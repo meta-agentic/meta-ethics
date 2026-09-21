@@ -28,6 +28,7 @@ A new parent version never propagates automatically. It arrives inside an instan
 | `conformance/` | Fairness fixtures a kernel must pass: identity-permutation symmetry, identity-blindness of L1, determinism |
 | `genesis/` | The genesis manifest schema and the genesis procedure |
 | `docs/KICKOFF-meta-ethics-constitution.md` | The originating brainstorm (2026-09-18), held inside the project that first needed it. Decisions there are settled unless the owner reopens them |
+| `docs/BRAINSTORM-2026-09-21-mathematics-of-ethics-and-revolution.md` | Second session: closure, the perimeter, conservation of the record, measure-not-score, and the formal frame — decisions D8–D21 and open decisions OD1–OD18, feeding ADR-ETH-01 |
 
 ## What is claimed, and what is not
 
