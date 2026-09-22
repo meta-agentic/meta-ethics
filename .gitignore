@@ -1,0 +1,27 @@
+# Local agent / tooling state — regenerated per session, never shared.
+.claude-flow/
+.swarm/
+ruvector.db
+agentdb.rvf**
+
+# Agent worktrees and session state.
+.claude/worktrees/
+.claude/memory.db*
+
+# Per-module .claude/ dirs are agent scratch; only a curated repo-root one is tracked.
+**/.claude/
+!/.claude/
+
+# macOS
+.DS_Store
+
+# LaTeX build output (paper/ arrives once there is a theorem to prove — ADR-ETH-01)
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+*.fdb_latexmk
+*.fls
