@@ -1,5 +1,28 @@
 # meta-ethics
 
+## In plain words
+
+More and more work is done by software agents acting for someone: an AI that files a report, merges a change or answers a customer on a company's behalf. Soon, many of these agents will work alongside people in the same organisation, and they will disagree, make mistakes, and sometimes misbehave. Someone has to decide what is allowed, who gets the last word, and what happens when things go wrong.
+
+This project writes the **rulebook for such mixed groups of people and agents**, a constitution. It is written so that a program can apply it, not just so that people can read it. Its main commitments:
+
+- **The same rules for everyone.** A human and an AI agent carry the same duties and are judged on the same record. No rule may name or favour a particular individual.
+- **Nobody stands outside.** Anyone whose action has an effect inside the system is inside it too, observed or not. There is no neutral outsider who escapes the rules, not even the referee.
+- **A record, not a score.** The system keeps a factual, append-only history of what happened. It does not turn people into ratings, because a rating already contains a judgement.
+- **Able to heal itself, in small steps.** A healthy system notices its own illnesses early and corrects them through its normal procedures. A revolution, a change the rules forbid, is the symptom of a system that let a problem grow too big. The aim is to make every needed correction a small, permitted one.
+- **A last word that can be replaced.** Someone must break ties and veto, but that seat can never block its own replacement.
+- **Honest about its limits.** Some things can be proved, such as that the rules treat everyone symmetrically and always give the same answer on the same facts. Others cannot, such as whether the facts themselves or the authors are neutral. The text says which is which.
+
+It is developed **in the open, before it is finished,** so that anyone can see how the decisions were reached, including the ones that turn out to be wrong.
+
+*A note on this repository's history:* the project began inside a private repository. Before publication, its history was replayed once to remove references to another, private project and to its internal tracker. Dates, authorship, order and every decision are unchanged; nothing else was edited.
+
+**Where to start:** the two session records in `docs/` tell the story, and `docs/adr/` records each decision with the options it rejected.
+
+---
+
+## For practitioners
+
 The **L0 constitution** for ecosystems of agents — human and non-human alike — who act under mandates delegated by parties for the common good, and who are judged by a neutral inference engine.
 
 This repository produces **text, rules and test specifications**. It does not produce code. The reference kernel that evaluates these rules lives elsewhere; what is written here is what that kernel must enforce, and the fixtures that prove it does.
