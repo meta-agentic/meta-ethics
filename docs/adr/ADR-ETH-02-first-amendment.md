@@ -7,7 +7,7 @@ title: First amendment to the L0 constitution — party and subject, record inte
 status: Proposed
 date: '2026-09-26'
 project: meta-ethics
-supersedes: ['ADR-ETH-01 D4', 'ADR-ETH-01 D8', 'ADR-ETH-01 D12', 'ADR-ETH-01 D14', 'ADR-ETH-01 OD16 (closed half)', 'ADR-ETH-01 OD19']
+supersedes: ['ADR-ETH-01 D4', 'ADR-ETH-01 D8', 'ADR-ETH-01 D9', 'ADR-ETH-01 D12', 'ADR-ETH-01 D14', 'ADR-ETH-01 OD16 (closed half)', 'ADR-ETH-01 OD19']
 supersededBy: []
 labels: [constitution, L0, amendment, party, record, erasure, correctability, lawful obstruction]
 ---
@@ -48,7 +48,7 @@ The forces F1–F9 of ADR-ETH-01 apply unchanged, except F3, which C6 sharpens. 
 
 ## Known hazards
 
-**H1 — Lawful obstruction is a known hazard, left to instances.** A party can slow or stall decisions without breaking any rule: by flooding proposals or findings, using every lever to its limit, withholding answers, timing filings, or making others ineligible. A3 is not violated by delay alone, so the parent does not detect it. Each instance's founding document declares its own defence. No defence may narrow a floor this constitution fixes, including a subject's sight of and answer to every finding about them.
+**H1 — Lawful obstruction is a known hazard, left to instances.** A party can slow or stall decisions without breaking any rule: by flooding proposals or findings, using every lever to its limit, withholding answers, timing filings, or making others ineligible. A3 is not violated by delay alone, so the parent does not detect it. Each instance's founding document declares its own defence. No defence may narrow a floor this constitution fixes, including a subject's sight of and answer to every finding about them. Judging two things the same is an act: attributed, reasoned, visible to everyone it affects, and contestable once. It never binds anyone who was not heard in the matched matter, and never suppresses or delays a subject's answer to a finding about them. A defence that reads the meaning of a filing is itself a lever: it can be flooded, stalled, and optimised against by anyone who can query its judge.
 *Rejected:* one anti-obstruction rule for every instance — loses to F7, because each defence trades speed against the protection of dissent, and that balance is the instance's to strike. *Rejected:* silence on the hazard — loses to F1, because an instance that never names it leaves the clock to whoever holds power.
 *Reopens if:* the same obstruction pattern defeats the declared defences of more than one instance.
 
@@ -67,7 +67,7 @@ The forces F1–F9 of ADR-ETH-01 apply unchanged, except F3, which C6 sharpens. 
 
 **C5 — The signature mechanism.** Pull requests here merge by rebase, which leaves no merge commit, so "the merge commit is the signature" is false. Corrected: ratification is the merge event of the pull request carrying the record, together with the commit that event lands on the main line. Under A2 that commit's hash is appended to the record, whose chain head is witnessed outside the repository, so the signature does not depend on how the history was merged.
 
-**C6 — F3: aggregation is stratified too.** F3 is restated: every clause is stratified Datalog in which negation and `count` are both stratified, every rule is range-restricted, and arithmetic appears only in non-recursive strata or as input facts. Any other clause is procedural, with its human enforcement named. *Reason:* under these conditions each fact set has exactly one model, so every replay of a verdict derives the same verdict, which D4's determinism and D9's replay depend on.
+**C6 — F3: aggregation is stratified too.** F3 is restated: every clause is stratified Datalog in which negation and `count` are both stratified, every rule is range-restricted, and arithmetic appears only in non-recursive strata or as input facts. Any other clause is procedural, with its human enforcement named. *Reason:* under these conditions each fact set has exactly one model, so every replay of a verdict derives the same verdict, which D4's determinism and D9's replay depend on. Rules are written in stratified Datalog, a decidable fragment of first-order logic, because full first-order validity is undecidable (Church 1936; Turing 1936) and only semi-decidable (Gödel 1930). Each verdict is decidable. Questions about the rules themselves are not, so admissibility is checked syntactically, and meaning enters only as attested facts (C11).
 
 **C7 — D12: issuance is governed and scopes nest.** Restored from the brainstorm record, dropped when D12 was ratified: every change to the set of parties is a proposal under the governed evolution channel. Added: a delegated scope lies within its delegator's own. The founder is the root of every chain by signing the genesis manifest, so D12's trigger does not fire at genesis.
 *Rejected:* issuance with no review — loses to F1, because Sybil risk is then relocated from entry to whoever issues mandates. *Rejected:* every mandate ratified by a human — loses to F5.
@@ -87,6 +87,10 @@ The forces F1–F9 of ADR-ETH-01 apply unchanged, except F3, which C6 sharpens. 
 - D5 — *Reopens if:* for any clause, the recorded findings that an act reached the clause's outcome without passing its check exceed the recorded passes, over a window the founding document declares.
 
 **C10 — OD16 is split.** Closed: the canonical metric on configuration space is the admissible distance to closure — the measure A3 uses, infinite exactly on the revolutionary surface. Open: which intrinsic properties serve as early-warning coordinates, and with what weight; this stays with the lab (D20) and remains OD15's declared choice of authors' values.
+
+**C11 — D9: replay re-derives, it does not re-judge.** Some input facts are attested acts: a witness's observation, a human's review, a judgement of meaning. Replay derives every verdict from the recorded facts, these included, and never re-runs the acts that produced them. Such a fact is re-examinable, not re-derivable. The record keeps what its author saw and why, and a contest replaces it only by an appended act. Determinism holds over the record, and the correctness of attested facts is auditable, not provable (D4).
+*Rejected:* calling attested facts replayable — loses to F6, because the claim would be false. *Rejected:* admitting no attested facts — loses to F3, because delivery and review cannot be derived from agent-writable facts alone (D15).
+*Reopens if:* a verdict depends on a fact whose producing act the record does not attribute.
 
 ## Consequences
 
@@ -137,6 +141,8 @@ C7   proposed  mandate issuance governed; scopes nest        no review (F1 — S
 C8   proposed  losing forces named (D3,D4,D11,D19,D21)       —                                                            —                                       —
 C9   proposed  observable triggers (D1,D2,D3,D5)             —                                                            —                                       as restated
 C10  proposed  OD16 split: metric closed, coordinates open   —                                                            —                                       —
+C11  proposed  replay re-derives, never re-judges            attested facts replayable (F6 — false)                       attested facts auditable, not provable  verdict on an unattributed attested fact
+     (D9)                                                    no attested facts (F3 — D15)
 H1   proposed  lawful obstruction named; defence per instance one anti-obstruction rule (F7 — instance's balance)          parent does not detect delay alone      same pattern defeats defences of more
                                                              silence on the hazard (F1 — clock to power)                                                          than one instance
 
@@ -146,4 +152,4 @@ INTEGRITY   amendments without a rejected alternative: 0   ·   without a reopen
 
 ## Provenance
 
-Amends ADR-ETH-01 (`docs/adr/ADR-ETH-01-constitution-shape.md`, ratified). C7's restored sentence is from the brainstorm record `docs/BRAINSTORM-2026-09-21-mathematics-of-ethics-and-revolution.md`, under D12. A1–A3 record the founder's rulings. The backlog is tracked outside this repository.
+Amends ADR-ETH-01 (`docs/adr/ADR-ETH-01-constitution-shape.md`, ratified). C7's restored sentence is from the brainstorm record `docs/BRAINSTORM-2026-09-21-mathematics-of-ethics-and-revolution.md`, under D12. A1–A3 record the founder's rulings. References for C6: Church 1936; Turing 1936; Gödel 1930. The backlog is tracked outside this repository.
