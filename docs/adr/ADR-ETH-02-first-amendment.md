@@ -9,7 +9,7 @@ date: '2026-09-26'
 project: meta-ethics
 supersedes: ['ADR-ETH-01 D4', 'ADR-ETH-01 D8', 'ADR-ETH-01 D12', 'ADR-ETH-01 D14', 'ADR-ETH-01 OD16 (closed half)', 'ADR-ETH-01 OD19']
 supersededBy: []
-labels: [constitution, L0, amendment, party, record, erasure, correctability]
+labels: [constitution, L0, amendment, party, record, erasure, correctability, lawful obstruction]
 ---
 
 # ADR-ETH-02 — First amendment to the L0 constitution
@@ -45,6 +45,12 @@ The forces F1–F9 of ADR-ETH-01 apply unchanged, except F3, which C6 sharpens. 
 *Rejected:* AG EF correct over the configuration space — loses to F1, because a correcting path that needs the capturing group's cooperation satisfies it. *Rejected:* keep the latest verdict per rule as the working state — loses to F1, because a compliant act after an uncorrected violation hides the violation from the check.
 *Accepted cost:* that requirement enlarges L0, against D18's aim of keeping it small.
 *Reopens if:* an unresolved violation is shown to fall outside the working state.
+
+## Known hazards
+
+**H1 — Lawful obstruction is a known hazard, left to instances.** A party can slow or stall decisions without breaking any rule: by flooding proposals or findings, using every lever to its limit, withholding answers, timing filings, or making others ineligible. A3 is not violated by delay alone, so the parent does not detect it. Each instance's founding document declares its own defence. No defence may narrow a floor this constitution fixes, including a subject's sight of and answer to every finding about them.
+*Rejected:* one anti-obstruction rule for every instance — loses to F7, because each defence trades speed against the protection of dissent, and that balance is the instance's to strike. *Rejected:* silence on the hazard — loses to F1, because an instance that never names it leaves the clock to whoever holds power.
+*Reopens if:* the same obstruction pattern defeats the declared defences of more than one instance.
 
 ## III. Corrections to ADR-ETH-01
 
@@ -84,7 +90,7 @@ The forces F1–F9 of ADR-ETH-01 apply unchanged, except F3, which C6 sharpens. 
 
 ## Consequences
 
-Judgement is universal and enfranchisement is earned: anyone who acts is judged, and only a mandate confers a voice. Exit and proxy use stop being escapes, and touching the system confers no entitlement. The record keeps its integrity without keeping everything forever: acts of power stay attributed, while findings about those subject to power fade in use, can lose their name, and always carry the subject's answer. The correctness claim now holds against an adversary, not only in the absence of one, and a violation cannot be hidden by a later compliant act. ADR-ETH-01's claims are narrowed to what it can deliver: symmetry is tested, L0 is a gate and not a revolution, and ratification has a signature that exists.
+Judgement is universal and enfranchisement is earned: anyone who acts is judged, and only a mandate confers a voice. Exit and proxy use stop being escapes, and touching the system confers no entitlement. The record keeps its integrity without keeping everything forever: acts of power stay attributed, while findings about those subject to power fade in use, can lose their name, and always carry the subject's answer. The correctness claim now holds against an adversary, not only in the absence of one, and a violation cannot be hidden by a later compliant act. ADR-ETH-01's claims are narrowed to what it can deliver: symmetry is tested, L0 is a gate and not a revolution, and ratification has a signature that exists. Lawful obstruction is named as a hazard the parent does not detect, and each instance declares its own defence (H1).
 
 What becomes easy: a human party's legal erasure without breaking replay; replaying any verdict with severed names; checking correctability without reading an unbounded log. What becomes hard: acting on the system through someone else's unmandated hands; rewriting any entry without leaving the rewrite in the record; closing a finding by any route but a witnessed act that names it.
 
@@ -131,6 +137,8 @@ C7   proposed  mandate issuance governed; scopes nest        no review (F1 — S
 C8   proposed  losing forces named (D3,D4,D11,D19,D21)       —                                                            —                                       —
 C9   proposed  observable triggers (D1,D2,D3,D5)             —                                                            —                                       as restated
 C10  proposed  OD16 split: metric closed, coordinates open   —                                                            —                                       —
+H1   proposed  lawful obstruction named; defence per instance one anti-obstruction rule (F7 — instance's balance)          parent does not detect delay alone      same pattern defeats defences of more
+                                                             silence on the hazard (F1 — clock to power)                                                          than one instance
 
 INTEGRITY   amendments without a rejected alternative: 0   ·   without a reopening trigger: 0
             ADR-ETH-01 body lines edited: 0 · ADR-ETH-01 front-matter lines edited: supersededBy only
