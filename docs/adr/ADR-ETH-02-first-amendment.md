@@ -73,7 +73,7 @@ The forces F1–F9 of ADR-ETH-01 apply unchanged, except F3, which C6 sharpens. 
 
 **C6 — F3: aggregation is stratified too.** F3 is restated: every clause is stratified Datalog in which negation and `count` are both stratified, every rule is range-restricted, and arithmetic appears only in non-recursive strata or as input facts. Any other clause is procedural, with its human enforcement named. *Reason:* under these conditions each fact set has exactly one model, so every replay of a verdict derives the same verdict, which D4's determinism and D9's replay depend on. Rules are written in stratified Datalog, a decidable fragment of first-order logic, because full first-order validity is undecidable (Church 1936; Turing 1936) and only semi-decidable (Gödel 1930). Each verdict is decidable. Questions about the rules themselves are not, so admissibility is checked syntactically, and meaning enters only as attested facts (C11).
 
-**C7 — D12: issuance is governed and scopes nest.** Restored from the brainstorm record, dropped when D12 was ratified: every change to the set of parties is a proposal under the governed evolution channel. Added: a delegated scope lies within its delegator's own. The founder is the root of every chain by signing the genesis manifest, so D12's trigger does not fire at genesis.
+**C7 — D12: issuance is governed and scopes nest.** Restored from the brainstorm record, dropped when D12 was ratified: every change to the set of parties is a proposal under the governed evolution channel. Added: a delegated scope lies within its delegator's own. Which mandates also need a human's ratification is set by each instance's founding document. The founder is the root of every chain by signing the genesis manifest, so D12's trigger does not fire at genesis.
 *Rejected:* issuance with no review — loses to F1, because Sybil risk is then relocated from entry to whoever issues mandates. *Rejected:* every mandate ratified by a human — loses to F5.
 *Reopens if:* the record shows a party whose chain does not reach the founding document, or a delegated scope wider than its delegator's.
 
@@ -86,7 +86,7 @@ The forces F1–F9 of ADR-ETH-01 apply unchanged, except F3, which C6 sharpens. 
 
 **C9 — Triggers that can be observed.**
 - D1 — *Reopens if:* a consequence a rule derives is not applied, or is applied differently to a party of another kind on the same derivation, with no appended act recording why.
-- D2 — *Reopens if:* over the last fifty decided proposals, the last word is exercised in more than a fraction the founding document declares. The fraction may not exceed one in ten.
+- D2 — *Reopens if:* over a window of decided proposals, the last word is exercised in more than a fraction of them. Each instance's founding document declares both, and no instance may leave either undeclared (T).
 - D3 — *Reopens if:* a procedurally valid mandate is revoked, or a rule changed to block it, by an act that cites its purpose rather than any finding.
 - D5 — *Reopens if:* for any clause, the recorded findings that an act reached the clause's outcome without passing its check exceed the recorded passes, over a window the founding document declares.
 
