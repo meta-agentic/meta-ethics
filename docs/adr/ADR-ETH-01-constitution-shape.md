@@ -8,7 +8,7 @@ status: Proposed
 date: '2026-09-21'
 project: meta-ethics
 supersedes: []
-supersededBy: []
+supersededBy: ['ADR-ETH-02 (D4, D8, D12, D14, OD16 closed half, OD19)']
 labels: [constitution, L0, closure, perimeter, neutrality, tailoring, governance]
 ---
 
