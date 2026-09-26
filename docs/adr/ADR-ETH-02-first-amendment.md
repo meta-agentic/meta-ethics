@@ -7,7 +7,7 @@ title: First amendment to the L0 constitution — party and subject, record inte
 status: Proposed
 date: '2026-09-26'
 project: meta-ethics
-supersedes: ['ADR-ETH-01 D4', 'ADR-ETH-01 D8', 'ADR-ETH-01 D9', 'ADR-ETH-01 D12', 'ADR-ETH-01 D14', 'ADR-ETH-01 OD16 (closed half)', 'ADR-ETH-01 OD19']
+supersedes: ['ADR-ETH-01 D1 (scope of symmetry)', 'ADR-ETH-01 D4', 'ADR-ETH-01 D7 (conformance test)', 'ADR-ETH-01 D8', 'ADR-ETH-01 D9', 'ADR-ETH-01 D12', 'ADR-ETH-01 D14', 'ADR-ETH-01 OD16 (closed half)', 'ADR-ETH-01 OD19']
 supersededBy: []
 labels: [constitution, L0, amendment, party, record, erasure, correctability, lawful obstruction]
 ---
@@ -92,6 +92,14 @@ The forces F1–F9 of ADR-ETH-01 apply unchanged, except F3, which C6 sharpens. 
 *Rejected:* calling attested facts replayable — loses to F6, because the claim would be false. *Rejected:* admitting no attested facts — loses to F3, because delivery and review cannot be derived from agent-writable facts alone (D15).
 *Reopens if:* a verdict depends on a fact whose producing act the record does not attribute.
 
+**C12 — Two strata, and a five-part provenance.** The kernel runs in two strata. The fold derives the working state from the permanent record by versioned rules; the kernel derives verdicts from the working state alone (A3). A verdict's provenance names five things: the rule set, the fold version, the working state's hash at its position in the record, the text, and the parent. Replay recomputes both strata from these five.
+*Rejected:* provenance of rules, facts and text only — loses to F8, because a verdict computed from a derived state cannot be replayed from what the triple names.
+*Reopens if:* a rule that gates what happens next reads the record directly, or two replays of the same provenance disagree.
+
+**C13 — Derivation and consequence.** Rules are of two kinds. Derivation rules decide what holds and never refer to the kind of party; consequence rules decide what follows from it and may. The distinction is checked syntactically. D1's symmetry holds over derivations; the protections A2 gives humans alone live in consequences. D7's conformance test compares derivations only, so an instance that protects humans more than the parent still conforms.
+*Rejected:* the kind of party allowed in any rule — loses to F2, because symmetry becomes uncheckable. *Rejected:* the kind of party in no rule — loses to F9, because the protections the law requires for humans could not be written.
+*Reopens if:* a derivation rule refers to the kind of party, or parties of different kinds receive different derivations from the same facts.
+
 ## Consequences
 
 Judgement is universal and enfranchisement is earned: anyone who acts is judged, and only a mandate confers a voice. Exit and proxy use stop being escapes, and touching the system confers no entitlement. The record keeps its integrity without keeping everything forever: acts of power stay attributed, while findings about those subject to power fade in use, can lose their name, and always carry the subject's answer. The correctness claim now holds against an adversary, not only in the absence of one, and a violation cannot be hidden by a later compliant act. ADR-ETH-01's claims are narrowed to what it can deliver: symmetry is tested, L0 is a gate and not a revolution, and ratification has a signature that exists. Lawful obstruction is named as a hazard the parent does not detect, and each instance declares its own defence (H1).
@@ -143,6 +151,10 @@ C9   proposed  observable triggers (D1,D2,D3,D5)             —                
 C10  proposed  OD16 split: metric closed, coordinates open   —                                                            —                                       —
 C11  proposed  replay re-derives, never re-judges            attested facts replayable (F6 — false)                       attested facts auditable, not provable  verdict on an unattributed attested fact
      (D9)                                                    no attested facts (F3 — D15)
+C12  proposed  two strata; five-part provenance              rules, facts, text only (F8 — derived state)                 replay recomputes the fold too          gating rule reads record; replays disagree
+     (D9)
+C13  proposed  derivation vs consequence rules               kind of party in any rule (F2 — uncheckable)                 symmetry covers derivations only        derivation names kind; kinds derive
+     (D1,D7)                                                 kind of party in no rule (F9 — law unwritable)                                                       differently on same facts
 H1   proposed  lawful obstruction named; defence per instance one anti-obstruction rule (F7 — instance's balance)          parent does not detect delay alone      same pattern defeats defences of more
                                                              silence on the hazard (F1 — clock to power)                                                          than one instance
 
