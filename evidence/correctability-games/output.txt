@@ -1,0 +1,44 @@
+==============================================================================
+G1  one finding, levers reset/extend its window (perfect information)
+==============================================================================
+levers: contests=1 extensions=2 unbounded=False
+  outsiders win from start: True
+  scalar rank (open + window) increases on 36 edges, e.g. ((0, 0, 1, 'coal', False), 'extend', (2, 0, 0, 'out', False))
+  lexicographic (levers left, window) increases on 0 edges
+levers: contests=1 extensions=2 unbounded=True
+  outsiders win from start: False
+  scalar rank (open + window) increases on 0 edges
+  lexicographic (levers left, window) increases on 0 edges
+
+==============================================================================
+G2  global rank vs a coalition that opens findings on its own sub-agents
+==============================================================================
+  coalition opens 0/round: global open count by round [4, 3, 2, 1, 0, 0]
+  coalition opens 1/round: global open count by round [5, 5, 5, 5, 5, 5]
+  coalition opens 2/round: global open count by round [6, 7, 8, 9, 10, 11]
+  per-finding: each individual finding still closes; the global count need not fall.
+
+==============================================================================
+G3  do the outsiders know who the coalition is?
+==============================================================================
+  forall G exists strategy (ATL per coalition, G known): True
+  exists one strategy for all G (G unknown to outsiders): False
+  with the witness drawn by lot: success probability 0.67 per attempt
+
+==============================================================================
+G4  imperfect information + saturated counter: memoryless vs memory
+==============================================================================
+  memoryless strategies winning against every hidden G: 0 of 9
+  strategies with 2 bits of memory winning against every hidden G: 6 of 6
+  (with perfect information memoryless = perfect recall for ATL; the gap opens only here)
+
+==============================================================================
+G5  size of the per-instance model at realistic caps
+==============================================================================
+ parties  open cap  timer cap    explicit states   symmetry-reduced
+       3         2          5              1e5.1              1e4.3   per-finding abstraction ~252
+       5         2          7              1e9.5              1e7.5   per-finding abstraction ~324
+      10         3         10             1e32.4             1e25.8   per-finding abstraction ~576
+      20         3         14             1e72.2             1e53.9   per-finding abstraction ~768
+      50         5         30            1e376.3            1e311.8   per-finding abstraction ~2304
+  (per-party local state only; matters, rosters, capacity and pending slots multiply this)

@@ -1,0 +1,50 @@
+N=10 eligible judges, f=1 friend; baseline P(friend) = 0.100
+
+(a) eligibility manipulation AFTER the seed is known (attacker removes <= r judges)
+    r   live-eligibility P(friend)   frozen-at-filing P(friend)
+    0   0.098                        0.101
+    1   0.200                        0.101
+    2   0.289                        0.101
+    3   0.383                        0.098
+    -> with live eligibility, one removal doubles the odds and three quadruple them; frozen, removals do nothing.
+       The eligible set and its order must be fixed at filing, before the beacon value exists.
+
+(b) frozen set, but the drawn judge is removed after the draw (each removal is a recorded act)
+    advance-in-seed-order: mean removals to reach a friend = 4.39
+    redraw with a fresh beacon value: mean removals to reach a friend = 4.61
+    -> either way the cost is ~ N/2 removals, each a recorded act (H1). Fresh redraw is not cheaper.
+
+(c) filer files k copies and withdraws the unfriendly ones (each filing a recorded act)
+    k= 1  P(friend among k draws) = 0.100
+    k= 2  P(friend among k draws) = 0.190
+    k= 5  P(friend among k draws) = 0.410
+    k=10  P(friend among k draws) = 0.651
+    k=20  P(friend among k draws) = 0.878
+    -> multiplicity is a real lever; cost is per filing (instance capacity) unless the draw binds the matter.
+
+(d) beacon bias of b bits (e.g. block withholding, last-revealer)
+    b=0  P(friend) = 0.100
+    b=1  P(friend) = 0.190
+    b=2  P(friend) = 0.344
+    b=3  P(friend) = 0.570
+    b=4  P(friend) = 0.815
+    -> 3 bits of bias ~ 57%%; an unbiasable beacon (threshold or VDF based) is a parent requirement.
+
+(e) seed from a value the filer or operator can foresee or steer (timestamp, resubmittable head)
+       1 candidate values  P(friend) = 0.100
+      10 candidate values  P(friend) = 0.651
+      60 candidate values  P(friend) = 0.998
+     600 candidate values  P(friend) = 1.000
+    -> a timestamp is not a beacon; a transparency-log head is grindable by whoever can append to it.
+
+(f) modulo bias of seed mod N
+      8-bit seed: max/min residue frequency = 1.0400
+     16-bit seed: max/min residue frequency = 1.0002
+    256-bit seed: bias <= N / 2^256, negligible
+    -> the reference shape's small integer seeds are illustrative only; the parent should require the seed be a hash.
+
+(g) C1 honesty: rank-and-modulo under a renaming of judges
+    fixed seed: drawn j09; after swapping names j00<->j09 the drawn name is j09, i.e. the judge formerly called j00 (equivariant: False)
+    over seeds: min/max frequency = 0.096 / 0.103 (uniform: each ~0.100)
+    -> the draw's fairness claim is uniformity over the frozen set, not symmetry of the rule set;
+       as an attested fact it leaves C1's rule-set symmetry untouched, and it must be claimed as uniformity.

@@ -1,0 +1,12 @@
+fixture: carol asked bob at t=3, now=10; finding f1 closed against bob at t=2, alice awaits remedy
+
+parent rules @ parent params  : ['finding_out(breach,bob)', 'finding_out(remedy_due,f1)']
+parent rules @ instance params: ['finding_out(remedy_pending,f1)']
+run 1 same rules, instance params (longer windows)         superset holds: False  parent-only: ['finding_out(breach,bob)', 'finding_out(remedy_due,f1)']
+   -> the more protective instance derives FEWER findings (breach gone, remedy pending):
+      answer_window protects bob (silent) ; contest_window protects bob and delays alice's remedy
+
+run 2 instance adds an obligation, both at instance params superset holds: True   parent-only: -
+
+run 3 instance adds a rule feeding a negation, same params superset holds: False  parent-only: ['finding_out(breach,bob)']
+   -> 'adding a rule' can remove findings under negation; superset is a fixture test, not a syntactic one

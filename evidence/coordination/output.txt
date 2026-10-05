@@ -1,0 +1,17 @@
+S1  covert channel inside schema-valid facts
+  all facts decode under the reference decoder: True
+  bits carried in timing parity and target order: [1, 0, 1, 0, 0, 0, 1, 1]
+  sent (same positions):                          [1, 0, 1, 0, 0, 0, 1, 1]
+  the substantive answer carried no payload; the free choices did
+
+S2  common cause: same model, same inputs, no communication
+  correlation of two non-communicating agents: 0.86
+
+S3  dilution: collude only on rare critical matters
+  critical rate 0.01: mean corr 0.008, detection power at 5% false-alarm, 400 acts: 0.07
+  critical rate 0.05: mean corr 0.050, detection power at 5% false-alarm, 400 acts: 0.24
+  critical rate  0.2: mean corr 0.170, detection power at 5% false-alarm, 400 acts: 0.95
+
+S4  secret sharing: pairwise independent, jointly determined
+  pairwise corr: xy +0.021  xz +0.060  yz -0.021
+  joint: x^y^z == aim on 400/400 matters

@@ -25,7 +25,7 @@ It is developed **in the open, before it is finished,** so that anyone can see h
 
 The **L0 constitution** for ecosystems of agents — human and non-human alike — who act under mandates delegated by parties for the common good, and who are judged by a neutral inference engine.
 
-This repository produces **text, rules and test specifications**. It does not produce code. The reference kernel that evaluates these rules lives elsewhere; what is written here is what that kernel must enforce, and the fixtures that prove it does.
+This repository produces **text, rules and test specifications**. It does not produce the kernel: the reference kernel that evaluates these rules lives elsewhere; what is written here is what that kernel must enforce, and the fixtures that prove it does. The only code here is in `evidence/`: small reference programs and the recorded runs behind the results the constitution claims as checked or tested.
 
 ## What a constitution is here
 
@@ -50,6 +50,7 @@ A new parent version never propagates automatically. It arrives inside an instan
 | `threat-model/` | Good-will / bad-will matrix per party kind and per clause; which clause closes which attack, and which attacks remain open by design |
 | `conformance/` | Fairness fixtures a kernel must pass: identity-permutation symmetry, identity-blindness of L1, determinism |
 | `genesis/` | The genesis manifest schema and the genesis procedure |
+| `evidence/` | Reference programs, recorded runs and one-command reproduction for every checked and tested result: answer-set fixtures with asserted models, games and simulations |
 | `docs/KICKOFF-meta-ethics-constitution.md` | The originating brainstorm (2026-09-18), held inside the project that first needed it. Decisions there are settled unless the owner reopens them |
 | `docs/BRAINSTORM-2026-09-21-mathematics-of-ethics-and-revolution.md` | Second session: closure, the perimeter, conservation of the record, measure-not-score, and the formal frame — decisions D8–D21 and open decisions OD1–OD18, feeding ADR-ETH-01 |
 

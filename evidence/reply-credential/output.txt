@@ -1,0 +1,21 @@
+==============================================================================
+reply_credential.lp
+==============================================================================
+rules: 12  facts: 22  components: 21
+stratified (neg+count): True
+range-restricted (own check): True
+arithmetic only in non-recursive strata: True
+count is the only aggregate: True
+answer sets: 1
+  EXPECT     resolved_by_effect(f2,bob)                    ok
+  EXPECT     same_signer_a(f1,f2)                          ok
+  EXPECT     relinked_after_severing_a(f1,bob)             ok
+  EXPECT     timing_relink_b(f1,bob)                       ok
+  EXPECT-NOT same_signer_b(f1,f2)                          ok
+  EXPECT-NOT relinked_after_severing_b(f1,bob)             ok
+
+==============================================================================
+SUMMARY
+==============================================================================
+program                                strat  rr     arith  count  models  expect
+reply_credential.lp                    True   True   True   True   1       6/6

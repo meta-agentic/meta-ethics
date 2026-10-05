@@ -1,0 +1,32 @@
+==============================================================================
+genesis_regime.lp
+==============================================================================
+rules: 9  facts: 23  components: 19
+stratified (neg+count): True
+range-restricted (own check): True
+arithmetic only in non-recursive strata: True
+count is the only aggregate: True
+answer sets: 1
+  EXPECT     first_level(m3)                               ok
+  EXPECT     regime_exit_at(7)                             ok
+  EXPECT     genesis_regime(6)                             ok
+  EXPECT     under_regime(a1)                              ok
+  EXPECT     fork(h2,h3)                                   ok
+  EXPECT-NOT first_level(m1)                               ok
+  EXPECT-NOT genesis_regime(7)                             ok
+  EXPECT-NOT under_regime(a2)                              ok
+  EXPECT-NOT fork(h1,h2)                                   ok
+  EXPECT-NOT unwitnessed(6)                                ok
+
+==============================================================================
+SUMMARY
+==============================================================================
+program                                strat  rr     arith  count  models  expect
+genesis_regime.lp                      True   True   True   True   1       10/10
+
+TSA  fork provable by: one reader with the public sequence=False   the witness's own record=False   two readers comparing=False
+Log  fork provable by: one reader with the public sequence=True   the witness's own record=True   two readers comparing=True
+
+-> a timestamp authority proves existence at a time, never uniqueness: two forks both carry valid tokens.
+   an append-only witness whose entries are linked and public makes a fork provable from the witness
+   alone, which is the only observer that exists in the genesis regime (one party, nobody to gossip with).

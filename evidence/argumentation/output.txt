@@ -1,0 +1,103 @@
+==============================================================================
+a_grounded_acyclic.lp
+==============================================================================
+rules: 2  facts: 5  components: 4
+stratified (neg+count): False
+range-restricted (own check): True
+arithmetic only in non-recursive strata: True
+count is the only aggregate: True
+  ! NOT STRATIFIED: neg edge defeated/1 -> defeated/1 inside a recursive component
+answer sets: 1
+  EXPECT     accepted(c3)                                  ok
+  EXPECT     defeated(c2)                                  ok
+  EXPECT     accepted(c1)                                  ok
+==============================================================================
+b_grounded_even_cycle.lp
+==============================================================================
+rules: 2  facts: 4  components: 4
+stratified (neg+count): False
+range-restricted (own check): True
+arithmetic only in non-recursive strata: True
+count is the only aggregate: True
+  ! NOT STRATIFIED: neg edge defeated/1 -> defeated/1 inside a recursive component
+answer sets: 2
+  (multiple models: expectations checked against the first; determinism FAILS)
+==============================================================================
+c_grounded_odd_cycle.lp
+==============================================================================
+rules: 2  facts: 6  components: 4
+stratified (neg+count): False
+range-restricted (own check): True
+arithmetic only in non-recursive strata: True
+count is the only aggregate: True
+  ! NOT STRATIFIED: neg edge defeated/1 -> defeated/1 inside a recursive component
+answer sets: 0
+==============================================================================
+d_grounded_unrolled.lp
+==============================================================================
+rules: 15  facts: 9  components: 16
+stratified (neg+count): True
+range-restricted (own check): True
+arithmetic only in non-recursive strata: True
+count is the only aggregate: True
+answer sets: 1
+  EXPECT     accepted(c3)                                  ok
+  EXPECT     rejected(c2)                                  ok
+  EXPECT     accepted(c1)                                  ok
+  EXPECT     undecided(c4)                                 ok
+  EXPECT     undecided(c5)                                 ok
+  EXPECT     ceiling_sufficient                            ok
+==============================================================================
+e_override_lookup.lp
+==============================================================================
+rules: 2  facts: 9  components: 4
+stratified (neg+count): True
+range-restricted (own check): True
+arithmetic only in non-recursive strata: True
+count is the only aggregate: True
+answer sets: 1
+  EXPECT     accepted(c3)                                  ok
+  EXPECT     overridden(c2)                                ok
+  EXPECT     overridden(c1)                                ok
+  EXPECT     overridden(c4)                                ok
+  EXPECT     overridden(c5)                                ok
+==============================================================================
+f_rule_superiority.lp
+==============================================================================
+rules: 12  facts: 15  components: 12
+stratified (neg+count): True
+range-restricted (own check): True
+arithmetic only in non-recursive strata: True
+count is the only aggregate: True
+answer sets: 1
+  EXPECT     sup_acyclic                                   ok
+  EXPECT     attacks(c3,c2)                                ok
+  EXPECT     attacks(c2,c1)                                ok
+  EXPECT     residue(c4,c5)                                ok
+  EXPECT-NOT ordered_cyclic                                ok
+  EXPECT-NOT attacks(c1,c2)                                ok
+==============================================================================
+g_ordering_at_filing.lp
+==============================================================================
+rules: 6  facts: 8  components: 11
+stratified (neg+count): True
+range-restricted (own check): True
+arithmetic only in non-recursive strata: True
+count is the only aggregate: True
+answer sets: 1
+  EXPECT     bound(m1,v1)                                  ok
+  EXPECT     prevails_bound(m1,r1,r2)                      ok
+  EXPECT     prevails_now(m1,r2,r1)                        ok
+  EXPECT-NOT prevails_bound(m1,r2,r1)                      ok
+
+==============================================================================
+SUMMARY
+==============================================================================
+program                                strat  rr     arith  count  models  expect
+a_grounded_acyclic.lp                  False  True   True   True   1       3/3
+b_grounded_even_cycle.lp               False  True   True   True   2       0/0
+c_grounded_odd_cycle.lp                False  True   True   True   0       0/0
+d_grounded_unrolled.lp                 True   True   True   True   1       6/6
+e_override_lookup.lp                   True   True   True   True   1       5/5
+f_rule_superiority.lp                  True   True   True   True   1       6/6
+g_ordering_at_filing.lp                True   True   True   True   1       4/4

@@ -1,0 +1,46 @@
+==============================================================================
+1_working_state_laundering.lp
+==============================================================================
+rules: 11  facts: 22  components: 19
+stratified (neg+count): True
+range-restricted (own check): True
+arithmetic only in non-recursive strata: True
+count is the only aggregate: True
+answer sets: 1
+  EXPECT     open(a1)                                      ok
+  EXPECT     latest_passing(a,r1)                          ok
+  EXPECT     closed(a3)                                    ok
+  EXPECT     open(a4)                                      ok
+  EXPECT     open_count(b,3)                               ok
+  EXPECT     open_count_sat(b,2)                           ok
+==============================================================================
+2_exclusion_base.lp
+==============================================================================
+rules: 16  facts: 25  components: 26
+stratified (neg+count): True
+range-restricted (own check): True
+arithmetic only in non-recursive strata: True
+count is the only aggregate: True
+answer sets: 1
+  EXPECT     captured_a(q9)                                ok
+  EXPECT-NOT captured_b(q9)                                ok
+==============================================================================
+3_bundle_replay.lp
+==============================================================================
+rules: 8  facts: 4  components: 14
+stratified (neg+count): True
+range-restricted (own check): True
+arithmetic only in non-recursive strata: True
+count is the only aggregate: True
+answer sets: 1
+  EXPECT     excluded_bundle(bob)                          ok
+  EXPECT-NOT excluded_full(bob)                            ok
+  EXPECT-NOT replay_accepts                                ok
+
+==============================================================================
+SUMMARY
+==============================================================================
+program                                strat  rr     arith  count  models  expect
+1_working_state_laundering.lp          True   True   True   True   1       6/6
+2_exclusion_base.lp                    True   True   True   True   1       2/2
+3_bundle_replay.lp                     True   True   True   True   1       3/3
