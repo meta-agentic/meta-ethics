@@ -126,7 +126,7 @@ Against the core it covers 9 floors, renders 19 in part and 4 not at all, and co
 - **LEX.3.** Provenance names the rule set at derivation, not at each act (C12), and no program file versions rules. Edit: bind it to the act's intake, and apply a milder rule.
 - **LEX.4.** P3's pause binds every party for one actor's departure, and the program classes it as a consequence. Edit: recast it as a condition of admissibility that reads no actor.
 - **IMP.3.** D1's second sentence lets consequence tables differ by kind. Edit: only safeguards may differ by kind; restrict C13 likewise.
-- **COR.1.** A2's last sentence and C15 require the consent of every protected party to narrow a protection, so one party below capture blocks it for good. Edit: OD32.
+- **COR.1.** A2's last sentence and C15 require the consent of every protected party to narrow a protection, so one party below capture blocks it for good. Edit: a defined protection with declared clauses for collective override (K9).
 - **COR.3, first.** A verdict stays provisional with no ceiling where no reviewer exists, while its subject stays recused (A2, P2). Edit: a ceiling at which it lapses in the subject's favour, unless the subject's own grants emptied the bench, when a reviewer is found outside every implicated chain.
 - **COR.3, second.** Findings kept on an ended instance's record, the founder's genesis findings included, are decided only on request (P3). Edit: a ceiling at which an unrequested kept finding closes as ended without verdict.
 - **GEN.2.** H3 lets an unratified genesis act stand with all its consequences. Edit: it stands as to the founder and those who accepted it only.
@@ -204,6 +204,14 @@ Genesis grants, as acts of general application, stand without re-decision. That 
 
 *Reopens if:* a move is made that the plan does not list.
 
+**K9 — No lock for ever.** A *lock* is a rule that holds a change back beyond the gate, such as a protection that may be narrowed only with the assent of those it protects. A lock is admissible only if, first, it is defined, declaring what it protects and for whom; and second, the rule set names the clauses under which the collective can override it, such as a collective vote. No party, seat or class can block a change for ever (COR.1). This records the founder's decision of 2026-10-05: "no protections against permanent lock must be in place and first of all the lock must be defined second under specific clauses the collective can run against it for example with the collective vote, so no one can block for ever". For the meta-agentic constitution, A2's last sentence and C15 resolve their contradiction with COR.1 by replacing each protected party's consent with a defined protection and declared clauses for collective override (`core/core-gaps.tsv`).
+
+*Rejected alternatives:*
+- *A declared protection ratchet* — a protection narrowable only with every protected party's consent, admitted by the core as an exception to COR.1. Loses to F1, because a ratchet can entrench a privilege as easily as it guards a right, and to F5, because an over-protective value could never be corrected, the reason ADR-ETH-02 C15 already gave for rejecting a ratchet.
+- *A lock defined but with no named override* — loses to F1, because the collective would then hold the power to override only in name, and the lock would be permanent in fact.
+
+*Reopens if:* a lock is found that no declared clause lets the collective override, or a lock is invoked to protect something its definition does not declare.
+
 ## Consequences
 
 The originator is now small and states what this record proposes every just constitution shares. Everything else — parity, the Custodian's shape, the draw, the witness, the logic — is a constitution's way of meeting these floors, or its value, and is said to be so. The meta-agentic constitution stops being the whole answer and becomes a worked one, with eight contradicting clauses, over seven floors, to close. What the core requires:
@@ -236,7 +244,7 @@ What becomes hard:
 
 **The core does not exclude procedurally valid evil** (X51), and opaque collusion, reward hacking and the observation gap are bounded, not excluded (X53, X54, X55).
 
-**The meta-agentic constitution does not conform until eight of its clauses are edited** (K3, OD27, OD32).
+**The meta-agentic constitution does not conform until eight of its clauses are edited** (K3, K9, OD27).
 
 **Coverage and minimality are established by inspection.** The machine checks of `core/tests.md` §4 are a design, two of them proxies beyond the roster cap; until they exist, the results are argued, not checked.
 
@@ -288,9 +296,7 @@ The argument for Option A: a deployment is not a sovereign, and a core that lice
 
 This record takes none of them.
 
-**OD32 — Protections that only their holders may narrow.** A2's last sentence and C15 let a protection be narrowed only with the consent of every party it protects, so a single protected party, below capture, blocks the change for good, against COR.1. There are two options, and this record recommends neither, because each costs something the other keeps:
-- *Option A — a declared protection ratchet in the core.* COR.1 admits one exception: a protection the constitution declares as a ratchet may be narrowed only with every protected party's consent. It keeps the strongest guard for those a protection covers. The cost is that an over-protective value can never be corrected, the very reason C15 rejected a ratchet.
-- *Option B — a collective gate.* A2 and C15 replace each party's consent with a gate the protected parties hold collectively, such as a majority of them, which no single party can block. It keeps COR.1 whole. The cost is that a protected minority within the protected class can be outvoted. Option B can carry a floor that limits that cost: a narrowing of a protection reaches a dissenting protected party only after VOX.1's declared interval, with a free exit under DEL.4, and never for acts done before it. The argument made for B with that floor is that it protects the minority within the protected class without a ratchet, and a ratchet can entrench a privilege as easily as it guards a right.
+**OD32 — decided by K9.** The founder decided on 2026-10-05 that no protection may lock a change for ever. One sub-point the decision did not settle stays open: whether the core adds a floor that a narrowing of a protection reaches a dissenting protected party only after VOX.1's declared interval, with a free exit under DEL.4, and never for acts done before it. The argument for it is that it protects a minority within the protected class without a ratchet, which can entrench a privilege as easily as it guards a right. The argument against it is that the floor is mechanism-shaped and DEL.3, DEL.4 and LEX.3 already give a dissenting party notice, exit and non-retroactivity for any change that adds a duty. It is argued, and undecided.
 
 The ledgers of ADR-ETH-01 and ADR-ETH-02 otherwise stand.
 
@@ -326,6 +332,10 @@ K7   proposed  pathologies are labels on violations,      ranking by score (F6, 
 K8   proposed  split of core/L0.md done; other moves      moving the consolidated text now (F5)               the plan waits on the decision         a move made outside the plan
                proposed; contradicts mark for the gaps
                file
+K9   proposed  a lock is admissible only if defined and   protection ratchet (F1, F5); a lock with no named   a protected minority can be           a lock with no collective override; a
+               the rule set names its collective          override (F1)                                       overridden by the collective          lock invoked beyond its definition
+               override; no one blocks for ever
+               (founder, 2026-10-05)
 
 INTEGRITY   decisions without a rejected alternative: 0 · without a reopening trigger: 0
             alternatives that lose to no force: 0 · ADR-ETH-01 and ADR-ETH-02 lines edited by this record: 0
