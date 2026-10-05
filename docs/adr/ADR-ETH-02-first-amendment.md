@@ -461,15 +461,17 @@ P3   proposed  an instance cannot continue with parties   one kind continuing (F
                one's own refusal or renunciation never
                counting against oneself, acts under the
                founder's overridable custody the
-               founder's, acts another mandated or
-               controlled that party's; its findings and
-               the founder's from genesis stay open,
-               never established, decided on request by
-               a named forum drawing from a declared
-               pool, the causer finding first even if
-               still provisional; others close as ended
-               without verdict; in genesis the end is
-               exit
+               founder's unless rebutted on evidence,
+               acts another mandated or controlled that
+               party's; its findings and the founder's
+               from genesis stay open once the causer
+               finding is reviewed or while it is
+               provisional, never established, decided
+               on request by a named forum drawing from
+               a declared pool, a human wherever the
+               finding names a human, the causer finding
+               first; others close as ended without
+               verdict; in genesis the end is exit
 C19  proposed  D15: one independent collector besides     any non-arbiter collector (F1); two collectors     —                                    one independent collector contradicted by
      (D15)     the arbiter seat, outside the chains of    besides the arbiter seat (F4)                                                           the record
                deliverer, recipient and filer
