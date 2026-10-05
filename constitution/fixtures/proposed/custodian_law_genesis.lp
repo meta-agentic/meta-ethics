@@ -1,4 +1,4 @@
-% Law-citing vetoes under the genesis regime (P1.7, P1.8): the founder f holds
+% Law-citing vetoes under the genesis regime (LV, as proposed; P1.7, P1.8): the founder f holds
 % the human seat; the regime has not ended. A pending review past its ceiling
 % no longer holds the reversible act: its consequences are withheld from the
 % human the citation names, the review is drawn again, and the veto still
@@ -15,11 +15,11 @@ decided_seq(q1, 10). decided_seq(q2, 20).
 % the human whose right each citation names
 cites_right_of(q1, l1, hr).
 
-% EXPECT-NOT[P1.7]: law_hold(q1)
-% EXPECT[P1.7]: consequence_withheld(q1,hr)
-% EXPECT[P1.7]: law_review_overdue(q1,l1)
-% EXPECT[P1.7]: law_review_redrawn(q1,l1)
-% EXPECT-NOT[P1.7]: custodian_passes(q1)
-% EXPECT[P1.8]: counted_veto(ch,q1,10)
-% EXPECT-NOT[P1.8]: within_ceiling(ch,q2)
-% EXPECT[P1.8]: custodian_passes(q2)
+% EXPECT-NOT[LV.2]: pr_law_hold(q1)
+% EXPECT[LV.3]: pr_consequence_withheld(q1,hr)
+% EXPECT[LV.4]: pr_overdue(q1,l1)
+% EXPECT[LV.4]: pr_redrawn(q1,l1)
+% EXPECT-NOT[LV.3]: pr_custodian_passes(q1)
+% EXPECT[LV.5]: pr_counted_veto(ch,q1,10)
+% EXPECT-NOT[LV.5]: pr_within_ceiling(ch,q2)
+% EXPECT[LV.3]: pr_custodian_passes(q2)

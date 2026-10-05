@@ -13,63 +13,37 @@ seat_filled(S) :- custodian_seat(S), seat_holder(_, S).
 empty_seat(S) :- custodian_seat(S), not seat_filled(S).
 filling_owed(S) :- empty_seat(S).
 
-% clause: P1.7 P1.8
-% every veto counts toward both ceilings unless the law it cites was found
-% breached, for the act or a re-proposal of it; a review never run, lapsed
-% or found unfounded leaves the veto counted
-law_founded(S, Q) :- veto(S, Q, _), veto_cites_law(S, Q, L), family(Q, R), family(Q2, R),
-                     law_breach_found(Q2, L).
-counted_veto(S, Q, T) :- veto(S, Q, T), not law_founded(S, Q).
+% clause: P1.8
+% a law-citing veto the review finds founded never counts toward a ceiling;
+% one it finds unfounded counts toward both; a veto citing a law already
+% reviewed for the act or a re-proposal of it is an ordinary veto and counts,
+% unless that review found the law breached
+law_citing(S, Q) :- veto_cites_law(S, Q, L), cites_right_of(Q, L, _).
 law_unfounded_in_family(Q, L) :- veto_cites_law(_, Q, L), family(Q, R), family(Q2, R), law_unfounded(Q2, L).
+counted_veto(S, Q, T) :- veto(S, Q, T), not law_citing(S, Q).
+counted_veto(S, Q, T) :- veto(S, Q, T), veto_cites_law(S, Q, L), law_unfounded_in_family(Q, L).
 
 % clause: P1.7 P1.3 P1.20
-% only a filled, eligible seat's signed veto citing a law, as to the right of
-% a human it names or a class of humans it names, holds the act or protects
-% anyone, and never against an owed act
-names_protected(Q, L) :- cites_right_of(Q, L, _).
-names_protected(Q, L) :- cites_class(Q, L, _).
-valid_law_veto(S, Q, L) :- veto_cites_law(S, Q, L), names_protected(Q, L), veto(S, Q, _), veto_signed(S, Q),
-                           seat_filled(S), not seat_ineligible(S, Q), not owed_act(Q).
-% a breach found for the act or a re-proposal of it holds the act whatever
-% the seat's budget and however long; a law already found unfounded gives no
-% fresh hold
-law_breach_found_in_family(Q, L) :- veto_cites_law(_, Q, L), family(Q, R), family(Q2, R), law_breach_found(Q2, L).
-law_hold(Q) :- valid_law_veto(_, Q, L), law_breach_found_in_family(Q, L).
-cited_pending(S, Q, L) :- valid_law_veto(S, Q, L), not law_unfounded_in_family(Q, L),
-                          not law_breach_found_in_family(Q, L).
-in_ceilings(S, Q) :- valid_law_veto(S, Q, _), within_ceiling(S, Q), within_act_bound(Q).
-beyond_ceilings(S, Q) :- valid_law_veto(S, Q, _), not in_ceilings(S, Q).
-% past the review's ceiling the delay is marked, counts toward D2's measure,
-% and the review is drawn again until it decides; no lapse passes the act
-law_review_overdue(Q, L) :- cited_pending(S, Q, L), veto(S, Q, T), now(N), param(law_review_ceiling, X), N - T >= X.
-law_review_redrawn(Q, L) :- law_review_overdue(Q, L).
-counts_toward_d2(Q) :- law_review_overdue(Q, _).
-% a pending review holds a reversible act within the seat's ceilings until the
-% review's ceiling; an act whose effect could not be withheld or reversed
-% forward (a disclosure of personal data, a narrowed protection, the
-% processing of a human's record, any effect that is not a P2 consequence)
-% stays held in every case until the review decides
-pending_hold(Q, L) :- cited_pending(S, Q, L), in_ceilings(S, Q), not law_review_overdue(Q, L),
-                      not irreversible_effect(Q).
-pending_hold(Q, L) :- cited_pending(_, Q, L), irreversible_effect(Q).
-law_hold(Q) :- pending_hold(Q, _).
-% under the genesis regime, where no reviewer outside the founder's chain
-% decides, that hold lasts the regime: H3's declared genesis cost, marked
-genesis_cost_hold(Q) :- pending_hold(Q, L), irreversible_effect(Q), law_review_overdue(Q, L), not regime_exited.
+% a veto that cites a law as to a human party's right: only a filled,
+% eligible seat's signed veto, citing the right of a human it names, and
+% never against an owed act; the act does not pass while the review is
+% pending or finds the breach. Ceilings on that hold, protection of a class
+% and irreversible effects are proposed (LV) and run in program/proposed/.
+nonhuman_named(Q, L) :- cites_right_of(Q, L, H), kind_of(H, K), K != human.
+valid_law_veto(S, Q, L) :- veto_cites_law(S, Q, L), cites_right_of(Q, L, _), not nonhuman_named(Q, L),
+                           veto(S, Q, _), veto_signed(S, Q), seat_filled(S), not seat_ineligible(S, Q),
+                           not owed_act(Q).
+law_hold(Q) :- valid_law_veto(_, Q, L), not law_unfounded_in_family(Q, L).
 
-% otherwise, beyond the seat's ceilings, or past the review's ceiling, the act
-% may pass, and no consequence of it falls on any human the cited right
-% protects, named or of the class the citation names, until the review
-% decides; it is a finding reviewed under P2
-protected_by(Q, L, H) :- cites_right_of(Q, L, H).
-protected_by(Q, L, H) :- cites_class(Q, L, C), in_class(H, C).
-protection_mode(Q, L) :- cited_pending(S, Q, L), beyond_ceilings(S, Q), not irreversible_effect(Q).
-protection_mode(Q, L) :- cited_pending(_, Q, L), law_review_overdue(Q, L), not irreversible_effect(Q).
-law_protection_finding(Q, L, H) :- protection_mode(Q, L), protected_by(Q, L, H).
-consequence_withheld(Q, H) :- law_protection_finding(Q, _, H).
-withheld_verdict(V) :- verdict_from_act(V, Q), consequence_on(V, H), consequence_withheld(Q, H).
-withheld_finding(F) :- finding_from_act(F, Q), finding(F, H, _), consequence_withheld(Q, H).
-withheld_duty(P, A) :- duty_from_act(A, Q), consequence_withheld(Q, P).
+% clause: P1.7 P1.2
+% a consequence arises from an act only while the act passes: a verdict,
+% finding or duty arising from an act the channel passed but that does not
+% take effect is withheld, from every human it would touch
+act_not_effective(Q) :- passed_channel(Q), not custodian_passes(Q).
+withheld_verdict(V) :- verdict_from_act(V, Q), act_not_effective(Q).
+withheld_finding(F) :- finding_from_act(F, Q), act_not_effective(Q).
+withheld_duty(P, A) :- duty_from_act(A, Q), duty_on(A, _, P), act_not_effective(Q).
+withheld_candidate(C, P) :- candidate_from_act(C, P, Q), act_not_effective(Q).
 
 % clause: P1.5 P1.8
 % the window is counted in decided proposals, as D2's is (decided_seq/2)
