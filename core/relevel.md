@@ -71,7 +71,7 @@ What a move of the consolidated text touches, from its checker as it stands on t
 
 **The core as a source.** The core is a separate artifact the constitution's inventory can point into, so the sufficiency map of `core/tests.md` §3.3 becomes a machine check rather than a table.
 
-- *Two new keys.* `03` names `docs/adr/ADR-ETH-03-core-and-levels.md`. Its force `F10`, criterion `E` and decisions `K1`–`K8` are bold-led units in the form the existing unit parser reads (`**K1 — …**`). `L0` names `core/L0.md`. Its units are its clause identifiers: a list item whose first bold token matches `(MEM|DEL|LEX|IMP|VOX|COR|GEN)\.[0-9]+`. Definitions and the GEN lemma carry no identifier and are not units.
+- *Two new keys.* `03` names `docs/adr/ADR-ETH-03-core-and-levels.md`. Its force `F10`, criterion `E` and decisions `K1`–`K9` are bold-led units in the form the existing unit parser reads (`**K1 — …**`). `L0` names `core/L0.md`. Its units are its clause identifiers: a list item whose first bold token matches `(MEM|DEL|LEX|IMP|VOX|COR|GEN)\.[0-9]+`. Definitions and the GEN lemma carry no identifier and are not units.
 - *A new inventory column.* Each paragraph in `clauses.tsv` gains a `core` column naming the `L0:` clauses it sits under, for example `L0:IMP.5 L0:VOX.4` for P2's review paragraph. A paragraph that sits under none says why: non-normative (the dedication), or editorial.
 - *A gaps file with three marks.* `core-gaps.tsv` lists every `L0:` clause the constitution does not fully meet, with one of three marks:
   - `none` — no paragraph renders it;
