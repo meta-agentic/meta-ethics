@@ -19,6 +19,10 @@ choice_needed(c3). option(c3, o1). about(c3, h). choice(ch, c3, o1). choice(ca, 
 passed_channel(r1). matter_of(r1, y1). veto(ch, r1, 22). veto_signed(ch, r1).
 reproposal_of(r2, r1). passed_channel(r2). matter_of(r2, y1). veto(ca, r2, 23). veto_signed(ca, r2).
 reproposal_of(r3, r2). passed_channel(r3). matter_of(r3, y1). veto(ch, r3, 24). veto_signed(ch, r3).
+passed_channel(q10). matter_of(q10, x10). owed_act(q10). veto(ca, q10, 26). veto_signed(ca, q10).
+passed_channel(q11). matter_of(q11, x11). replaces_seat(q11, ca, n9). kind_of(n9, nonhuman). veto(ca, q11, 27). veto_signed(ca, q11).
+replaces_seat(q12, ca, h9). kind_of(h9, human).
+seat_kind(ch, human). seat_kind(ca, nonhuman). kind_of(h, human). kind_of(a, nonhuman).
 l0_change(z1). l0_signed(z1, ch). l0_signed(z1, ca).
 l0_change(z2). l0_signed(z2, ch).
 
@@ -42,6 +46,14 @@ l0_change(z2). l0_signed(z2, ch).
 % EXPECT[P1.6]: standing_veto(ca,r2)
 % EXPECT[P1.6]: act_to_review(r3)
 % EXPECT-NOT[P1.6]: standing_veto(ch,r3)
+% EXPECT[P1.12]: custodian_passes(q10)
+% EXPECT-NOT[P1.12]: standing_veto(ca,q10)
+% EXPECT[P1.20]: seat_ineligible(ca,q11)
+% EXPECT[P1.20]: replacement_inadmissible(q12)
+% EXPECT-NOT[P1.20]: standing_veto(ca,q11)
+% EXPECT-NOT[P1.20]: replacement_inadmissible(q11)
+% EXPECT-NOT[P1.21]: composition_breach(ch)
+% EXPECT-NOT[P1.1]: composition_breach(ca)
 % EXPECT[P1.13]: l0_change_passes(z1)
 % EXPECT-NOT[P1.13]: l0_change_passes(z2)
 % EXPECT[D18.3]: l0_signature_missing(z2)

@@ -8,9 +8,15 @@ fork(H1, H2) :- next_head(H1, H2), not extends(H2, H1).
 % clause: C16.4 S1.14
 covered_by_head(Sig) :- signature(Sig, _, _, T), witnessed_head(_, Th), T <= Th.
 
-% clause: C5.2 S1.14
+% clause: S1.6
+later_signature(Sig, R) :- signature(Sig, _, R, T), signature(_, _, R, T2), T < T2.
+last_intake(R, T) :- signature(Sig, _, R, T), not later_signature(Sig, R).
+stale(Sig) :- signature(Sig, _, R, _), signature_head(Sig, Th), last_intake(R, TL),
+              param(staleness_window, W), TL - Th > W.
+
+% clause: C5.2 S1.14 S1.6
 ratification_signed(R, S) :- signature(Sig, P, R, _), seat_holder(P, S), custodian_seat(S),
-                             signature_valid(Sig), covered_by_head(Sig).
+                             signature_valid(Sig), covered_by_head(Sig), not stale(Sig).
 ratification_missing(R, S) :- placed(R), custodian_seat(S), not ratification_signed(R, S).
 ratification_incomplete(R) :- ratification_missing(R, _).
 ratified(R) :- placed(R), not ratification_incomplete(R).

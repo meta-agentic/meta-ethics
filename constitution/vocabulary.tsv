@@ -174,3 +174,30 @@ vetoes_on_act	proposal,nat	derived	P1.6	vetoes cast earlier against the same act
 within_act_bound	proposal	derived	P1.6	a veto against the same act stands at most a number of times the founding document declares
 act_to_review	proposal	derived	P1.6	after which the act goes to review by a party drawn as P2 provides
 is_reproposal	proposal	derived	P1.6	a proposal that re-proposes an earlier act
+owed_act	proposal	intake	P1.12	an act L0 owes to a subject or a law binding the instance requires for a human party's right
+replaces_seat	proposal,seat,party	intake	P1.20	a proposal to replace a Custodian seat's holder with a party
+seat_kind	seat,kind	intake	P1.1	the kind of party a Custodian seat is held by
+signature_head	signature,time	intake	S1.6	the position of the witnessed head a signature covers
+later_signature	signature,record	derived	S1.6	another signature on the same act came in later
+last_intake	record,time	derived	S1.6	the intake of the last required signature
+stale	signature	derived	S1.6	a signature over a head older than the window at the last signature's intake is stale and does not count
+delivered_to_subject	finding	attested	A1.5	the finding was delivered to its subject in a form it can read, the delivery observed
+delivery_owed	finding,party	derived	A1.5	every finding made about a subject is delivered to them
+may_answer	party,finding	derived	A1.5	the subject may answer every finding about them
+interim	interim,finding,time	intake	A2.7	an interim measure about a finding's subject, from its intake
+interim_active	interim	derived	A2.7	an interim measure ends at a ceiling the founding document declares, whatever the state of review
+composition_breach	seat	consequence	P1.21	a Custodian seat held by a party not of the seat's kind
+replacement_inadmissible	proposal	consequence	P1.20	a replacement that would leave a kind unrepresented is not admissible
+renunciation_act	act	intake	P3.8	an act refusing or renouncing the actor's own mandate
+made_one_kind	act	attested	P3.8	a reviewed finding that the act made the parties one kind
+under_founder_custody	act	attested	P3.8	the act was made under custody the founder can override, during the genesis regime
+rebutted	act	attested	P3.12	the founder rebutted, on evidence, the presumption that the act is the founder's
+controlled_by	act,party	attested	P3.8	the record shows the party mandated or controlled the act
+own_exit	act	derived	P3.8	a party's refusal or renunciation of its own mandate never counts against that party
+causer	party	derived	P3.8	the party that caused the end
+controlled_act	act	derived	P3.8	an act the record shows another party mandated or controlled
+instance_ended		attested	P3.5	the act of power ending the instance, marked as such
+exit_by	time	derived	P3.9	the genesis regime had ended by that time
+kept_open	finding	derived	P3.9	findings that stay open on the kept record
+ended_without_verdict	finding	derived	P3.7	findings about a subject who did not cause the end close as ended without verdict
+founder_presumed	act	derived	P3.12	during the genesis regime an act made under custody the founder can override counts as the founder's, unless rebutted

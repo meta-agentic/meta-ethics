@@ -23,6 +23,13 @@ signature(s3, a, r2, 12). signature_valid(s3).
 placed(r2).
 signature(s5, h, r3, 6). signature_valid(s5).
 placed(r3).
+param(staleness_window, 5).
+signature(s6, h, r4, 3). signature_valid(s6). signature_head(s6, 2).
+signature(s7, a, r4, 9). signature_valid(s7). signature_head(s7, 8).
+placed(r4).
+signature(s8, h, r5, 6). signature_valid(s8). signature_head(s8, 5).
+signature(s9, a, r5, 9). signature_valid(s9). signature_head(s9, 8).
+placed(r5).
 
 delivered(d1, rcpt, x1, 5). observed(d1, col1).
 delivered(d2, rcpt, x2, 6). observed(d2, col2).
@@ -41,6 +48,10 @@ filed(y1, col1). owed(y1). balance(col1, 0).
 filed(y2, col1).
 filed(y3, col2). balance(col2, 3).
 
+% EXPECT[S1.6]: stale(s6)
+% EXPECT[S1.6]: ratified(r5)
+% EXPECT-NOT[S1.6]: ratified(r4)
+% EXPECT-NOT[S1.6]: stale(s7)
 % EXPECT[C16.3]: fork(h2,h3)
 % EXPECT-NOT[C16.3]: fork(h1,h2)
 % EXPECT[C16.4]: covered_by_head(s2)

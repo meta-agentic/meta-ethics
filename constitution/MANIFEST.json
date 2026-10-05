@@ -1,7 +1,7 @@
 {
   "object": "the L0 constitution as it stands, prose and program bound by clause",
   "digest_rule": "sha256 over the lines '<sha256>  <path>\\n' of the entries, in the order listed",
-  "combined_sha256": "c0bbec9ca9a4854b49bad625c9dfed57eb89606717b0176111d5dcb88fc737a7",
+  "combined_sha256": "5edb166d9a8e3151455889b99972ff3a7a8c12d42acbad3d8e1e17b2df0d998c",
   "entries": [
     {
       "path": "L0.md",
@@ -9,7 +9,7 @@
     },
     {
       "path": "clauses.tsv",
-      "sha256": "a66cc6b527c46f5cba866f01511d98d17fbe32c267058d7d3382b591e822aa0b"
+      "sha256": "bfa22ce10b1ce1e9cc36d195f0d2483ceb8595f2f325bc146b4d0e5e5eb7829f"
     },
     {
       "path": "unmapped.tsv",
@@ -17,7 +17,7 @@
     },
     {
       "path": "vocabulary.tsv",
-      "sha256": "aed72566bd5f880d51822d3dd1327a32c0bef9eae992986f5cf36b299a3a397f"
+      "sha256": "0651e0f38590df61f47b4dc6ec115a9d9e8e9bf9665a2cf9cad81982b9c376c3"
     },
     {
       "path": "parameters.tsv",
@@ -25,7 +25,11 @@
     },
     {
       "path": "program/custodian.lp",
-      "sha256": "3ea86d683fbbf09068ddfb51364f415c8c4c979990a3e7a158fc517db45ce4fd"
+      "sha256": "158a18a475f70554c1584c1052b40ff1a34ab29955827ab03f6f643da453f722"
+    },
+    {
+      "path": "program/kinds.lp",
+      "sha256": "42abf5c9a439dfb6399ab28474b3ed876737bc05c7c4c4e5f9f1a887f0ee24c8"
     },
     {
       "path": "program/parties.lp",
@@ -33,11 +37,11 @@
     },
     {
       "path": "program/procedure.lp",
-      "sha256": "a1293d04ffc69dc417a3b5f6ee308b5bcb66d1ee47d7198ea620f0675cf20b3e"
+      "sha256": "43e171a2c31e3cbd45b106a5a0223c930f7eb9c74ca4be72f0ad0e55b46f25dc"
     },
     {
       "path": "program/record.lp",
-      "sha256": "ae0ed5efe6ccca609fdcf4d2bd81a4c0ca4ce25a283497d0ae691cd59a5196a3"
+      "sha256": "3772abc79b03cd5638c05ded39d1682e0d423f2e525bc1655dc09514f04da411"
     },
     {
       "path": "program/review.lp",
@@ -49,15 +53,19 @@
     },
     {
       "path": "fixtures/custodian.lp",
-      "sha256": "6ac488f286942cf02cef0b9dfed495174e2fd388efb00b88949d7448d8ff09f9"
+      "sha256": "c34da638401b2cd3215e720305e88f6e71dbde68ec57a840c9931b09b62c08d1"
     },
     {
       "path": "fixtures/custodian_empty_seat.lp",
-      "sha256": "eba067195c221171ad0bb8b678a853703813597b182daaff5e526f97aa928e5b"
+      "sha256": "4822b9dd5b17cc5ce5b3cf9a56bb946b6870f0e4579a2038aa30565876b4a3bc"
     },
     {
       "path": "fixtures/genesis_regime.lp",
       "sha256": "26a0f5ab295a9a3614eb7116a0f3a8131a788670f3dda45ae00d665fa28380ec"
+    },
+    {
+      "path": "fixtures/instance_end.lp",
+      "sha256": "39d34c2c93fc0ea35a07da1f50f4626c351a0d72aef6a07cfb4ceb89073c875d"
     },
     {
       "path": "fixtures/kinds_paused.lp",
@@ -73,11 +81,11 @@
     },
     {
       "path": "fixtures/procedure.lp",
-      "sha256": "7a4a03643daa388b462e1816eda8de5fd1d64116d45ade5cf605e23eb0dfc01b"
+      "sha256": "a29dccf0c02f25ecb093c5567d4dfbf18ad7114e8788103e7b63e36f33406290"
     },
     {
       "path": "fixtures/record.lp",
-      "sha256": "f9fc245476e90f07522f18379e2ca4c025e086a1f66d54ed675f3beac1c3addc"
+      "sha256": "3f6fe8ff67d0163118f52667dfd6916eeeb1add11753fc449b4ddd4937420f90"
     },
     {
       "path": "fixtures/review.lp",

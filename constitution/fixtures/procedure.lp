@@ -29,10 +29,18 @@ closure(k9, g2). act(k9, a, close, 7).
 window_opens(a, q3, 10). extension_requested(a, q3, 12). extension_requested(a, q3, 13).
 window_opens(b, q3, 10).
 
+param(interim_ceiling, 6).
+delivered_to_subject(g2).
+interim(i1, g1, 16). interim(i2, g2, 10).
 regime_exit(15).
 power_at(w1, 9). power_at(w2, 16).
 finding(g3, f, 4). closure(k3x, g3). witnessed_by(k3x, c). discharges(k3x, g3).
 
+% EXPECT[A1.5]: delivery_owed(g1,b)
+% EXPECT[A1.5]: may_answer(c,g2)
+% EXPECT-NOT[A1.5]: delivery_owed(g2,c)
+% EXPECT[A2.7]: interim_active(i1)
+% EXPECT-NOT[A2.7]: interim_active(i2)
 % EXPECT[S1.10]: void_signature(s2)
 % EXPECT[S1.10]: void_signature(s3)
 % EXPECT-NOT[S1.10]: void_signature(s1)

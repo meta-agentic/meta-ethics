@@ -5,6 +5,9 @@
 seat_ineligible(S, Q) :- custodian_seat(S), seat_holder(P, S), about(Q, P).
 seat_ineligible(S, Q) :- custodian_seat(S), seat_holder(P, S), matter_of(Q, X), recused(P, X).
 
+% clause: P1.20
+seat_ineligible(S, Q) :- custodian_seat(S), replaces_seat(Q, S, _).
+
 % clause: P1.4
 seat_filled(S) :- custodian_seat(S), seat_holder(_, S).
 empty_seat(S) :- custodian_seat(S), not seat_filled(S).
@@ -24,9 +27,10 @@ vetoes_on_act(Q, N) :- veto(_, Q, T), family(Q, R),
 within_act_bound(Q) :- vetoes_on_act(Q, N), param(veto_per_act, B), N < B.
 act_to_review(Q) :- veto(_, Q, _), not within_act_bound(Q).
 
-% clause: P1.2 P1.3 P1.4 P1.5 P1.6
+% clause: P1.2 P1.3 P1.4 P1.5 P1.6 P1.12
 standing_veto(S, Q) :- veto(S, Q, _), veto_signed(S, Q), seat_filled(S),
-                       not seat_ineligible(S, Q), within_ceiling(S, Q), within_act_bound(Q).
+                       not seat_ineligible(S, Q), within_ceiling(S, Q), within_act_bound(Q),
+                       not owed_act(Q).
 vetoed(Q) :- standing_veto(_, Q).
 
 % clause: P1.3
@@ -37,6 +41,9 @@ some_eligible_seat(Q) :- eligible_seat(_, Q).
 custodian_passes(Q) :- passed_channel(Q), not vetoed(Q), some_eligible_seat(Q).
 custodian_passes(Q) :- passed_channel(Q), not vetoed(Q), not some_eligible_seat(Q),
                        act_reviewed(Q), not stopped_by_review(Q).
+
+% clause: P1.12
+custodian_passes(Q) :- passed_channel(Q), owed_act(Q).
 
 % clause: P1.2 P1.3 P1.4
 seat_choice(S, Q, O) :- choice(S, Q, O), seat_filled(S), not seat_ineligible(S, Q).

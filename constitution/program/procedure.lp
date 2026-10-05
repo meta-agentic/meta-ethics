@@ -35,3 +35,10 @@ regime_exited :- regime_exit(T), now(N), T <= N.
 exit_before(A) :- power_at(A, T), regime_exit(E), E <= T.
 marked_regime(A) :- power_at(A, _), not exit_before(A).
 founder_finding_held(F) :- finding(F, P, _), founder(P), not regime_exited.
+
+% clause: A1.5
+delivery_owed(F, P) :- finding(F, P, _), not delivered_to_subject(F).
+may_answer(P, F) :- finding(F, P, _).
+
+% clause: A2.7
+interim_active(I) :- interim(I, F, T), finding(F, _, _), now(N), param(interim_ceiling, C), N - T < C.

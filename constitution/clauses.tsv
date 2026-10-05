@@ -35,7 +35,7 @@ A1.1	program	02:A1 01:D8 01:D12
 A1.2	program	02:A1 01:D8 01:D12		
 A1.3	program	02:A1 01:D8 01:D12		
 A1.4	program	02:A1 01:D8 01:D12		
-A1.5	todo	02:A1 01:D8 01:D12		
+A1.5	program	02:A1 01:D8 01:D12		
 A1.6	procedural	02:A1 01:D8 01:D12	founding document; configuration check (C18)	parameter declaration
 A1.7	todo	02:A1 01:D8 01:D11		
 C7.1	program	02:C7 01:D12		
@@ -65,7 +65,7 @@ A2.3	program	02:A2 01:D14
 A2.4	program	02:A2 01:D14		
 A2.5	program	02:A2 02:P2 02:C17		
 A2.6	program	02:A2 01:D14		
-A2.7	todo	02:A2 01:D14		
+A2.7	program	02:A2 01:D14		
 A2.8	program	02:A2 01:D14		
 A2.9	procedural	02:A2 01:D14	the anonymizing act, appended and attested (C11); any party re-checks the chain and replays the listed verdicts; parameters in the founding document, checked by C18	
 A2.10	todo	02:A2 01:D14		
@@ -155,7 +155,7 @@ S1.2	todo	02:S1
 S1.3	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
 S1.4	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
 S1.5	todo	02:S1 02:C9		
-S1.6	todo	02:S1		
+S1.6	program	02:S1		
 S1.7	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
 S1.8	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
 S1.9	procedural	02:S1	a finding about the signature decided on the record, by review (P2)	
@@ -182,7 +182,7 @@ S2.6	todo	02:S2
 S2.7	todo	02:S2		
 S2.8	procedural	02:S2	the party's proof of continuity, entered as an act of presence and checked by any party from the record	
 S2.9	procedural	02:S2	the party's proof of continuity, entered as an act of presence and checked by any party from the record	parameter declaration
-P1.1	todo	02:P1		
+P1.1	program	02:P1		
 P1.2	program	02:P1		
 P1.3	program	02:P1		
 P1.4	program	02:P1		
@@ -193,7 +193,7 @@ P1.8	todo	02:P1
 P1.9	interpretive	02:P1		
 P1.10	todo	02:P1		
 P1.11	todo	02:P1		
-P1.12	todo	02:P1		
+P1.12	program	02:P1		
 P1.13	program	02:P1 01:D18 02:C2		
 P1.14	procedural	02:P1	founding document disclosures (H3); custody structure published as verification material	
 P1.15	todo	02:P1		
@@ -201,8 +201,8 @@ P1.16	interpretive	02:P1
 P1.17	interpretive	02:P1		
 P1.18	todo	02:P1		
 P1.19	program	02:P1 01:D9		
-P1.20	todo	02:P1 01:§accepted-costs		
-P1.21	todo	02:P1		
+P1.20	program	02:P1 01:§accepted-costs		
+P1.21	program	02:P1		
 P1.22	procedural	02:P1	founding document disclosures (H3); custody structure published as verification material	parameter declaration
 P2.1	program	02:P2 02:A2		
 P2.2	program	02:P2 02:A2		
@@ -218,12 +218,12 @@ P3.3	program	02:P3
 P3.4	todo	02:P3		
 P3.5	todo	02:P3		
 P3.6	procedural	02:P3	founding document names the keeper and the forum; configuration check (C18)	
-P3.7	todo	02:P3		
-P3.8	todo	02:P3		
-P3.9	todo	02:P3		
+P3.7	program	02:P3		
+P3.8	program	02:P3		
+P3.9	program	02:P3		
 P3.10	procedural	02:P3	founding document names the keeper and the forum; configuration check (C18)	
 P3.11	todo	02:P3		
-P3.12	todo	02:P3		
+P3.12	program	02:P3		
 P3.13	procedural	02:P3	founding document names the keeper and the forum; configuration check (C18)	parameter declaration
 DEDICATION.1	interpretive	02:Dedication		
 OD4.1	open	02:§open-decisions 01:§open-decisions-adr-eth-01-od-n		
