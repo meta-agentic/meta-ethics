@@ -20,7 +20,7 @@ Notation as in `core/L0.md`: $R$ the record, $\sigma$ the state, $M$ the mandate
 
 **X02 Unattributed power** — *also:* anonymous decree, dark acts. *Definition:* acts with effect whose author cannot be named. *Violation:* an entry with no author, or an act inside $\Pi_\Gamma$ absent from $R$. *Excluded by:* MEM.2, DEL.1. *Class:* structural.
 
-**X03 Surveillance** — *also:* one-way watching, total recording. *Definition:* subjects are observed by readers they cannot see, or recorded beyond any need. *Violation:* a party learns which entries concern an identified subject with no entry visible to the subject; or an act is entered that no rule reads and no declared purpose covers; or what is observed is chosen outside the rules. *Excluded by:* MEM.5, VOX.2, MEM.2, LEX.6. *Class:* structural.
+**X03 Surveillance** — *also:* one-way watching, total recording. *Definition:* subjects are observed by readers they cannot see, or recorded beyond any need. *Violation:* an actor learns, through the record, which entries concern an identified subject with no entry visible to the subject; or an act is entered that no rule reads and no declared purpose covers; or what is observed is chosen outside the rules. *Excluded by:* MEM.5, VOX.2, MEM.2, LEX.6. *Class:* structural.
 
 **X04 Whitewashing** *(agent)* — *also:* identity laundering, respawning to shed a record. *Definition:* an actor sheds its record by reappearing as a new one. *Violation:* an actor's acts are credited to a fresh party with an empty record while the chain whose access it used escapes attribution. *Excluded by:* MEM.4, DEL.1, DEL.5. *Class:* structural.
 
@@ -48,7 +48,7 @@ Notation as in `core/L0.md`: $R$ the record, $\sigma$ the state, $M$ the mandate
 
 **X12 Bondage** — *also:* serfdom, conscription, forced service. *Definition:* duties imposed on someone who never accepted them, or who cannot leave. *Violation:* a duty binds $x$ with no accepted mandate, or renounce by $x$ is inadmissible in some reachable state. *Excluded by:* DEL.3, DEL.4. *Class:* structural.
 
-**X13 Lock-in** — *also:* hostage dependency, exit with forfeiture. *Definition:* leaving is formally possible and the rules make it ruinous. *Violation:* a consequence derived from the act of renouncing itself. *Excluded by:* DEL.4, VOX.5. Costs of leaving that arise outside the system are outside the core. *Class:* structural.
+**X13 Lock-in** — *also:* hostage dependency, exit with forfeiture. *Definition:* leaving is formally possible and the rules make it ruinous. *Violation:* a consequence derived from the act of renouncing itself, or a cost of leaving the instance sets or controls. *Excluded by:* DEL.3 (terms that make leaving costly void acceptance), DEL.4, VOX.5. Costs of leaving that the instance neither sets nor controls are outside the core. *Class:* structural.
 
 **X14 Colonial binding** — *also:* extraction by rule over the unconsenting. *Definition:* the system's rules bind actors who neither accepted them nor can leave their reach. *Violation:* a duty-bearing consequence binds an actor with no accepted mandate, or the perimeter is widened over others without a change. *Excluded by:* DEL.3 (no duty on any actor, party or not, without acceptance), DEL.4, LEX.6. Harm to outsiders that binds no one is X52. *Class:* structural.
 
@@ -94,7 +94,7 @@ Notation as in `core/L0.md`: $R$ the record, $\sigma$ the state, $M$ the mandate
 
 **X31 Corruption** — *also:* kleptocracy, self-dealing, conflict of interest. *Definition:* the holders of power decide where they benefit. *Violation:* $\mathit{impl}(x, m)$ by benefit and $x$ decides $m$. *Excluded by:* IMP.5, MEM.2 (the act stays named). *Class:* mixed — excluded where the benefit is in the record; hidden benefit is found only on evidence.
 
-**X32 Judge in own cause** — *also:* self-review. *Definition:* a party judges, reviews, attests or witnesses a matter it is implicated in. *Violation:* $\mathit{impl}(x, m)$ and $x$ judges, reviews, attests or witnesses in $m$. *Excluded by:* IMP.5. *Class:* structural.
+**X32 Judge in own cause** — *also:* self-review, marking one's own homework. *Definition:* a party judges, reviews, attests or witnesses a matter it is implicated in, or reviews or re-examines its own decision. *Violation:* $\mathit{impl}(x, m)$ and $x$ judges, reviews, attests or witnesses in $m$; or $x$ reviews or re-examines a decision it made. *Excluded by:* IMP.5. *Class:* structural.
 
 **X33 Self-promotion of optimisers** *(agent)* — *Definition:* a learning or evolutionary process promotes its own output into the rules. *Violation:* a change admitted on the assent of a party that benefits specifically from it, such as the producer whose output it promotes; or a change entering the rules by a route other than $\Delta$. *Excluded by:* IMP.5, LEX.8. *Class:* structural.
 
@@ -107,6 +107,8 @@ Notation as in `core/L0.md`: $R$ the record, $\sigma$ the state, $M$ the mandate
 **X36 Monoculture of judges** *(agent)* — *also:* correlated judgement. *Definition:* judges share a substrate or model family with the judged or with each other, and correlate without communicating. *Violation:* a judge whose position is held through a grant made by a party implicated in the matter. *Excluded by:* IMP.5. The correlation itself is a relation the record does not hold; the core excludes it only through the dependency ground, and a constitution may add shared substrate as a ground. *Class:* mixed.
 
 **X58 Exclusion from standing** — *also:* denizenship, internal statelessness, second-class subjects. *Definition:* a class is kept out of party status by an attribute, and bound as subjects. *Violation:* an admission rule reads an attribute other than kind; or a duty binds an actor with no accepted mandate; or a consequence reading an attribute burdens a subject outside the favoured class beyond the protecting role. *Excluded by:* IMP.3, DEL.3. An instance that admits by kind declares it as a value; those it leaves out stay subjects, judged on acts alone, with every protection of VOX. *Class:* structural.
+
+**X66 Exclusion by discretion** — *also:* gatekeeping, discretionary demotion, purge. *Definition:* a class is kept out, or pushed out, by the choices of those who grant and revoke, while the rules stay blind. *Violation:* an admission or appointment decided with its reasons unrecorded, or differing between candidates alike up to renaming and to attributes admission may not read; a revocation not under a rule, reading an attribute or an exercise of voice, or undelivered; a revocation of the mandates of a class. *Excluded by:* DEL.8. *Class:* mixed — a grantor's reasons are auditable, not provable.
 
 ## 5. Pathologies of voice
 
@@ -127,6 +129,8 @@ Notation as in `core/L0.md`: $R$ the record, $\sigma$ the state, $M$ the mandate
 ## 6. Pathologies of correctability
 
 **X44 Entrenchment** — *also:* self-perpetuation, life tenure, the unremovable office, the founder beyond replacement, mutual entrenchment. *Definition:* a holder, or a set of holders, cannot be replaced except by itself. *Violation:* a position with no admissible path, free of its holder's acts, that ends its holding; or a cycle in the replacement-dependency graph. *Excluded by:* COR.2. Applies after the founding regime (`core/L0.md` GEN). *Class:* structural.
+
+**X67 Impunity by exhaustion** — *also:* the emptied bench. *Definition:* a party is beyond judgement because every eligible decider holds its position through that party's grants, so every matter about it lapses in its favour. *Violation:* a matter with no eligible decider under IMP.5 that lapses in favour of a subject whose own grants made every decider implicated, with no decider provided from outside every implicated chain. *Excluded by:* COR.3, IMP.4. *Class:* structural.
 
 **X45 Oligarchy** — *also:* rule by a closed few, aristocracy as a closed elite. *Definition:* decision power held by a small closed set. *Violation:* one of four — the set's positions form a cycle of mutual replacement (COR.2); a group below capture blocks every change (COR.1); a class is barred from it by an attribute (IMP.3); or it binds actors who never accepted or cannot leave (DEL.3, DEL.4). *Excluded by:* COR.1, COR.2, IMP.3, DEL.3, DEL.4. *Class:* mixed. "A few decide" over parties who accepted, can leave at no cost, are judged like everyone and can replace them is a declared value — the management of an organisation — and the core does not exclude it.
 
@@ -179,9 +183,9 @@ Every composite's components are doctrine-neutral: the same components define au
 
 | Class | Count | Result |
 |---|---|---|
-| Structural | 47 | each excluded by at least one clause |
-| Mixed | 13 (X08, X11, X15, X22, X23, X31, X36, X41, X45, X46, X47, X52, X55) | the structural part excluded; the remainder named |
+| Structural | 48 | each excluded by at least one clause |
+| Mixed | 14 (X08, X11, X15, X22, X23, X31, X36, X41, X45, X46, X47, X52, X55, X66) | the structural part excluded; the remainder named |
 | Beyond the core | 5 (X51, X53, X54, X56, X57) | not excluded; each made visible, attributed, answerable and correctable where the core can, and named as outside |
-| Total | 65 | |
+| Total | 67 | |
 
 Every structural pathology is excluded by at least one clause. Some structural pathologies are excluded by the clauses of one principle alone: MEM for X01, X61, X65; DEL for X06, X09, X10, X12, X64; LEX for X17, X19, X20; IMP for X28, X29, X32, X34, X62; VOX for X37, X38; COR for X44, X49, X50, X60. That shows each principle does work no other principle does in the taxonomy. It is a different thing from the minimality counter-models of `core/tests.md` §3.2, which are whole systems satisfying five principles and violating the sixth. Coverage is established by inspection of each definition against each clause; the per-principle table is generated mechanically from the *Excluded by* lists. A pathology later shown to be structural and excluded by none reopens ADR-ETH-03.

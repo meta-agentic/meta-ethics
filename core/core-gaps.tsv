@@ -1,27 +1,31 @@
 clause	mark	paragraphs	missing_or_edit
 MEM.1	partial	A2, C16, C23	A2: the anonymising act replaces content and keeps each entry's digest, author, type and position
 MEM.2	partial	S1, H2, D11	enter nothing that no rule reads and no declared purpose covers
+MEM.3	partial	C16, S1	the witness is readable by any party; a subject that is not a party should verify the entries about it too
+MEM.5	partial	A2 (identifier-free views, read log), S1 (key resolution logged)	reads by actors that are not parties — a substrate provider, an outside service — are entered as well
 DEL.1	partial	A1, C7	standing under a mandate runs from acceptance (A1 makes a grantee a party before it accepts)
 DEL.2	partial	C7, A1, P1	count positions held in one chain once in every winning set, not only at the Custodian
 DEL.3	partial	A1	a duty added by change binds after delivery and a declared interval in which the holder may renounce
 DEL.4	partial	A1, P3	no cost the instance controls; the leaver takes its record and constituting state
-DEL.5	contradicts	A2, P2, D15, S2	A2 and P2 cite a chain-attributed finding against a grantor after review of the attribution, with no act, custody or knowledge of the grantor's own. Edit: cite it only where the record shows the grantor's undeclared or out-of-scope grant, its custody, or its knowledge with a failure to act, as S2 already provides for steering
+DEL.5	contradicts	P2 (the sentence on findings attributed through a chain), D15, S2, P3	P2 cites a finding attributed to a human only through a chain against that human after review of the attribution, with no act, custody or knowledge of the human's own; it says nothing for non-human grantors. Edit: cite a chain-attributed finding against any grantor, human or not, only where the record shows its undeclared or out-of-scope grant, its custody, or its knowledge with a failure to act, as S2 already provides for steering; and P3's genesis presumption counts an overridable seat's act as the founder's for DEL.5's custody ground only
 DEL.6	partial	C18 (OD23 declaration)	name an actor answerable for the instance's acts in each jurisdiction; no outward act while none is named
-DEL.7	none	—	provide for the instance's own departure from the core
+DEL.7	none	—	provide for the instance's own departure from the core, by its most demanding gate, with notice and a free exit
+DEL.8	partial	C7, A1	admission and appointment are matters with recorded reasons, judged alike; revocation only under a rule, never of a class
 LEX.1	partial	C9 (D1 trigger)	a derived consequence not applied, with no recorded reasoned act closing it, is a finding
 LEX.2	partial	C11, C12, C14	C14's resolution of an undecided conflict is entered as a judgement, and the consequence is derived from it
-LEX.3	contradicts	C12, C14, H2, D21	C12's provenance names "the rule set" with no per-act version, so a verdict is derived under the rules at derivation. Edit: bind provenance to the rules in force at each judged act's intake, and apply a milder rule adopted before the verdict
-LEX.4	contradicts	H2, S2, P3	P3's pause stops every party's acts of power because of one actor's departure, with no notice or hearing. Edit: recast the pause as a condition of the admissibility relation, applying alike to every party, not as a consequence on any
-LEX.5	partial	C14, C18, H1	every party can comply whatever the others do
+LEX.3	contradicts	C12, C14, H2, D21	C12's provenance names "the rule set" with no per-act version, and no program file has a rule-version or `in_force` predicate, so replay uses the current rules. Edit: bind provenance to the rules in force at each judged act's intake, and apply a milder rule adopted before the verdict
+LEX.4	contradicts	H2, S2, P3	P3's pause stops every party's acts of power because of one actor's departure, with no notice or hearing; `vocabulary.tsv` classes `paused` and `blocked_by_pause` as consequences. Edit: recast the pause as a condition of the admissibility relation that reads no actor and applies alike to every party
+LEX.5	partial	C14, C18, H1	every actor a rule can bind can comply whatever the others do
 LEX.7	none	—	alike acts attested differently are a finding
 LEX.8	partial	C12 (fold version in provenance)	the fold and the admissibility relation change only through the governed channel
-IMP.3	partial	C13, P1, P2, A2, P3	C13 lets consequences read kind with no restriction; restrict it to safeguards. The instance's own kind-reading rules — P1 eligibility, P2's reviewer, A2's anonymisation, P3's admission — already conform
+IMP.3	contradicts	D1, C13, P1, P2, A2, P3	D1's second sentence lets consequence tables differ by kind of party, while IMP.3 lets an attribute shape safeguards only. Edit: "safeguards in consequences may differ by kind"; and restrict C13 to safeguards. P1 eligibility, P2's reviewer, A2's anonymisation and P3's admission already conform
 VOX.1	partial	A1, D13	deliver a change that adds a duty a declared interval before it binds
 VOX.5	partial	S1, H1, P3	a general clause
 VOX.6	none	—	any affected actor files and is answered
 VOX.7	partial	A2	undo or remedy an interim measure's effects when the finding fails
-COR.1	partial	A3, C18, P1	A3's adversarial check for rules, not only for findings; the Custodian's replacement (OD4)
+COR.1	contradicts	A2, C15, A3, C18, P1	A2's last sentence and C15 require the consent of every party a protection covers to narrow it, so a single affected party, below capture, blocks the change for good. Edit: either the core admits a declared protection ratchet, or those clauses use a gate the protected parties hold collectively (ADR-ETH-03 OD32). Also open: A3's adversarial check for rules, and the Custodian's replacement (OD4)
 COR.2	partial	P1, D9	decide what replaces a Custodian (OD4) and check the replacement graph is acyclic
-COR.3	contradicts	A2, P2, A3, H1, C14	A2 and P2 keep a verdict provisional with no ceiling where no eligible reviewer exists, while its subject stays recused on the matter. Edit: a ceiling at which such a verdict lapses in the subject's favour, as the revised C14 already provides for undecided conflicts; and a bound on each matter's total delay
+COR.3	contradicts	A2, P2, A3, H1, C14	A2 and P2 keep a verdict provisional with no ceiling where no eligible reviewer exists, while its subject stays recused. Edit: a ceiling at which such a verdict lapses in the subject's favour, as the revised C14 already provides, except where the subject's own grants made every reviewer implicated, when a reviewer is provided from outside every implicated chain; and a bound on each matter's total delay
+COR.3	contradicts	P3 (the kept record's findings and their forum)	Findings kept open on an ended instance's record, those naming the founder from the genesis regime included, are decided by the forum only on request, with no ceiling when none is made. Edit: a ceiling from the end at which a kept finding not requested closes as ended without verdict; or a statement that the floors stop at an instance's end, naming those that survive (MEM.1, MEM.3, VOX.2, VOX.3)
 COR.4	partial	A2, C22, H1	re-examination against a subject after a favourable verdict only on new recorded evidence, a finite number of times
-GEN.2	partial	H3, P1	deliver the regime's declaration to every subject; forbid lengthening its duration except by parties not implicated; lapse its consequences on others past the ceiling
+GEN.2	contradicts	H3, P1	H3 lets an act not ratified within its window stand, consequences included, while GEN.2 lapses its consequences on every actor but the founder and those who accepted it. Edit: H3's unratified act stands as to the founder and its acceptors only. Also missing: delivery of the regime's declaration to every subject, and a bar on lengthening its duration except by parties not implicated
