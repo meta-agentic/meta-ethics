@@ -46,7 +46,7 @@ A new parent version never propagates automatically. It arrives inside an instan
 | Path | Contents |
 |---|---|
 | `docs/adr/` | Architecture decision records. ADR-first: the constitution is preceded by an ADR recording why this shape and not another |
-| `constitution/` | The L0 text, numbered clauses, each carrying its meta-rule or its procedural note |
+| `constitution/` | The L0 constitution as it stands: the prose (`L0.md`) and the program (`program/`), bound paragraph by paragraph, with the inventory, the source map to the records, the vocabulary, the parameter schema, the fixtures, the checks (`tools/check.sh`) and the ratification manifest; `DESIGN.md` records how |
 | `threat-model/` | Good-will / bad-will matrix per party kind and per clause; which clause closes which attack, and which attacks remain open by design |
 | `conformance/` | Fairness fixtures a kernel must pass: identity-permutation symmetry, identity-blindness of L1, determinism |
 | `genesis/` | The genesis manifest schema and the genesis procedure |
