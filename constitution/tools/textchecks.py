@@ -21,6 +21,9 @@ NARRATIVE = re.compile(r"\b((?<!be )restored|corrected|correction|amended|amendm
 # One floor atom; a floor is one or more atoms joined by " & ", all of which hold.
 FLOOR = re.compile(r"^(finite|declared|nonempty|positive|law|>= [0-9]+|>= [a-z_]+( \+ [a-z_]+)?|= [a-z_]+|"
                    r"<= share\(D2\) pooled|superset\([a-z_]+(,[a-z_]+)*\))$")
+# a proposed paragraph the founder has adopted, which enters force with the
+# record edits once the reviews clear it
+ADOPTED = "Adopted by the founder, subject to review; enters force with the record edits"
 KEYWORDS = ("finite", "declared", "nonempty", "positive", "law", "share", "pooled", "superset")
 
 errors = []
@@ -70,13 +73,14 @@ def check_prose():
             fail("prose", "%s: %s paragraph names no enforcement" % (r["id"], r["status"]))
     # paragraphs marked procedural in the prose are procedural in the inventory
     status = {r["id"]: r["status"] for r in inv}
-    marked = dict(re.findall(r"^\*\*([A-Z]+[0-9]*\.[0-9]+)\*\* \*(Procedural|Parameters|Accepted cost|Proposed, founder decision pending)\.\*", text, re.M))
+    marked = dict(re.findall(r"^\*\*([A-Z]+[0-9]*\.[0-9]+)\*\* \*(Procedural|Parameters|Accepted cost|Proposed, founder decision pending|Adopted by the founder, subject to review; enters force with the record edits)\.\*", text, re.M))
     for pid, st in status.items():
         want = {"Procedural": "procedural", "Parameters": "procedural", "Accepted cost": "cost",
-                "Proposed, founder decision pending": "proposed"}.get(marked.get(pid))
+                "Proposed, founder decision pending": "proposed",
+                ADOPTED: "proposed"}.get(marked.get(pid))
         if want and st != want:
             fail("prose", "%s is marked %s in the prose but %s in the inventory" % (pid, marked[pid], st))
-        if st == "proposed" and marked.get(pid) != "Proposed, founder decision pending":
+        if st == "proposed" and marked.get(pid) not in ("Proposed, founder decision pending", ADOPTED):
             fail("prose", "%s is proposed in the inventory but not marked so in the prose" % pid)
         if st == "cost" and marked.get(pid) != "Accepted cost":
             fail("prose", "%s is an accepted cost in the inventory but not marked so in the prose" % pid)
