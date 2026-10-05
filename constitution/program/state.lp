@@ -19,6 +19,6 @@ eligible(Q, P) :- base(Q, P), not recused(P, Q).
 base_size(Q, N) :- matter(Q), N = #count{ P : base(Q, P) }.
 eligible_size(Q, N) :- matter(Q), N = #count{ P : eligible(Q, P) }.
 
-% clause: A2.3 A2.8 P3.7 P3.9
+% clause: A2.3 A2.8 P3.7 P3.9 P1.7
 citable(F, P) :- finding(F, P, T), now(N), param(citation_period, D), N - T <= D,
-                 not closed_in_favour(F), not instance_ended.
+                 not closed_in_favour(F), not instance_ended, not withheld_finding(F).

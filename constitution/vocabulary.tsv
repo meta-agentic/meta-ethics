@@ -291,4 +291,15 @@ law_breach_found_in_family	proposal,law	derived	P1.7	the cited law was found bre
 cites_right_of	proposal,law,party	intake	P1.7	the human party whose right the act would breach, as the law-citing veto names it
 beyond_ceilings	seat,proposal	derived	P1.7	a law-citing veto beyond the seat's window ceiling or the per-act bound
 law_protection_finding	proposal,law,party	derived	P1.7	beyond the ceilings, a pending citation is a finding on behalf of the human it names, reviewed under P2
-consequence_withheld	proposal,party	derived	P1.7	the act may pass, but no consequence of it falls on the named human until the review decides
+irreversible_effect	proposal	intake	P1.7	the act's effect class, declared at intake: an effect on a human that is not a P2 consequence and could not be withheld or reversed forward
+pending_hold	proposal,law	derived	P1.7	a pending review holds the act within the seat's ceilings, and beyond them where its effect is irreversible
+cites_class	proposal,law,class	intake	P1.7	the class of humans the cited right protects, as the citation names it
+in_class	party,class	intake	P1.7	a human in a class a citation names
+protected_by	proposal,law,party	derived	P1.7	every human the cited right protects, named or of the class the citation names
+consequence_withheld	proposal,party	derived	P1.7	the act may pass, but no consequence of it falls on a protected human until the review decides
+verdict_from_act	verdict,proposal	intake	P1.7	a verdict whose consequence arises from the act
+finding_from_act	finding,proposal	intake	P1.7	a finding that arises from the act
+duty_from_act	act,proposal	intake	P1.7	a duty that arises from the act
+withheld_verdict	verdict	derived	P1.7	a verdict from the act with a consequence on a protected human does not take effect
+withheld_finding	finding	derived	P1.7	a finding from the act about a protected human is not cited and carries no interim measure
+withheld_duty	party,act	derived	P1.7	a duty from the act does not run against a protected human

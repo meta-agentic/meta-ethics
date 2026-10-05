@@ -20,7 +20,7 @@ removal_bar(R) :- reviewed_removal(_,R); founder_chain(R); not regime_exited. | 
 removal_effective(A) :- removes_last_of_kind(A); reviewed_removal(A,R); not removal_bar(R). | drop removes_last_of_kind(A)	type guard: a removal is reviewed only where it would remove the last party of a kind
 active(M) :- mandate(M,_,_); issued(M,T0); now(T); T0 <= T; not revoked_by_now(M). | drop mandate(M,_,_)	type guard: issued/2 is recorded only for a mandate
 duty_runs(M) :- mandate(M,_,_); terms_delivered(M); accepted(M); not renounced_by_now(M). | drop mandate(M,_,_)	type guard: terms are delivered only for a mandate
-interim_active(I) :- interim(I,F,T); finding(F,_,_); now(N); param(interim_ceiling,C); (N-T) < C; not instance_ended. | drop finding(F,_,_)	type guard: an interim measure is recorded only for a finding
+interim_active(I) :- interim(I,F,T); finding(F,_,_); now(N); param(interim_ceiling,C); (N-T) < C; not instance_ended; not withheld_finding(F). | drop finding(F,_,_)	type guard: an interim measure is recorded only for a finding
 ratification_signed(R,S) :- signature(Sig,P,R,_); seat_holder(P,S); custodian_seat(S); signature_valid(Sig); covered_by_head(Sig); not stale(Sig). | drop custodian_seat(S)	no outcome reads it: ratified/1 asks only after Custodian seats
 beats(C1,C2,P) :- candidate(C1,P); candidate(C2,P); conflict(C1,C2); prevails(C1,C2). | drop candidate(C1,P)	type guard: a prevailing or resolving consequence enters the conflict only as a candidate for the party
 beats(C1,C2,P) :- candidate(C1,P); candidate(C2,P); conflict(C1,C2); prevails(C1,C2). | drop candidate(C2,P)	type guard: as above, for the consequence that yields
@@ -33,7 +33,7 @@ admitted_act(A) :- filed(A,P); not owed(A); balance(P,N); N > 0. | drop not owed
 reviewer_kind_ok(V,R) :- reviewed(V,R); needs_human_reviewer(V); kind_of(R,human). | drop reviewed(V,R)	implied: review_done/1 reads it only together with the recorded review
 reviewer_kind_ok(V,R) :- reviewed(V,R); needs_human_reviewer(V); kind_of(R,human). | drop needs_human_reviewer(V)	equivalent: a human reviewer satisfies every verdict, and the rule above admits it where no human is needed
 review_done(V) :- reviewed(V,R); drawn_reviewer(V,R); not implicated(R,V); reviewer_kind_ok(V,R); not genesis_bar(R). | drop reviewed(V,R)	implied: reviewer_kind_ok/2 holds only for a recorded review
-takes_effect(V) :- verdict(V,_,_); bears_consequence(V); review_done(V); window_passed(V). | drop verdict(V,_,_)	type guard: bears_consequence/1 is recorded only for a verdict
+takes_effect(V) :- verdict(V,_,_); bears_consequence(V); review_done(V); window_passed(V); not withheld_verdict(V). | drop verdict(V,_,_)	type guard: bears_consequence/1 is recorded only for a verdict
 provisional(V) :- verdict(V,_,_); bears_consequence(V); not takes_effect(V). | drop verdict(V,_,_)	type guard: bears_consequence/1 is recorded only for a verdict
 valid_closure(F) :- closure(C,F); witnessed_by(C,W); discharges(C,F); finding(F,P,_); W != P; not in_chain(W,P); not founder_finding_held(F). | drop closure(C,F)	type guard: witnessing and discharge are recorded only for a closing act
 drawn_decides(Q) :- choice_needed(Q); no_status_quo(Q); not some_chosen(Q); choice_since(Q,T); now(N); param(owed_content_ceiling,X); (N-T) >= X. | drop choice_needed(Q)	type guard: no_status_quo/1 and choice_since/2 are recorded only for an act that must be chosen
@@ -50,3 +50,4 @@ decider_ok(V,R) :- dispute_decision(V,_,R,_); dispute_of(V); dispute_needs_human
 law_founded(S,Q) :- veto(S,Q,_); veto_cites_law(S,Q,L); family(Q,R); family(Q2,R); law_breach_found(Q2,L). | drop veto(S,Q,_)	type guard: a citation is recorded only for a recorded veto
 law_unfounded_in_family(Q,L) :- veto_cites_law(_,Q,L); family(Q,R); family(Q2,R); law_unfounded(Q2,L). | drop veto_cites_law(_,Q,L)	no outcome reads it: law_hold/1 and law_review_overdue/2 ask only about a cited law
 law_breach_found_in_family(Q,L) :- veto_cites_law(_,Q,L); family(Q,R); family(Q2,R); law_breach_found(Q2,L). | drop veto_cites_law(_,Q,L)	no outcome reads it: law_hold/1 and the finding ask only about a cited law
+pending_hold(Q,L) :- valid_law_veto(S,Q,L); beyond_ceilings(S,Q); irreversible_effect(Q); not law_unfounded_in_family(Q,L). | drop beyond_ceilings(S,Q)	equivalent: within the ceilings the rule above holds the act on the same terms

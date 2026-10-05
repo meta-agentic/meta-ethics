@@ -29,8 +29,9 @@ founder_chain(F) :- founder(F).
 founder_chain(R) :- founder(F), in_chain(R, F).
 genesis_bar(R) :- reviewed(_, R), founder_chain(R), not regime_exited.
 
-% clause: A2.5 P2.1 P2.7 H3.4
+% clause: A2.5 P2.1 P2.7 H3.4 P1.7
 review_done(V) :- reviewed(V, R), drawn_reviewer(V, R), not implicated(R, V),
                   reviewer_kind_ok(V, R), not genesis_bar(R).
-takes_effect(V) :- verdict(V, _, _), bears_consequence(V), review_done(V), window_passed(V).
+takes_effect(V) :- verdict(V, _, _), bears_consequence(V), review_done(V), window_passed(V),
+                  not withheld_verdict(V).
 provisional(V) :- verdict(V, _, _), bears_consequence(V), not takes_effect(V).

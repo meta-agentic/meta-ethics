@@ -17,7 +17,9 @@ passed_channel(q4). matter_of(q4, x4). replaces_seat(q4, ca, n9).
 veto(ca, q4, 25). veto_signed(ca, q4). veto_cites_law(ca, q4, l4).
 % against an owed act
 passed_channel(q5). matter_of(q5, x5). owed_act(q5). veto(ca, q5, 25). veto_signed(ca, q5). veto_cites_law(ca, q5, l5).
-% valid and pending within the ceiling: held
+% valid and pending within the ceiling: held; an older veto on the act by
+% another seat does not start its review clock
+veto(ch, q6, 5).
 passed_channel(q6). matter_of(q6, x6). veto(ca, q6, 25). veto_signed(ca, q6). veto_cites_law(ca, q6, l6).
 cites_right_of(q6, l6, h6).
 % valid, pending past the ceiling: still held, the review drawn again, the delay
@@ -39,6 +41,7 @@ decided_seq(q6, 25). decided_seq(q7, 12). decided_seq(q8, 13).
 % EXPECT-NOT[P1.7]: law_hold(q4)
 % EXPECT-NOT[P1.7]: law_hold(q5)
 % EXPECT[P1.7]: law_hold(q6)
+% EXPECT-NOT[P1.7]: law_review_overdue(q6,l6)
 % EXPECT-NOT[P1.7]: beyond_ceilings(ca,q6)
 % EXPECT-NOT[P1.7]: consequence_withheld(q6,h6)
 % EXPECT[P1.7]: law_hold(q7)

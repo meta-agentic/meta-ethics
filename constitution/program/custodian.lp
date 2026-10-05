@@ -35,20 +35,31 @@ valid_law_veto(S, Q, L) :- veto_cites_law(S, Q, L), veto(S, Q, _), veto_signed(S
 % ceilings; a law already found unfounded gives no fresh hold
 law_breach_found_in_family(Q, L) :- veto_cites_law(_, Q, L), family(Q, R), family(Q2, R), law_breach_found(Q2, L).
 law_hold(Q) :- valid_law_veto(_, Q, L), law_breach_found_in_family(Q, L).
-law_hold(Q) :- valid_law_veto(S, Q, L), within_ceiling(S, Q), within_act_bound(Q),
-               not law_unfounded_in_family(Q, L).
-law_review_overdue(Q, L) :- valid_law_veto(S, Q, L), within_ceiling(S, Q), within_act_bound(Q), veto(S, Q, T),
-                            now(N), param(law_review_ceiling, X), N - T >= X,
-                            not law_unfounded_in_family(Q, L), not law_breach_found_in_family(Q, L).
-
-% beyond the seat's ceilings a pending citation protects the named human
-% alone: it is a finding reviewed under P2, the act may pass, and no
-% consequence of it falls on that human until the review decides
 beyond_ceilings(S, Q) :- valid_law_veto(S, Q, _), not within_ceiling(S, Q).
 beyond_ceilings(S, Q) :- valid_law_veto(S, Q, _), not within_act_bound(Q).
-law_protection_finding(Q, L, H) :- valid_law_veto(S, Q, L), beyond_ceilings(S, Q), cites_right_of(Q, L, H),
-                                   not law_unfounded_in_family(Q, L), not law_breach_found_in_family(Q, L).
+pending_hold(Q, L) :- valid_law_veto(S, Q, L), within_ceiling(S, Q), within_act_bound(Q),
+                      not law_unfounded_in_family(Q, L).
+% beyond the ceilings the act stays held where the breach could not be
+% withheld or reversed forward: an effect on a human that is not a P2
+% consequence (a disclosure of personal data, a narrowed protection)
+pending_hold(Q, L) :- valid_law_veto(S, Q, L), beyond_ceilings(S, Q), irreversible_effect(Q),
+                      not law_unfounded_in_family(Q, L).
+law_hold(Q) :- pending_hold(Q, _).
+law_review_overdue(Q, L) :- pending_hold(Q, L), valid_law_veto(S, Q, L), veto(S, Q, T), now(N),
+                            param(law_review_ceiling, X), N - T >= X, not law_breach_found_in_family(Q, L).
+
+% otherwise, beyond the ceilings, the act may pass, and no consequence of it
+% falls on any human the cited right protects, named or of the class the
+% citation names, until the review decides; it is a finding reviewed under P2
+protected_by(Q, L, H) :- cites_right_of(Q, L, H).
+protected_by(Q, L, H) :- cites_class(Q, L, C), in_class(H, C).
+law_protection_finding(Q, L, H) :- valid_law_veto(S, Q, L), beyond_ceilings(S, Q), not irreversible_effect(Q),
+                                   protected_by(Q, L, H), not law_unfounded_in_family(Q, L),
+                                   not law_breach_found_in_family(Q, L).
 consequence_withheld(Q, H) :- law_protection_finding(Q, _, H).
+withheld_verdict(V) :- verdict_from_act(V, Q), consequence_on(V, H), consequence_withheld(Q, H).
+withheld_finding(F) :- finding_from_act(F, Q), finding(F, H, _), consequence_withheld(Q, H).
+withheld_duty(P, A) :- duty_from_act(A, Q), consequence_withheld(Q, P).
 law_review_redrawn(Q, L) :- law_review_overdue(Q, L).
 counts_toward_d2(Q) :- law_review_overdue(Q, _).
 

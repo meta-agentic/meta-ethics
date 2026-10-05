@@ -9,6 +9,9 @@
 % clause: BIND.3
 has_standing(P, V) :- verdict_subject(V, P).
 has_standing(P, V) :- withheld_protection(V, P, _).
+% every human a law-citing veto's cited right protects may dispute an
+% outcome of the act (P1.7), named or of the class the citation names
+has_standing(H, V) :- verdict_from_act(V, Q), protected_by(Q, _, H).
 refused_dispute(D) :- disputed(D, V, P), not has_standing(P, V).
 earlier_by_party(D) :- disputed(D, V, P), dispute_at(D, T), disputed(D2, V, P), dispute_at(D2, T2), T2 < T.
 admitted_dispute(D) :- disputed(D, V, P), has_standing(P, V), not earlier_by_party(D).

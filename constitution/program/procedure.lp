@@ -15,8 +15,8 @@ lobbying(C, P) :- contact(C, P, J, Q), drawn_judge(Q, J).
 % clause: C21.5
 unentered_contact(C, J) :- contact(C, _, J, Q), drawn_judge(Q, J), not contact_entered(C).
 
-% clause: C14.4
-owes(P, A) :- duty_on(A, Q, P), not recused(P, Q).
+% clause: C14.4 P1.7
+owes(P, A) :- duty_on(A, Q, P), not recused(P, Q), not withheld_duty(P, A).
 
 % clause: A2.13
 possible_subjects(F, N) :- finding(F, _, _), N = #count{ P : could_be_subject(F, P) }.
@@ -50,9 +50,9 @@ founder_finding_held(F) :- finding(F, P, _), founder(P), not regime_exited.
 delivery_owed(F, P) :- finding(F, P, _), not delivered_to_subject(F).
 may_answer(P, F) :- finding(F, P, _).
 
-% clause: A2.7 P3.7
+% clause: A2.7 P3.7 P1.7
 interim_active(I) :- interim(I, F, T), finding(F, _, _), now(N), param(interim_ceiling, C), N - T < C,
-                     not instance_ended.
+                     not instance_ended, not withheld_finding(F).
 
 % clause: H3.8
 unratified(A) :- marked_regime(A), regime_exit(E), now(N), param(ratification_window, W), N - E >= W,
