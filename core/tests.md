@@ -37,6 +37,7 @@ The candidate given to ADR-ETH-03 was five principles: Memory, Delegation, Impar
 27. **An answerable actor could be named without its consent, and leaving the core had no gate.** *Changed:* DEL.6 requires the named actor's accepted entry; DEL.7 requires the most demanding gate, under IMP.5, and a chance for every subject to answer.
 28. **The outside decider could be rebuilt from the founder's own grants.** A pool the founding document grants holds its positions through the founder's grants, so it is implicated in every matter about the founder. *Changed:* COR.3's outside decider holds a root grant no implicated party made or can revoke alone — for matters about the founder, a grant made after genesis through $\Delta$, or an outside decider the founding document names without granting it a mandate, whose decision enters as an attestation from which the consequence is derived, so that it falls under IMP.5 and VOX.3.
 29. **A protection could hold a change back for ever.** A rule letting a protection be narrowed only with every protected party's consent satisfied the core while it applied to no gate. *Changed:* COR.1 admits a lock only if it is defined — what it protects and for whom — and the rule set names the clauses under which it is overridden, by a family of winning sets that itself meets COR.1; no party, seat holder or class below capture blocks a change for ever, and a seat every winning set contains blocks nothing for ever because its holder is replaceable (ADR-ETH-03 K9). The ratchet that would have let a declared protection stand beyond override was rejected.
+30. **The lock rule explained away a real veto.** It said a seat every winning set contains "blocks nothing for ever, because its holder is replaceable", which hid that a constitution's own defence is changed only by unanimity. *Changed:* COR.1 has two tiers. A declared, minimal entrenched tier — the clauses that defend the constitution itself, holding no rule about actors — changes only by unanimity of its seats, and the core says openly that a seat can block such a change for ever, with open debate as the remedy and no duty imposed to give reasons. Outside it, no gate requires every seat it counts, and the lock rule stands (ADR-ETH-03 K9).
 
 Oligarchy and plutocracy are not excluded as such. "A few decide" and "weight follows stake" are violations only through cycles of mutual replacement, a blocking group below capture, barring by attribute, or binding those who cannot leave. Over parties who accepted, can leave at no cost and can replace the few, they are declared values (`core/pathologies.md` X45, X46).
 
@@ -57,7 +58,7 @@ The core has **39 floors**: MEM 5, DEL 8, LEX 8, IMP 5, VOX 7, COR 4 in six prin
 
 | Class | Count | Result |
 |---|---|---|
-| Structural | 48 | every one excluded by at least one clause |
+| Structural | 48 | every one excluded by at least one clause; X50 everywhere but the declared entrenched tier, where it is a declared cost |
 | Mixed | 14 | the structural part excluded; the remainder named |
 | Beyond | 5 | not excluded; made visible, attributed, answerable and correctable where the core can, and named |
 | Total | 67 | |
@@ -106,12 +107,14 @@ For each principle, a system expressible in the model that satisfies the other f
 | IMP.5 (iii) exception | a judge reviewing its own verdict on appeal (X32) |
 | IMP.3 ($A$ invariance) | acts by one kind not admitted, everything else blind |
 | GEN.3 | a deployment that names the core for good while failing a floor, its subjects untold |
+| COR.1 (entrenched tier) | a tier declared to hold a consequence rule, or a two-key gate on an ordinary rule that requires every seat it counts |
 | COR.1 (locks) | a protection narrowable only with every protected party's consent, with no override; an override by unanimous vote; or a lock repealed by a bare majority on the ordinary gate, its override clauses never run |
 
 **Couplings checked.** Several clauses refer to another principle; none makes a principle derivable from the others.
 - DEL.8 applies VOX, IMP and LEX to grants and revocations, which are acts of a grantor and not consequences; its witness (a purge by individually valid revocations) violates no clause outside DEL. The VOX witness revokes nothing, so DEL.8's reliance on VOX is not engaged.
 - COR.3's outside decider uses IMP.5's implication; its witness keeps every decider unimplicated except through the subject's grants.
 - $\Delta$ refuses any change that adds a violation of a [Γ] floor. The COR witness's rule set is the founding one; its frozen seat rule is a violation it keeps, so no change is refused on its account, and because the seat rule's family of winning sets is empty, no change can remove it, and the witness keeps failing COR alone.
+- The entrenched tier is not the COR counter-model. The unremovable seat has no replacement path for its holder and an empty family of winning sets; the tier has a non-empty family, unanimity of its seats, leaves every holder replaceable under COR.2, holds no rule about actors, and is declared. A system with the tier and every floor met still satisfies COR; the unremovable seat still fails COR alone.
 - The lock sentence of COR.1 is a case of COR.1's own quantifier, made explicit: its witness (a consent-only protection) violates COR.1 and no clause outside COR, and the COR counter-model, the unremovable seat, is unaffected, since it has no override clause and keeps failing COR alone.
 - X67's witness is excluded by COR.3 alone: a matter decided by an outside decider is judged, so IMP.4 is not separately engaged.
 - DEL.3's acceptance by staying refers to VOX.1's notice. The VOX witness therefore adds no duty by change.
@@ -217,6 +220,7 @@ The classes a unit can fall in:
 | VOX.6 | none | — | any affected actor files and is answered |
 | VOX.7 | partial | A2 | undo or remedy an interim measure's effects when the finding fails |
 | COR.1 | **contradicts** | A2, C15, A3, C18, P1 | A2's last sentence and C15 require the consent of every party a protection covers to narrow it, so a single affected party, below capture, blocks the change for good: an undefined lock with no collective override. Edit: replace "the consent of the parties it affects" (A2) and "the consent of the parties it protects" (C15) with a defined protection — what it protects and for whom — and declared clauses under which it is overridden by a family of winning sets that itself meets COR.1, such as a collective vote of the parties (ADR-ETH-03 K9). Also open: A3's adversarial check for rules, and the Custodian's replacement (OD4) |
+| COR.1 | **contradicts** | P1, C2 | Both Custodians' signatures are required for every constitutional change, so unanimity of the seats covers the whole constitutional text, and the constitution declares no entrenched tier. Edit: declare the tier — the rule by which the constitution is changed, P1's signature requirement and C2 included, the tier's own declaration, and the clauses named as the constitution's defence — and give the rest of the constitutional text a gate that does not require every seat, such as a collective vote or the governed channel with a Custodian's signature |
 | COR.2 | partial | P1, D9 | decide what replaces a Custodian (OD4) and check the replacement graph is acyclic |
 | COR.3 | **contradicts** | A2, P2, A3, H1, C14 | A2 and P2 keep a verdict provisional with no ceiling where no eligible reviewer exists, while its subject stays recused. Edit: a ceiling at which such a verdict lapses in the subject's favour, as the revised C14 already provides, except where the subject's own grants made every reviewer implicated, when a reviewer is provided from outside every implicated chain; and a bound on each matter's total delay |
 | COR.3 | **contradicts** | P3 (the kept record's findings and their forum) | Findings kept open on an ended instance's record, those naming the founder from the genesis regime included, are decided by the forum only on request, with no ceiling when none is made. Edit: a ceiling from the end at which a kept finding not requested closes as ended without verdict; or a statement that the floors stop at an instance's end, naming those that survive (MEM.1, MEM.3, VOX.2, VOX.3) |
@@ -231,7 +235,7 @@ The classes a unit can fall in:
 | none | 4 |
 | contradicts | 7 |
 
-Seven floors are contradicted, by eight clauses of the instance: COR.3 by two. Each contradiction is closed by the founder's edit to the records named in its row; this record makes none of them.
+Seven floors are contradicted, by nine clauses of the instance: COR.1 and COR.3 by two each. Each contradiction is closed by the founder's edit to the records named in its row; this record makes none of them.
 
 Three readings formerly taken as contradictions are resolved by the core's own statements, not by an instance edit:
 - A2's anonymisation is compatible with MEM.1 once append-only is stated over skeletons and the anonymising act is itself appended.
@@ -280,7 +284,7 @@ A check marked **proxy** is weaker than its floor, and the row says where.
 | VOX.5 | static | voice-act predicates reach no burden-class head at any polarity | — |
 | VOX.6 | fixture | a filing by a non-subject derives `owed_answer` with a ceiling; `unanswered_past_ceiling` empty | — |
 | VOX.7 | fixture | an unconfirmed interim consequence past its ceiling derives `lapsed`; a failed finding derives `remedy_owed` for each interim effect | — |
-| COR.1 | bounded | for each rule and each group below capture up to the cap, the published closure procedure changes the rule without the group's acts (A3's form); every rule tagged as a lock carries a definition and names an override clause, and the override clause meets COR.1 itself; a change touching a lock or its definition is admitted only through that clause | **proxy** beyond the cap |
+| COR.1 | bounded | for each rule and each group below capture up to the cap, the published closure procedure changes the rule without the group's acts (A3's form); every rule tagged as a lock carries a definition and names an override clause, and the override clause meets COR.1 itself; a change touching a lock or its definition is admitted only through that clause ; the declared entrenched tier is exempt from the reachability check, its clauses carry no derivation, consequence, grant or revocation head, and every gate outside it is refused if some winning set it needs is the set of all its seats | **proxy** beyond the cap |
 | COR.2 | bounded | the replacement-dependency graph is acyclic, and every position has a replacement path free of its holder's acts | **proxy** beyond the cap |
 | COR.3 | static + fixture + bounded | every predicate of the `lever` vocabulary class is bounded by a parameter, and so is each matter's total delay; a provisional status past its ceiling derives `decided` or `lapsed`; for every matter whose deciders are all implicated, a decider outside every implicated chain exists up to the cap | — |
 | COR.4 | procedural + fixture | the published closure result of A3; `reopen_against(V)` without new evidence or beyond the count derives `jeopardy` | — |
