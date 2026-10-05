@@ -60,7 +60,7 @@ Section 1 of `core/L0.md` holds definitions of the model, which bind no one. Sec
 **How it was found.** The candidate given to this record was five principles: Memory, Delegation, Impartiality, Voice and Correctability. Three tests were run (`core/tests.md` §3), and the candidate failed in eighteen places, each closed in the core (`core/tests.md` §1).
 - **Coverage.** 65 pathologies after merging synonyms, each classed by its definition before any clause is applied. All 47 structural ones are excluded by some clause, and the 13 mixed ones in their structural part. The 5 beyond a core over a record are named with the reason.
 - **Minimality.** For each principle, a system expressible in the model satisfies the other five and violates it. There is a witness for each clause added to answer a distinct pathology, and the couplings between clauses were checked.
-- **Sufficiency.** Every unit of ADR-ETH-01, ADR-ETH-02 and the open amendment adding P3 maps to what it serves. Of the 37 floors, the meta-agentic constitution covers 11, renders 19 in part and 3 not at all, and contradicts 4 (K3).
+- **Sufficiency.** Every unit of ADR-ETH-01 and ADR-ETH-02, P3 and the revised C14 included, maps to what it serves. Of the 37 floors, the meta-agentic constitution covers 11, renders 19 in part and 3 not at all, and contradicts 4 (K3).
 
 *Rejected alternatives:*
 - *The meta-agentic constitution as the core* — loses to F10. Parity of kinds (P1), two kinds or no instance (P3) and the human reviewer for humans (P2) exclude a humans-only and an agents-only constitution.
@@ -193,7 +193,7 @@ GEN.2 holds the founding regime to every other floor it can meet:
 - Proposed only, in `core/relevel.md`: the other moves — the consolidated text to `instances/meta-agentic/constitution/`; the core's floor checks to `conformance/core/`; the threat model and genesis under the deployment; the records in place, their level recorded at ratification.
 - Also proposed there: the inventory's `core` column; a `core-gaps.tsv` with marks `none`, `partial` and `contradicts`; and the companion paper's new structure.
 
-*Rejected alternatives:* moving the consolidated text in this record — loses to F5, because it is an open change that would be rebased under a move it did not make.
+*Rejected alternatives:* moving the consolidated text in this record — loses to F5, because a move that renames a checked directory is its own change, with its own check run, not a rider on a decision.
 
 *Reopens if:* a move is made that the plan does not list.
 
@@ -312,7 +312,7 @@ K6   proposed  GEN a declared transient; regime          core from the first act
 K7   proposed  pathologies are labels on violations,      ranking by score (F6, D16)                          no total order                        a pathology defined by resemblance or
                classed by definition; partial order                                                                                                 classed by excludability
                within a version's family
-K8   proposed  split of core/L0.md done; other moves      moving the consolidated text now (F5)               the plan waits on the open text       a move made outside the plan
+K8   proposed  split of core/L0.md done; other moves      moving the consolidated text now (F5)               the plan waits on the decision         a move made outside the plan
                proposed; contradicts mark for the gaps
                file
 
@@ -322,4 +322,4 @@ INTEGRITY   decisions without a rejected alternative: 0 · without a reopening t
 
 ## Provenance
 
-The founder's decision of 2026-10-05: the invariants are the originator, and the constitution designed so far governs the agentic system developing software with the founder of meta-agentic.ai. The candidate five principles were given to this record as a starting point and changed as `core/tests.md` §1 records. The sufficiency test reads ADR-ETH-01 and ADR-ETH-02 at the main line, the open amendment that adds P3 and revises C14, and the open consolidated text. References: Aristotle, *Politics*, Book III; Fuller, *The Morality of Law*, 1964; Hirschman, *Exit, Voice, and Loyalty*, 1970; Ostrom, *Governing the Commons*, 1990. The backlog is tracked outside this repository.
+The founder's decision of 2026-10-05: the invariants are the originator, and the constitution designed so far governs the agentic system developing software with the founder of meta-agentic.ai. The candidate five principles were given to this record as a starting point and changed as `core/tests.md` §1 records. The sufficiency test read ADR-ETH-01 and ADR-ETH-02, P3 and the revised C14 while they were an open amendment, and the consolidated text while it was open; both have since landed on the main line, and the four contradictions were re-checked against the main line and stand. References: Aristotle, *Politics*, Book III; Fuller, *The Morality of Law*, 1964; Hirschman, *Exit, Voice, and Loyalty*, 1970; Ostrom, *Governing the Commons*, 1990. The backlog is tracked outside this repository.
