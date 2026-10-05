@@ -145,7 +145,10 @@ def tag_at(tags, line):
 # --------------------------------------------------------------- program
 
 def check_program(vocab, status):
+    # program/proposed/ holds the rules of `proposed` paragraphs, run only with
+    # the fixtures in fixtures/proposed/, so the program in force is unchanged
     files = sorted(glob.glob(os.path.join(ROOT, "program", "*.lp")))
+    files += sorted(glob.glob(os.path.join(ROOT, "program", "proposed", "*.lp")))
     programmed = {}           # clause id -> number of rules
     combined = []
     n_rules = 0
@@ -175,9 +178,10 @@ def check_program(vocab, status):
             if not tag:
                 fail("binding", "%s: rule carries no clause tag" % where)
             else:
+                want = "proposed" if os.sep + "proposed" + os.sep in path else "program"
                 for cid in tag:
-                    if status.get(cid) != "program":
-                        fail("binding", "%s: tag %s is not a `program` paragraph (%s)" % (where, cid, status.get(cid)))
+                    if status.get(cid) != want:
+                        fail("binding", "%s: tag %s is not a `%s` paragraph (%s)" % (where, cid, want, status.get(cid)))
                     programmed[cid] = programmed.get(cid, 0) + 1
             check_rule(st, vocab, where)
     # the whole program, through the evidence checker's analysis
@@ -272,12 +276,15 @@ def check_rule(st, vocab, where):
 # --------------------------------------------------------------- fixtures
 
 def check_fixtures(vocab, status, prog_files, programmed):
-    prog = "\n".join(open(p, encoding="utf-8").read() for p in prog_files)
+    in_force = [p for p in prog_files if os.sep + "proposed" + os.sep not in p]
     pos, neg = {}, {}
     files = sorted(glob.glob(os.path.join(ROOT, "fixtures", "*.lp")))
+    files += sorted(glob.glob(os.path.join(ROOT, "fixtures", "proposed", "*.lp")))
     n_assert = 0
     for path in files:
         name = os.path.relpath(path, ROOT)
+        proposed = os.sep + "proposed" + os.sep in path
+        prog = "\n".join(open(p, encoding="utf-8").read() for p in (prog_files if proposed else in_force))
         src, stmts = parse_file(path)
         for st in stmts:
             if st.ast_type in SKIP:
@@ -316,7 +323,7 @@ def check_fixtures(vocab, status, prog_files, programmed):
             if str(sym) != atom or not adecl or adecl["cls"] not in RULE_CLASSES:
                 fail("fixtures", "%s: [%s] assertion %r is not a canonical atom of a declared rule predicate"
                      % (name, cid, atom))
-            if status.get(cid) != "program":
+            if status.get(cid) not in (("program", "proposed") if proposed else ("program",)):
                 fail("binding", "%s: assertion tagged %s, which is not a `program` paragraph" % (name, cid))
             holds = atom in model
             if kind == "EXPECT":
@@ -330,7 +337,7 @@ def check_fixtures(vocab, status, prog_files, programmed):
         if not found:
             fail("fixtures", "%s: no assertion" % name)
     for cid, st in status.items():
-        if st != "program":
+        if st != "program" and not (st == "proposed" and programmed.get(cid)):
             continue
         if not programmed.get(cid):
             fail("binding", "%s is `program` but no rule carries its tag" % cid)

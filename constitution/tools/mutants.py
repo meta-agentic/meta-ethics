@@ -23,18 +23,18 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 
 
-def load_fixtures():
+def load_fixtures(sub=""):
     out = []
-    for p in sorted(glob.glob(os.path.join(ROOT, "fixtures", "*.lp"))):
+    for p in sorted(glob.glob(os.path.join(ROOT, "fixtures", sub, "*.lp"))):
         src = open(p, encoding="utf-8").read()
         asserts = re.findall(r"^\s*%\s*(EXPECT|EXPECT-NOT)\[[A-Z]+[0-9]*\.[0-9]+\]:\s*(.+?)\s*$", src, re.M)
         out.append((os.path.basename(p), src, asserts))
     return out
 
 
-def load_rules():
+def load_rules(sub=""):
     rules = []
-    for p in sorted(glob.glob(os.path.join(ROOT, "program", "*.lp"))):
+    for p in sorted(glob.glob(os.path.join(ROOT, "program", sub, "*.lp"))):
         stmts = []
         ast.parse_string(open(p, encoding="utf-8").read(), stmts.append)
         rules += [(os.path.basename(p), st) for st in stmts if st.ast_type == ast.ASTType.Rule]
@@ -78,12 +78,15 @@ def key(st, label):
 
 
 def main():
-    fixtures = load_fixtures()
-    rules = load_rules()
-    base = [st for _, st in rules]
-    if killed(base, fixtures):
-        print("FAIL mutants    the unmutated program fails a fixture")
-        return 1
+    # the program in force against its fixtures; then the proposed rules,
+    # loaded beside it, against theirs (program/proposed/, fixtures/proposed/)
+    in_force = load_rules()
+    passes = [([], in_force, load_fixtures()), ([st for _, st in in_force], load_rules("proposed"),
+                                                load_fixtures("proposed"))]
+    for fixed, rules, fixtures in passes:
+        if killed(fixed + [st for _, st in rules], fixtures):
+            print("FAIL mutants    the unmutated program fails a fixture")
+            return 1
     allowed = {}
     path = os.path.join(HERE, "mutants-allowed.tsv")
     for line in open(path, encoding="utf-8").read().splitlines()[1:]:
@@ -93,18 +96,20 @@ def main():
     total = 0
     survivors = []
     errors = []
-    for i, (f, st) in enumerate(rules):
-        for label, m in mutants(st):
-            total += 1
-            prog = base[:i] + ([] if m is None else [m]) + base[i + 1:]
-            if killed(prog, fixtures):
-                continue
-            k = key(st, label)
-            survivors.append(k)
-            if label == "delete":
-                errors.append("%s: deleting this rule changes no assertion: %s" % (f, st))
-            elif k not in allowed:
-                errors.append("%s: surviving mutant not in mutants-allowed.tsv: %s" % (f, k))
+    for fixed, rules, fixtures in passes:
+        base = [st for _, st in rules]
+        for i, (f, st) in enumerate(rules):
+            for label, m in mutants(st):
+                total += 1
+                prog = fixed + base[:i] + ([] if m is None else [m]) + base[i + 1:]
+                if killed(prog, fixtures):
+                    continue
+                k = key(st, label)
+                survivors.append(k)
+                if label == "delete":
+                    errors.append("%s: deleting this rule changes no assertion: %s" % (f, st))
+                elif k not in allowed:
+                    errors.append("%s: surviving mutant not in mutants-allowed.tsv: %s" % (f, k))
     for k in sorted(set(allowed) - set(survivors)):
         errors.append("mutants-allowed.tsv lists a mutant that is now killed: %s" % k)
     print("mutants %d, killed %d, surviving %d (all listed with a reason)" % (total, total - len(survivors), len(survivors))

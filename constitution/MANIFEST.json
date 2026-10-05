@@ -120,11 +120,11 @@
     "P3.5"
   ],
   "digest_rule": "sha256 over the lines '<sha256>  <path>\\n' of the entries, in the order listed",
-  "combined_sha256": "6f67175134486ec40f0964a259f96a8e4e4516d6a2475e1188ff33bfc88821b1",
+  "combined_sha256": "2a31eaad324267202902e20bb2932b125d72c513bb068c43699bc4654f9d07ff",
   "entries": [
     {
       "path": "L0.md",
-      "sha256": "e5858081d854f30e7dd68d04018d274c1bb2bbf1f89d96570768f14a090b5eee"
+      "sha256": "f03373f5681f94fad18962302803926763b50b84bc575f726c5986b428ebd014"
     },
     {
       "path": "clauses.tsv",
@@ -136,7 +136,7 @@
     },
     {
       "path": "vocabulary.tsv",
-      "sha256": "b9475a6f0f371e3ee26c148018014df43097b216772c3a92b06801346f18e5ca"
+      "sha256": "b9e2a728f1320e42d0aeb247a9472f767eb9d234d7e29adafc732c3b197bd5eb"
     },
     {
       "path": "parameters.tsv",
@@ -263,6 +263,18 @@
       "sha256": "54c47779c4189fc711169358529db40eb88a2be2737eaf09b06ea49e76117395"
     },
     {
+      "path": "program/proposed/binding.lp",
+      "sha256": "9ca490db6cbe33eb67ca603f2d49c0b672fe6534516f289504f0ffd50c5a5ca9"
+    },
+    {
+      "path": "fixtures/proposed/binding_decided.lp",
+      "sha256": "514e084d84881b9b67d72c182ca56e2b5e5fa99e8a9632ba03166c237489aeb3"
+    },
+    {
+      "path": "fixtures/proposed/binding_lapse.lp",
+      "sha256": "c81d9021900f889645cf882ba67265a38d63802cad4a9883f818ca5079e824e6"
+    },
+    {
       "path": "fixtures/values/conforming.values",
       "sha256": "e0adb147d0c1a2d5ed1401a383ba76e8d803301091fe65de408c02069337073e"
     },
@@ -276,7 +288,7 @@
     },
     {
       "path": "DESIGN.md",
-      "sha256": "ffadc108160cffe6663e07ac54315be0574adfd81a5727c1e26a998cd2462eed"
+      "sha256": "e0201a18e5f2ca052bf62027d46da063f6a185d8465373d528ea4a34b723abdd"
     },
     {
       "path": "tools/c18.py",
@@ -284,7 +296,7 @@
     },
     {
       "path": "tools/check.py",
-      "sha256": "f61bd610e82c67428b138eef1c53c8ff510f6baef7afb7e2f9d8374600645cf1"
+      "sha256": "386f876850c84743e4c90766ed8bde630c61c60e82213f175dc3100dd7899f93"
     },
     {
       "path": "tools/check.sh",
@@ -292,11 +304,11 @@
     },
     {
       "path": "tools/mutants-allowed.tsv",
-      "sha256": "b5cbc6fbf407529e15b88c7c0325a368228c952053a0559275642beee74f1104"
+      "sha256": "304bcf452eee959bcfcb01ae1774e86d95640b81fec5b621fbd90564fb717b49"
     },
     {
       "path": "tools/mutants.py",
-      "sha256": "2197cd189808ea8fc593bb6e31fdb4874af1f6f1bb930fca850d684ab6501921"
+      "sha256": "3eb513f4e43959e570810b0fed3faec8cb3a0af7d5cbe2a99a7e994fbcfe3129"
     },
     {
       "path": "tools/requirements.txt",
@@ -304,7 +316,7 @@
     },
     {
       "path": "tools/textchecks.py",
-      "sha256": "3b6ce3e1f9de4664677a19cb06ce8ccd83e340296113f2ea83a246066ea2df30"
+      "sha256": "508cb9a7b7dc56eb12f10f620db4e9943ea2433d2729121a102803b25957883a"
     },
     {
       "path": "../evidence/checker/check.py",

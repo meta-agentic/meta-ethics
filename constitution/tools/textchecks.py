@@ -198,6 +198,8 @@ def manifest_files():
     files = ["L0.md", "clauses.tsv", "unmapped.tsv", "vocabulary.tsv", "parameters.tsv"]
     files += sorted(os.path.relpath(p, ROOT) for p in glob.glob(os.path.join(ROOT, "program", "*.lp")))
     files += sorted(os.path.relpath(p, ROOT) for p in glob.glob(os.path.join(ROOT, "fixtures", "*.lp")))
+    files += sorted(os.path.relpath(p, ROOT) for p in glob.glob(os.path.join(ROOT, "program", "proposed", "*.lp")))
+    files += sorted(os.path.relpath(p, ROOT) for p in glob.glob(os.path.join(ROOT, "fixtures", "proposed", "*.lp")))
     files += sorted(os.path.relpath(p, ROOT) for p in glob.glob(os.path.join(ROOT, "fixtures", "values", "*.values")))
     files += ["DESIGN.md"]
     files += sorted(os.path.relpath(p, ROOT) for p in glob.glob(os.path.join(ROOT, "tools", "*"))

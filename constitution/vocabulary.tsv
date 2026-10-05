@@ -255,3 +255,21 @@ drawn_decides	proposal	derived	P1.10	where neither the channel nor the seats dec
 continuity_failed	act	attested	S2.2	the session that did the act could not prove the party's continuity
 access_granted_by	act,party	intake	S2.5	whoever granted the access the act used
 continuity_finding	act	derived	S2.5	an act by an instance for which continuity fails is a finding
+disputed	dispute,verdict,party	intake	BIND.3	a party's dispute that the program derived an outcome this text forbids
+dispute_at	dispute,time	intake	BIND.3	the dispute's intake time
+dispute_decision	dispute,reading,party,time	attested	BIND.3	a reviewer's decision of the dispute under P2, upholding the program's reading or this text's, and when
+prose_protection	dispute,rule	intake	BIND.2	a protection this text gives, as the dispute states it
+earlier_dispute	dispute	consequence	BIND.3	the same party disputed the same outcome before
+first_dispute	dispute	consequence	BIND.3	a party may dispute an outcome once
+dispute_needs_human	dispute	consequence	BIND.3	a consequence of the disputed outcome falls on a human
+decider_barred	party	consequence	BIND.3	under the genesis regime a reviewer in the founder's chain does not decide it
+decider_ok	dispute,party	consequence	BIND.3	decided under P2, by a human wherever any consequence falls on a human
+upheld_program	dispute,time	consequence	BIND.3	a decision upholding the program's reading, which applies forward from its time
+upheld	dispute	consequence	BIND.3	the program's reading was upheld
+decided	dispute	consequence	BIND.3	the dispute was decided
+dispute_lapsed	dispute	consequence	BIND.3	the ceiling passed with the dispute undecided
+binding_held	verdict	consequence	BIND.2	until upheld, the disputed outcome burdens no subject
+protection_held	rule	consequence	BIND.3	every protection either reading gives prevails until a decision upholds the program
+bind_takes_effect	verdict	consequence	BIND.2	an outcome takes effect only if no first dispute holds it
+effective_from	verdict,time	consequence	BIND.3	when it takes effect: from delivery, or forward from the decision that upholds it
+disputed_outcome	verdict	consequence	BIND.3	an outcome some party disputes
