@@ -44,7 +44,7 @@ The model is a system as an abstraction with an observation map. It has:
 - a rule set whose fold and admissibility relation are among its components;
 - a mandate graph rooted in a founding document that is not a party;
 - typed attestations;
-- a change operator gated over positions, which admits only a rule set that passes every rule-set floor.
+- a change operator gated over positions, which admits no change that loses a rule-set floor the current rule set meets, so a rule set can be repaired one change at a time.
 
 The core's floors:
 - **MEM — Memory.** What happened is written once, by its true author, and never silently changed. Nothing more is written than is needed, and no one learns about a subject unseen.
@@ -97,7 +97,7 @@ The records before this one are read through the mapping of `core/relevel.md` §
 
 Under that mapping C15's conformance test keeps its fixtures, which are L1's.
 
-The change operator reaches every rule of a constitution and admits only a conforming rule set. Leaving the core is a re-founding: a new founding document whose genesis entry cites the old record, preceded by notice and a free exit (DEL.7). It is not a step of the old system. Within a deployment, the core is therefore its revolutionary surface (ADR-ETH-02 C2).
+The change operator reaches every rule of a constitution and admits no change that loses a rule-set floor the current rule set meets; a deployment claims conformance only once every floor is met. Leaving the core is a re-founding: a new founding document whose genesis entry cites the old record, preceded by notice and a free exit (DEL.7). It is not a step of the old system. Within a deployment, the core is therefore its revolutionary surface (ADR-ETH-02 C2).
 
 A version of the core is identified by its digest:
 - Anyone may publish a version, and authorship confers nothing.
@@ -203,7 +203,7 @@ GEN.2 holds the founding regime to every other floor it can meet:
 
 ## Consequences
 
-The originator is now small and states what this record proposes every just constitution shares. Everything else — parity, the Custodian's shape, the draw, the witness, the logic — is a constitution's way of meeting these floors, or its value, and is said to be so. The meta-agentic constitution stops being the whole answer and becomes a worked one, with four named contradictions to close. What the core requires:
+The originator is now small and states what this record proposes every just constitution shares. Everything else — parity, the Custodian's shape, the draw, the witness, the logic — is a constitution's way of meeting these floors, or its value, and is said to be so. The meta-agentic constitution stops being the whole answer and becomes a worked one, with eight contradicting clauses, over seven floors, to close. What the core requires:
 - a record that cannot be silently rewritten;
 - power only by grant, and duty only by consent;
 - consequences only by rule, and every derived one applied;
@@ -229,7 +229,7 @@ What becomes hard:
 
 **The core admits rule by a few, and weight by stake, where parties accepted, can leave at no cost the instance controls, take their record and state with them, are judged alike, and can replace the few.** These are declared values (`core/pathologies.md` X45, X46).
 
-**Kind is the one attribute admission may read.** A constitution that leaves a kind out of party status leaves it out of every power, as a declared value. Those it leaves out stay subjects with every protection of VOX and no burden by attribute (OD24).
+**Admission may read kind, and declared thresholds every actor of an admitted kind meets or comes to meet** — a minimum age, legal capacity, a qualification open to every such actor and attested by a party not implicated. A constitution that leaves a kind out of party status leaves it out of every power, as a declared value; a threshold no actor of a kind can meet reads that kind and is declared as such. Those it leaves out stay subjects with every protection of VOX and no burden by attribute (OD24).
 
 **The core does not exclude procedurally valid evil** (X51), and opaque collusion, reward hacking and the observation gap are bounded, not excluded (X53, X54, X55).
 
@@ -287,7 +287,7 @@ This record takes none of them.
 
 **OD32 — Protections that only their holders may narrow.** A2's last sentence and C15 let a protection be narrowed only with the consent of every party it protects, so a single protected party, below capture, blocks the change for good, against COR.1. There are two options, and this record recommends neither, because each costs something the other keeps:
 - *Option A — a declared protection ratchet in the core.* COR.1 admits one exception: a protection the constitution declares as a ratchet may be narrowed only with every protected party's consent. It keeps the strongest guard for those a protection covers. The cost is that an over-protective value can never be corrected, the very reason C15 rejected a ratchet.
-- *Option B — a collective gate.* A2 and C15 replace each party's consent with a gate the protected parties hold collectively, such as a majority of them, which no single party can block. It keeps COR.1 whole. The cost is that a protected minority within the protected class can be outvoted.
+- *Option B — a collective gate.* A2 and C15 replace each party's consent with a gate the protected parties hold collectively, such as a majority of them, which no single party can block. It keeps COR.1 whole. The cost is that a protected minority within the protected class can be outvoted. Option B can carry a floor that limits that cost: a narrowing of a protection reaches a dissenting protected party only after VOX.1's declared interval, with a free exit under DEL.4, and never for acts done before it. The argument made for B with that floor is that it protects the minority within the protected class without a ratchet, and a ratchet can entrench a privilege as easily as it guards a right.
 
 The ledgers of ADR-ETH-01 and ADR-ETH-02 otherwise stand.
 
@@ -297,12 +297,12 @@ The ledgers of ADR-ETH-01 and ADR-ETH-02 otherwise stand.
 ID   STATUS    DECISION                                   ALTERNATIVES REJECTED (why)                         ACCEPTED COST                         REOPENING TRIGGER
 K1   proposed  L0 is the core: MEM, DEL, LEX, IMP, VOX,   meta-agentic text (F10); candidate five (F1);       admits rule by a few with real exit;  structural pathology excluded by none;
                COR over a model of observed systems,      cooperative COR (F1, as A3); blacklist (F6, D16);   procedurally valid evil not           a counter-model violates two
-               and the transient GEN; 38 floors, each a   mechanisms (F10); substantive floor (F6, D3); one   excluded; collusion bounded; kind     principles; a conforming constitution
-               state or run property; definitions apart   principle (F1); voice in rule-making (F10, F6);     the one attribute admission reads     shows a structural pathology; a
-                                                          a core per kind (F7, F2)                                                                  reviewed finding of a violation
+               and the transient GEN; 38 floors, each a   mechanisms (F10); substantive floor (F6, D3); one   excluded; collusion bounded;          principles; a conforming constitution
+               state or run property; definitions apart   principle (F1); voice in rule-making (F10, F6);     admission reads kind and declared     shows a structural pathology; a
+                                                          a core per kind (F7, F2)                            thresholds every admitted actor meets reviewed finding of a violation
 K2   proposed  L0 core, L1 constitution, L2 parameters;   two levels (F7); one relation (F8); renaming the    within a deployment the core is its   clause with no level; level
-               conforms-to and instance-of; Delta admits  records (F8); core amendable inside (F10); authors  revolutionary surface                 unresolvable; a version treated as
-               only conforming rule sets; leaving is      alone publish (F1); a gate among constitutions                                            binding a non-conformer
+               conforms-to and instance-of; Delta never   records (F8); core amendable inside (F10); authors  revolutionary surface                 unresolvable; a version treated as
+               loses a rule-set floor; leaving is         alone publish (F1); a gate among constitutions                                            binding a non-conformer
                re-founding; versions by digest            (F7)
 K3   proposed  ADR-ETH-01, ADR-ETH-02 and the             re-derive first (F5); parity as core (F10);         8 contradictions to close by the      a further contradiction; conformance
                consolidated text are the meta-agentic     weaken a floor to fit (F1)                          founder's edits; 22 floors partial    claimed before the eight areclosed
