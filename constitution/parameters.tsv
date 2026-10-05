@@ -53,3 +53,4 @@ kept_forum	P3.13	declaration	the subject of an open finding on the kept record	d
 forum_ceiling	P3.13	duration	the subject of an open finding on the kept record	finite	the ceiling within which the forum decides on request
 regime_duration	H3.5	duration	every party (the regime ends)	finite	the declared, finite duration of the genesis regime
 external_answerability	OD23.4	declaration	the injured outsider	declared	whether a law binding the instance requires naming a person answerable for a non-human party's acts
+answer_window	H1.5	duration	the party that must answer	>= min_response_window	the window within which a party answers, running from delivery in the declared form

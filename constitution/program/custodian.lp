@@ -15,9 +15,18 @@ vetoes_before(S, Q, N) :- veto(S, Q, T), param(veto_window, W),
                           N = #count{ X : veto(S, Q2, T2), matter_of(Q2, X), T2 < T, T - T2 < W }.
 within_ceiling(S, Q) :- vetoes_before(S, Q, N), param(veto_ceiling, C), N < C.
 
-% clause: P1.2 P1.3 P1.4 P1.5
+% clause: P1.6
+is_reproposal(Q) :- reproposal_of(Q, _).
+family(Q, Q) :- passed_channel(Q), not is_reproposal(Q).
+family(Q2, R) :- reproposal_of(Q2, Q), family(Q, R).
+vetoes_on_act(Q, N) :- veto(_, Q, T), family(Q, R),
+                       N = #count{ S2, Q2 : veto(S2, Q2, T2), family(Q2, R), T2 < T }.
+within_act_bound(Q) :- vetoes_on_act(Q, N), param(veto_per_act, B), N < B.
+act_to_review(Q) :- veto(_, Q, _), not within_act_bound(Q).
+
+% clause: P1.2 P1.3 P1.4 P1.5 P1.6
 standing_veto(S, Q) :- veto(S, Q, _), veto_signed(S, Q), seat_filled(S),
-                       not seat_ineligible(S, Q), within_ceiling(S, Q).
+                       not seat_ineligible(S, Q), within_ceiling(S, Q), within_act_bound(Q).
 vetoed(Q) :- standing_veto(_, Q).
 
 % clause: P1.3

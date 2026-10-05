@@ -143,3 +143,34 @@ admitted_act	act	derived	H1.4	capacity never gates an owed act
 kind_present	kind	consequence	P3.3	some party of the kind holds a mandate
 paused		consequence	P3.3	the parties are all of one kind: a pause
 blocked_by_pause	act	consequence	P3.3	during the pause no act of power takes effect except those listed
+reports_compromise	act,party,time	intake	S1.11	a party's report of compromise or loss of its own signing means, at its intake
+witnessed_between	signature,act	derived	S1.10	a witnessed head covers the signature before the report
+void_signature	signature	derived	S1.10	a compromise reported before the witnessed time of the act voids the signature; under the same head the report prevails
+contact	contact,party,party,matter	attested	C21.5	a contact by a party with a judge about a matter outside the record, later shown
+drawn_judge	matter,party	attested	C17.5	the judge the draw yields for a matter
+contact_entered	contact	intake	C21.5	the judge entered the contact as an attested fact, visible to the subject
+lobbying	contact,party	derived	C17.7	contacting or lobbying the drawn judge about the matter outside the record is a finding
+unentered_contact	contact,party	derived	C21.5	a contact later shown and not entered is a finding against the judge
+duty_on	act,matter,party	intake	C14.4	an act a rule requires of a party on a matter
+owes	party,act	derived	C14.4	no one owes an act on a matter in which a finding names them
+could_be_subject	finding,party	intake	A2.13	a party that could be the finding's subject, as shown to others
+possible_subjects	finding,nat	derived	A2.13	how many parties could be the finding's subject
+shown_to_others	finding	derived	A2.13	shown to others only where at least as many parties could be its subject as the founding document declares
+sees_in_full	party,finding	derived	A2.13	its subject and whoever closes it see it in full
+extension_requested	party,matter,time	intake	H1.5	a party's request, stating no reason, to extend its window on a matter
+window_opens	party,matter,time	intake	H1.5	delivery in the form the party's mandate declares, or a filing's intake time
+extended	party,matter	derived	H1.5	a party's window is extended once per matter at its request
+due	party,matter,time	derived	H1.5	when the party's window on the matter closes
+regime_exit	time	attested	H3.5	the declared, observable event that ends the genesis regime
+power_at	act,time	intake	H3.3	an act of power and its intake time
+founder	party	intake	H3.1	the founder, as the founding document names it
+regime_exited		derived	H3.3	the genesis regime has ended
+exit_before	act	derived	H3.3	an act of power after the regime's exit
+marked_regime	act	derived	H3.3	every act of power under the regime is marked so, for good
+founder_finding_held	finding	derived	H3.3	a finding naming the founder stays open until exit
+reproposal_of	proposal,proposal	intake	P1.6	a re-proposal of an act
+family	proposal,proposal	derived	P1.6	an act and its re-proposals
+vetoes_on_act	proposal,nat	derived	P1.6	vetoes cast earlier against the same act or a re-proposal of it
+within_act_bound	proposal	derived	P1.6	a veto against the same act stands at most a number of times the founding document declares
+act_to_review	proposal	derived	P1.6	after which the act goes to review by a party drawn as P2 provides
+is_reproposal	proposal	derived	P1.6	a proposal that re-proposes an earlier act

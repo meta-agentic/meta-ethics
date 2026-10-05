@@ -1,9 +1,9 @@
 % The working state (A3) and recusal against a fixed base (A2).
 % Findings are minted at intake; rules decide which are open.
 
-% clause: A3.2
+% clause: A3.2 H3.3
 valid_closure(F) :- closure(C, F), witnessed_by(C, W), discharges(C, F),
-                    finding(F, P, _), W != P, not in_chain(W, P).
+                    finding(F, P, _), W != P, not in_chain(W, P), not founder_finding_held(F).
 
 % clause: A3.1
 open(F) :- finding(F, _, _), not valid_closure(F).

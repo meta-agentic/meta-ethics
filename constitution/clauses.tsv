@@ -11,8 +11,8 @@ F6.1	interpretive	01:F6
 F7.1	interpretive	01:F7		
 F8.1	interpretive	01:F8		
 F9.1	interpretive	01:F9		
-T.1	todo	02:T		
-T.2	todo	02:T		
+T.1	procedural	02:T	configuration check (C18) of the founding document's values against parameters.tsv	
+T.2	procedural	02:T	the L0 gate of both Custodians' signatures (P1.13); the governed channel for values	
 D1.1	todo	01:D1		
 D1.2	meta	01:D1 02:C13	checker: C13 derivation/consequence split	
 D2.1	interpretive	01:D2 02:P1		
@@ -26,8 +26,8 @@ D5.1	interpretive	01:D5
 D5.2	todo	01:D5 02:C9 01:D19		
 D6.1	interpretive	01:D6 02:C3		
 D6.2	procedural	01:§adoption-by-instances	the instance's own records; read by the conformance suite	
-C15.1	procedural	02:C15 01:D7	conformance suite: parameter schema, and the parent's fixtures run at the instance's values	
-C15.2	procedural	02:C15 01:D7	conformance suite: parameter schema, and the parent's fixtures run at the instance's values	
+C15.1	meta	02:C15 01:D7	checker: every parameters.tsv row names the role its bound protects	
+C15.2	meta	02:C15 01:D7	checker: parameters.tsv floors are relations in a closed grammar, never numbers	
 C15.3	todo	02:C15 01:D7		
 C15.4	procedural	02:C15 01:D7	conformance suite: parameter schema, and the parent's fixtures run at the instance's values	
 C15.5	interpretive	02:C15 01:D7		
@@ -71,7 +71,7 @@ A2.9	procedural	02:A2 01:D14	the anonymizing act, appended and attested (C11); a
 A2.10	todo	02:A2 01:D14		
 A2.11	procedural	02:A2 02:C23	the anonymizing act, appended and attested (C11); any party re-checks the chain and replays the listed verdicts; parameters in the founding document, checked by C18	
 A2.12	todo	02:A2 01:D14		
-A2.13	todo	02:A2 01:D14		
+A2.13	program	02:A2 01:D14		
 A2.14	todo	02:A2 02:C21		
 A2.15	todo	02:A2 01:D14		
 A2.16	procedural	02:A2 01:D14	the anonymizing act, appended and attested (C11); any party re-checks the chain and replays the listed verdicts; parameters in the founding document, checked by C18	parameter declaration
@@ -89,7 +89,7 @@ C10.1	interpretive	02:C10 01:§open-decisions-adr-eth-01-od-n
 D16.1	interpretive	01:D16		
 D16.2	interpretive	01:D16		
 D17.1	interpretive	01:D17		
-D18.1	todo	01:D18 02:C2		
+D18.1	interpretive	01:D18 02:C2		
 D18.2	interpretive	01:D18 02:C2		
 D18.3	program	02:C2 02:P1		
 D19.1	todo	01:D19		
@@ -103,7 +103,7 @@ C13.2	meta	02:C13	checker: derivation rules read no consequence predicate; fold 
 C14.1	program	02:C14		
 C14.2	program	02:C14		
 C14.3	todo	02:C14		
-C14.4	todo	02:C14		
+C14.4	program	02:C14		
 C14.5	procedural	02:C14	founding document; conformance suite checks the ordering is stratified	parameter declaration
 C16.1	procedural	02:C16	any party's read of the witness; heads and prefix proofs enter as attested facts (C11)	
 C16.2	procedural	02:C16	any party's read of the witness; heads and prefix proofs enter as attested facts (C11)	
@@ -117,14 +117,14 @@ C17.3	procedural	02:C17	the published draw procedure, re-run by any party; the b
 C17.4	procedural	02:C17	the published draw procedure, re-run by any party; the beacon value enters as an attested fact (C11)	
 C17.5	procedural	02:C17 02:C22	the published draw procedure, re-run by any party; the beacon value enters as an attested fact (C11)	
 C17.6	todo	02:C17		
-C17.7	todo	02:C17 02:C21		
+C17.7	program	02:C17 02:C21		first sentence procedural: the draw re-run by any party
 C17.8	procedural	02:C17 02:P2	the published draw procedure, re-run by any party; the beacon value enters as an attested fact (C11)	
 C17.9	procedural	02:C17	the published draw procedure, re-run by any party; the beacon value enters as an attested fact (C11)	parameter declaration
 C21.1	procedural	02:C21	the drawn judge's declaration and the challenger's evidence, entered as attested facts (C11); a second draw (C17)	
 C21.2	program	02:C21		
 C21.3	procedural	02:C21	the drawn judge's declaration and the challenger's evidence, entered as attested facts (C11); a second draw (C17)	
 C21.4	interpretive	02:C21		
-C21.5	todo	02:C21		
+C21.5	program	02:C21		
 C22.1	procedural	02:C22 02:C17	a drawn judge's sameness ruling, entered as an attested act (C11)	
 C22.2	procedural	02:C22 02:C17	a drawn judge's sameness ruling, entered as an attested act (C11)	
 C18.1	procedural	02:C18	conformance suite's configuration check; result published and bound to the founding document's hash	
@@ -133,9 +133,9 @@ C18.3	procedural	02:C18	conformance suite's configuration check; result publishe
 C18.4	procedural	02:C18	conformance suite's configuration check; result published and bound to the founding document's hash	
 H1.1	interpretive	02:H1		
 H1.2	procedural	02:H1	the founding document's declared defence; the conformance suite checks that no floor is narrowed	
-H1.3	todo	02:H1		
+H1.3	procedural	02:H1	a drawn judge's judgement of sameness, entered as an attested fact (C11)	
 H1.4	program	02:H1		
-H1.5	todo	02:H1		
+H1.5	program	02:H1		
 H2.1	interpretive	02:H2		
 H2.2	meta	02:H2	checker: closed vocabulary; only declared predicates enter the program	
 H2.3	todo	02:H2		
@@ -143,7 +143,7 @@ H2.4	interpretive	02:H2
 H2.5	todo	02:H2		
 H3.1	procedural	02:H3	founding document disclosures and every party's inform channel; an exit not checkable from the record is an attested fact (C11)	
 H3.2	procedural	02:H3	founding document disclosures and every party's inform channel; an exit not checkable from the record is an attested fact (C11)	
-H3.3	todo	02:H3		
+H3.3	program	02:H3		
 H3.4	todo	02:H3		
 H3.5	todo	02:H3		
 H3.6	procedural	02:H3	founding document disclosures and every party's inform channel; an exit not checkable from the record is an attested fact (C11)	
@@ -158,8 +158,8 @@ S1.5	todo	02:S1 02:C9
 S1.6	todo	02:S1		
 S1.7	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
 S1.8	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
-S1.9	todo	02:S1		
-S1.10	todo	02:S1		
+S1.9	procedural	02:S1	a finding about the signature decided on the record, by review (P2)	
+S1.10	program	02:S1		
 S1.11	todo	02:S1		
 S1.12	todo	02:S1		
 S1.13	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
@@ -187,7 +187,7 @@ P1.2	program	02:P1
 P1.3	program	02:P1		
 P1.4	program	02:P1		
 P1.5	program	02:P1 02:C9		
-P1.6	todo	02:P1		
+P1.6	program	02:P1		
 P1.7	todo	02:P1		
 P1.8	todo	02:P1		
 P1.9	interpretive	02:P1		
@@ -212,7 +212,7 @@ P2.5	program	02:P2 02:A2
 P2.6	procedural	02:P2 02:A2	configuration check (C18); founding document	
 P2.7	todo	02:P2 02:A2		
 P2.8	procedural	02:P2 02:A2	configuration check (C18); founding document	parameter declaration
-P3.1	todo	02:P3		
+P3.1	procedural	02:P3	configuration check (C18) of the founding document	
 P3.2	todo	02:P3		
 P3.3	program	02:P3		
 P3.4	todo	02:P3		

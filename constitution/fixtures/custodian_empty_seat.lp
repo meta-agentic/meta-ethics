@@ -2,7 +2,7 @@
 % and filling the seat is owed.
 
 now(30).
-param(veto_window, 10). param(veto_ceiling, 2).
+param(veto_window, 10). param(veto_ceiling, 2). param(veto_per_act, 2).
 root_grant(m0). mandate(m0, h, s). issued(m0, 0). carries_seat(m0, ch). admitted(m0).
 custodian_seat(ch). custodian_seat(ca).
 passed_channel(q1). matter_of(q1, x1). veto(ch, q1, 25). veto_signed(ch, q1).
