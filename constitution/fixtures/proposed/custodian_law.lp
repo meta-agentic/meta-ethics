@@ -1,4 +1,4 @@
-% Law-citing vetoes and the ceilings (P1.7, P1.8). The ceiling is two vetoes
+% Law-citing vetoes and the ceilings (LV, as proposed; P1.7, P1.8). The ceiling is two vetoes
 % per window. Every veto counts toward both ceilings unless the law it cites
 % was found breached, for the act or a re-proposal of it: ca's veto on q1,
 % whose law was found breached, does not count; its veto on q2, found
@@ -36,27 +36,27 @@ decided_seq(q6, 15). decided_seq(q7, 16). decided_seq(q8, 17). decided_seq(q9, 1
 % the human whose right each citation names
 cites_right_of(q1, l1, hr). cites_right_of(q2, l2, hr). cites_right_of(q6, l2, hr). cites_right_of(q7, l1, hr). cites_right_of(q9, l1, hr). cites_right_of(q10, l2, hr).
 
-% EXPECT[P1.8]: within_ceiling(ca,q3)
-% EXPECT[P1.8]: counted_veto(ca,q2,11)
-% EXPECT[P1.8]: counted_veto(ca,q4,13)
-% EXPECT-NOT[P1.8]: counted_veto(ca,q1,10)
-% EXPECT-NOT[P1.8]: within_ceiling(ca,q4)
-% EXPECT-NOT[P1.8]: within_ceiling(ca,q5)
-% EXPECT-NOT[P1.7]: law_hold(q4)
-% EXPECT[P1.7]: beyond_ceilings(ca,q4)
-% EXPECT[P1.7]: law_protection_finding(q4,l3,hq)
-% EXPECT[P1.7]: consequence_withheld(q4,hq)
-% EXPECT[P1.7]: law_hold(q1)
-% EXPECT[P1.7]: custodian_passes(q4)
-% EXPECT-NOT[P1.7]: custodian_passes(q1)
-% EXPECT-NOT[P1.7]: law_hold(q2)
-% EXPECT[P1.8]: counted_veto(ch,q6,15)
-% EXPECT-NOT[P1.7]: law_hold(q6)
+% EXPECT[LV.5]: pr_within_ceiling(ca,q3)
+% EXPECT[LV.5]: pr_counted_veto(ca,q2,11)
+% EXPECT[LV.5]: pr_counted_veto(ca,q4,13)
+% EXPECT-NOT[LV.5]: pr_counted_veto(ca,q1,10)
+% EXPECT-NOT[LV.5]: pr_within_ceiling(ca,q4)
+% EXPECT-NOT[LV.5]: pr_within_ceiling(ca,q5)
+% EXPECT-NOT[LV.2]: pr_law_hold(q4)
+% EXPECT[LV.2]: pr_beyond_ceilings(ca,q4)
+% EXPECT[LV.3]: pr_consequence_withheld(q4,hq)
+% EXPECT[LV.3]: pr_consequence_withheld(q4,hq)
+% EXPECT[LV.2]: pr_law_hold(q1)
+% EXPECT[LV.3]: pr_custodian_passes(q4)
+% EXPECT-NOT[LV.3]: pr_custodian_passes(q1)
+% EXPECT-NOT[LV.2]: pr_law_hold(q2)
+% EXPECT[LV.5]: pr_counted_veto(ch,q6,15)
+% EXPECT-NOT[LV.2]: pr_law_hold(q6)
 % EXPECT[P1.7]: law_unfounded_in_family(q6,l2)
-% EXPECT-NOT[P1.8]: counted_veto(ch,q7,16)
+% EXPECT-NOT[LV.5]: pr_counted_veto(ch,q7,16)
 % EXPECT[P1.8]: law_founded(ch,q7)
-% EXPECT[P1.7]: law_hold(q7)
-% EXPECT[P1.8]: counted_veto(ch,q8,17)
-% EXPECT[P1.8]: counted_veto(ch,q9,18)
+% EXPECT[LV.2]: pr_law_hold(q7)
+% EXPECT[LV.5]: pr_counted_veto(ch,q8,17)
+% EXPECT[LV.5]: pr_counted_veto(ch,q9,18)
 % EXPECT-NOT[P1.7]: law_unfounded_in_family(q10,l2)
 % EXPECT-NOT[P1.7]: law_breach_found_in_family(q9,l1)
