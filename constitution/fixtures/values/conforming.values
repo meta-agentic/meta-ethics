@@ -28,7 +28,7 @@ min_response_window 3
 challenge_window 3
 delivery_bound 2
 challenge_ceiling 5
-recusal_standard C21.2-floor-plus-shared-employer
+recusal_standard chain,benefit,prior_action,shared_employer
 cause_challenge_ceiling 7
 sameness_ceiling 7
 roster_cap 20
@@ -45,7 +45,7 @@ continuity_procedure signed-challenge-with-heads
 nonhuman_seat_holder the-nonhuman-seat-party
 seat_fill_ceiling 30
 veto_window 40
-veto_ceiling 4
+veto_ceiling 2
 veto_per_act 2
 owed_content_ceiling 14
 reviewer_independence exclude-shared-substrate
@@ -58,3 +58,4 @@ external_answerability no-such-law-binds
 answer_window 5
 ratification_window 30
 binding_dispute_ceiling 14
+law_review_ceiling 30

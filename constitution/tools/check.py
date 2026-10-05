@@ -142,6 +142,10 @@ def tag_at(tags, line):
     return best
 
 
+# sorts whose constants a rule may write: closed enumerations L0 declares
+ENUM_SORTS = {"kind", "reading", "param"}
+
+
 # --------------------------------------------------------------- program
 
 def check_program(vocab, status):
@@ -150,6 +154,8 @@ def check_program(vocab, status):
     files = sorted(glob.glob(os.path.join(ROOT, "program", "*.lp")))
     files += sorted(glob.glob(os.path.join(ROOT, "program", "proposed", "*.lp")))
     programmed = {}           # clause id -> number of rules
+    heads = {"in_force": set(), "proposed": set()}
+    read_in_force = set()
     combined = []
     n_rules = 0
     for path in files:
@@ -184,6 +190,14 @@ def check_program(vocab, status):
                         fail("binding", "%s: tag %s is not a `%s` paragraph (%s)" % (where, cid, want, status.get(cid)))
                     programmed[cid] = programmed.get(cid, 0) + 1
             check_rule(st, vocab, where)
+            group = "proposed" if os.sep + "proposed" + os.sep in path else "in_force"
+            heads[group].add(atom_sig(st.head.atom)[0])
+            if group == "in_force":
+                read_in_force.update(atom_sig(a)[0] for a in symbolic_atoms(st) if a is not st.head.atom)
+    # a proposed rule adds nothing to the program in force: it derives no
+    # predicate the program in force derives or reads
+    for pred in sorted(heads["proposed"] & (heads["in_force"] | read_in_force)):
+        fail("binding", "proposed rules derive %s, which the program in force derives or reads" % pred)
     # the whole program, through the evidence checker's analysis
     spec = importlib.util.spec_from_file_location("evidence_check", os.path.join(REPO, "evidence/checker/check.py"))
     ev = importlib.util.module_from_spec(spec)
@@ -209,9 +223,21 @@ def check_rule(st, vocab, where):
     head_cls = hdecl["cls"] if hdecl else None
     if hdecl and head_cls not in RULE_CLASSES:
         fail("symmetry", "%s: rule head %s/%d is %s; no rule creates an input (C6)" % (where, head_name, len(head_args), head_cls))
-    for a in head_args:
+    for a, sort in zip(head_args, hdecl["sorts"] if hdecl else []):
         if a.ast_type == ast.ASTType.Function and a.arguments:
             fail("symmetry", "%s: function term in the head mints an object (C6): %s" % (where, a))
+        elif is_constant(a) and sort not in ENUM_SORTS and not (
+                a.ast_type == ast.ASTType.SymbolicTerm and a.symbol.type == clingo.SymbolType.Number):
+            fail("symmetry", "%s: constant %s of sort %s in the head names an object no act minted (C6)"
+                 % (where, a, sort))
+    # an assignment of a constant names an object as surely as a head constant
+    for n in walk(st):
+        if n.ast_type == ast.ASTType.Comparison and len(n.guards) == 1 \
+                and n.guards[0].comparison == ast.ComparisonOperator.Equal:
+            for side in (n.term, n.guards[0].term):
+                if is_constant(side) and not (side.ast_type == ast.ASTType.SymbolicTerm
+                                              and side.symbol.type == clingo.SymbolType.Number):
+                    fail("symmetry", "%s: assignment of the constant %s names an object (C6)" % (where, side))
     var_sort = {}
     for atom in symbolic_atoms(st):
         name, args = atom_sig(atom)
@@ -259,6 +285,8 @@ def check_rule(st, vocab, where):
             fail("fragment", "%s: double negation, outside the fragment: %s" % (where, n))
         elif t in (ast.ASTType.Pool, ast.ASTType.Interval):
             fail("fragment", "%s: %s term in a rule: %s" % (where, t.name.lower(), n))
+        elif t == ast.ASTType.SymbolicTerm and n.symbol.type == clingo.SymbolType.String:
+            fail("symmetry", "%s: string constant %s in a rule names an object no act minted (C6)" % (where, n))
         elif t == ast.ASTType.Function and n.arguments:
             fail("symmetry", "%s: compound term %s mints or hides an object (C1, C6)" % (where, n))
         elif t == ast.ASTType.Comparison:
@@ -380,6 +408,10 @@ SELFTEST = [
     ("fragment", "open(F) :- finding(F, _, _), not not valid_closure(F)."),
     ("fragment", "holds_inform(P) :- party(P;Q), subject(Q)."),
     ("kinds", "own_exit(A) :- made_one_kind(A)."),
+    # the formal re-check: constants that name objects no act minted
+    ("symmetry", 'chain_of(A, X) :- act(A, _, _, _), X = "m".'),
+    ("symmetry", "chain_of(A, X) :- act(A, _, _, _), X = m."),
+    ("symmetry", "chain_of(A, m) :- act(A, _, _, _)."),
 ]
 
 

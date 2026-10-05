@@ -17,11 +17,23 @@ filling_owed(S) :- empty_seat(S).
 law_citing(S, Q) :- veto_cites_law(S, Q, _).
 counted_veto(S, Q, T) :- veto(S, Q, T), not law_citing(S, Q).
 counted_veto(S, Q, T) :- veto(S, Q, T), veto_cites_law(S, Q, L), law_unfounded(Q, L).
-law_hold(Q) :- veto_cites_law(_, Q, L), not law_unfounded(Q, L).
+
+% clause: P1.7 P1.3 P1.20
+% only a filled, eligible seat's signed veto citing a law holds the act, and
+% never an owed act; a pending review holds it up to a ceiling
+valid_law_veto(S, Q, L) :- veto_cites_law(S, Q, L), veto(S, Q, _), veto_signed(S, Q), seat_filled(S),
+                           not seat_ineligible(S, Q), not owed_act(Q).
+law_review_lapsed(Q, L) :- valid_law_veto(S, Q, L), veto(S, Q, T), now(N), param(law_review_ceiling, X),
+                           N - T >= X.
+law_hold(Q) :- valid_law_veto(_, Q, L), law_breach_found(Q, L).
+law_hold(Q) :- valid_law_veto(_, Q, L), not law_unfounded(Q, L), not law_breach_found(Q, L),
+               not law_review_lapsed(Q, L).
 
 % clause: P1.5 P1.8
-vetoes_before(S, Q, N) :- veto(S, Q, T), param(veto_window, W),
-                          N = #count{ X : counted_veto(S, Q2, T2), matter_of(Q2, X), T2 < T, T - T2 < W }.
+% the window is counted in decided proposals, as D2's is (decided_seq/2)
+vetoes_before(S, Q, N) :- veto(S, Q, _), decided_seq(Q, K), param(veto_window, W),
+                          N = #count{ X : counted_veto(S, Q2, _), decided_seq(Q2, K2), matter_of(Q2, X),
+                                      K2 < K, K - K2 < W }.
 within_ceiling(S, Q) :- vetoes_before(S, Q, N), param(veto_ceiling, C), N < C.
 
 % clause: P1.6

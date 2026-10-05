@@ -19,9 +19,9 @@ RULE_CLASSES = {"derived", "consequence"}
 NARRATIVE = re.compile(r"\b((?<!be )restored|corrected|correction|amended|amendment|amendments|"
                        r"supersedes?|superseded|as first written|now reads|first draft)\b", re.I)
 # One floor atom; a floor is one or more atoms joined by " & ", all of which hold.
-FLOOR = re.compile(r"^(finite|declared|nonempty|positive|law|>= [0-9]+|>= [a-z_]+( \+ [a-z_]+)?|"
-                   r"<= share\(D2\)|clause\([A-Z]+[0-9]*\.[0-9]+\))$")
-KEYWORDS = ("finite", "declared", "nonempty", "positive", "law", "share", "clause")
+FLOOR = re.compile(r"^(finite|declared|nonempty|positive|law|>= [0-9]+|>= [a-z_]+( \+ [a-z_]+)?|= [a-z_]+|"
+                   r"<= share\(D2\) pooled|superset\([a-z_]+(,[a-z_]+)*\))$")
+KEYWORDS = ("finite", "declared", "nonempty", "positive", "law", "share", "pooled", "superset")
 
 errors = []
 SKIP = {ast.ASTType.Program} | ({ast.ASTType.Comment} if hasattr(ast.ASTType, "Comment") else set())
@@ -175,10 +175,7 @@ def check_parameters(inv_ids, prog_files):
             if not FLOOR.match(atom):
                 fail("parameters", "%s: floor %r is outside the floor grammar" % (r["parameter"], atom))
                 continue
-            m = re.match(r"clause\((.+)\)", atom)
-            if m and m.group(1) not in inv_ids:
-                fail("parameters", "%s: floor names clause %s, not a paragraph of L0.md" % (r["parameter"], m.group(1)))
-            for ref in re.findall(r"[a-z_]+", re.sub(r"clause\(.*\)|share\(D2\)", "", atom)):
+            for ref in re.findall(r"[a-z_]+", re.sub(r"superset\(.*\)|share\(D2\)", "", atom)):
                 if ref not in KEYWORDS and ref not in ids:
                     fail("parameters", "%s: floor names undeclared parameter %s" % (r["parameter"], ref))
     declared_in = {r["clause"] for r in rows}

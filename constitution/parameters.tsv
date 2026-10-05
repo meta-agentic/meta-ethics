@@ -26,7 +26,7 @@ min_response_window	C18.1	duration	the party that must answer	positive & law & f
 challenge_window	C17.9	duration	every party to a matter	>= min_response_window	the challenge window before a draw
 delivery_bound	C17.9	duration	every party to a matter	finite	the bound on delivery of a filing to every party to the matter
 challenge_ceiling	C17.9	duration	the filer	>= delivery_bound + challenge_window	the ceiling from intake of the challenge window
-recusal_standard	C17.9	standard	the subject of a matter	clause(C21.2)	the recusal standard, at least its L0 floor: a judge or reviewer in a party's delegation chain, one who benefits from the outcome, and one who has acted in the matter (C21.2)
+recusal_standard	C17.9	set	the subject of a matter	superset(chain,benefit,prior_action)	the recusal standard, as the set of grounds it covers; at least C21.2's floor: in a party's delegation chain (chain), benefits from the outcome (benefit), has acted in the matter (prior_action)
 cause_challenge_ceiling	C21.3	duration	the subject of a matter	finite	the ceiling within which a challenge for cause is judged
 sameness_ceiling	C22.2	duration	the later filer	finite	the ceiling within which a judgement of sameness is decided
 roster_cap	C18.1	count	every party	finite	the roster size up to which the configuration check enumerates
@@ -42,8 +42,8 @@ carrier	S1.20	method	the signer	declared	the carriers a signed act may be made o
 continuity_procedure	S2.9	method	the non-human party	declared	how the challenge, the attestation and the act of presence are made
 nonhuman_seat_holder	P1.22	declaration	every party (the seat is filled)	nonempty	who holds the non-human Custodian seat, its charter and its key's custody
 seat_fill_ceiling	P1.4	duration	every party (the seat is filled)	finite	the ceiling within which an empty Custodian seat is filled
-veto_window	P1.5	duration	every party (the veto stays a last resort)	declared	the window over which a seat's vetoes are counted
-veto_ceiling	P1.5	count	every party (the veto stays a last resort)	finite & <= share(D2)	the count of matters per window a seat may veto
+veto_window	P1.5	count	every party (the veto stays a last resort)	= last_word_window	the window over which a seat's vetoes are counted, in decided proposals; it is D2's window, so the ceiling and the share measure the same thing
+veto_ceiling	P1.5	count	every party (the veto stays a last resort)	finite & <= share(D2) pooled	the count of matters per window a seat may veto; both seats' ceilings together stay within D2's share of the window (pooled; whether the share is per seat or for both seats together is the founder's to decide)
 veto_per_act	P1.6	count	the proposer	finite	how many times a veto against one act or its re-proposals stands
 owed_content_ceiling	P1.10	duration	the party owed the act	finite	the ceiling within which an owed act's content is decided
 reviewer_independence	P2.8	standard	the subject of a verdict	declared	whether a shared substrate or model family makes a reviewer implicated
@@ -56,3 +56,4 @@ external_answerability	OD23.4	declaration	the injured outsider, and the human pa
 answer_window	H1.5	duration	the party that must answer	positive & >= min_response_window & finite	the window within which a party answers, running from delivery in the declared form
 ratification_window	H3.8	duration	every party (acts of the regime are ratified)	positive & finite	the window at exit within which an act of power marked under the regime is ratified
 binding_dispute_ceiling	BIND.3	duration	the subject of a disputed outcome	positive & finite	the ceiling within which a dispute of a program outcome against this text is decided (proposed)
+law_review_ceiling	P1.7	duration	the proposer (no act is held without end)	positive & finite	the ceiling within which the review of a law-citing veto is decided; past it, an undecided review no longer holds the act

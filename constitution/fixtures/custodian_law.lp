@@ -4,7 +4,7 @@
 % is pending, even beyond the ordinary ceiling.
 
 now(30).
-param(veto_window, 20). param(veto_ceiling, 2). param(veto_per_act, 5).
+param(law_review_ceiling, 100). param(veto_window, 20). param(veto_ceiling, 2). param(veto_per_act, 5).
 root_grant(m0). mandate(m0, h, s). issued(m0, 0). carries_seat(m0, ch). admitted(m0).
 root_grant(m1). mandate(m1, a, s). issued(m1, 0). carries_seat(m1, ca). admitted(m1).
 custodian_seat(ch). custodian_seat(ca).
@@ -13,6 +13,9 @@ passed_channel(q2). matter_of(q2, x2). veto(ca, q2, 11). veto_signed(ca, q2). ve
 passed_channel(q3). matter_of(q3, x3). veto(ca, q3, 12). veto_signed(ca, q3).
 passed_channel(q4). matter_of(q4, x4). veto(ca, q4, 13). veto_signed(ca, q4). veto_cites_law(ca, q4, l3).
 passed_channel(q5). matter_of(q5, x5). veto(ca, q5, 14). veto_signed(ca, q5).
+
+% each vetoed act's position among decided proposals
+decided_seq(q1, 10). decided_seq(q2, 11). decided_seq(q3, 12). decided_seq(q4, 13). decided_seq(q5, 14).
 
 % EXPECT[P1.8]: within_ceiling(ca,q3)
 % EXPECT[P1.8]: counted_veto(ca,q2,11)

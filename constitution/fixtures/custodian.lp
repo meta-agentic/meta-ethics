@@ -26,6 +26,9 @@ seat_kind(ch, human). seat_kind(ca, nonhuman). kind_of(h, human). kind_of(a, non
 l0_change(z1). l0_signed(z1, ch). l0_signed(z1, ca).
 l0_change(z2). l0_signed(z2, ch).
 
+% each vetoed act's position among decided proposals
+decided_seq(q1, 5). decided_seq(q3, 7). decided_seq(q4, 8). decided_seq(q5, 20). decided_seq(q7, 21). decided_seq(r1, 22). decided_seq(r2, 23). decided_seq(r3, 24). decided_seq(q10, 26). decided_seq(q11, 27).
+
 % EXPECT[P1.2]: vetoed(q1)
 % EXPECT[P1.2]: chosen(c1,o1)
 % EXPECT[P1.2]: status_quo(c2)

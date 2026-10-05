@@ -11,9 +11,14 @@ comment) and decides every floor of parameters.tsv against them. Floor atoms:
                value is required, and the check records the atom as attested
   >= n         at least the constant n
   >= p, >= p + q   at least the value of p, or of p plus q
-  <= share(D2) at most last_word_share times last_word_window: the share at
-               which D2's last word ceases to be an exception (P1.5)
-  clause(id)   the value names that paragraph, whose floor it meets (C18)
+  = p          equal to the value of p (one window, in decided proposals)
+  <= share(D2) pooled
+               both seats together within D2's share: twice the value at
+               most last_word_share times last_word_window (P1.5; pooled,
+               pending the founder's decision on per seat or pooled)
+  superset(a,b,...)
+               the value, a comma-separated set, contains every listed
+               element (the recusal standard's grounds, C21.2)
 
   c18.py                 decide every fixtures/values/*.values file against its
                          `# EXPECT:` line (`conforms`, or `fails <parameter>` for
@@ -64,11 +69,14 @@ def decide(values):
                 ok = n is not None and (atom == "finite" or n > 0)
             elif atom in ("declared", "law"):
                 ok = True
-            elif atom == "<= share(D2)":
+            elif atom == "<= share(D2) pooled":
                 share, window = number(values.get("last_word_share")), number(values.get("last_word_window"))
-                ok = None not in (n, share, window) and n <= share * window
-            elif atom.startswith("clause("):
-                ok = atom[len("clause("):-1] in v
+                ok = None not in (n, share, window) and 2 * n <= share * window
+            elif atom.startswith("superset("):
+                have = {x.strip() for x in v.split(",")}
+                ok = set(atom[len("superset("):-1].split(",")) <= have
+            elif atom.startswith("= "):
+                ok = n is not None and n == number(values.get(atom[2:]))
             else:
                 m = re.match(r">= (\S+)(?: \+ (\S+))?$", atom)
                 terms = [number(t) if re.match(r"[0-9]", t) else number(values.get(t))

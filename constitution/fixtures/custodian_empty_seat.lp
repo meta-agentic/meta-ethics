@@ -10,6 +10,9 @@ seat_kind(ch, nonhuman). kind_of(h, human).
 passed_channel(q2). matter_of(q2, x2). about(q2, h).
 choice_needed(c1). option(c1, o1). choice(ch, c1, o1).
 
+% each vetoed act's position among decided proposals
+decided_seq(q1, 25).
+
 % EXPECT[P1.21]: composition_breach(ch)
 % EXPECT[P1.1]: composition_breach(ch)
 % EXPECT[P1.4]: empty_seat(ca)

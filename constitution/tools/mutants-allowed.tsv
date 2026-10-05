@@ -37,15 +37,14 @@ takes_effect(V) :- verdict(V,_,_); bears_consequence(V); review_done(V); window_
 provisional(V) :- verdict(V,_,_); bears_consequence(V); not takes_effect(V). | drop verdict(V,_,_)	type guard: bears_consequence/1 is recorded only for a verdict
 valid_closure(F) :- closure(C,F); witnessed_by(C,W); discharges(C,F); finding(F,P,_); W != P; not in_chain(W,P); not founder_finding_held(F). | drop closure(C,F)	type guard: witnessing and discharge are recorded only for a closing act
 drawn_decides(Q) :- choice_needed(Q); no_status_quo(Q); not some_chosen(Q); choice_since(Q,T); now(N); param(owed_content_ceiling,X); (N-T) >= X. | drop choice_needed(Q)	type guard: no_status_quo/1 and choice_since/2 are recorded only for an act that must be chosen
-first_dispute(D) :- disputed(D,_,_); dispute_at(D,_); not earlier_dispute(D). | drop disputed(D,_,_)	type guard: an intake time is recorded only for a dispute
-first_dispute(D) :- disputed(D,_,_); dispute_at(D,_); not earlier_dispute(D). | drop dispute_at(D,_)	type guard: every dispute is recorded with its intake time
-dispute_needs_human(D) :- first_dispute(D); disputed(D,V,_); consequence_on(V,P); kind_of(P,human). | drop first_dispute(D)	no outcome reads it: decisions count only on a first dispute
+valid_law_veto(S,Q,L) :- veto_cites_law(S,Q,L); veto(S,Q,_); veto_signed(S,Q); seat_filled(S); not seat_ineligible(S,Q); not owed_act(Q). | drop veto(S,Q,_)	type guard: a veto's signature is verified only for a recorded veto
+law_hold(Q) :- valid_law_veto(_,Q,L); not law_unfounded(Q,L); not law_breach_found(Q,L); not law_review_lapsed(Q,L). | drop not law_breach_found(Q,L)	equivalent: where the breach is found the rule above holds the act
+custodian_passes(Q) :- passed_channel(Q); not vetoed(Q); not law_hold(Q); not some_eligible_seat(Q); act_reviewed(Q); not stopped_by_review(Q). | drop not law_hold(Q)	equivalent: a law-citing veto holds only from an eligible seat, and here no seat is eligible
+later_admitted(D) :- admitted_dispute(D); disputed(D,V,_); dispute_at(D,T); admitted_dispute(D2); disputed(D2,V,_); dispute_at(D2,T2); T2 < T. | drop admitted_dispute(D)	no outcome reads it: joined_since/2 asks only about admitted disputes
+dispute_needs_human(V) :- dispute_of(V); consequence_on(V,P); kind_of(P,human). | drop dispute_of(V)	no outcome reads it: decider_ok/2 asks only about disputed outcomes
+decider_ok(V,R) :- dispute_decision(V,_,R,_); dispute_of(V); dispute_needs_human(V); kind_of(R,human); not decider_barred(R). | drop dispute_decision(V,_,R,_)	implied: decider_ok/2 is read only together with the decision
+decider_ok(V,R) :- dispute_decision(V,_,R,_); dispute_of(V); dispute_needs_human(V); kind_of(R,human); not decider_barred(R). | drop dispute_needs_human(V)	equivalent: where no human is needed the rule above admits every reviewer not barred
+decided(V) :- dispute_decision(V,_,R,_); decider_ok(V,R). | drop dispute_decision(V,_,R,_)	implied: decider_ok/2 holds only for a recorded decision
+protection_held(X,P) :- admitted_dispute(D); disputed(D,V,P); withheld_protection(V,P,X); not upheld(V). | drop admitted_dispute(D)	equivalent: a party whose protection is withheld has standing, so its first dispute is admitted
 decider_barred(R) :- dispute_decision(_,_,R,_); founder_chain(R); not regime_exited. | drop dispute_decision(_,_,R,_)	no outcome reads it: decider_ok/2 asks only after a deciding reviewer
-decider_ok(D,R) :- dispute_decision(D,_,R,_); dispute_needs_human(D); kind_of(R,human); not decider_barred(R). | drop dispute_decision(D,_,R,_)	implied: decider_ok/2 is read only together with the decision
-decider_ok(D,R) :- dispute_decision(D,_,R,_); dispute_needs_human(D); kind_of(R,human); not decider_barred(R). | drop dispute_needs_human(D)	equivalent: where no human is needed the rule above admits every reviewer not barred
-upheld_program(D,T) :- first_dispute(D); dispute_decision(D,program,R,T); decider_ok(D,R). | drop first_dispute(D)	no outcome reads it: holding and effect read first disputes only
-dispute_lapsed(D) :- first_dispute(D); dispute_at(D,T); now(N); param(binding_dispute_ceiling,X); (N-T) >= X; not decided(D). | drop first_dispute(D)	no outcome reads it: a lapse marks a dispute and holds nothing by itself
-decided(D) :- first_dispute(D); dispute_decision(D,_,R,_); decider_ok(D,R). | drop first_dispute(D)	no outcome reads it: decided/1 is asked only of first disputes
-decided(D) :- first_dispute(D); dispute_decision(D,_,R,_); decider_ok(D,R). | drop dispute_decision(D,_,R,_)	implied: decider_ok/2 holds only for a recorded decision
-effective_from(V,T) :- bind_takes_effect(V); first_dispute(D); disputed(D,V,_); upheld_program(D,T). | drop first_dispute(D)	implied: upheld_program/2 holds only for a first dispute
-disputed_outcome(V) :- first_dispute(D); disputed(D,V,_). | drop first_dispute(D)	equivalent: every disputed outcome has a first dispute
+decider_ok(V,R) :- dispute_decision(V,_,R,_); dispute_of(V); dispute_needs_human(V); kind_of(R,human); not decider_barred(R). | drop dispute_of(V)	implied: dispute_needs_human/1 holds only for a disputed outcome
