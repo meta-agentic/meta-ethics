@@ -339,20 +339,28 @@ C16  proposed  external witness: public, append-only,     timestamp authority al
                                                           for time and randomness (F1)                                                             an unwitnessed interval; unlinked change
 C17  proposed  draw from a frozen set with a beacon seed  witness head as seed (F1); eligibility at draw     one wait for the challenge window    draw changed after filing; steerable or
                taken after a challenge window from        (F1); draw as a rule (F2); peremptory challenge    and the beacon                       early value; second draw by refiling;
-               delivery, outside the rules; one blind     (F1); commit-reveal secrecy (F9,F8)                                                     re-run differs; judge rules on own
-               challenge against the set (C20); one draw                                                                                          challenge; contact with the judge outside
-               per matter, whoever files (C22); judge                                                                                             the record yields no finding
-               computable once the beacon publishes,
-               lobbying a finding (C21)
+               delivery, capped from intake, outside the  (F1); commit-reveal secrecy (F9,F8)                                                     re-run differs; judge rules on own
+               rules; one blind challenge against the                                                                                             challenge; contact with the judge outside
+               set under the recusal standard (C20); one                                                                                          the record yields no finding
+               draw per matter, whoever files (C22);
+               judge computable once the beacon
+               publishes, lobbying a finding (C21);
+               window, ceiling, delivery bound and
+               recusal standard are parameters
 C18  proposed  joint configuration check at genesis and   one at a time (F1); check as ratification (F6 —    —                                    dead document conforms; vacuous result
-               on every parameter change; challenge and   the check is no party); schema beside text                                              unmarked; readable and checked differ;
-               staleness windows fit; the                 (F1,F9)                                                                                 passes with no reviewer, no fillable or
-               external-answerability declaration made                                                                                            replaceable seats, or windows that do not
-               (OD23); from a declared least                                                                                                      fit
+               on every parameter change; challenge       the check is no party); schema beside text                                              unmarked; readable and checked differ;
+               window, its intake ceiling against the     (F1,F9)                                                                                 passes with no reviewer, no fillable or
+               declared delivery bound, and staleness                                                                                             replaceable seats, windows that do not
+               windows fit; the recusal standard meets                                                                                            fit, or a recusal standard below its floor
+               its L0 floor (C21); the
+               external-answerability declaration made
+               (OD23); from a declared least
                composition, a reviewer for each kind and
-               two fillable, replaceable Custodian seats
-               one of each kind (P1,P2), vacuous below;
-               decided by enumeration up to the cap
+               two fillable Custodian seats one of each
+               kind, with a non-implicated candidate of
+               each kind for replacement (P1,P2),
+               vacuous below; decided by enumeration up
+               to the cap
 S1   proposed  every act requiring a signature signed by  platform account action (F1 — repudiable); one     every signer bears a key             disputed signature undecidable on the
      (C5)      each party that performs it, human or      technology in L0 (F7,D5); operator holds the key                                        evidence; method weakens before renewal;
                not; floors fixed, method a parameter;     (F1); single identity provider (F1); humans only                                        act takes effect unsigned or unwitnessed;
@@ -373,21 +381,23 @@ S2   proposed  non-human party continuous iff mandate,    identity by model or p
                only by a signed act; failure never ends
                the answer; steering attributed to the
                steerer
-P1   proposed  Custodian is two seats, one of each kind   third seat (F1 — D2); objection-only veto          two last words can deadlock;         D2's trigger for either seat; seats act as
-     (D2 seed, (F6), each with tie-break and veto as      (F2,F6); veto reserved to humans (F2,F6); one      genesis custody limitation; a third  one; non-human seat acts without its own
-     D18,      last resort; a veto stands within a        seat choosing alone (F1); bodies breaking each     asymmetry by kind                    key; veto overridden or beyond ceiling or
-     OD1,OD2,  ceiling per window and a bound per act,    other's ties (F1); veto with no ceiling (F1,A3);                                        per-act bound; choice one seat did not
-     OD3,OD6)  then review decides; a law-citing veto     seats regardless of kind (F6); D9 about the                                             sign; owed act stopped or undecided past
-               gets one review per law per act, counts    office (F5,C2); veto over own replacement (F1);                                         ceiling; seat unfilled past ceiling; own
-               toward neither ceiling if founded and      attestation only (F2,F6)                                                                replacement vetoed; a kind left
-               toward both if not, and the act waits                                                                                              unrepresented; L0 change to the Custodian
-               while the breach is found; L0 change                                                                                               with no admissible path, or any L0 change
-               always needs both signatures, outside                                                                                              passed on one signature; a founded
-               both ceilings and any drawn review; a                                                                                              law-citing veto counted toward a ceiling;
-               choice needs both or the status quo                                                                                                a second review on a law already reviewed
-               stands; both recused: review decides;                                                                                              for the act; an act passed while review
-               empty seat: veto only, filling owed; an                                                                                            finds the breach of law its veto cited
-               owed act's content decided by a drawn
+P1   proposed  Custodian is two seats, one of each kind   third seat (F1 — D2); objection-only veto          two last words can deadlock;         D2's trigger for either seat; a seat
+     (D2 seed, (F6), each with tie-break and veto as      (F2,F6); veto reserved to humans (F2,F6); one      genesis custody limitation; a third  routinely recused through findings
+     D18,      last resort; a veto stands within a        seat choosing alone (F1); bodies breaking each     asymmetry by kind                    attributed along its chain (vital sign);
+     OD1,OD2,  ceiling per window and a bound per act,    other's ties (F1); veto with no ceiling (F1,A3);                                        seats act as one; non-human seat acts
+     OD3,OD6)  then review decides; a law-citing veto     seats regardless of kind (F6); D9 about the                                             without its own key; veto overridden or
+               gets one review per law per act or         office (F5,C2); veto over own replacement (F1);                                         beyond ceiling or per-act bound; choice
+               re-proposal, a changed law or              attestation only (F2,F6)                                                                one seat did not sign; owed act stopped or
+               interpretation counting as distinct,                                                                                               undecided past ceiling; seat unfilled past
+               counts toward neither ceiling if founded                                                                                           ceiling; own replacement vetoed; a kind
+               and toward both if not, and the act waits                                                                                          left unrepresented; L0 change to the
+               while the breach is found; L0 change                                                                                               Custodian with no admissible path, or any
+               always needs both signatures, outside                                                                                              L0 change passed on one signature; a
+               both ceilings and any drawn review; a                                                                                              founded law-citing veto counted toward a
+               choice needs both or the status quo                                                                                                ceiling; a second review on a law already
+               stands; both recused: review decides;                                                                                              reviewed for the act; an act passed while
+               empty seat: veto only, filling owed; an                                                                                            review finds the breach of law its veto
+               owed act's content decided by a drawn                                                                                              cited
                party past its ceiling; owed acts beyond
                either power; D9 about the party; no veto
                over own replacement; non-human signature
@@ -412,9 +422,13 @@ C20  proposed  challenge lodged blind against the set     unevidenced challenge 
 C21  proposed  the drawn judge is not secret; the read    commit-reveal secrecy (F9,F8); masked read log     a computed judge can be searched     outside contact yields no finding; a read
      (A2,C17)  log names it as any reader; the judge      (F1); no challenge after the draw (F9)             for a disqualifying relation         missing from the log; challenge for cause
                declares relations the recusal standard                                                                                            without evidence, outside the standard or
-               covers and enters outside contacts;                                                                                                past its ceiling; undeclared covered
-               lobbying a finding; one challenge for                                                                                              relation; verdict of a removed judge not
-               cause on evidence, within the standard, a                                                                                          reviewed
+               covers and enters outside contacts; the                                                                                            past its ceiling; undeclared covered
+               standard is a bound protecting the                                                                                                 relation; verdict of a removed judge not
+               subject whose L0 floor covers the                                                                                                  reviewed
+               delegation chain, benefit from the
+               outcome and prior action in the matter;
+               lobbying a finding; one challenge for
+               cause on evidence, within the standard, a
                given verdict to review
 C22  proposed  first draw on a matter stands, whoever     a draw per filer (F1 — steering by refiling); a    —                                    second draw on a matter; later filer bound
      (C17)     files; a later filer challenges only on    later filer challenging on any relation (F1 —                                           with no challenge; sameness judged undrawn
