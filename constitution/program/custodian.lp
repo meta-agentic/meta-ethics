@@ -1,0 +1,41 @@
+% The Custodian in parity (P1), the signer of an L0 change (D18), and the
+% ineligibility of a seat on proposals about its holder (D9).
+
+% clause: P1.19 D9.3 P1.3
+seat_ineligible(S, Q) :- custodian_seat(S), seat_holder(P, S), about(Q, P).
+seat_ineligible(S, Q) :- custodian_seat(S), seat_holder(P, S), matter_of(Q, X), recused(P, X).
+
+% clause: P1.4
+seat_filled(S) :- custodian_seat(S), seat_holder(_, S).
+empty_seat(S) :- custodian_seat(S), not seat_filled(S).
+filling_owed(S) :- empty_seat(S).
+
+% clause: P1.5
+vetoes_before(S, Q, N) :- veto(S, Q, T), param(veto_window, W),
+                          N = #count{ X : veto(S, Q2, T2), matter_of(Q2, X), T2 < T, T - T2 < W }.
+within_ceiling(S, Q) :- vetoes_before(S, Q, N), param(veto_ceiling, C), N < C.
+
+% clause: P1.2 P1.3 P1.4 P1.5
+standing_veto(S, Q) :- veto(S, Q, _), veto_signed(S, Q), seat_filled(S),
+                       not seat_ineligible(S, Q), within_ceiling(S, Q).
+vetoed(Q) :- standing_veto(_, Q).
+
+% clause: P1.3
+eligible_seat(S, Q) :- custodian_seat(S), seat_filled(S), passed_channel(Q), not seat_ineligible(S, Q).
+some_eligible_seat(Q) :- eligible_seat(_, Q).
+
+% clause: P1.2 P1.3
+custodian_passes(Q) :- passed_channel(Q), not vetoed(Q), some_eligible_seat(Q).
+custodian_passes(Q) :- passed_channel(Q), not vetoed(Q), not some_eligible_seat(Q),
+                       act_reviewed(Q), not stopped_by_review(Q).
+
+% clause: P1.2 P1.3 P1.4
+seat_choice(S, Q, O) :- choice(S, Q, O), seat_filled(S), not seat_ineligible(S, Q).
+dissent(Q, O) :- choice_needed(Q), option(Q, O), custodian_seat(S), not seat_choice(S, Q, O).
+chosen(Q, O) :- choice_needed(Q), option(Q, O), not dissent(Q, O).
+some_chosen(Q) :- chosen(Q, _).
+status_quo(Q) :- choice_needed(Q), not some_chosen(Q).
+
+% clause: P1.13 D18.3
+l0_signature_missing(Q) :- l0_change(Q), custodian_seat(S), not l0_signed(Q, S).
+l0_change_passes(Q) :- l0_change(Q), not l0_signature_missing(Q).
