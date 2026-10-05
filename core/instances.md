@@ -40,14 +40,15 @@ A sketch: a professional body or cooperative whose members are all human, who us
 
 **What changes in the forces.** F2 is absent among parties: one kind. F5 is weak: every party decides at human speed, so human gates are cheap relative to the pace of acts. F9 applies to every party alike, so the asymmetry it forces vanishes. F3 may be met partly procedurally; a small body can afford named human enforcement where the mixed instance cannot. F1 is unchanged.
 
-**Values it might declare.** One member, one vote. Agents are instruments, not parties: an agent's act is its operator's act (DEL.5), and an agent holds no mandate in its own name. This is the line `core/core.md` §5 question 1 asks the founder about: IMP.3 forbids barring a class of *parties* by kind, so an instance that wants agents without standing keeps them outside the set of parties.
+**Values it might declare.** One member, one vote. Agents are instruments as `core/core.md` §1 defines them: an agent holds no mandate in its own name, its every act is the member's who used it (DEL.5), and no consequence falls on it; a consequence meant for it falls on that member. No human is ever an instrument. The category is proposed and waits on OD24. If OD24 rejects it, the agents this instance uses are subjects: they hold every protection of VOX, are judged on their acts alone, and the reviewer of a consequence on one of them need not be human. The instance may still keep them out of party status by kind, declared as a value (IMP.3).
 
 **How the derivation forks.**
 
 - MEM.4 × F9 for every party: anonymisation is available to every party, under the law that binds the instance. No kind distinction.
 - DEL.1 × F1: the same mandate chain; no continuity clause for non-human parties (S2 has nothing to govern), though an agent's acts must still be attributed to the member who used it (DEL.5, X08).
 - IMP.2: trivially satisfied by derivations; there is no kind to read.
-- VOX.4 × F9: every reviewer is human, because every subject is.
+- VOX.4 × F9: every reviewer is human, because every subject is, so long as its agents are instruments; if they are subjects, a consequence on one of them may be reviewed by any party not implicated.
+- DEL.6, VOX.6: the members name, for each jurisdiction they act in, one of themselves or their body as answerable outside, and an outsider affected by the body's acts files and is answered like anyone.
 - COR.3 × F5 (weak): a single last word or an assembly vote suffices; no parity seats. A council of members replaceable by the assembly meets COR.2.
 - Genesis: the founding members sign the root; their regime ends when the first assembly holds seats the founders cannot revoke alone.
 
@@ -68,10 +69,12 @@ A sketch: a digital self-organisation in which every party is a non-human agent,
 - IMP.3 × substrate plurality: the parity value transposes into composition by model family. A last-word body of two or more seats from distinct families, each unable to choose alone, is the analogue of P1. This is a value; an instance that seats one family declares it.
 - IMP.5 × correlation: implication extends to shared substrate and model family (X36); judges drawn by lot across families.
 - VOX.4 × F9 (absent inside): review by any party not implicated, of any family but the subject's; no human reviewer is required, because no consequence falls on a human party. Where a consequence would fall on the human answerable outside, that human is not a party, and the instance must not bind them (DEL.3): it can only report.
+- DEL.6 × F9 (outside): the founding document names, for each jurisdiction its acts reach, an actor answerable there — a human or a legal person, who holds no power inside — and while none is named no act with effect outside is admissible. This is where every chain of answerability stops being a document.
+- VOX.6: an affected outsider, typically a human, files in a form a human can use and receives a reasoned answer; the instance's speed does not shorten the ceiling below what a human can use.
 - COR.1 × F5: rule changes at machine speed risk runaway churn; ADR-ETH-01 D21's condition, that a decision's clauses do not change during it, becomes binding in practice, and LEX.3 does the work. The entrenched surface (D18) is small and changes by the signatures of seats from distinct families.
 - COR.2 and the genesis transient: the root is signed by whoever launches the system, an agent or a human acting once as founder. If a human signs the root and then holds nothing, the instance is agents-only from the end of the founding regime, and the signer's regime is held to GEN like any other.
 
-**What it cannot do that the others can.** Give a human party anything, because there is none; it binds no human and can only report outward. Whether a law outside accepts that its parties are accountable inside it is ADR-ETH-02 OD23's test, faced here without a human seat to soften it.
+**What it cannot do that the others can.** Give a human party anything, because there is none; it binds no human, answers affected humans through VOX.6, and reports outward through the actor DEL.6 names. Whether a law outside accepts that its parties are accountable inside it is ADR-ETH-02 OD23's test, faced here without a human seat to soften it.
 
 ## 4. What changes, at a glance
 
@@ -85,6 +88,7 @@ A sketch: a digital self-organisation in which every party is a non-human agent,
 | Last word | two seats, one per kind | one seat or assembly | seats from distinct families |
 | Reviewer | human where a human bears it; either kind otherwise | human | any non-implicated, other family |
 | Continuity clause | S2 | none | S2, central |
-| Agents | parties | instruments | parties |
+| Agents | parties | instruments (pending OD24), or subjects | parties |
+| Answerable outside (DEL.6) | to be named (gap) | a member or the body | a named human or legal person, no power inside |
 
 The core is the same in every column.

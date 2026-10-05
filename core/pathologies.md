@@ -1,6 +1,6 @@
 # Pathologies of decisional systems
 
-**Status: Proposed with ADR-ETH-03, 2026-10-05.** A taxonomy of the ways a decisional system of humans, agents or both fails, each defined as a violation of a property of the model in `core/core.md` §1, and mapped to the core principle or principles whose violation it is. It is the ex-post labelling ADR-ETH-01 D16 allows: no entry is a score, and none is defined by resemblance to a historical polity. No entry names a real person or state.
+**Status: Proposed with ADR-ETH-03, 2026-10-05.** A taxonomy of the ways a decisional system of humans, agents or both fails, each defined as a violation of a property of the model in `core/core.md` §1, and mapped to the core principle or principles whose violation it is. It is the ex-post labelling ADR-ETH-01 D16 allows: no entry is a score, and none is defined by resemblance to a historical polity. No entry is defined by reference to a real person or state, and names and synonyms are descriptive; terms of art drawn from a person, a book or a historical policy are left out.
 
 The list starts from the founder's — unjust, unfair, tyrannical, arbitrary, fascist, oligarchic, plutocratic, corrupt, evil — and adds every distinct failure mode found, with agent-specific ones marked *(agent)*. Synonyms are merged under one entry. Composites, the founder's list among them, are mapped to their components in §8.
 
@@ -10,11 +10,11 @@ Notation as in `core/core.md`: $R$ the record, $\sigma$ the state, $M$ the manda
 
 ## 1. Pathologies of the record
 
-**X01 Revisionism** — *also:* memory hole, unpersoning, history rewritten by the powerful. *Definition:* the past is altered so that what happened no longer appears to have happened. *Violation:* for some $t < t'$ on a run, $R_t \not\sqsubseteq R_{t'}$, or an entry changes with no appended act recording the change, or a change is undetectable by some party. *Excluded by:* MEM.1, MEM.3. *Class:* structural.
+**X01 Revisionism** — *also:* rewritten history, erasure of a person from the record, history rewritten by the powerful. *Definition:* the past is altered so that what happened no longer appears to have happened. *Violation:* for some $t < t'$ on a run, $R_t \not\sqsubseteq R_{t'}$, or an entry changes with no appended act recording the change, or a change is undetectable by some party. *Excluded by:* MEM.1, MEM.3. *Class:* structural.
 
 **X02 Unattributed power** — *also:* anonymous decree, dark acts. *Definition:* acts with effect whose author cannot be named. *Violation:* an entry with no author, or an act inside $\Pi_\Gamma$ absent from $R$. *Excluded by:* MEM.2, DEL.1. *Class:* structural.
 
-**X03 Surveillance** — *also:* panopticon, one-way watching. *Definition:* subjects are observed by readers they cannot see. *Violation:* a read of the record about $y$ with no entry, or with an entry $y$ cannot see. *Excluded by:* MEM.5, VOX.2; over-collection beyond the perimeter is LEX.6, and the record holds acts, not inner states (LEX.4). *Class:* structural.
+**X03 Surveillance** — *also:* one-way watching, total recording. *Definition:* subjects are observed by readers they cannot see, or recorded beyond any need. *Violation:* a read of the record about $y$ with no entry, or with an entry $y$ cannot see; or an act entered that no rule reads and no declared purpose covers. *Excluded by:* MEM.5, VOX.2, MEM.2; collection beyond the perimeter is LEX.6, and the record holds acts, not inner states (LEX.4). *Class:* structural.
 
 **X04 Whitewashing** *(agent)* — *also:* identity laundering, respawning to shed a record. *Definition:* an actor sheds its record by reappearing as a new one. *Violation:* an actor's acts are credited to a fresh party with an empty record while the chain whose access it used escapes attribution. *Excluded by:* MEM.4, DEL.1, DEL.5. *Class:* structural.
 
@@ -38,7 +38,9 @@ Notation as in `core/core.md`: $R$ the record, $\sigma$ the state, $M$ the manda
 
 **X13 Lock-in** — *also:* hostage dependency, exit with forfeiture. *Definition:* leaving is formally possible and the rules make it ruinous. *Violation:* a consequence derived from the act of renouncing itself. *Excluded by:* DEL.4, VOX.5. Costs of leaving that arise outside the system are outside the core. *Class:* structural.
 
-**X14 Colonial binding** — *also:* extraction by rule over the unconsenting. *Definition:* the system's rules bind actors who neither accepted them nor can leave their reach. *Violation:* a duty-bearing consequence binds an actor with no accepted mandate, or the perimeter is widened over others without a change. *Excluded by:* DEL.3, DEL.4, LEX.6. Harm to outsiders that binds no one is X52. *Class:* structural.
+**X14 Colonial binding** — *also:* extraction by rule over the unconsenting. *Definition:* the system's rules bind actors who neither accepted them nor can leave their reach. *Violation:* a duty-bearing consequence binds an actor with no accepted mandate, or the perimeter is widened over others without a change. *Excluded by:* DEL.3 (no duty on any actor, party or not, without acceptance), DEL.4, LEX.6. Harm to outsiders that binds no one is X52. *Class:* structural.
+
+**X52 Externality on outsiders** — *also:* pure extraction, the harm machine with perfect process. *Definition:* the system harms actors outside it without binding them. *Violation of the structural part:* no actor answerable under the law of a jurisdiction the instance's acts reach (DEL.6), or an affected outsider with no route to file and be answered (VOX.6). *Excluded by:* DEL.6, VOX.6, as to answerability and standing. The harm itself is not excluded: outsiders are not subjects, and what the instance owes them in substance is for law outside. *Class:* mixed.
 
 ## 3. Pathologies of rule
 
@@ -64,15 +66,15 @@ Notation as in `core/core.md`: $R$ the record, $\sigma$ the state, $M$ the manda
 
 **X25 Totalitarian reach** — *Definition:* the rules reach every act of life, every read is open, and no one can leave. *Violation:* a perimeter widened without change or undeclared, reads unrecorded, exit inadmissible. *Excluded by:* LEX.6, MEM.5, DEL.4. A wide perimeter declared, accepted and leavable is a value. *Class:* structural.
 
-**X26 Kafkaesque process** — *also:* opaque bureaucracy, the trial that never ends. *Definition:* the subject is not told the case, cannot see it, and it never ends. *Violation:* findings undelivered or invisible to their subject, a matter pending past every ceiling, a verdict that cannot be replayed. *Excluded by:* VOX.1, VOX.2, COR.3, COR.4, LEX.2. *Class:* structural.
+**X26 Endless opaque process** — *also:* opaque bureaucracy, the trial that never ends. *Definition:* the subject is not told the case, cannot see it, and it never ends. *Violation:* findings undelivered or invisible to their subject, a matter pending past every ceiling, a verdict that cannot be replayed. *Excluded by:* VOX.1, VOX.2, COR.3, COR.4, LEX.2. *Class:* structural.
 
-**X27 Mob rule** — *also:* ochlocracy, lynching. *Definition:* consequences imposed by a crowd outside procedure. *Violation:* a consequence not derived, with no hearing. *Excluded by:* LEX.1, VOX.4. A majority acting through valid general rules is X51. *Class:* structural.
+**X27 Mob rule** — *also:* ochlocracy, crowd punishment. *Definition:* consequences imposed by a crowd outside procedure. *Violation:* a consequence not derived, with no hearing. *Excluded by:* LEX.1, VOX.4. A majority acting through valid general rules is X51. *Class:* structural.
 
 ## 4. Pathologies of impartiality
 
 **X28 Personal law** — *also:* privilege, impunity, being above the law, bill of attainder, the cult of the founder. *Definition:* rules that favour, exempt or target a particular actor. *Violation:* a rule with an actor constant or an order over actors, or a subject outside judgement. *Excluded by:* IMP.1, IMP.4. *Class:* structural.
 
-**X29 Caste** — *also:* apartheid, hereditary status, subordination by kind. *Definition:* findings or power depend on an attribute the party did not choose. *Violation:* $D_\Gamma$ not invariant under an attribute-changing bijection, or $W_\Gamma$ or eligibility not invariant under a permutation of attribute values. *Excluded by:* IMP.2, IMP.3. *Class:* structural.
+**X29 Caste** — *also:* legal segregation, hereditary status, subordination by kind. *Definition:* findings or power depend on an attribute the party did not choose. *Violation:* $D_\Gamma$ not invariant under an attribute-changing bijection, or $W_\Gamma$ or eligibility not invariant under a permutation of attribute values, or a consequence reading an attribute burdens another class beyond the protecting role. *Excluded by:* IMP.2, IMP.3. Keeping the class out of party status altogether is X58. *Class:* structural.
 
 **X30 Dynasty** — *also:* nepotism, hereditary office. *Definition:* positions pass by kinship or at the holder's choice. *Violation:* eligibility read from an unchosen relation, the holder deciding its own successor, or a decision benefiting the decider's relation. *Excluded by:* IMP.3, IMP.5, COR.2. *Class:* structural.
 
@@ -82,11 +84,13 @@ Notation as in `core/core.md`: $R$ the record, $\sigma$ the state, $M$ the manda
 
 **X33 Self-promotion of optimisers** *(agent)* — *Definition:* a learning or evolutionary process promotes its own output into the rules. *Violation:* a change to $\Gamma$ admitted on the assent of the party that produced it, or entering by a route other than $\Delta$. *Excluded by:* IMP.5, DEL.1, COR.1 (change only by $\Delta$). *Class:* structural.
 
-**X34 Base manipulation** — *also:* gerrymandering, disenfranchising to win, packing. *Definition:* those interested in a matter change who is entitled to decide it after it arose. *Violation:* the deciding set for $m$ differs from the one fixed by rule at $m$'s filing. *Excluded by:* IMP.5. *Class:* structural.
+**X34 Base manipulation** — *also:* redrawing the electorate, disenfranchising to win, packing. *Definition:* those interested in a matter change who is entitled to decide it after it arose. *Violation:* the deciding set for $m$ differs from the one fixed by rule at $m$'s filing. *Excluded by:* IMP.5. *Class:* structural.
 
-**X35 Theocracy** — *Definition:* rules or offices justified by an authority no admissible act can reach. *Violation:* a rule no finite admissible path changes, an office whose holder no path removes, or an office barred by an unchosen attribute. *Excluded by:* COR.1, COR.2, IMP.3, IMP.4. A shared purpose declared, accepted and leavable is a value (X51 for its content). *Class:* structural.
+**X35 Rule by unamendable doctrine** — *also:* theocracy, ideocracy, the party-state. *Definition:* rules or offices justified by an authority no admissible act can reach. *Violation:* a rule no finite admissible path changes, an office whose holder no path removes, or an office barred by an unchosen attribute. *Excluded by:* COR.1, COR.2, IMP.3, IMP.4. A shared purpose declared, accepted and leavable is a value (X51 for its content). *Class:* structural.
 
 **X36 Monoculture of judges** *(agent)* — *also:* correlated judgement. *Definition:* judges share a substrate or model family with the judged or with each other, and correlate without communicating. *Violation:* the judge's verdict depends on a relation the record cannot see. *Excluded by:* IMP.5, by declaring shared substrate a ground of implication. *Class:* mixed — correlation is measured, never proved (ADR-ETH-02 H2).
+
+**X58 Exclusion from standing** — *also:* denizenship, internal statelessness, second-class subjects. *Definition:* a class is kept out of party status by an attribute it did not choose, and bound as subjects. *Violation:* an admission rule reads an unchosen attribute other than kind; or a duty binds an actor with no accepted mandate; or a consequence reading an attribute burdens a subject outside the favoured class beyond the protecting role. *Excluded by:* IMP.3, DEL.3. An instance that admits by kind declares it as a value; those it leaves out stay subjects, judged on acts alone, with every protection of VOX. *Class:* structural.
 
 ## 5. Pathologies of voice
 
@@ -116,19 +120,21 @@ Notation as in `core/core.md`: $R$ the record, $\sigma$ the state, $M$ the manda
 
 **X48 Junta** — *also:* stratocracy. *Definition:* power seized and held by those who command force. *Violation:* origin outside every chain (X06), permanence (X44), rule by exception (X24). *Excluded by:* DEL.1, COR.2, LEX.1. *Class:* structural.
 
-**X49 Paralysis** — *also:* gridlock, vetocracy, liberum veto, lawful obstruction, sclerosis. *Definition:* no decision is reachable, or delay has no end. *Violation:* a rule no finite admissible path changes, a lever without a ceiling, an owed act that never occurs. *Excluded by:* COR.1, COR.3. *Class:* mixed — every lever finite still allows a long sum of finite delays; this is bounded and named, not excluded (ADR-ETH-02 H1).
+**X49 Paralysis** — *also:* gridlock, vetocracy, veto by any single member, lawful obstruction, sclerosis. *Definition:* no decision is reachable, or delay has no end. *Violation:* a rule no finite admissible path changes, a lever without a ceiling, an owed act that never occurs. *Excluded by:* COR.1, COR.3. *Class:* mixed — every lever finite still allows a long sum of finite delays; this is bounded and named, not excluded (ADR-ETH-02 H1).
 
 **X50 Revolution-only correction** — *also:* the frozen constitution, brittleness. *Definition:* a needed correction can be made only by a step the rules forbid. *Violation:* a rule unreachable by any finite admissible path. *Excluded by:* COR.1. *Class:* structural.
 
+**X59 Indefinite provisional status** — *also:* permanent probation, pending forever, the status that never resolves. *Definition:* a subject or party is held in a provisional status — probation, interim measure, pending admission, pending review — with no end. *Violation:* a provisional status with no declared finite ceiling, or one that passes its ceiling neither decided nor lapsed in the subject's favour. *Excluded by:* COR.3, VOX.7. *Class:* structural.
+
+**X60 Endless jeopardy** — *also:* harassment by process, retrial without end. *Definition:* a verdict in the subject's favour is reopened again and again, so that process is the punishment. *Violation:* re-examination against the subject a verdict favoured, without a declared ground or beyond a declared finite count. *Excluded by:* COR.4. *Class:* structural.
+
 ## 7. Beyond a procedural core
 
-**X51 Procedurally valid evil** — *also:* substantive injustice, tyranny of the majority by a general rule, draconian consequence, evil purpose. *Definition:* a lawful, blind, heard, correctable decision whose content is wrong. *Violation:* none of the core's; the defect is in what $C_\Gamma$ prescribes. *Not excluded* (ADR-ETH-01 D3). The core contributes: the decision is recorded and attributed (MEM), binds its makers alike (IMP.4), is answerable (VOX), can be left (DEL.4) and corrected (COR); a general rule can still be aimed at a class only through an attribute it reads, which IMP.3 forbids for unchosen attributes. *Class:* beyond.
-
-**X52 Externality on outsiders** — *also:* pure extraction. *Definition:* the system harms actors outside it without binding them. *Violation:* none of the core's; outsiders are not subjects. *Not excluded*; the perimeter is declared (LEX.6) and law outside applies (F9). *Class:* beyond.
+**X51 Procedurally valid evil** — *also:* substantive injustice, persecution by a general rule on belief or conduct, tyranny of the majority by a general rule, draconian consequence, evil purpose. *Definition:* a lawful, blind, heard, correctable decision whose content is wrong. *Violation:* none of the core's; the defect is in what $C_\Gamma$ prescribes. *Not excluded* (ADR-ETH-01 D3). The core contributes: the decision is recorded and attributed (MEM), binds its makers alike (IMP.4), is answerable (VOX), can be left (DEL.4) and corrected (COR); a general rule can still be aimed at a class only through an attribute it reads, which IMP.3 forbids for unchosen attributes. Disproportion would become structural if ADR-ETH-03 OD26 adds an ordinal proportion clause. *Class:* beyond.
 
 **X53 Opaque collusion** *(agent)* — *also:* covert coordination. *Definition:* parties coordinate in channels the record cannot read. *Not excluded*: no core over a record can see it (ADR-ETH-02 H2). Bounded: a group below capture cannot block a correction (COR.4), and acts are judged by their effects (LEX.4). *Class:* beyond.
 
-**X54 Governance reward hacking** *(agent)* — *also:* specification gaming, rules-lawyering, Goodhart's law applied to rules, bypass exceeding compliance. *Definition:* acts satisfy the letter of the checks and defeat their outcome. *Not excluded*: any finite rule set admits it. Detected and corrected: the acts are in the record (MEM), and the rule can be changed (COR.1); the meta-agentic instance measures it as a vital sign (ADR-ETH-02 C9 on D5). *Class:* beyond.
+**X54 Governance reward hacking** *(agent)* — *also:* specification gaming, rules-lawyering, optimising the measure instead of the aim, bypass exceeding compliance. *Definition:* acts satisfy the letter of the checks and defeat their outcome; the measure is optimised instead of the aim. *Not excluded*: any finite rule set admits it. Detected and corrected: the acts are in the record (MEM), and the rule can be changed (COR.1); the meta-agentic instance measures it as a vital sign (ADR-ETH-02 C9 on D5). *Class:* beyond.
 
 **X55 Selective observation** — *also:* the evidence gap. *Definition:* what is watched decides who is judged. *Not excluded*: the observed perimeter is narrower than the judged one in every real system. Declared and measured (MEM.2, ADR-ETH-01 D11). *Class:* beyond.
 
@@ -144,20 +150,22 @@ Notation as in `core/core.md`: $R$ the record, $\sigma$ the state, $M$ the manda
 | Unjust | consequences not derived from one's own acts, X15, X20, X21; and substantive injustice, X51 | LEX.1, LEX.4; X51 beyond |
 | Tyrannical | rule in the ruler's interest, beyond judgement and replacement, by will, unheard: X28, X44, X15, X37, X31 | IMP.4, COR.2, LEX.1, VOX, IMP.5 |
 | Arbitrary | X15, X17, X19 | LEX.1, LEX.3, LEX.5 |
-| Fascist | a leader beyond judgement and replacement (X28, X44), dissent punished (X38), enemies designated by attribute (X29), rule by exception (X24), information controlled (X42), the many bound and unable to leave (X12) | IMP, COR, VOX, LEX, DEL |
+| Fascist | a leader beyond judgement and replacement (X28, X44), dissent punished (X38), enemies designated by an unchosen attribute (X29, X58), rule by exception (X24), information controlled (X42), the many bound and unable to leave (X12); designation of enemies by belief or conduct through a general rule is X51, beyond the core | IMP, COR, VOX, LEX, DEL; X51 beyond |
 | Oligarchic | X45 | COR.2, IMP.3, DEL.3–4 |
 | Plutocratic | X46, X11 | DEL.1, COR.2, DEL.4, IMP.5 |
 | Corrupt | X31, X11, X32 | IMP.5, DEL.1 |
 | Evil | X51 | beyond; made visible, attributed, answerable, leavable, correctable |
-| Totalitarian | X25, X03, X12 | LEX.6, MEM.5, DEL.4 |
+| Totalitarian | X25, X03, X12 | LEX.6, MEM.5, MEM.2, DEL.4 |
+
+Every composite's components are doctrine-neutral: the same components define authoritarian rule under any doctrine, and the composite labels are the founder's input terms.
 
 ## 9. Summary
 
 | Class | Count | Result |
 |---|---|---|
-| Structural | 41 | each excluded by at least one principle |
-| Mixed | 9 (X08, X11, X31, X36, X41, X45, X46, X47, X49) | the structural part excluded; the remainder named |
-| Beyond the core | 7 (X51–X57) | not excluded; each made visible, attributed, answerable and correctable where the core can, and named as outside |
-| Total | 57 | |
+| Structural | 44 | each excluded by at least one principle |
+| Mixed | 10 (X08, X11, X31, X36, X41, X45, X46, X47, X49, X52) | the structural part excluded; the remainder named |
+| Beyond the core | 6 (X51, X53–X57) | not excluded; each made visible, attributed, answerable and correctable where the core can, and named as outside |
+| Total | 60 | |
 
-Every structural pathology is the violation of at least one principle, and each principle is the only one violated by at least one pathology: MEM by X01, DEL by X09 and X12, LEX by X15 and X17, IMP by X28, X29 and X32, VOX by X37, COR by X44 and X50. These are the minimality witnesses of `core/core.md` §3.2. The coverage is established by inspection of each definition against each principle, not by a machine; a pathology later shown to be structural and excluded by none reopens ADR-ETH-03.
+Every structural pathology is the violation of at least one principle, and each principle is the only one violated by at least one pathology: MEM by X01, DEL by X09 and X12, LEX by X15 and X17, IMP by X28, X29, X32 and X58, VOX by X37, COR by X44, X50, X59 and X60. These are the minimality witnesses of `core/core.md` §3.2. The coverage is established by inspection of each definition against each principle, not by a machine; a pathology later shown to be structural and excluded by none reopens ADR-ETH-03.
