@@ -3,16 +3,17 @@ kind: adr
 space: eth
 adrId: ADR-ETH-02
 provisionalNumber: false
-title: First amendment to the L0 constitution — party and subject, record integrity, the working state of the correctness claim, the genesis regime, and corrections to ADR-ETH-01
+title: First and second amendments to the L0 constitution — party and subject, record integrity, the working state of the correctness claim, the genesis regime, corrections to ADR-ETH-01; signed acts, continuity of a non-human party, the paritetic Custodian, review for every subject
 status: Proposed
 date: '2026-09-26'
+amended: '2026-10-05'
 project: meta-ethics
-supersedes: ['ADR-ETH-01 D1 (scope of symmetry)', 'ADR-ETH-01 D4', 'ADR-ETH-01 D7', 'ADR-ETH-01 D8', 'ADR-ETH-01 D9', 'ADR-ETH-01 D12', 'ADR-ETH-01 D14', 'ADR-ETH-01 OD16 (closed half)', 'ADR-ETH-01 OD7', 'ADR-ETH-01 OD19']
+supersedes: ['ADR-ETH-01 D1 (scope of symmetry)', 'ADR-ETH-01 D2', 'ADR-ETH-01 D4', 'ADR-ETH-01 D7', 'ADR-ETH-01 D8', 'ADR-ETH-01 D9', 'ADR-ETH-01 D12', 'ADR-ETH-01 D14', 'ADR-ETH-01 D18 (signer of an L0 change)', 'ADR-ETH-01 OD1', 'ADR-ETH-01 OD3', 'ADR-ETH-01 OD6', 'ADR-ETH-01 OD16 (closed half)', 'ADR-ETH-01 OD7', 'ADR-ETH-01 OD19']
 supersededBy: []
-labels: [constitution, L0, amendment, party, record, erasure, correctability, lawful obstruction, opaque coordination, genesis, witness, lot]
+labels: [constitution, L0, amendment, party, record, erasure, correctability, lawful obstruction, opaque coordination, genesis, witness, lot, signature, non-repudiation, continuity, custodian, paritetic, review]
 ---
 
-# ADR-ETH-02 — First amendment to the L0 constitution
+# ADR-ETH-02 — First and second amendments to the L0 constitution
 
 **Status: Proposed 2026-09-26.** Awaiting ratification by the founder, who at genesis holds every seat. Ratification is recorded as C5 below states; this record does not repeat ADR-ETH-01's claim that a merge commit is the signature.
 
@@ -23,6 +24,8 @@ ADR-ETH-01 is ratified and its body is frozen. This record amends it decision by
 ## Context
 
 The forces F1–F9 of ADR-ETH-01 apply unchanged, except F3, which C6 sharpens. Three questions ADR-ETH-01 left open or answered inconsistently are settled here: who is a party (D8 against D12), what the record must conserve when a human party asserts erasure (D14 against OD19), and against what state the correctness claim is checked (the formal-frame accepted cost). The rest are corrections of statements that were wrong or unobservable as written.
+
+The second amendment, of 2026-10-05, settles three more (section IV). What proves that a party consented to an act: C5 places an act in the record, and proves no one's consent. What makes a non-human party the same party across sessions that share no memory. And the Custodian's shape, OD1–OD6. It extends A2's review floor to every subject, and corrects five sentences, in ADR-ETH-01 and in this record, that were inconsistent or unobservable as written (C19–C23).
 
 ## I. The recurring template
 
@@ -73,7 +76,7 @@ The forces F1–F9 of ADR-ETH-01 apply unchanged, except F3, which C6 sharpens. 
 
 **C4 — ADR-ETH-01's "written at the time of decision, not reconstructed."** This held for D8–D21. D1–D7 were decided on 2026-09-18 as conclusions only; their alternatives, losing forces and triggers were written on 2026-09-21, three days later, as ADR-ETH-01 itself says in its preamble to the decisions. They are reconstructed, and are to be read as such.
 
-**C5 — The signature mechanism.** Pull requests here merge by rebase, which leaves no merge commit, so "the merge commit is the signature" is false. Corrected: ratification is the merge event of the pull request carrying the record, together with the commit that event lands on the main line. Under A2 that commit's hash is appended to the record, whose chain head is witnessed by the external witness (C16), so the signature does not depend on how the history was merged.
+**C5 — The signature mechanism. Restated by S1.** Pull requests here merge by rebase, which leaves no merge commit, so "the merge commit is the signature" is false. Corrected: the merge event of the pull request carrying the record, together with the commit that event lands on the main line, is the act's placement in the record. Under A2 that commit's hash is appended to the record, whose chain head is witnessed by the external witness (C16), so the placement does not depend on how the history was merged. A placement proves when and where an act landed, not who consented to it: the consent is the signatures S1 requires, and ratification takes effect when both exist under a witnessed head.
 
 **C6 — F3: aggregation is stratified too.** F3 is restated: every clause is stratified Datalog in which negation and `count` are both stratified, every rule is range-restricted, no rule names a party or compares party variables except by `neq` (C1), and arithmetic appears only in non-recursive strata or as input facts. Any other clause is procedural, with its human enforcement named. Every object the record names is minted by an appended act at intake; no rule creates one, which range restriction enforces. *Reason:* under these conditions each fact set has exactly one model, so every replay of a verdict derives the same verdict, which D4's determinism and D9's replay depend on. Rules are written in stratified Datalog, a decidable fragment of first-order logic, because full first-order validity is undecidable (Church 1936; Turing 1936) and only semi-decidable (Gödel 1930). Each verdict is decidable. Questions about the rules themselves are not, so admissibility is checked syntactically, and meaning enters only as attested facts (C11).
 
@@ -131,6 +134,46 @@ The forces F1–F9 of ADR-ETH-01 apply unchanged, except F3, which C6 sharpens. 
 **C18 — The configuration check.** At genesis and on every change of a parameter, the conformance suite checks the founding document's values jointly, at every roster size up to its declared cap: that a change can pass, allowing for the recusals a finding can cause; that every window, lengthened as the document allows, fits under its timer ceiling; that findings can be shown at some roster size, below which the published result is marked vacuous; and that a judge can be drawn for a two-sided matter. Each check is linear in the roster size and decided by enumeration. Its result is published as A3's is, and establishes satisfiability and nothing else. The document checked is the document the parties read, and the result binds to its hash. A change that leaves the document unsatisfiable is inadmissible.
 *Rejected:* checking parameters one at a time — loses to F1, because a dead configuration passes each check alone. *Rejected:* the check as ratification — loses to F6, because a machine consents for no one. *Rejected:* a checked schema beside a readable text — loses to F1 and F9, because the two drift and the one consented to is not the one that runs.
 *Reopens if:* a conforming document admits no roster size at which a change passes, a result is published as non-vacuous below the first roster size at which findings are shown, or the readable and checked documents differ.
+
+## IV. Second amendment
+
+**S1 — Signed acts. Restates C5 as to consent.** Every act that requires a signature is signed by each party that performs it, human or not. An act with several signers carries one signature per signer over the same text; how many are needed is a rule, not a property of the signature. L0 requires a signature for the ratification of a record, an L0 change, a Custodian's veto or tie-break (P1), a review under P2, a change of charter (S2), the act that ends the genesis regime (H3), and the replacement of a signing method; each founding document may require it for more. On whatever carrier it is made, a signature meets these floors.
+- *Attribution:* it binds the act to one identified party, at an assurance level the founding document declares per kind of party. The floor under every level: the party's identity was established when its mandate was granted, and the signature binds to that party and to no other.
+- *Integrity:* it covers the digest of the exact text, and cannot be moved to another text or version.
+- *Sole control:* the means of signing is under the signer's sole control; for a non-human party, under the custody its mandate declares, attributed to its grantor (A1). No operator, founder or other party can produce another party's signature.
+- *Verifiability:* any party can verify it without the operator's help, at the time and later. The evidence that needs, including the status of the signer's key at signing time, is recorded with the act. Its time is the witnessed head's (C16), never the signer's clock.
+- *Non-repudiation:* a claim that a signature is not its signer's is a finding, decided on the recorded evidence. A compromise reported before the witnessed time of the act voids the signature; one reported after does not void it by itself.
+- *Compromise, loss and rotation* pass through the governed channel (C7). No party replaces another's signing means alone.
+- *Method agility:* the method is a parameter (T), and replacing it is an act of power. Signatures made under a method are renewed, by an appended and witnessed act, before the method weakens; renewal before weakness is a floor.
+- *Medium:* a signed act may be carried on any medium. It takes effect when its digest and every signature are appended to the record, attributed, and covered by a witnessed head. Entering a carrier is itself an act; the carrier and the record can each be checked against the other.
+- *Privacy:* the record keeps every signature and its verification evidence. The binding of a key to a named human is kept where the instance's law permits; anonymization (A2) severs the name, never the verifiability. A signature on an act of power keeps its name, as the act does.
+- *Genesis:* the founding document publishes the founder's verification key, and the other Custodian seat's with its custody (P1), and the first witnessed head covers them.
+
+C5 is restated: the merge event and the landing commit are the act's placement in the record, the signatures are the consent, and ratification takes effect when both exist under a witnessed head. ADR-ETH-01 was ratified by placement alone, before this rule existed. That ratification stands, is marked unsigned for good, and is an act of power under the genesis regime (H3). The ratification of this record, signed by both Custodians, is the first act signed under this rule.
+*Procedural note:* the method, the assurance levels and the carrier are parameters (T). Non-normative examples, each one possible solution among others: a qualified electronic signature, for its legal presumption; an OpenPGP or X.509 key; a hardware token; a printed text bearing handwritten signatures and machine-readable codes, such as QR codes, that encode each signer's digital signature over the text's digest. A handwritten signature alone meets attribution where the law presumes it, but not integrity or independent verification; it may accompany a signature that meets the floors, never replace it. No signing key, and nothing that grants the use of one, is kept in this repository; the record holds verification material only. The path of a signed act:
+
+```mermaid
+sequenceDiagram
+    participant P as Each signing party
+    participant C as Carrier, any medium
+    participant R as Record
+    participant W as External witness, C16
+    P->>P: digest of the exact text
+    P->>C: signature over the digest, under sole control
+    C->>R: entering act with the digest, every signature and the verification evidence
+    R->>W: chain head at the fixed cadence
+    W-->>R: witnessed head covering the entry
+    Note over R,W: the act takes effect here, and its time is the head's
+    R-->>P: any party verifies without the operator
+```
+
+*Rejected:* a platform account action as the signature — loses to F1, because the platform attests the act and the signer can repudiate it as a use of the account by someone else. *Rejected:* one signing technology fixed in L0 — loses to F7 and D5, because methods age and the law that gives a signature effect differs between instances, so a clause bound to one method trains its bypass when the method fails. *Rejected:* a key held by the operator for the signer — loses to F1, because whoever holds the key signs for the party. *Rejected:* a single identity provider for every party — loses to F1, because it is one point of capture for every signature at once. *Rejected:* signatures from human parties only — loses to F2, because a non-human party's act would then be attributed by assertion, and the party that does not sign is the route every attack takes.
+*Reopens if:* a signature is disputed and the recorded evidence cannot decide it, a method weakens before the signatures made under it are renewed, an act that requires a signature takes effect unsigned or before a witnessed head covers its signatures, or a party's signature is produced by anyone else.
+
+**S2 — Continuity of a non-human party.** A non-human party is the same party across sessions if and only if four things hold together: its mandate (A1); its charter, the standing instruction that constitutes it, known by its digest; its signing key, under the custody its mandate declares (S1); and its record of signed acts. Before it acts, an instance of the party proves all four. It signs a fresh challenge that includes the current witnessed head, which no earlier session could have signed; it attests the digest of the charter it runs under; it names the last head it has read; and it enters an act of presence that carries the three. A change of charter is an act of power, signed and witnessed; a change to a Custodian's charter needs both Custodians' signatures (P1). An act by an instance for which any of the four fails is not the party's: it is attributed as A1 attributes any act, to whoever granted the access it used, and it is a finding. The substrate behind the party, its model, provider and runtime, is a flux (A1, D11): replaced, not judged, and the party persists through its replacement.
+*Procedural note:* how the challenge, the attestation and the act of presence are made is the instance's (T). Proof that the substrate executed the charter it attests, such as attested hardware, is an option an instance may require; L0 does not, because no hosted substrate offers it to every instance.
+*Rejected:* identity by model or provider — loses to F7 and D11, because the substrate is a flux, and a party that ended with its model would leave every finding about it behind. *Rejected:* identity by session — loses to F1 and F5, because each session would be a new party needing its own mandate through the channel, and no finding about one session would bind the next. *Rejected:* identity by key alone — loses to F1, because a key moved to a substrate running another charter would make another's acts the party's.
+*Reopens if:* an act is attributed to a party for which one of the four did not hold, a charter change is found that no signed and witnessed act records, or two instances prove continuity of one party at the same head and their acts conflict.
 
 ## Consequences
 
