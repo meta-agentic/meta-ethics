@@ -50,6 +50,7 @@
     "S1.14",
     "C5.2",
     "S2.3",
+    "S2.5",
     "P1.1",
     "P1.2",
     "P1.3",
@@ -58,6 +59,7 @@
     "P1.6",
     "P1.7",
     "P1.8",
+    "P1.10",
     "P1.12",
     "P1.13",
     "P1.17",
@@ -110,25 +112,23 @@
     "S1.11",
     "S2.1",
     "S2.4",
-    "S2.5",
     "S2.6",
     "S2.7",
-    "P1.10",
     "P1.11",
     "P1.15",
     "P1.18",
     "P3.5"
   ],
   "digest_rule": "sha256 over the lines '<sha256>  <path>\\n' of the entries, in the order listed",
-  "combined_sha256": "21622209d9f82e3b27013dabb3ab9ef7c094cf9503da485e8dbbb0f4addd67bf",
+  "combined_sha256": "6f67175134486ec40f0964a259f96a8e4e4516d6a2475e1188ff33bfc88821b1",
   "entries": [
     {
       "path": "L0.md",
-      "sha256": "2dd98c035f3c72c10aa49e774155ee7ce7f3575c86ecc4c2f8cf0c1760ce7f61"
+      "sha256": "e5858081d854f30e7dd68d04018d274c1bb2bbf1f89d96570768f14a090b5eee"
     },
     {
       "path": "clauses.tsv",
-      "sha256": "70d6c87040d130bd677d6e3c78d533c956f54794557f9c22fe4042a2213686e0"
+      "sha256": "72d1c1461643f00f95ad1fb3c817b885bb42c1ab11ed12a70d953fd096feee40"
     },
     {
       "path": "unmapped.tsv",
@@ -136,15 +136,15 @@
     },
     {
       "path": "vocabulary.tsv",
-      "sha256": "71d34edd8b341abeca25d3dd6ed984764b3eddf0937ab3582450fa2848510d53"
+      "sha256": "b9475a6f0f371e3ee26c148018014df43097b216772c3a92b06801346f18e5ca"
     },
     {
       "path": "parameters.tsv",
-      "sha256": "e37bdb038f76758989c8a0b592263bcb583aa358d8c4bb5e61bb90511c58fbae"
+      "sha256": "19835e5dadfdfc4782024939ab8206578fd13cf9b9b7dffdad6a91f5a7271902"
     },
     {
       "path": "program/custodian.lp",
-      "sha256": "b22d2e26244570f398bffec5fd8785aa7a50e34f96b4ac5fc142eaa9052bb982"
+      "sha256": "233dbc3e1730d01310869e140cb1bea09947d7722b80da8dd6da5365904ed5b3"
     },
     {
       "path": "program/kinds.lp",
@@ -152,7 +152,7 @@
     },
     {
       "path": "program/parties.lp",
-      "sha256": "6330d5f2b2f6c24c0713a4f77fc8ed78b953c42b541fdfaf0ba82f13d43dc50a"
+      "sha256": "a28467294ec0c9787766d45bc09e4a28a08cad19afa0f5a168473cf5d560a5ab"
     },
     {
       "path": "program/procedure.lp",
@@ -235,6 +235,10 @@
       "sha256": "5f5a05055f8a519a61517dc540b05d12a46001f79bd6796978ebeaa4de1733c9"
     },
     {
+      "path": "fixtures/owed_and_continuity.lp",
+      "sha256": "c2e0e9b015303dc23f8fe6bb7f792d757d1dfafc90fb7c60cc30d78a66d400f3"
+    },
+    {
       "path": "fixtures/parties.lp",
       "sha256": "15d9d90ae5d675efd81e0cd23aa41072b5f4b3e145e4f7770a8f25a14b04d31e"
     },
@@ -257,6 +261,54 @@
     {
       "path": "fixtures/state.lp",
       "sha256": "54c47779c4189fc711169358529db40eb88a2be2737eaf09b06ea49e76117395"
+    },
+    {
+      "path": "fixtures/values/conforming.values",
+      "sha256": "e0adb147d0c1a2d5ed1401a383ba76e8d803301091fe65de408c02069337073e"
+    },
+    {
+      "path": "fixtures/values/protections-set-to-nothing.values",
+      "sha256": "dfdd304b96421e1494ccb54b9783bc43b5a14375c670446384395f64a4f4bd88"
+    },
+    {
+      "path": "fixtures/values/relations-broken.values",
+      "sha256": "4bd81a949118f05ed4a4fba2e5d818b63182d16e43b4b6fd31dc4676a1a8827d"
+    },
+    {
+      "path": "DESIGN.md",
+      "sha256": "ffadc108160cffe6663e07ac54315be0574adfd81a5727c1e26a998cd2462eed"
+    },
+    {
+      "path": "tools/c18.py",
+      "sha256": "2e3c4ff1203b13ccae2ff2b09c611805d3b6c532e4703c85b8c94e29c2031022"
+    },
+    {
+      "path": "tools/check.py",
+      "sha256": "f61bd610e82c67428b138eef1c53c8ff510f6baef7afb7e2f9d8374600645cf1"
+    },
+    {
+      "path": "tools/check.sh",
+      "sha256": "2958d0449e624e6908a2470df05cb9ec47c0da480529d5d278765251f988ac72"
+    },
+    {
+      "path": "tools/mutants-allowed.tsv",
+      "sha256": "b5cbc6fbf407529e15b88c7c0325a368228c952053a0559275642beee74f1104"
+    },
+    {
+      "path": "tools/mutants.py",
+      "sha256": "2197cd189808ea8fc593bb6e31fdb4874af1f6f1bb930fca850d684ab6501921"
+    },
+    {
+      "path": "tools/requirements.txt",
+      "sha256": "429ea43ecd3d07760ed1f66aa9acb02e18fcf432d64a958831765068a58f2846"
+    },
+    {
+      "path": "tools/textchecks.py",
+      "sha256": "3b6ce3e1f9de4664677a19cb06ce8ccd83e340296113f2ea83a246066ea2df30"
+    },
+    {
+      "path": "../evidence/checker/check.py",
+      "sha256": "81fc7ba42c9be8423bbffcc923d63e6d0669e1f6523104eea302e542e83b4bf0"
     },
     {
       "path": "../docs/adr/ADR-ETH-01-constitution-shape.md",

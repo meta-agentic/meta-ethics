@@ -42,16 +42,20 @@ subject(F) :- founder(F).
 % clause: A1.9
 self_exemption(A) :- exempts(A, F), founder(F), act(A, F, _, _).
 
-% clause: A2.4 P1.17 OD23.2
-in_scope(A, M) :- act_under(A, M), act(A, _, C, _), mandate(M, _, S), scope_has(S, C).
+% clause: A2.4 P1.17 OD23.2 S2.5
+in_scope(A, M) :- act_under(A, M), act(A, _, C, _), mandate(M, _, S), scope_has(S, C), not continuity_failed(A).
 chain_of(A, M) :- in_scope(A, M).
 chain_of(A, M0) :- chain_of(A, M), delegated_from(M, M0).
-attributed(A, P) :- act(A, P, _, _).
+attributed(A, P) :- act(A, P, _, _), not continuity_failed(A).
 attributed(A, P) :- chain_of(A, M), mandate(M, P, _).
 attributed(A, Gr) :- act(A, H, C, _), grant(G, Gr, H, C), not covered_grant(G).
 
 % clause: C7.3
 grantor_of(F, P) :- mandate(M, P, _), root_grant(M), founder_revocable(M), founder(F), F != P.
+
+% clause: S2.5
+attributed(A, G) :- continuity_failed(A), access_granted_by(A, G).
+continuity_finding(A) :- continuity_failed(A).
 
 % clause: C21.2
 % A party's delegation chain: its grantors up to, not including, the common

@@ -44,6 +44,7 @@ A1.7	todo	02:A1 01:D8 01:D11	until programmed: binds in full; the instance's ado
 A1.8	program	01:§accepted-costs/closure-makes-the-founder-a-judged-party-from-the-first-act		
 A1.9	program	01:§safety-envelope		
 A1.10	program	02:§accepted-costs/a-subject-with-no-mandate-is-never-negligent		
+A1.11	cost	02:§accepted-costs/anonymization-lowers-accountability-for-its-subject-where-the-law-requires-it		the limit on A1.5
 C7.1	program	02:C7 01:D12		
 C7.2	todo	02:C7 01:D12	until programmed: binds in full; the instance's adoption record attests it (D6.2); conformance on the parent fixtures does not test it (C15.4)	
 C7.3	program	02:C7 01:D12		
@@ -140,7 +141,7 @@ C17.7	program	02:C17 02:C21		first sentence procedural: the draw re-run by any p
 C17.8	procedural	02:C17 02:P2	the published draw procedure, re-run by any party; the beacon value enters as an attested fact (C11)	
 C17.9	procedural	02:C17	the published draw procedure, re-run by any party; the beacon value enters as an attested fact (C11)	parameter declaration
 C21.1	procedural	02:C21	the drawn judge's declaration and the challenger's evidence, entered as attested facts (C11); a second draw (C17)	
-C21.2	program	02:C21		
+C21.2	program	02:C21		its three grounds are programmed in `implicated` and `in_chain`; the standard as a bound protecting the subject is the parameter recusal_standard, checked against this floor (C18)
 C21.3	procedural	02:C21	the drawn judge's declaration and the challenger's evidence, entered as attested facts (C11); a second draw (C17)	
 C21.4	interpretive	02:C21		
 C21.5	program	02:C21		
@@ -186,7 +187,7 @@ S1.13	procedural	02:S1	signature verification by any party from recorded verific
 S1.14	program	02:S1		
 S1.15	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
 S1.16	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
-S1.17	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
+S1.17	procedural	02:S1	the anonymizing act (A2, C23), marked as an act of power anonymized under the law it cites; normative: the constitution does not resist the law	
 S1.18	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
 S1.19	interpretive	02:S1		
 S1.20	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	parameter declaration
@@ -198,7 +199,7 @@ S2.1	todo	02:S2	until programmed: binds in full; the instance's adoption record 
 S2.2	procedural	02:S2	the party's proof of continuity, entered as an act of presence and checked by any party from the record	
 S2.3	program	02:S2		
 S2.4	todo	02:S2	until programmed: binds in full; the instance's adoption record attests it (D6.2); conformance on the parent fixtures does not test it (C15.4)	
-S2.5	todo	02:S2	until programmed: binds in full; the instance's adoption record attests it (D6.2); conformance on the parent fixtures does not test it (C15.4)	
+S2.5	program	02:S2		
 S2.6	todo	02:S2	until programmed: binds in full; the instance's adoption record attests it (D6.2); conformance on the parent fixtures does not test it (C15.4)	
 S2.7	todo	02:S2	until programmed: binds in full; the instance's adoption record attests it (D6.2); conformance on the parent fixtures does not test it (C15.4)	
 S2.8	procedural	02:S2	the party's proof of continuity, entered as an act of presence and checked by any party from the record	
@@ -212,7 +213,7 @@ P1.6	program	02:P1
 P1.7	program	02:P1		
 P1.8	program	02:P1		
 P1.9	interpretive	02:P1		
-P1.10	todo	02:P1	until programmed: binds in full; the instance's adoption record attests it (D6.2); conformance on the parent fixtures does not test it (C15.4)	
+P1.10	program	02:P1		
 P1.11	todo	02:P1	until programmed: binds in full; the instance's adoption record attests it (D6.2); conformance on the parent fixtures does not test it (C15.4)	
 P1.12	program	02:P1		
 P1.13	program	02:P1 01:D18 02:C2		
@@ -259,6 +260,9 @@ OD23.2	program	02:§open-decisions
 OD23.3	procedural	02:§open-decisions	the grant's delivered terms (A1); configuration check (C18)	
 OD23.4	procedural	02:§open-decisions 02:C18	the grant's delivered terms (A1); configuration check (C18)	
 OD23.5	cost	02:§accepted-costs/accountability-outside-the-system-waits-for-law		
+BIND.1	proposed		founder decision pending	proposed remedy where the program and the prose disagree; not in either record
+BIND.2	proposed		founder decision pending	proposed remedy where the program and the prose disagree; not in either record
+BIND.3	proposed		founder decision pending	proposed remedy where the program and the prose disagree; not in either record
 OPEN.1	open	01:§open-decisions-adr-eth-01-od-n 02:§open-decisions		
 OPEN.2	open	01:§open-decisions-adr-eth-01-od-n 02:§open-decisions		
 OPEN.3	open	01:§open-decisions-adr-eth-01-od-n 02:§open-decisions		

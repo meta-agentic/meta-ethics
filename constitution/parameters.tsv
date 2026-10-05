@@ -43,7 +43,7 @@ continuity_procedure	S2.9	method	the non-human party	declared	how the challenge,
 nonhuman_seat_holder	P1.22	declaration	every party (the seat is filled)	nonempty	who holds the non-human Custodian seat, its charter and its key's custody
 seat_fill_ceiling	P1.4	duration	every party (the seat is filled)	finite	the ceiling within which an empty Custodian seat is filled
 veto_window	P1.5	duration	every party (the veto stays a last resort)	declared	the window over which a seat's vetoes are counted
-veto_ceiling	P1.5	count	every party (the veto stays a last resort)	<= share(D2)	the count of matters per window a seat may veto
+veto_ceiling	P1.5	count	every party (the veto stays a last resort)	finite & <= share(D2)	the count of matters per window a seat may veto
 veto_per_act	P1.6	count	the proposer	finite	how many times a veto against one act or its re-proposals stands
 owed_content_ceiling	P1.10	duration	the party owed the act	finite	the ceiling within which an owed act's content is decided
 reviewer_independence	P2.8	standard	the subject of a verdict	declared	whether a shared substrate or model family makes a reviewer implicated
@@ -55,3 +55,4 @@ regime_duration	H3.5	duration	every party (the regime ends)	finite	the declared,
 external_answerability	OD23.4	declaration	the injured outsider, and the human party inside the system	declared	whether a law binding the instance holds, or requires it to name, a natural or legal person answerable for a non-human party's acts; where it does, the person named (OD23.4)
 answer_window	H1.5	duration	the party that must answer	positive & >= min_response_window & finite	the window within which a party answers, running from delivery in the declared form
 ratification_window	H3.8	duration	every party (acts of the regime are ratified)	positive & finite	the window at exit within which an act of power marked under the regime is ratified
+binding_dispute_ceiling	BIND.3	duration	the subject of a disputed outcome	positive & finite	the ceiling within which a dispute of a program outcome against this text is decided (proposed)

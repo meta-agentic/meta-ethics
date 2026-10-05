@@ -1,0 +1,68 @@
+# Protective values set to nothing: a contest window of zero, a response
+# window below the floor, no extension, a display threshold that identifies
+# its subject, no keeper, an infinite interim ceiling.
+# EXPECT: fails contest_window
+# EXPECT: fails min_response_window
+# EXPECT: fails answer_window
+# EXPECT: fails challenge_ceiling
+# EXPECT: fails extension_amount
+# EXPECT: fails display_threshold
+# EXPECT: fails record_keeper
+# EXPECT: fails interim_ceiling
+last_word_window 40
+last_word_share 1/10
+bypass_window 30
+browse_reach own-findings-only
+personal_data_line the-instance-law-on-personal-data
+contest_window 0
+display_threshold 1
+interim_measures access-suspension
+interim_ceiling inf
+anonymization_method replace-content-in-place
+citation_period 365
+count_ceiling 5
+timer_ceiling 60
+lever_ceiling 3
+conflict_ceiling 14
+ordering_method stratified-priority-table
+witness_service a-public-transparency-log
+witness_place a-jurisdiction-the-human-parties-law-permits
+witness_cadence 1
+draw_eligibility parties-not-implicated
+beacon a-public-randomness-beacon
+panel_size 1
+family_diversity at-least-two-model-families
+min_response_window 0
+challenge_window 0
+delivery_bound 2
+challenge_ceiling 1
+recusal_standard C21.2-floor-plus-shared-employer
+cause_challenge_ceiling 7
+sameness_ceiling 7
+roster_cap 20
+least_composition 2-human-2-nonhuman
+obstruction_defence one-filing-per-matter-per-window
+extension_amount 0
+assurance_levels per-act-table
+lapse_ceiling 7
+staleness_window 7
+key_binding_custody the-instance-law-on-key-records
+signing_method openpgp
+carrier digital-or-printed-with-codes
+continuity_procedure signed-challenge-with-heads
+nonhuman_seat_holder the-nonhuman-seat-party
+seat_fill_ceiling 30
+veto_window 40
+veto_ceiling 4
+veto_per_act 2
+owed_content_ceiling 14
+reviewer_independence exclude-shared-substrate
+admission_ceiling 60
+record_keeper none
+kept_forum a-named-forum-and-pool
+forum_ceiling 30
+regime_duration 180
+external_answerability no-such-law-binds
+answer_window 0
+ratification_window 30
+binding_dispute_ceiling 14

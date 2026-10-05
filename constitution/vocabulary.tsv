@@ -249,3 +249,9 @@ reviewed_removal	act,party	attested	P3.2	the review under P2 of such an act, by 
 removal_bar	party	consequence	P3.2	during the genesis regime a reviewer in the founder's chain cannot review it	
 removal_effective	act	consequence	P3.2	it takes effect only as a consequence reviewed under P2	
 removal_provisional	act	consequence	P3.2	until then, and in genesis without a reviewer outside the founder's chain, it stays provisional	
+no_status_quo	proposal	intake	P1.10	an act with no status quo: a seat to fill, a judge to replace, an act with a deadline
+choice_since	proposal,time	intake	P1.10	when the act's content was first to be decided
+drawn_decides	proposal	derived	P1.10	where neither the channel nor the seats decide its content within the ceiling, a party drawn as P2 provides decides it
+continuity_failed	act	attested	S2.2	the session that did the act could not prove the party's continuity
+access_granted_by	act,party	intake	S2.5	whoever granted the access the act used
+continuity_finding	act	derived	S2.5	an act by an instance for which continuity fails is a finding

@@ -13,7 +13,7 @@ ROOT = os.path.dirname(HERE)                      # constitution/
 REPO = os.path.dirname(ROOT)
 RECORDS = {"01": os.path.join(REPO, "docs/adr/ADR-ETH-01-constitution-shape.md"),
            "02": os.path.join(REPO, "docs/adr/ADR-ETH-02-first-amendment.md")}
-STATUSES = {"program", "todo", "procedural", "meta", "interpretive", "open", "cost"}
+STATUSES = {"program", "todo", "procedural", "meta", "interpretive", "open", "cost", "proposed"}
 INPUT_CLASSES = {"intake", "attested", "param"}
 RULE_CLASSES = {"derived", "consequence"}
 NARRATIVE = re.compile(r"\b((?<!be )restored|corrected|correction|amended|amendment|amendments|"
@@ -70,11 +70,14 @@ def check_prose():
             fail("prose", "%s: %s paragraph names no enforcement" % (r["id"], r["status"]))
     # paragraphs marked procedural in the prose are procedural in the inventory
     status = {r["id"]: r["status"] for r in inv}
-    marked = dict(re.findall(r"^\*\*([A-Z]+[0-9]*\.[0-9]+)\*\* \*(Procedural|Parameters|Accepted cost)\.\*", text, re.M))
+    marked = dict(re.findall(r"^\*\*([A-Z]+[0-9]*\.[0-9]+)\*\* \*(Procedural|Parameters|Accepted cost|Proposed, founder decision pending)\.\*", text, re.M))
     for pid, st in status.items():
-        want = {"Procedural": "procedural", "Parameters": "procedural", "Accepted cost": "cost"}.get(marked.get(pid))
+        want = {"Procedural": "procedural", "Parameters": "procedural", "Accepted cost": "cost",
+                "Proposed, founder decision pending": "proposed"}.get(marked.get(pid))
         if want and st != want:
             fail("prose", "%s is marked %s in the prose but %s in the inventory" % (pid, marked[pid], st))
+        if st == "proposed" and marked.get(pid) != "Proposed, founder decision pending":
+            fail("prose", "%s is proposed in the inventory but not marked so in the prose" % pid)
         if st == "cost" and marked.get(pid) != "Accepted cost":
             fail("prose", "%s is an accepted cost in the inventory but not marked so in the prose" % pid)
         if st == "procedural" and marked.get(pid) not in ("Procedural", "Parameters"):
@@ -126,6 +129,10 @@ def check_sources(inv):
     used = set()
     for r in inv:
         toks = r["sources"].split()
+        if r["status"] == "proposed":
+            if toks:
+                fail("sources", "%s is proposed and in neither record, so it names no source" % r["id"])
+            continue
         if not toks:
             fail("sources", "%s names no source" % r["id"])
         for t in toks:
@@ -191,7 +198,13 @@ def manifest_files():
     files = ["L0.md", "clauses.tsv", "unmapped.tsv", "vocabulary.tsv", "parameters.tsv"]
     files += sorted(os.path.relpath(p, ROOT) for p in glob.glob(os.path.join(ROOT, "program", "*.lp")))
     files += sorted(os.path.relpath(p, ROOT) for p in glob.glob(os.path.join(ROOT, "fixtures", "*.lp")))
+    files += sorted(os.path.relpath(p, ROOT) for p in glob.glob(os.path.join(ROOT, "fixtures", "values", "*.values")))
+    files += ["DESIGN.md"]
+    files += sorted(os.path.relpath(p, ROOT) for p in glob.glob(os.path.join(ROOT, "tools", "*"))
+                    if os.path.isfile(p) and not p.endswith(".pyc"))
     entries = [(f, os.path.join(ROOT, f)) for f in files]
+    entries += [(os.path.relpath(os.path.join(REPO, "evidence/checker/check.py"), ROOT),
+                 os.path.join(REPO, "evidence/checker/check.py"))]
     entries += [(os.path.relpath(p, ROOT), p) for p in RECORDS.values()]
     return entries
 

@@ -51,12 +51,16 @@ custodian_passes(Q) :- passed_channel(Q), not vetoed(Q), not law_hold(Q), not so
 % clause: P1.12
 custodian_passes(Q) :- passed_channel(Q), owed_act(Q).
 
-% clause: P1.2 P1.3 P1.4
+% clause: P1.2 P1.3 P1.4 P1.10
 seat_choice(S, Q, O) :- choice(S, Q, O), seat_filled(S), not seat_ineligible(S, Q).
 dissent(Q, O) :- choice_needed(Q), option(Q, O), custodian_seat(S), not seat_choice(S, Q, O).
 chosen(Q, O) :- choice_needed(Q), option(Q, O), not dissent(Q, O).
 some_chosen(Q) :- chosen(Q, _).
-status_quo(Q) :- choice_needed(Q), not some_chosen(Q).
+status_quo(Q) :- choice_needed(Q), not some_chosen(Q), not no_status_quo(Q).
+
+% clause: P1.10
+drawn_decides(Q) :- choice_needed(Q), no_status_quo(Q), not some_chosen(Q), choice_since(Q, T),
+                    now(N), param(owed_content_ceiling, X), N - T >= X.
 
 % clause: P1.13 D18.3
 l0_signature_missing(Q) :- l0_change(Q), custodian_seat(S), not l0_signed(Q, S).

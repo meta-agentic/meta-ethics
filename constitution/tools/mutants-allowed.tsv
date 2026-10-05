@@ -36,3 +36,4 @@ review_done(V) :- reviewed(V,R); drawn_reviewer(V,R); not implicated(R,V); revie
 takes_effect(V) :- verdict(V,_,_); bears_consequence(V); review_done(V); window_passed(V). | drop verdict(V,_,_)	type guard: bears_consequence/1 is recorded only for a verdict
 provisional(V) :- verdict(V,_,_); bears_consequence(V); not takes_effect(V). | drop verdict(V,_,_)	type guard: bears_consequence/1 is recorded only for a verdict
 valid_closure(F) :- closure(C,F); witnessed_by(C,W); discharges(C,F); finding(F,P,_); W != P; not in_chain(W,P); not founder_finding_held(F). | drop closure(C,F)	type guard: witnessing and discharge are recorded only for a closing act
+drawn_decides(Q) :- choice_needed(Q); no_status_quo(Q); not some_chosen(Q); choice_since(Q,T); now(N); param(owed_content_ceiling,X); (N-T) >= X. | drop choice_needed(Q)	type guard: no_status_quo/1 and choice_since/2 are recorded only for an act that must be chosen
