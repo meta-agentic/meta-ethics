@@ -10,7 +10,7 @@ ratified: '2026-09-25'
 ratifiedBy: 'merge of pull request #1 (placement in the record, ADR-ETH-02 C5); made before ADR-ETH-02 S1, so unsigned'
 project: meta-ethics
 supersedes: []
-supersededBy: ['ADR-ETH-02 (D1 scope of symmetry, D2, D4, D7, D8, D9, D12, D14, D18 signer of an L0 change, OD1, OD3, OD6, OD7, OD16 closed half, OD19)']
+supersededBy: ['ADR-ETH-02 (D1 scope of symmetry, D2 seed, D4, D7, D8, D9, D12, D14, D18 signer of an L0 change, OD1, OD2, OD3, OD6, OD7, OD16 closed half, OD19, accepted cost on the formal frame)']
 labels: [constitution, L0, closure, perimeter, neutrality, tailoring, governance]
 ---
 
