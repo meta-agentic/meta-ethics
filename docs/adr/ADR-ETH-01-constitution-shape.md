@@ -4,10 +4,10 @@ space: eth
 adrId: ADR-ETH-01
 provisionalNumber: false
 title: The shape of the L0 constitution — a procedural, closed, measured, minimally invariant frame for mixed human/agent ecosystems
-status: Accepted
+status: Proposed
 date: '2026-09-21'
-ratified: '2026-09-25'
-ratifiedBy: 'merge of pull request #1 (placement in the record, ADR-ETH-02 C5); made before ADR-ETH-02 S1, so unsigned'
+placed: 'merge of pull request #1, 2026-09-25 (placement in the record, ADR-ETH-02 C5); not a ratification'
+ratification: 'with ADR-ETH-02, as one act over the digests of both records, signed by both Custodians (ADR-ETH-02 S1, P1)'
 project: meta-ethics
 supersedes: []
 supersededBy: ['ADR-ETH-02 (D1 scope of symmetry, D2 seed, D4, D7, D8, D9, D12, D14, D18 signer of an L0 change, OD1, OD2, OD3, OD6, OD7, OD16 closed half, OD19, accepted cost on the formal frame)']
@@ -16,7 +16,7 @@ labels: [constitution, L0, closure, perimeter, neutrality, tailoring, governance
 
 # ADR-ETH-01 — The shape of the L0 constitution
 
-**Status: Proposed 2026-09-21.** Awaiting ratification by the owner, who at genesis holds every seat and is therefore the Custodian for this act. Ratification is the merge of the pull request that carries this file; the merge commit is the signature. **Written at the time of decision**, not reconstructed: the decisions below were taken in two sessions, 2026-09-18 (kickoff, decisions D1–D7) and 2026-09-21 (brainstorm record, decisions D8–D21), and this record was drafted the same day as the second.
+**Status: Proposed 2026-09-21; placed in the record by a merge on 2026-09-25, not ratified.** This record and ADR-ETH-02 are read as one continuous text, the second an evolution of the first, and are ratified as one act: a single act over the digests of both records, signed by both Custodians under ADR-ETH-02 S1 and P1, which the signing closes. As drafted, this line made the merge of its pull request the ratification and the merge commit the signature; ADR-ETH-02 C5 corrects that. **Written at the time of decision**, not reconstructed: the decisions below were taken in two sessions, 2026-09-18 (kickoff, decisions D1–D7) and 2026-09-21 (brainstorm record, decisions D8–D21), and this record was drafted the same day as the second.
 
 > Claim tags: **[evidence]** · **[hypothesis]** · **[open]** · **[proposed]** · **[pending]**.
 
