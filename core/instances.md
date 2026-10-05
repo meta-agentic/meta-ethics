@@ -1,6 +1,6 @@
 # Instances — three derivations from one core
 
-**Status: Proposed with ADR-ETH-03, 2026-10-05.** An instance is derived, not chosen whole: **core × forces × values ⟹ instance ⟹ parameters**. The core (`core/core.md`) is the same for every instance. The forces F1–F9 of ADR-ETH-01 are the environment, and their strength differs between instances. The values are what each instance declares under F6. The instance is what results, and its founding document then sets parameters within the bounds the instance fixes. This file sketches three instances, one page each, and shows where the derivation forks. Only the first exists; the other two are sketches to show that the core admits them.
+**Status: Proposed with ADR-ETH-03, 2026-10-05.** An instance is derived, not chosen whole: **core × forces × values ⟹ instance ⟹ parameters**. The core (`core/L0.md`) is the same for every instance. The forces F1–F9 of ADR-ETH-01 are the environment, and their strength differs between instances. The values are what each instance declares under F6. The instance is what results, and its founding document then sets parameters within the bounds the instance fixes. This file sketches three instances, one page each, and shows where the derivation forks. Only the first exists; the other two are sketches to show that the core admits them.
 
 ## 1. The meta-agentic instance
 
@@ -40,19 +40,19 @@ A sketch: a professional body or cooperative whose members are all human, who us
 
 **What changes in the forces.** F2 is absent among parties: one kind. F5 is weak: every party decides at human speed, so human gates are cheap relative to the pace of acts. F9 applies to every party alike, so the asymmetry it forces vanishes. F3 may be met partly procedurally; a small body can afford named human enforcement where the mixed instance cannot. F1 is unchanged.
 
-**Values it might declare.** One member, one vote. Agents are instruments as `core/core.md` §1 defines them: an agent holds no mandate in its own name, its every act is the member's who used it (DEL.5), and no consequence falls on it; a consequence meant for it falls on that member. No human is ever an instrument. The category is proposed and waits on OD24. If OD24 rejects it, the agents this instance uses are subjects: they hold every protection of VOX, are judged on their acts alone, and the reviewer of a consequence on one of them need not be human. The instance may still keep them out of party status by kind, declared as a value (IMP.3).
+**Values it might declare.** One member, one vote. Admission reads kind: only humans become parties, declared as a value, and so agents are left out of every power (IMP.3). The agents the members use are instruments as `core/L0.md` §1 defines them, a category that waits on OD24: an agent holds no mandate in its own name, every act of it is recorded to the member who used it (DEL.5), and no consequence falls on it — a consequence meant for it falls on that member under DEL.5. An instrument is still a subject: a finding about its acts is delivered to it and to its member, and it can see and answer it (VOX). No human is ever an instrument. If OD24 rejects the category, the agents are subjects with no standing, judged on their acts alone, and the reviewer of a consequence on one of them need not be human.
 
 **How the derivation forks.**
 
 - MEM.4 × F9 for every party: anonymisation is available to every party, under the law that binds the instance. No kind distinction.
 - DEL.1 × F1: the same mandate chain; no continuity clause for non-human parties (S2 has nothing to govern), though an agent's acts must still be attributed to the member who used it (DEL.5, X08).
 - IMP.2: trivially satisfied by derivations; there is no kind to read.
-- VOX.4 × F9: every reviewer is human, because every subject is, so long as its agents are instruments; if they are subjects, a consequence on one of them may be reviewed by any party not implicated.
+- VOX.4 × F9: every reviewer is human, because every consequence falls on a human: on a member directly, or on a member through an instrument. If OD24 rejects instruments, a consequence on an agent may be reviewed by any party not implicated.
 - DEL.6, VOX.6: the members name, for each jurisdiction they act in, one of themselves or their body as answerable outside, and an outsider affected by the body's acts files and is answered like anyone.
 - COR.3 × F5 (weak): a single last word or an assembly vote suffices; no parity seats. A council of members replaceable by the assembly meets COR.2.
 - Genesis: the founding members sign the root; their regime ends when the first assembly holds seats the founders cannot revoke alone.
 
-**What it loses relative to the meta-agentic instance.** Nothing the core requires. It cannot host agents as parties without becoming another instance, and it says so.
+**What it loses relative to the meta-agentic instance.** Nothing the core requires. It bars a kind from party status, and so from every power, as a declared value, which the core admits only for kind; it cannot host agents as parties without becoming another constitution, and it says so.
 
 ## 3. An agents-only, fully autonomous instance
 
