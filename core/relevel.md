@@ -78,6 +78,6 @@ What a move of the consolidated text touches, from its checker as it stands on i
   - `partial` — a paragraph renders it in part, and the row names what is missing;
   - `contradicts` — a paragraph conflicts with it, and the row names that paragraph and the edit that would resolve it.
 
-  The rows of `core/tests.md` §3.3 are its first contents.
+  Its seed is `core/core-gaps.tsv`: the 26 floors §3.3 of `core/tests.md` does not mark covered, with their marks, the paragraphs concerned and what is missing or the edit that would resolve the contradiction. It moves beside the constitution's inventory when the consolidated text lands.
 - *The two-way totality check, extended.* Every paragraph names at least one `L0:` clause or is listed with a reason. Every `L0:` clause is named by a paragraph or listed in `core-gaps.tsv`. The check refuses a `core` entry naming a clause that a `contradicts` row lists against the same paragraph, so a paragraph cannot claim the clause it breaks.
 - *What it checks and what it does not.* It checks that the map is total in both directions, that every name resolves, and that no paragraph claims a clause it contradicts. It does not check that a paragraph meets the clause it names; that is what the floor checks of `core/tests.md` §4 do.

@@ -157,7 +157,7 @@ The classes a unit can fall in:
 
 **Noise.** No normative unit serves no principle. Three units are not normative: the dedication, by its own text, and the editorial corrections C4 and C8.
 
-**Floors to units.** Status is *covered*, *partial*, *none* or *contradicts*. A *contradicts* row names the instance edit that would resolve it. Each such edit is a change to the founder's records, made by the founder's own amendment, not by this record.
+**Floors to units.** Status is *covered*, *partial*, *none* or *contradicts*; every row not marked covered is also in `core/core-gaps.tsv`, the seed of the gaps file `core/relevel.md` §5 proposes. A *contradicts* row names the instance edit that would resolve it. Each such edit is a change to the founder's records, made by the founder's own amendment, not by this record.
 
 | Floor | Status | Instance units | Instance edit that would close it |
 |---|---|---|---|
