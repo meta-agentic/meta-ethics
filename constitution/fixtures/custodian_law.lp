@@ -2,8 +2,10 @@
 % per window. Every veto counts toward both ceilings unless the law it cites
 % was found breached, for the act or a re-proposal of it: ca's veto on q1,
 % whose law was found breached, does not count; its veto on q2, found
-% unfounded, and on q4, its review pending, do. q4 does not pass while its
-% review is pending, though the veto is beyond the ordinary ceiling. A
+% unfounded, and on q4, its review pending, do. q4's veto is beyond the
+% seat's ceiling, so its pending citation does not hold the act: the act
+% passes, and the citation is a finding that keeps any consequence off the
+% human it names, hq, until the review decides. A
 % re-proposal re-citing a law found unfounded is an ordinary, counted veto
 % with no fresh hold; one re-citing a law found breached stays uncounted and
 % held.
@@ -18,6 +20,7 @@ law_breach_found(q1, l1).
 passed_channel(q2). matter_of(q2, x2). veto(ca, q2, 11). veto_signed(ca, q2). veto_cites_law(ca, q2, l2). law_unfounded(q2, l2).
 passed_channel(q3). matter_of(q3, x3). veto(ca, q3, 12). veto_signed(ca, q3).
 passed_channel(q4). matter_of(q4, x4). veto(ca, q4, 13). veto_signed(ca, q4). veto_cites_law(ca, q4, l3).
+cites_right_of(q4, l3, hq).
 passed_channel(q5). matter_of(q5, x5). veto(ca, q5, 14). veto_signed(ca, q5).
 reproposal_of(q6, q2). passed_channel(q6). matter_of(q6, x2). veto(ch, q6, 15). veto_signed(ch, q6). veto_cites_law(ch, q6, l2).
 reproposal_of(q7, q1). passed_channel(q7). matter_of(q7, x1). veto(ch, q7, 16). veto_signed(ch, q7). veto_cites_law(ch, q7, l1).
@@ -37,9 +40,12 @@ decided_seq(q6, 15). decided_seq(q7, 16). decided_seq(q8, 17). decided_seq(q9, 1
 % EXPECT-NOT[P1.8]: counted_veto(ca,q1,10)
 % EXPECT-NOT[P1.8]: within_ceiling(ca,q4)
 % EXPECT-NOT[P1.8]: within_ceiling(ca,q5)
-% EXPECT[P1.7]: law_hold(q4)
+% EXPECT-NOT[P1.7]: law_hold(q4)
+% EXPECT[P1.7]: beyond_ceilings(ca,q4)
+% EXPECT[P1.7]: law_protection_finding(q4,l3,hq)
+% EXPECT[P1.7]: consequence_withheld(q4,hq)
 % EXPECT[P1.7]: law_hold(q1)
-% EXPECT-NOT[P1.7]: custodian_passes(q4)
+% EXPECT[P1.7]: custodian_passes(q4)
 % EXPECT-NOT[P1.7]: custodian_passes(q1)
 % EXPECT-NOT[P1.7]: law_hold(q2)
 % EXPECT[P1.8]: counted_veto(ch,q6,15)
@@ -50,4 +56,5 @@ decided_seq(q6, 15). decided_seq(q7, 16). decided_seq(q8, 17). decided_seq(q9, 1
 % EXPECT[P1.7]: law_hold(q7)
 % EXPECT[P1.8]: counted_veto(ch,q8,17)
 % EXPECT[P1.8]: counted_veto(ch,q9,18)
-% EXPECT[P1.7]: law_hold(q10)
+% EXPECT-NOT[P1.7]: law_unfounded_in_family(q10,l2)
+% EXPECT-NOT[P1.7]: law_breach_found_in_family(q9,l1)

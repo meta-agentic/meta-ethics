@@ -49,3 +49,4 @@ decider_barred(R) :- dispute_decision(_,_,R,_); founder_chain(R); not regime_exi
 decider_ok(V,R) :- dispute_decision(V,_,R,_); dispute_of(V); dispute_needs_human(V); kind_of(R,human); not decider_barred(R). | drop dispute_of(V)	implied: dispute_needs_human/1 holds only for a disputed outcome
 law_founded(S,Q) :- veto(S,Q,_); veto_cites_law(S,Q,L); family(Q,R); family(Q2,R); law_breach_found(Q2,L). | drop veto(S,Q,_)	type guard: a citation is recorded only for a recorded veto
 law_unfounded_in_family(Q,L) :- veto_cites_law(_,Q,L); family(Q,R); family(Q2,R); law_unfounded(Q2,L). | drop veto_cites_law(_,Q,L)	no outcome reads it: law_hold/1 and law_review_overdue/2 ask only about a cited law
+law_breach_found_in_family(Q,L) :- veto_cites_law(_,Q,L); family(Q,R); family(Q2,R); law_breach_found(Q2,L). | drop veto_cites_law(_,Q,L)	no outcome reads it: law_hold/1 and the finding ask only about a cited law

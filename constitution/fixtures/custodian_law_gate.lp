@@ -19,6 +19,7 @@ veto(ca, q4, 25). veto_signed(ca, q4). veto_cites_law(ca, q4, l4).
 passed_channel(q5). matter_of(q5, x5). owed_act(q5). veto(ca, q5, 25). veto_signed(ca, q5). veto_cites_law(ca, q5, l5).
 % valid and pending within the ceiling: held
 passed_channel(q6). matter_of(q6, x6). veto(ca, q6, 25). veto_signed(ca, q6). veto_cites_law(ca, q6, l6).
+cites_right_of(q6, l6, h6).
 % valid, pending past the ceiling: still held, the review drawn again, the delay
 % marked; a re-proposal without the cited part is not held by it
 passed_channel(q7). matter_of(q7, x7). veto(ch, q7, 12). veto_signed(ch, q7). veto_cites_law(ch, q7, l7).
@@ -38,6 +39,8 @@ decided_seq(q6, 25). decided_seq(q7, 12). decided_seq(q8, 13).
 % EXPECT-NOT[P1.7]: law_hold(q4)
 % EXPECT-NOT[P1.7]: law_hold(q5)
 % EXPECT[P1.7]: law_hold(q6)
+% EXPECT-NOT[P1.7]: beyond_ceilings(ca,q6)
+% EXPECT-NOT[P1.7]: consequence_withheld(q6,h6)
 % EXPECT[P1.7]: law_hold(q7)
 % EXPECT[P1.7]: law_review_overdue(q7,l7)
 % EXPECT[P1.7]: law_review_redrawn(q7,l7)

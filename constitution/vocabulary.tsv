@@ -210,7 +210,7 @@ founder_revocable	mandate	intake	C7.3	a mandate the founding document grants tha
 veto_cites_law	seat,proposal,law	intake	P1.7	a veto citing a law binding the instance that the act would breach as to a human party's right	
 law_unfounded	proposal,law	attested	P1.7	the review under P2 found the cited law not breached	
 counted_veto	seat,proposal,time	derived	P1.8	a veto that counts toward both ceilings: every veto, unless the law it cites was found breached	
-law_hold	proposal	derived	P1.7	the act does not pass while the review is pending or finds the breach; no lapse passes it	
+law_hold	proposal	derived	P1.7	the act does not pass while the review finds the breach, or while it is pending within the seat's ceilings; no lapse passes it	
 exempts	act,party	intake	A1.9	an act that purports to exempt a party from a rule	
 self_exemption	act	derived	A1.9	the founder may not exempt themself: a finding	
 human_language_filing	party,matter	intake	H2.3	a filing in human language or an accessible form	
@@ -287,3 +287,8 @@ counts_toward_d2	proposal	derived	P1.7	the marked delay counts toward the share 
 provisional_for	verdict,party	consequence	BIND.2	the held outcome is provisional for every subject it touches, past the ceiling too, until decided
 law_founded	seat,proposal	derived	P1.8	the law the veto cites was found breached, for the act or a re-proposal of it
 law_unfounded_in_family	proposal,law	derived	P1.7	the cited law was found not breached for the act or a re-proposal of it
+law_breach_found_in_family	proposal,law	derived	P1.7	the cited law was found breached for the act or a re-proposal of it
+cites_right_of	proposal,law,party	intake	P1.7	the human party whose right the act would breach, as the law-citing veto names it
+beyond_ceilings	seat,proposal	derived	P1.7	a law-citing veto beyond the seat's window ceiling or the per-act bound
+law_protection_finding	proposal,law,party	derived	P1.7	beyond the ceilings, a pending citation is a finding on behalf of the human it names, reviewed under P2
+consequence_withheld	proposal,party	derived	P1.7	the act may pass, but no consequence of it falls on the named human until the review decides
