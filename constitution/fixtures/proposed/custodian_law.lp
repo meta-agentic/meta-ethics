@@ -24,7 +24,7 @@ cites_right_of(q4, l3, hq).
 passed_channel(q5). matter_of(q5, x5). veto(ca, q5, 14). veto_signed(ca, q5).
 reproposal_of(q6, q2). passed_channel(q6). matter_of(q6, x2). veto(ch, q6, 15). veto_signed(ch, q6). veto_cites_law(ch, q6, l2).
 reproposal_of(q7, q1). passed_channel(q7). matter_of(q7, x1). veto(ch, q7, 16). veto_signed(ch, q7). veto_cites_law(ch, q7, l1).
-% an ordinary veto on a re-proposal of q1 counts; on an unrelated act, laws
+% a veto with no law citation on a re-proposal of q1 counts; on an unrelated act, laws
 % found breached or unfounded elsewhere neither exempt the veto nor withdraw the hold
 reproposal_of(q8, q1). passed_channel(q8). matter_of(q8, x1). veto(ch, q8, 17). veto_signed(ch, q8).
 passed_channel(q9). matter_of(q9, x9). veto(ch, q9, 18). veto_signed(ch, q9). veto_cites_law(ch, q9, l1).

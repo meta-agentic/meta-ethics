@@ -120,11 +120,11 @@
     "P3.5"
   ],
   "digest_rule": "sha256 over the lines '<sha256>  <path>\\n' of the entries, in the order listed",
-  "combined_sha256": "a847a515c1bd9862fbdff915a9ce8f3f1c722b2f7cd26c62386733c8c5e1f62e",
+  "combined_sha256": "230d3a3160d2d5f6530d60ccc61c5025261229200cd6a0d2c98be4540f22694c",
   "entries": [
     {
       "path": "L0.md",
-      "sha256": "f922bf2669e68f5b2faa585a8980fa4d1b6bfdf47d1abd9736ce23642e0702ca"
+      "sha256": "602f79756c663ddd659329c63ab89e5958e94f7bc1b49f4ba9d0f666e9da7503"
     },
     {
       "path": "clauses.tsv",
@@ -144,7 +144,7 @@
     },
     {
       "path": "program/custodian.lp",
-      "sha256": "a89b756edc233c0a6eea531e5f52b137acb3c648112973706525c2cccbd56d8e"
+      "sha256": "8eced31e6ef863183cf5ca463d33713cda7342029acafefb7b81b36d96d8c6cd"
     },
     {
       "path": "program/kinds.lp",
@@ -184,7 +184,7 @@
     },
     {
       "path": "fixtures/custodian_law_inforce.lp",
-      "sha256": "b091db0a480b1882fe99f25bfa630a5a72f6977c723825655b7738582f998e3f"
+      "sha256": "1d4d6b641080d2c516248c777ff549e21bfebb0350fb7c37c7e76c8f8ce6f9f7"
     },
     {
       "path": "fixtures/custodian_law_inforce_ceiling.lp",
@@ -192,7 +192,7 @@
     },
     {
       "path": "fixtures/custodian_law_inforce_genesis.lp",
-      "sha256": "5dcedecd1ce93082306772322923d89a30ca402582043cf45dc9194753d9ad8e"
+      "sha256": "d4512d30781266c72755fae0f9254e176e1a818e1f70fd30e9888677b498855a"
     },
     {
       "path": "fixtures/genesis_regime.lp",
@@ -292,7 +292,7 @@
     },
     {
       "path": "fixtures/proposed/custodian_law.lp",
-      "sha256": "78633aa722589cc598e2edd50a1478bf789f04238881055474e2997b81f75a34"
+      "sha256": "784d665489cae49dd4750c3bda0651732a3d693a1ef9dad99d92dc502496fdc7"
     },
     {
       "path": "fixtures/proposed/custodian_law_ceilings.lp",
@@ -344,7 +344,7 @@
     },
     {
       "path": "DESIGN.md",
-      "sha256": "5c873d6241704e618b3ec4e8da5bbf0cd354db03be443b7219c4d226c1c393ac"
+      "sha256": "1c375880e034cf4028e5ad2b4d0f6168641fa6a75088d038c029607888c93a59"
     },
     {
       "path": "tools/c18.py",
