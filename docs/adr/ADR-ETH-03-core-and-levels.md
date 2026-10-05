@@ -30,9 +30,7 @@ The two pull against each other and against F6. F10 pushes the core toward less;
 
 ## The decisions
 
-### K1 — L0 is the core: six principles
-
-The core is six principles, each a property of the model in `core/core.md` §1 (an append-only record; state as a fold over it; a mandate graph rooted in a founding document that is not a party; a verdict function from facts and rules to findings and consequences; a change operator on rules gated over positions).
+**K1 — L0 is the core: six principles.** The core is six principles, each a property of the model in `core/core.md` §1 (an append-only record; state as a fold over it; a mandate graph rooted in a founding document that is not a party; a verdict function from facts and rules to findings and consequences; a change operator on rules gated over positions).
 
 - **MEM — Memory.** What happened is written once, attributed, and never silently changed; reading about a subject is itself written.
 - **DEL — Delegation.** Every power is granted, every duty accepted, every mandate renounceable, and all trace to one root; delegation divides power and never multiplies it.
@@ -51,9 +49,7 @@ The candidate failed the tests in nine places, and the core above is the result 
 
 *Reopens if:* a pathology is shown to be structural and excluded by no principle; a principle's counter-model is shown to violate another principle too, so that the principles are not independent; an instance satisfying all six exhibits a pathology the taxonomy classes structural; or an instance the founder holds legitimate violates a principle.
 
-### K2 — Three levels
-
-**L0** is the core, shared by every instance. **L1** is an instance's constitution: for the meta-agentic instance, ADR-ETH-01 with ADR-ETH-02 and their consolidated text. **L2** is an instance's rules and parameters, admitted through its governed channel within the bounds L1 fixes (ADR-ETH-02 T, C15). An instance is derived, not chosen whole: core × forces × values ⟹ instance ⟹ parameters.
+**K2 — Three levels.** **L0** is the core, shared by every instance. **L1** is an instance's constitution: for the meta-agentic instance, ADR-ETH-01 with ADR-ETH-02 and their consolidated text. **L2** is an instance's rules and parameters, admitted through its governed channel within the bounds L1 fixes (ADR-ETH-02 T, C15). An instance is derived, not chosen whole: core × forces × values ⟹ instance ⟹ parameters.
 
 The records before this one use "L0" for the meta-agentic constitution and "L1" for its ordinary rules. They are not rewritten. Read under the levels: their "L0" is the instance's L1, their "L0 change" is a constitutional change of the instance, their "L1" is L2, and their "parent" (ADR-ETH-01 D6) is the core with its conformance suite. `core/relevel.md` §1 carries the full mapping.
 
@@ -63,9 +59,7 @@ The core is not a rule of any instance. COR reaches every rule of an instance, i
 
 *Reopens if:* a clause is found that belongs to no level, or a reader of the earlier records cannot resolve a level from the mapping.
 
-### K3 — ADR-ETH-01 and ADR-ETH-02 are the meta-agentic instance
-
-ADR-ETH-01, ADR-ETH-02 and the consolidated text are the constitution of the meta-agentic instance: the instance designed to govern the agentic system that develops software with the founder of meta-agentic.ai. It aims at being a good constitution for humans and agents collaborating; it does not claim to be the best one, and other instances may serve humans alone or agents alone better. Its values, declared under F6, are parity between kinds (P1), review for every subject (P2's extension), two kinds or no instance (P3) and the founder's dedication, which is not a rule. Its forces are F1–F9 at full strength, F2 and F9 in particular. `core/instances.md` §1 derives its text from the core.
+**K3 — ADR-ETH-01 and ADR-ETH-02 are the meta-agentic instance.** ADR-ETH-01, ADR-ETH-02 and the consolidated text are the constitution of the meta-agentic instance: the instance designed to govern the agentic system that develops software with the founder of meta-agentic.ai. It aims at being a good constitution for humans and agents collaborating; it does not claim to be the best one, and other instances may serve humans alone or agents alone better. Its values, declared under F6, are parity between kinds (P1), review for every subject (P2's extension), two kinds or no instance (P3) and the founder's dedication, which is not a rule. Its forces are F1–F9 at full strength, F2 and F9 in particular. `core/instances.md` §1 derives its text from the core.
 
 The instance satisfies the core except in the genesis regime, which K6 accounts for, and leaves seven core clauses without a clause or with a partial one (`core/core.md` §3.3): non-retroactivity of judgement; notice, with a chance to leave, before a change of rules adds a duty; non-retaliation; possible compliance; no consequence from prediction or association; reads of the record beyond findings; and the replacement of a Custodian (OD4). None is a contradiction. Each is for the instance to close by its own amendment, or to declare.
 
@@ -73,41 +67,31 @@ The instance satisfies the core except in the genesis regime, which K6 accounts 
 
 *Reopens if:* a clause of the instance is found to contradict a core clause outside the genesis regime.
 
-### K4 — What the founder's ceremony ratifies
-
-The core is published under its authors' signatures, as authors: an attribution (MEM.2), not an act of power, because the core binds no one by itself. The meta-agentic instance adopts the core and ratifies its own constitution in one act, signed by both Custodians (ADR-ETH-02 S1, P1). ADR-ETH-02 already makes ADR-ETH-01 and ADR-ETH-02 one act over both digests; this record proposes that the same act carry the digests of this record and of the core. That needs ADR-ETH-02's status sentence amended in place before the act, which ADR-ETH-02 permits until then; this record does not make that edit. The act is made under the genesis regime and is marked so (ADR-ETH-02 H3).
+**K4 — What the founder's ceremony ratifies.** The core is published under its authors' signatures, as authors: an attribution (MEM.2), not an act of power, because the core binds no one by itself. The meta-agentic instance adopts the core and ratifies its own constitution in one act, signed by both Custodians (ADR-ETH-02 S1, P1). ADR-ETH-02 already makes ADR-ETH-01 and ADR-ETH-02 one act over both digests; this record proposes that the same act carry the digests of this record and of the core. That needs ADR-ETH-02's status sentence amended in place before the act, which ADR-ETH-02 permits until then; this record does not make that edit. The act is made under the genesis regime and is marked so (ADR-ETH-02 H3).
 
 *Rejected:* the core ratified by the founder alone as the instance's supreme law — loses to F10 and COR.2, because a core one party ratifies for an instance is that party's fixed point. *Rejected:* the core ratified by the meta-agentic Custodians on behalf of every instance — loses to F7: instances are siblings, and none adopts for another. *Rejected:* two separate acts, one for the core and one for the instance — loses to F5, because the instance would then exist for a time with a constitution and no core, or a core and no ratified constitution.
 
 *Reopens if:* the core is cited as binding a party that has not adopted it.
 
-### K5 — How a future instance adopts the core
-
-An instance adopts the core by its founding document, which names the core's version by digest, declares the instance's forces and values, and states the instance's constitution (L1). It conforms when its rules pass the core's conformance checks (`core/core.md` §4, to be built under `conformance/core/`) and its own; and it carries a thin adoption record in its own repository, as ADR-ETH-01 already provides. It is a sibling of every other instance: adopting first confers nothing. It may meet each floor by any mechanism, and may adopt the meta-agentic instance's mechanisms as a library without adopting its values.
+**K5 — How a future instance adopts the core.** An instance adopts the core by its founding document, which names the core's version by digest, declares the instance's forces and values, and states the instance's constitution (L1). It conforms when its rules pass the core's conformance checks (`core/core.md` §4, to be built under `conformance/core/`) and its own; and it carries a thin adoption record in its own repository, as ADR-ETH-01 already provides. It is a sibling of every other instance: adopting first confers nothing. It may meet each floor by any mechanism, and may adopt the meta-agentic instance's mechanisms as a library without adopting its values.
 
 *Rejected:* adoption by copying the meta-agentic constitution and editing it — loses to F10, because it carries parity into an instance that may not hold it, and to F11, because the edit cannot tell which clauses carry the core. *Rejected:* conformance by self-declaration — loses to F1.
 
 *Reopens if:* an instance passes the core's conformance checks and violates a principle on its fixtures, which would mean the checks do not capture the core.
 
-### K6 — The genesis transient
-
-In every rooted system the signer of the founding document holds every position at the first act, before any grant (DEL.1). No system satisfies COR.2 or IMP.5 at genesis. The core is therefore claimed from the end of a founding regime, and the regime is held to the core's other clauses: it is declared and every act under it marked, it has a finite declared ceiling, and every act of power under it is decided again at its end by parties it did not implicate. An instance whose founding regime never ends never conforms. ADR-ETH-02 H3 is the meta-agentic instance's mechanism for this; the outcome is the core's.
+**K6 — The genesis transient.** In every rooted system the signer of the founding document holds every position at the first act, before any grant (DEL.1). No system satisfies COR.2 or IMP.5 at genesis. The core is therefore claimed from the end of a founding regime, and the regime is held to the core's other clauses: it is declared and every act under it marked, it has a finite declared ceiling, and every act of power under it is decided again at its end by parties it did not implicate. An instance whose founding regime never ends never conforms. ADR-ETH-02 H3 is the meta-agentic instance's mechanism for this; the outcome is the core's.
 
 *Rejected:* a core that holds from the first act — loses to its own impossibility. *Rejected:* exempting genesis without bounds — loses to F1, because a founding regime with no end is entrenchment by another name (`core/pathologies.md` X44).
 
 *Reopens if:* an instance claims conformance with its founding regime past its declared ceiling.
 
-### K7 — Pathologies are labels on violations, and instances are partially ordered
-
-Each pathology in `core/pathologies.md` is defined as a violation of a property of the model, never as a resemblance to a historical polity, and no real person or state is named. This is the ex-post labelling ADR-ETH-01 D16 allows, not the scoring it rejects. Instances are ordered by which principles they satisfy and which pathologies they exclude. The order is partial: two instances satisfying all six are not ranked by the core, because what remains between them is their values.
+**K7 — Pathologies are labels on violations, and instances are partially ordered.** Each pathology in `core/pathologies.md` is defined as a violation of a property of the model, never as a resemblance to a historical polity, and no real person or state is named. This is the ex-post labelling ADR-ETH-01 D16 allows, not the scoring it rejects. Instances are ordered by which principles they satisfy and which pathologies they exclude. The order is partial: two instances satisfying all six are not ranked by the core, because what remains between them is their values.
 
 *Rejected:* a ranking of instances by a score — loses to F6 and D16.
 
 *Reopens if:* a pathology is defined in the taxonomy by resemblance rather than by a property.
 
-### K8 — The re-levelling plan
-
-`core/relevel.md` proposes the moves: the consolidated text to `instances/meta-agentic/constitution/`; the core's property checks to `conformance/core/`; the threat model and the genesis directory under the instance; the decision records where they are, their level recorded at ratification; and the companion paper's new structure — thesis the core and the pathology result, the multiverse of constitutions as its frame, the meta-agentic instance as a worked derivation, a humans-only and an agents-only instance as sketches. No existing file is moved by this record.
+**K8 — The re-levelling plan.** `core/relevel.md` proposes the moves: the consolidated text to `instances/meta-agentic/constitution/`; the core's property checks to `conformance/core/`; the threat model and the genesis directory under the instance; the decision records where they are, their level recorded at ratification; and the companion paper's new structure — thesis the core and the pathology result, the multiverse of constitutions as its frame, the meta-agentic instance as a worked derivation, a humans-only and an agents-only instance as sketches. No existing file is moved by this record.
 
 *Rejected:* moving files in this record — loses to F5 and to the open consolidated text, which would be rebased under a move it did not make.
 

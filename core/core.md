@@ -36,6 +36,8 @@ The model says nothing about the logic rules are written in, the carrier of a si
 
 Each principle has a one-line statement, its clauses as properties of the model, and what it leaves to instances.
 
+**Identifiers.** The principle identifiers `MEM`, `DEL`, `LEX`, `IMP`, `VOX`, `COR` and `GEN`, and the clause identifiers formed from them (`MEM.1`, `DEL.4`, …), are stable: a clause keeps its identifier for good, a retired identifier is never reused, and a new clause takes the next free number under its principle. Each clause is one list item whose first bold token is its identifier, so that an instance's inventory can name the core clause each of its paragraphs sits under, and a checker can resolve the name (`core/relevel.md` §5).
+
 ### MEM — Memory
 
 *What happened is written once, attributed, and never silently changed.*
@@ -108,6 +110,15 @@ Each principle has a one-line statement, its clauses as properties of the model,
 
 *Left to instances:* the gate's shape and thresholds, who holds the last word, who signs a constitutional change.
 
+### GEN — The genesis transient
+
+*No rooted system meets the core at its first act; the core is claimed from the end of a founding regime held to its other clauses.*
+
+- **GEN.1 Lemma.** In every rooted system, at $e_0$ the signer of $\rho$ holds every position: before any grant, no one else holds a capability (DEL.1). So COR.2 and IMP.5 fail for the signer at genesis, in every instance.
+- **GEN.2 The founding regime.** The core is claimed from the end of a founding regime, and the regime is held to the core's other clauses: it is declared and every act under it is marked (MEM.2); it is a lever with a finite declared ceiling (COR.3); and every act of power made under it is decided again, at its end, by parties it did not implicate (IMP.5). An instance whose founding regime never ends never conforms.
+
+*Left to instances:* how the regime ends; ADR-ETH-02 H3 is the meta-agentic instance's mechanism.
+
 ### 2.7 What the core is not
 
 **Not substantive.** The core encodes who decides, on what record, with whom excluded, and how it is corrected; it says nothing about what is good (ADR-ETH-01 D3). It excludes pathologies of structure and does not exclude pathologies of purpose. `core/pathologies.md` marks which are which.
@@ -115,12 +126,6 @@ Each principle has a one-line statement, its clauses as properties of the model,
 **Not a rule of any instance.** COR reaches every rule of an instance, and does not reach the core, because the core is the type of an instance, not a clause in one. An instance cannot amend it; it can leave the family. The core is not a fixed point owned by a party, since it binds only those who adopt it, and changes only by re-founding: a new version of the core, which each instance adopts or not by its own constitutional change (ADR-ETH-01 D6, as ADR-ETH-03 re-levels it).
 
 **Not a score.** Instances are ordered by which principles they satisfy and which pathologies they exclude. The order is partial: two instances that satisfy the same principles are not ranked by the core, because what remains between them is their values (ADR-ETH-01 D16). The taxonomy of pathologies is the ex-post labelling D16 allows, each label defined as a violation of a property, never as a resemblance to a historical polity.
-
-### 2.8 The genesis transient
-
-**Lemma.** In every rooted system, at $e_0$ the signer of $\rho$ holds every position: before any grant, no one else holds a capability (DEL.1). So COR.2 and IMP.5 fail for the signer at genesis, in every instance.
-
-The core is therefore claimed from the end of a founding regime, and the regime itself is held to the core's other clauses: it is declared and every act under it is marked (MEM.2), it is a lever with a finite declared ceiling (COR.3), and every act of power made under it is decided again, at its end, by parties it did not implicate (IMP.5). An instance whose founding regime never ends never conforms. This is a statement of outcomes; ADR-ETH-02 H3 is one mechanism that delivers it.
 
 ## 3. Tests
 
@@ -187,7 +192,7 @@ Every unit of ADR-ETH-01 (D1–D21), of ADR-ETH-02 on the main line (T, A1–A3,
 | A3 working state | COR.3, COR.4 | F1, F8 | floor; the working-state form is mechanism |
 | H1 lawful obstruction | COR.3, VOX.4 | F1, F7 | floor; defences are mechanism |
 | H2 opaque coordination | LEX.4, MEM.2, IMP.5 | F1, F3, F6 | floor |
-| H3 genesis regime | the genesis transient (§2.8) | F4, F7 | floor; exit by custody is mechanism |
+| H3 genesis regime | the genesis transient (GEN) | F4, F7 | floor; exit by custody is mechanism |
 | C4, C8, C9 | the records' own accuracy | — | editorial |
 | C5, C16 placement, witness | MEM.1, MEM.3 | F1, F9 | mechanism |
 | C6 fragment | LEX.2 | F3, F8 | mechanism |
@@ -215,7 +220,7 @@ Every unit of ADR-ETH-01 (D1–D21), of ADR-ETH-02 on the main line (T, A1–A3,
 6. **MEM.5 reading is an act.** A2 logs every read of a finding about a subject. Reads of the rest of the record about a subject are not logged. *Partial.*
 7. **COR.2 for the Custodian seats.** P1 forbids a seat to veto its own replacement, but what replaces a Custodian and who counts it is open (ADR-ETH-01 OD4). *Partial, open.*
 
-None of the gaps is a contradiction: the instance does nothing a core clause forbids, except during the genesis regime, which §2.8 accounts for.
+None of the gaps is a contradiction: the instance does nothing a core clause forbids, except during the genesis regime, which GEN accounts for.
 
 ### 3.4 Where the candidate five failed, and what changed
 
@@ -229,7 +234,7 @@ The candidate core was Memory, Delegation, Impartiality, Voice and Correctabilit
 6. **Memory did not exclude surveillance.** *Changed:* MEM.5, reading is an act.
 7. **"Every rule is changeable by the rules" admitted gridlock and indefinite pendency.** A rule can be changeable in principle and never in practice. *Changed:* COR states reachability along a finite path (COR.1), no owned fixed point (COR.2), finite levers (COR.3) and closable findings (COR.4).
 8. **Oligarchy and plutocracy are not excluded as such.** The tests show that "a few decide" and "weight follows stake" are violations only through one of three routes: binding those who cannot leave (DEL.3, DEL.4), entrenching (COR.2), or barring a class (IMP.3). Over parties who accepted, can leave, are judged like everyone and are replaceable, they are declared values. This is a finding, not a change; `core/pathologies.md` X45 and X46 argue it.
-9. **The genesis transient was missing.** The candidate's "no position, the founder's included, is beyond replacement" fails at $e_0$ in every system (§2.8). *Changed:* the transient is stated.
+9. **The genesis transient was missing.** The candidate's "no position, the founder's included, is beyond replacement" fails at $e_0$ in every system (GEN.1). *Changed:* the transient is stated.
 
 Six principles result: MEM, DEL, LEX, IMP, VOX, COR.
 
