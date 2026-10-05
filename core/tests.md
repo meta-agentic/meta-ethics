@@ -27,7 +27,7 @@ The candidate given to ADR-ETH-03 was five principles: Memory, Delegation, Impar
 17. **No matter had to end, and a favourable verdict could be reopened without end.** *Changed:* COR.3 bounds every matter and provisional status; COR.4 forbids double jeopardy.
 18. **The genesis lemma did not hold in the model, and the founding regime could be extended or ended by declaration.** *Changed:* GEN is a declared transient, not a principle; its lemma is restated in the model's terms; GEN.2 is held to the other floors.
 19. **The admissibility relation could carry burdens past every floor.** A condition such as "acts by kind b are not admitted" changed capacity without being a consequence. *Changed:* *binds* covers any component of $\Gamma$; $A$ is invariant under renaming (IMP.1) and under permutation of attribute values (IMP.3); a condition of $A$ that reads an actor's own status is a consequence.
-20. **The change operator checked only state floors, so a change could install unanimity.** *Changed:* floors are tagged **[Γ]**, **[state]** or **[run]**, and $\Delta$ admits a rule set only if it meets every [Γ] floor the current one meets, decided at admission by the bounded checks of §4: no change regresses, a non-conforming rule set can be repaired one change at a time, and conformance is claimed only once every floor is met.
+20. **The change operator checked only state floors, so a change could install unanimity.** *Changed:* floors are tagged **[Γ]**, **[state]** or **[run]**, and $\Delta$ admits a rule set only if it meets every [Γ] floor the current one meets, decided at admission by the bounded checks of §4: no change regresses, a non-conforming rule set can be repaired one change at a time, and conformance is claimed only once every floor is met. A first form compared whole floors, so a rule set failing a floor anywhere could add violations of it everywhere; the comparison is now per violation — a floor with the rule, matter or position that fails it — and GEN.3 bounds how long a deployment may name the core while it does not conform.
 21. **The procedure exclusion of implication let a decider review its own decision.** *Changed:* ground (iii) excepts reviewing or re-examining one's own decision.
 22. **Universality forbade duties of office.** *Changed:* IMP.4 forbids reading a position only to exempt its holder.
 23. **Admission by attribute excluded qualification and legal capacity, and a first loosening let proxies back in.** *Changed:* admission may read a declared minimum age or legal capacity that every actor of an admitted kind meets or comes to meet, never a maximum age; a criterion no actor of a kind can meet reads kind and is declared; capacity withheld by law on another attribute is a derogation, not a criterion; a qualification counts only if every actor of an admitted kind can obtain it and a party attests it under IMP.5.
@@ -35,6 +35,7 @@ The candidate given to ADR-ETH-03 was five principles: Memory, Delegation, Impar
 25. **Lapse in the subject's favour gave impunity to a party whose grants filled every seat.** *Changed:* COR.3 provides a decider from outside every implicated chain, and lapse is unavailable to a subject whose grants emptied the bench; GEN.2 lapses an unre-decided genesis act's consequences on everyone but the founder and those who accepted it.
 26. **Three protections of subjects reached parties only.** *Changed:* MEM.3, MEM.5 and LEX.5 reach subjects and actors.
 27. **An answerable actor could be named without its consent, and leaving the core had no gate.** *Changed:* DEL.6 requires the named actor's accepted entry; DEL.7 requires the most demanding gate, under IMP.5, and a chance for every subject to answer.
+28. **The outside decider could be rebuilt from the founder's own grants.** A pool the founding document grants holds its positions through the founder's grants, so it is implicated in every matter about the founder. *Changed:* COR.3's outside decider holds a root grant no implicated party made or can revoke alone — for matters about the founder, a grant made after genesis through $\Delta$, or an outside decider the founding document names without granting it a mandate.
 
 Oligarchy and plutocracy are not excluded as such. "A few decide" and "weight follows stake" are violations only through cycles of mutual replacement, a blocking group below capture, barring by attribute, or binding those who cannot leave. Over parties who accepted, can leave at no cost and can replace the few, they are declared values (`core/pathologies.md` X45, X46).
 
@@ -42,7 +43,7 @@ Fuller's eight ways to fail to make law are restated as follows: generality as I
 
 ## 2. Clauses and definitions
 
-The core has **38 floors**: MEM 5, DEL 8, LEX 8, IMP 5, VOX 7, COR 4 in six principles, and GEN.2 in the declared transient. §1 of `core/L0.md` holds the **definitions of the model**: systems as abstractions, attribute and kind, act time, skeleton, the rule set's six components, state, live edge, party, subject, instrument, binding, implication, positions and capture, change, attestation, provisional status, runs, and the two relations between levels. A definition binds no one; it fixes what a floor means.
+The core has **39 floors**: MEM 5, DEL 8, LEX 8, IMP 5, VOX 7, COR 4 in six principles, and GEN.2 and GEN.3 in the two declared transients. §1 of `core/L0.md` holds the **definitions of the model**: systems as abstractions, attribute and kind, act time, skeleton, the rule set's six components, state, live edge, party, subject, instrument, binding, implication, positions and capture, change, attestation, provisional status, runs, and the two relations between levels. A definition binds no one; it fixes what a floor means.
 
 ## 3. Tests
 
@@ -103,11 +104,12 @@ For each principle, a system expressible in the model that satisfies the other f
 | COR.3 (outside decider) | a founder whose grants filled every seat, every matter about it lapsing (X67) |
 | IMP.5 (iii) exception | a judge reviewing its own verdict on appeal (X32) |
 | IMP.3 ($A$ invariance) | acts by one kind not admitted, everything else blind |
+| GEN.3 | a deployment that names the core for good while failing a floor, its subjects untold |
 
 **Couplings checked.** Several clauses refer to another principle; none makes a principle derivable from the others.
 - DEL.8 applies VOX, IMP and LEX to grants and revocations, which are acts of a grantor and not consequences; its witness (a purge by individually valid revocations) violates no clause outside DEL. The VOX witness revokes nothing, so DEL.8's reliance on VOX is not engaged.
 - COR.3's outside decider uses IMP.5's implication; its witness keeps every decider unimplicated except through the subject's grants.
-- $\Delta$ refuses any change that loses a [Γ] floor the current rule set meets. The COR witness's rule set is the founding one; because the seat rule's family of winning sets is empty, no change can reach COR.1 or COR.2 from it, and the witness keeps failing COR alone.
+- $\Delta$ refuses any change that adds a violation of a [Γ] floor. The COR witness's rule set is the founding one; its frozen seat rule is a violation it keeps, so no change is refused on its account, and because the seat rule's family of winning sets is empty, no change can remove it, and the witness keeps failing COR alone.
 - X67's witness is excluded by COR.3 alone: a matter decided by an outside decider is judged, so IMP.4 is not separately engaged.
 - DEL.3's acceptance by staying refers to VOX.1's notice. The VOX witness therefore adds no duty by change.
 - VOX.7 refers to COR.3 for its ceiling and adds scope and remedy; it is not a restatement.
@@ -217,12 +219,13 @@ The classes a unit can fall in:
 | COR.3 | **contradicts** | P3 (the kept record's findings and their forum) | Findings kept open on an ended instance's record, those naming the founder from the genesis regime included, are decided by the forum only on request, with no ceiling when none is made. Edit: a ceiling from the end at which a kept finding not requested closes as ended without verdict; or a statement that the floors stop at an instance's end, naming those that survive (MEM.1, MEM.3, VOX.2, VOX.3) |
 | COR.4 | partial | A2, C22, H1 | re-examination against a subject after a favourable verdict only on new recorded evidence, a finite number of times |
 | GEN.2 | **contradicts** | H3, P1 | H3 lets an act not ratified within its window stand, consequences included, while GEN.2 lapses its consequences on every actor but the founder and those who accepted it. Edit: H3's unratified act stands as to the founder and its acceptors only; an act of general application, a rule or a grant, stands, and only its consequences on actors that did not accept it lapse, so H3's rejection of lapse unless ratified (F5) is not reopened. Also missing: delivery of the regime's declaration to every subject, and a bar on lengthening its duration except by parties not implicated |
+| GEN.3 | none | — | none needed if the eight record edits land before ratification, so that the deployment conforms when it first names the core; otherwise declare every violation and a ceiling, delivered to every subject |
 
 | Status | Count |
 |---|---|
 | covered | 9 |
 | partial | 19 |
-| none | 3 |
+| none | 4 |
 | contradicts | 7 |
 
 Seven floors are contradicted, by eight clauses of the instance: COR.3 by two. Each contradiction is closed by the founder's edit to the records named in its row; this record makes none of them.
@@ -244,7 +247,7 @@ A check marked **proxy** is weaker than its floor, and the row says where.
 
 | Floor | Kind | Check | Proxy? |
 |---|---|---|---|
-| $\Delta$ | bounded | a change is admitted only if the resulting rule set passes every **[Γ]** check below that the current rule set passes | — |
+| $\Delta$ | bounded | each **[Γ]** check below returns its set of witnesses (the floor and the failing rule, matter or position); a change is admitted only if the new set is contained in the current one | — |
 | MEM.1, MEM.3 | procedural | every witnessed head extends its predecessor by a prefix proof over skeletons; a pair without one derives `fork` | — |
 | MEM.2 | static + procedural | every intake predicate carries an author argument, bound to a signature (S1); every intake predicate is read by some rule or listed with a declared purpose; the observed/judged gap is published | — |
 | MEM.4 | static | no derivation of a finding reads `renounce` under negation | — |
@@ -278,6 +281,7 @@ A check marked **proxy** is weaker than its floor, and the row says where.
 | COR.2 | bounded | the replacement-dependency graph is acyclic, and every position has a replacement path free of its holder's acts | **proxy** beyond the cap |
 | COR.3 | static + fixture + bounded | every predicate of the `lever` vocabulary class is bounded by a parameter, and so is each matter's total delay; a provisional status past its ceiling derives `decided` or `lapsed`; for every matter whose deciders are all implicated, a decider outside every implicated chain exists up to the cap | — |
 | COR.4 | procedural + fixture | the published closure result of A3; `reopen_against(V)` without new evidence or beyond the count derives `jeopardy` | — |
+| GEN.3 | procedural | a deployment naming a core version while any check fails publishes its witness set and ceiling to every subject; past the ceiling the version is no longer named | — |
 | GEN.2 | procedural | the regime's declaration, ceiling, ending event and re-decision window are in the founding document and the record | — |
 
 ## 5. Open questions

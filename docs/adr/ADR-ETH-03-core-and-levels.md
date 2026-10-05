@@ -3,7 +3,7 @@ kind: adr
 space: eth
 adrId: ADR-ETH-03
 provisionalNumber: false
-title: The core and the levels — six invariant principles and one declared transient as the originator; the meta-agentic constitution as one constitution conforming to them
+title: The core and the levels — six invariant principles and two declared transients as the originator; the meta-agentic constitution as one constitution conforming to them
 status: Proposed
 date: '2026-10-05'
 project: meta-ethics
@@ -37,14 +37,14 @@ F10 pushes the core toward less. F1 pushes it toward more, because every structu
 
 ## The decisions
 
-**K1 — L0 is the core: six principles and one declared transient.** The core is `core/L0.md`. It states a model, then floors over that model.
+**K1 — L0 is the core: six principles and two declared transients.** The core is `core/L0.md`. It states a model, then floors over that model.
 
 The model is a system as an abstraction with an observation map. It has:
 - an append-only record of entries, each with a skeleton and a content;
 - a rule set whose fold and admissibility relation are among its components;
 - a mandate graph rooted in a founding document that is not a party;
 - typed attestations;
-- a change operator gated over positions, which admits no change that loses a rule-set floor the current rule set meets, so a rule set can be repaired one change at a time.
+- a change operator gated over positions, which admits no change that adds a violation of a rule-set floor — a floor with the rule, matter or position that fails it — so a rule set can be repaired one change at a time.
 
 The core's floors:
 - **MEM — Memory.** What happened is written once, by its true author, and never silently changed. Nothing more is written than is needed, and no one learns about a subject unseen.
@@ -53,14 +53,14 @@ The core's floors:
 - **IMP — Impartiality.** What is found does not depend on who you are. Attributes may shape safeguards, never burdens or power, and admission reads no attribute but kind. No one is outside judgement, and no one decides their own case.
 - **VOX — Voice.** Whoever is bound is told in time, can see, can answer at no cost, and is heard before it binds; interim measures are bounded. Whoever is affected, inside or not, can complain and is answered.
 - **COR — Correctability.** No group short of capture can block a correction, and no position's replacement depends on itself. Every matter ends, and no one is tried twice on the same facts without new evidence.
-- **GEN — the founding regime**, a declared transient and not a principle. No rooted system meets the core at its first act. The core is claimed from the end of a founding regime held to every other floor it can meet.
+- **GEN — two declared transients, not principles:** the founding regime (GEN.2), and partial conformance (GEN.3), under which a deployment that names the core before meeting it declares every violation and a ceiling to its subjects, and stops naming the core past the ceiling. For the founding regime: No rooted system meets the core at its first act. The core is claimed from the end of a founding regime held to every other floor it can meet.
 
-Section 1 of `core/L0.md` holds definitions of the model, which bind no one. Sections 2 and 3 hold the 38 floors, each marked a property of the rule set, decided when a rule set is admitted, or of a state, or of a run.
+Section 1 of `core/L0.md` holds definitions of the model, which bind no one. Sections 2 and 3 hold the 39 floors, each marked a property of the rule set, decided when a rule set is admitted, or of a state, or of a run.
 
 **How it was found.** The candidate given to this record was five principles: Memory, Delegation, Impartiality, Voice and Correctability. Three tests were run (`core/tests.md` §3), and the candidate failed in twenty-seven places, each closed in the core (`core/tests.md` §1).
 - **Coverage.** 67 pathologies after merging synonyms, each classed by its definition before any clause is applied. All 48 structural ones are excluded by some clause, and the 14 mixed ones in their structural part. The 5 beyond a core over a record are named with the reason.
 - **Minimality.** For each principle, a system expressible in the model satisfies the other five and violates it. There is a witness for each clause added to answer a distinct pathology, and the couplings between clauses were checked.
-- **Sufficiency.** Every unit of ADR-ETH-01 and ADR-ETH-02, P3 and the revised C14 included, maps to what it serves. Of the 38 floors, the meta-agentic constitution covers 9, renders 19 in part and 3 not at all, and contradicts 7, by eight of its clauses (K3).
+- **Sufficiency.** Every unit of ADR-ETH-01 and ADR-ETH-02, P3 and the revised C14 included, maps to what it serves. Of the 39 floors, the meta-agentic constitution covers 9, renders 19 in part and 4 not at all, and contradicts 7, by eight of its clauses (K3).
 
 *Rejected alternatives:*
 - *The meta-agentic constitution as the core* — loses to F10. Parity of kinds (P1), two kinds or no instance (P3) and the human reviewer for humans (P2) exclude a humans-only and an agents-only constitution.
@@ -97,7 +97,7 @@ The records before this one are read through the mapping of `core/relevel.md` §
 
 Under that mapping C15's conformance test keeps its fixtures, which are L1's.
 
-The change operator reaches every rule of a constitution and admits no change that loses a rule-set floor the current rule set meets; a deployment claims conformance only once every floor is met. Leaving the core is a re-founding: a new founding document whose genesis entry cites the old record, preceded by notice and a free exit (DEL.7). It is not a step of the old system. Within a deployment, the core is therefore its revolutionary surface (ADR-ETH-02 C2).
+The change operator reaches every rule of a constitution and admits no change that adds a violation of a rule-set floor; a deployment claims conformance only once every floor is met, and while it does not, GEN.3 bounds how long it may name the core. Leaving the core is a re-founding: a new founding document whose genesis entry cites the old record, preceded by notice and a free exit (DEL.7). It is not a step of the old system. Within a deployment, the core is therefore its revolutionary surface (ADR-ETH-02 C2).
 
 A version of the core is identified by its digest:
 - Anyone may publish a version, and authorship confers nothing.
@@ -121,7 +121,7 @@ A version of the core is identified by its digest:
 - two kinds or no instance (P3);
 - the founder's dedication, which is not a rule.
 
-Against the core it covers 9 floors, renders 19 in part and 3 not at all, and contradicts 7, by eight of its clauses (`core/tests.md` §3.3, `core/core-gaps.tsv`). Each contradiction is closed by an edit to the founder's records, which this record does not make:
+Against the core it covers 9 floors, renders 19 in part and 4 not at all, and contradicts 7, by eight of its clauses (`core/tests.md` §3.3, `core/core-gaps.tsv`). Each contradiction is closed by an edit to the founder's records, which this record does not make:
 - **DEL.5.** P2 cites a finding attributed to a human only through a chain against that human, with no act, custody or knowledge of its own, and says nothing of non-human grantors. Edit: for any grantor, cite it only on those grounds, as S2 already does for steering.
 - **LEX.3.** Provenance names the rule set at derivation, not at each act (C12), and no program file versions rules. Edit: bind it to the act's intake, and apply a milder rule.
 - **LEX.4.** P3's pause binds every party for one actor's departure, and the program classes it as a consequence. Edit: recast it as a condition of admissibility that reads no actor.
@@ -161,6 +161,7 @@ The signature covers `core/L0.md`, never `core/tests.md` or the taxonomy, so the
 - It carries a thin adoption record in its own repository, as ADR-ETH-01 already provides.
 - Constitutions are siblings, and adopting first confers nothing.
 - A constitution may meet each floor by any mechanism, and may reuse the meta-agentic mechanisms without its values.
+- A deployment that names the core before its constitution meets every floor is under GEN.3: it declares every violation and a finite ceiling to its subjects, claims no conformance, adds no violation by any change, and past the ceiling stops naming the core.
 
 *Rejected alternatives:*
 - *Adoption by copying the meta-agentic constitution and editing it* — loses to F10, because it carries parity into a constitution that may not hold it.
@@ -177,6 +178,8 @@ GEN.2 holds the founding regime to every other floor it can meet:
 - it ends at an event any party can verify;
 - every act of power under it goes for re-decision by parties not implicated, and one not re-decided within a window stands, marked, as a finding, which is H3's own rule;
 - past the ceiling without the ending event, every consequence under it on others lapses.
+
+Genesis grants, as acts of general application, stand without re-decision. That is bounded: COR.2 and DEL.8 keep every holder replaceable after genesis, and implication ground (iv) keeps the founder's appointees implicated in every matter about the founder.
 
 *Rejected alternatives:*
 - *A core that holds from the first act* — loses to F7, because no deployment could conform: every one begins with one signer.
@@ -255,7 +258,7 @@ The argument for Option A: ordinal proportion imports no external scale, since i
 
 *Option B:* leave both to constitutions, at the cost that a lawful, heard, correctable constitution may impose draconian or irreversible consequences and still conform.
 
-**OD27 — The meta-agentic constitution against the core.** Which of its 19 partial and 3 absent floors to close by amendment and which to declare. Its 8 contradicting clauses must be closed before it claims conformance (K3). DEL.6 should be read with OD23: it asks for an actor answerable for the instance's acts, not for the non-human seat's in particular.
+**OD27 — The meta-agentic constitution against the core.** Which of its 19 partial and 4 absent floors to close by amendment and which to declare. The deployment meets GEN.3 most simply by landing the eight record edits before ratification, so that it conforms when it first names the core. Its 8 contradicting clauses must be closed before it claims conformance (K3). DEL.6 should be read with OD23: it asks for an actor answerable for the instance's acts, not for the non-human seat's in particular.
 
 **OD28 — The ratification manifest.** Whether the ratification act signs one manifest carrying `core/L0.md`, this record and the consolidated text with ADR-ETH-01 and ADR-ETH-02 (K4). That needs ADR-ETH-02's status sentence amended first.
 
@@ -297,12 +300,12 @@ The ledgers of ADR-ETH-01 and ADR-ETH-02 otherwise stand.
 ID   STATUS    DECISION                                   ALTERNATIVES REJECTED (why)                         ACCEPTED COST                         REOPENING TRIGGER
 K1   proposed  L0 is the core: MEM, DEL, LEX, IMP, VOX,   meta-agentic text (F10); candidate five (F1);       admits rule by a few with real exit;  structural pathology excluded by none;
                COR over a model of observed systems,      cooperative COR (F1, as A3); blacklist (F6, D16);   procedurally valid evil not           a counter-model violates two
-               and the transient GEN; 38 floors, each a   mechanisms (F10); substantive floor (F6, D3); one   excluded; collusion bounded;          principles; a conforming constitution
+               two transients (GEN); 39 floors, each a    mechanisms (F10); substantive floor (F6, D3); one   excluded; collusion bounded;          principles; a conforming constitution
                state or run property; definitions apart   principle (F1); voice in rule-making (F10, F6);     admission reads kind and declared     shows a structural pathology; a
                                                           a core per kind (F7, F2)                            thresholds every admitted actor meets reviewed finding of a violation
 K2   proposed  L0 core, L1 constitution, L2 parameters;   two levels (F7); one relation (F8); renaming the    within a deployment the core is its   clause with no level; level
-               conforms-to and instance-of; Delta never   records (F8); core amendable inside (F10); authors  revolutionary surface                 unresolvable; a version treated as
-               loses a rule-set floor; leaving is         alone publish (F1); a gate among constitutions                                            binding a non-conformer
+               conforms-to and instance-of; Delta adds    records (F8); core amendable inside (F10); authors  revolutionary surface                 unresolvable; a version treated as
+               no rule-set violation; leaving is          alone publish (F1); a gate among constitutions                                            binding a non-conformer
                re-founding; versions by digest            (F7)
 K3   proposed  ADR-ETH-01, ADR-ETH-02 and the             re-derive first (F5); parity as core (F10);         8 contradictions to close by the      a further contradiction; conformance
                consolidated text are the meta-agentic     weaken a floor to fit (F1)                          founder's edits; 22 floors partial    claimed before the eight areclosed
