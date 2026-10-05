@@ -26,8 +26,18 @@ sees_in_full(C, F) :- closure(K, F), act(K, C, _, _).
 
 % clause: H1.5
 extended(P, Q) :- extension_requested(P, Q, _).
-due(P, Q, E) :- window_opens(P, Q, T), param(answer_window, W), not extended(P, Q), E = T + W.
-due(P, Q, E) :- window_opens(P, Q, T), param(answer_window, W), extended(P, Q),
+
+% clause: H2.3
+awaiting_render(P, Q) :- human_language_filing(P, Q), not rendered(P, Q).
+
+% clause: S1.12
+means_pending(P) :- reports_compromise(R, P, _), not new_means_admitted(R).
+window_suspended(P, Q) :- requires_signature(Q, P), means_pending(P).
+
+% clause: H1.5 H2.3 S1.12
+window_runs(P, Q) :- window_opens(P, Q, _), not awaiting_render(P, Q), not window_suspended(P, Q).
+due(P, Q, E) :- window_opens(P, Q, T), window_runs(P, Q), param(answer_window, W), not extended(P, Q), E = T + W.
+due(P, Q, E) :- window_opens(P, Q, T), window_runs(P, Q), param(answer_window, W), extended(P, Q),
                 param(extension_amount, X), E = T + W + X.
 
 % clause: H3.3
@@ -43,3 +53,20 @@ may_answer(P, F) :- finding(F, P, _).
 % clause: A2.7 P3.7
 interim_active(I) :- interim(I, F, T), finding(F, _, _), now(N), param(interim_ceiling, C), N - T < C,
                      not instance_ended.
+
+% clause: H3.8
+unratified(A) :- marked_regime(A), regime_exit(E), now(N), param(ratification_window, W), N - E >= W,
+                 not ratified_act(A), not refused_act(A).
+refusal_finding(A) :- marked_regime(A), refused_act(A).
+
+% clause: A2.2
+anonymization_breach(E) :- anonymized(E, _), power_entry(E).
+anonymization_breach(E) :- anonymized(E, _), not law_requires(E).
+
+% clause: A2.10
+anonymization_premature(E) :- anonymized(E, P), finding(F, P, _), open(F), not instance_ended.
+anonymization_untold(E) :- anonymized(E, _), not told_before(E).
+
+% clause: A2.14
+unlogged_read(D, P) :- read_shown(D, P, F), not read_of(D, P, F).
+visible_read(S, D, P) :- read_of(D, P, F), finding(F, S, _).

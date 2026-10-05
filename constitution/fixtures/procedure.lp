@@ -33,6 +33,22 @@ param(interim_ceiling, 6).
 delivered_to_subject(g2).
 interim(i1, g1, 16). interim(i2, g2, 10).
 regime_exit(15).
+param(ratification_window, 3).
+power_at(w3, 12). ratified_act(w3).
+power_at(w4, 13). refused_act(w4).
+window_opens(c, q4, 10). human_language_filing(c, q4).
+window_opens(c, q5, 10). human_language_filing(c, q5). rendered(c, q5).
+window_opens(d, q6, 10). requires_signature(q6, d). reports_compromise(k4, d, 9).
+window_opens(d, q7, 10).
+root_grant(m5). mandate(m5, d, s). issued(m5, 0).
+window_opens(a, q8, 10). requires_signature(q8, a). new_means_admitted(k1).
+kind_of(a, human). kind_of(b, human). kind_of(c, nonhuman). kind_of(d, human).
+anonymized(e1, a). law_requires(e1). told_before(e1).
+anonymized(e2, a). power_entry(e2). law_requires(e2). told_before(e2).
+anonymized(e3, a).
+anonymized(e4, b). law_requires(e4).
+anonymized(e5, c). law_requires(e5). told_before(e5).
+read_of(rd1, c, g1). read_shown(rd1, c, g1). read_shown(rd2, a, g1).
 power_at(w1, 9). power_at(w2, 16).
 finding(g3, f, 4). closure(k3x, g3). witnessed_by(k3x, c). discharges(k3x, g3).
 
@@ -41,6 +57,28 @@ finding(g3, f, 4). closure(k3x, g3). witnessed_by(k3x, c). discharges(k3x, g3).
 % EXPECT-NOT[A1.5]: delivery_owed(g2,c)
 % EXPECT[A2.7]: interim_active(i1)
 % EXPECT-NOT[A2.7]: interim_active(i2)
+% EXPECT[H2.3]: due(c,q5,15)
+% EXPECT[H2.3]: awaiting_render(c,q4)
+% EXPECT-NOT[H2.3]: due(c,q4,15)
+% EXPECT[S1.12]: due(d,q7,15)
+% EXPECT[S1.12]: due(a,q8,15)
+% EXPECT-NOT[S1.12]: due(d,q6,15)
+% EXPECT[H3.8]: unratified(w1)
+% EXPECT[H3.8]: refusal_finding(w4)
+% EXPECT-NOT[H3.8]: unratified(w3)
+% EXPECT-NOT[H3.8]: unratified(w4)
+% EXPECT[A2.2]: anonymization_breach(e2)
+% EXPECT[A2.2]: anonymization_breach(e3)
+% EXPECT-NOT[A2.2]: anonymization_breach(e1)
+% EXPECT[A2.10]: anonymization_premature(e4)
+% EXPECT[A2.10]: anonymization_untold(e4)
+% EXPECT-NOT[A2.10]: anonymization_premature(e1)
+% EXPECT-NOT[A2.10]: anonymization_untold(e1)
+% EXPECT[A2.17]: anonymization_breach_kind(e5)
+% EXPECT-NOT[A2.17]: anonymization_breach_kind(e1)
+% EXPECT[A2.14]: unlogged_read(rd2,a)
+% EXPECT[A2.14]: visible_read(b,rd1,c)
+% EXPECT-NOT[A2.14]: unlogged_read(rd1,c)
 % EXPECT[S1.10]: void_signature(s2)
 % EXPECT[S1.10]: void_signature(s3)
 % EXPECT-NOT[S1.10]: void_signature(s1)

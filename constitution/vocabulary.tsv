@@ -216,3 +216,38 @@ counted_veto	seat,proposal,time	derived	P1.8	a veto that counts toward a ceiling
 law_hold	proposal	derived	P1.7	the act does not pass while the review of a cited law is pending or finds the breach
 exempts	act,party	intake	A1.9	an act that purports to exempt a party from a rule
 self_exemption	act	derived	A1.9	the founder may not exempt themself: a finding
+human_language_filing	party,matter	intake	H2.3	a filing in human language or an accessible form
+rendered	party,matter	attested	H2.3	the filing rendered into the schema
+awaiting_render	party,matter	derived	H2.3	no deadline runs against its author until it is rendered
+requires_signature	matter,party	intake	S1.12	an act on the matter requires the party's signature
+new_means_admitted	act	attested	S1.11	the reporting party's new signing means admitted through the channel
+means_pending	party	derived	S1.12	a party whose new signing means waits for admission
+window_suspended	party,matter	derived	S1.12	no window runs against the party for an act that requires its signature until its new means is admitted
+window_runs	party,matter	derived	H1.5	a window runs against the party
+ratified_act	act	attested	H3.7	an act of power under the regime ratified by signature at exit
+refused_act	act	attested	H3.8	an explicit refusal of an act at exit
+unratified	act	derived	H3.8	ratification is never by silence: an act not ratified within its window stands, marked unratified for good, and is a finding
+refusal_finding	act	derived	H3.8	an explicit refusal is a finding against the act
+anonymized	entry,party	intake	A2.2	an anonymizing act on an entry naming a person
+power_entry	entry	intake	A2.2	an entry recording an act done in a seat, as a delegator, or as a change of rules
+law_requires	entry	attested	A2.2	the law binding the instance the anonymizing act cites requires it
+anonymization_breach	entry	derived	A2.2	an act of power anonymized, or an anonymization no law requires: a finding
+anonymization_premature	entry	derived	A2.10	an anonymization before the closure of an open finding about the person, other than on the kept record
+told_before	entry	attested	A2.10	the person was told before the anonymization was done
+anonymization_untold	entry	derived	A2.10	an anonymization the person was not told of beforehand
+read_of	read,party,finding	intake	A2.14	a logged read of a finding by a party
+read_shown	read,party,finding	attested	A2.14	a read of a finding by a party, later shown
+unlogged_read	read,party	derived	A2.14	a read missing from the log: a finding
+visible_read	party,read,party	derived	A2.14	every read is visible to the finding's subject with its reader
+anonymization_breach_kind	entry	consequence	A2.17	anonymization applies to humans only
+conflict_filed	rule,party,time	intake	C14.3	when an undecided conflict went to a drawn reviewer
+protection	rule	intake	C14.3	a consequence that protects its subject
+conflict_lapsed	rule,party	consequence	C14.3	an undecided conflict whose ceiling passed unresolved
+attributed_via_chain	finding,party	intake	P2.3	a finding attributed to a party only through its delegation chain
+attribution_reviewed	finding,party,party	attested	P2.3	a review of the finding's attribution to the party, by a reviewer
+citable_through_chain	finding,party	consequence	P2.3	beyond its matter, a chain-attributed finding is cited against a human only once a human has reviewed its attribution
+removes_last_of_kind	act	attested	P3.2	an act by another party that would remove the last party of a kind
+reviewed_removal	act,party	attested	P3.2	the review under P2 of such an act, by a reviewer
+removal_bar	party	derived	P3.2	during the genesis regime a reviewer in the founder's chain cannot review it
+removal_effective	act	derived	P3.2	it takes effect only as a consequence reviewed under P2
+removal_provisional	act	derived	P3.2	until then, and in genesis without a reviewer outside the founder's chain, it stays provisional

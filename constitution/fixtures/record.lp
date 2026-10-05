@@ -44,6 +44,10 @@ presence(e3, col2, k2, h1). presence(e4, col2, k2, h2).
 candidate(suspend, sub). candidate(protect, sub). conflicts(suspend, protect). prevails(protect, suspend).
 candidate(fine, col2). candidate(warn, col2). conflicts(fine, warn).
 candidate(warn, col1).
+param(conflict_ceiling, 5).
+candidate(fine2, rcpt). candidate(shield, rcpt). conflicts(fine2, shield). protection(shield).
+conflict_filed(shield, rcpt, 10). conflict_filed(fine2, rcpt, 10).
+candidate(fine3, sub). candidate(shield, sub). conflicts(fine3, shield). conflict_filed(shield, sub, 18).
 
 filed(y1, col1). owed(y1). balance(col1, 0).
 filed(y2, col1).
@@ -78,6 +82,9 @@ filed(y3, col2). balance(col2, 3).
 % EXPECT-NOT[C14.1]: applied(warn,col2)
 % EXPECT[C14.2]: applied(protect,sub)
 % EXPECT-NOT[C14.2]: applied(suspend,sub)
+% EXPECT[C14.3]: applied(shield,rcpt)
+% EXPECT-NOT[C14.3]: applied(fine2,rcpt)
+% EXPECT-NOT[C14.3]: applied(shield,sub)
 % EXPECT[H1.4]: admitted_act(y1)
 % EXPECT[H1.4]: admitted_act(y3)
 % EXPECT-NOT[H1.4]: admitted_act(y2)

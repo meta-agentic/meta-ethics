@@ -64,6 +64,8 @@ def check_prose():
     for r in inv:
         if r["status"] not in STATUSES:
             fail("prose", "%s: unknown status %r" % (r["id"], r["status"]))
+        if r["status"] == "todo" and not r["enforcement"].startswith("until programmed:"):
+            fail("prose", "%s: a todo paragraph names its interim enforcement (\"until programmed: ...\")" % r["id"])
         if r["status"] in ("procedural", "meta") and not r["enforcement"].strip():
             fail("prose", "%s: %s paragraph names no enforcement" % (r["id"], r["status"]))
     # paragraphs marked procedural in the prose are procedural in the inventory
@@ -201,8 +203,11 @@ def digest(path):
 def build_manifest():
     entries = [{"path": rel, "sha256": digest(p)} for rel, p in manifest_files()]
     canon = "".join("%s  %s\n" % (e["sha256"], e["path"]) for e in entries)
+    inv = read_tsv("clauses.tsv")
     return {
         "object": "the L0 constitution as it stands, prose and program bound by clause",
+        "attested_equivalent": [r["id"] for r in inv if r["status"] == "program"],
+        "consented_in_prose_only": [r["id"] for r in inv if r["status"] == "todo"],
         "digest_rule": "sha256 over the lines '<sha256>  <path>\\n' of the entries, in the order listed",
         "combined_sha256": hashlib.sha256(canon.encode()).hexdigest(),
         "entries": entries,

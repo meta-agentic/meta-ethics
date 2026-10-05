@@ -54,3 +54,4 @@ forum_ceiling	P3.13	duration	the subject of an open finding on the kept record	f
 regime_duration	H3.5	duration	every party (the regime ends)	finite	the declared, finite duration of the genesis regime
 external_answerability	OD23.4	declaration	the injured outsider, and the human party inside the system	declared	whether a law binding the instance holds, or requires it to name, a natural or legal person answerable for a non-human party's acts; where it does, the person named (OD23.4)
 answer_window	H1.5	duration	the party that must answer	positive & >= min_response_window & finite	the window within which a party answers, running from delivery in the declared form
+ratification_window	H3.8	duration	every party (acts of the regime are ratified)	positive & finite	the window at exit within which an act of power marked under the regime is ratified

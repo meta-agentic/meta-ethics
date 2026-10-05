@@ -1,15 +1,134 @@
 {
   "object": "the L0 constitution as it stands, prose and program bound by clause",
+  "attested_equivalent": [
+    "A1.1",
+    "A1.2",
+    "A1.3",
+    "A1.4",
+    "A1.5",
+    "A1.8",
+    "A1.9",
+    "A1.10",
+    "C7.1",
+    "C7.3",
+    "C7.4",
+    "D9.3",
+    "D15.2",
+    "D15.3",
+    "A2.2",
+    "A2.3",
+    "A2.4",
+    "A2.5",
+    "A2.6",
+    "A2.7",
+    "A2.8",
+    "A2.10",
+    "A2.13",
+    "A2.14",
+    "A2.17",
+    "A3.1",
+    "A3.2",
+    "D18.3",
+    "C14.1",
+    "C14.2",
+    "C14.3",
+    "C14.4",
+    "C16.3",
+    "C16.4",
+    "C17.7",
+    "C21.2",
+    "C21.5",
+    "H1.4",
+    "H1.5",
+    "H2.3",
+    "H3.3",
+    "H3.4",
+    "H3.8",
+    "S1.6",
+    "S1.10",
+    "S1.12",
+    "S1.14",
+    "C5.2",
+    "S2.3",
+    "P1.1",
+    "P1.2",
+    "P1.3",
+    "P1.4",
+    "P1.5",
+    "P1.6",
+    "P1.7",
+    "P1.8",
+    "P1.12",
+    "P1.13",
+    "P1.17",
+    "P1.19",
+    "P1.20",
+    "P1.21",
+    "P2.1",
+    "P2.2",
+    "P2.3",
+    "P2.4",
+    "P2.5",
+    "P2.7",
+    "P3.2",
+    "P3.3",
+    "P3.4",
+    "P3.7",
+    "P3.8",
+    "P3.9",
+    "P3.11",
+    "P3.12",
+    "P3.15",
+    "OD23.2"
+  ],
+  "consented_in_prose_only": [
+    "D1.1",
+    "D3.2",
+    "D5.2",
+    "C15.3",
+    "A1.7",
+    "C7.2",
+    "D9.2",
+    "C12.4",
+    "D10.2",
+    "D11.1",
+    "D11.2",
+    "D13.1",
+    "D15.1",
+    "A2.1",
+    "A2.12",
+    "A2.15",
+    "D19.1",
+    "C17.6",
+    "H2.5",
+    "H3.5",
+    "H3.7",
+    "H3.9",
+    "S1.1",
+    "S1.2",
+    "S1.5",
+    "S1.11",
+    "S2.1",
+    "S2.4",
+    "S2.5",
+    "S2.6",
+    "S2.7",
+    "P1.10",
+    "P1.11",
+    "P1.15",
+    "P1.18",
+    "P3.5"
+  ],
   "digest_rule": "sha256 over the lines '<sha256>  <path>\\n' of the entries, in the order listed",
-  "combined_sha256": "9551a6816318c75acab0b2047ae17ffb0cc7cafa543ab2ebeabadc4ffde59fc7",
+  "combined_sha256": "c1b029a349031d40831317a3d3d771b6c5527631edfc9cb32867d662e066badb",
   "entries": [
     {
       "path": "L0.md",
-      "sha256": "db18b8b0c9fe9d864b791316063a2f5a5dd488e7f32fb9622999ce9d4c444708"
+      "sha256": "2dd98c035f3c72c10aa49e774155ee7ce7f3575c86ecc4c2f8cf0c1760ce7f61"
     },
     {
       "path": "clauses.tsv",
-      "sha256": "340a41a985ef6802eb47ce13d5dd496bc9706660b24b9fe9ebce66644ebcb7b4"
+      "sha256": "70d6c87040d130bd677d6e3c78d533c956f54794557f9c22fe4042a2213686e0"
     },
     {
       "path": "unmapped.tsv",
@@ -17,11 +136,11 @@
     },
     {
       "path": "vocabulary.tsv",
-      "sha256": "ec6b5efd28f2221deb135dec52b9d127322b9e88b903bacea063d921b3bbbf0b"
+      "sha256": "604fb7b4c917b8a470c508a186c66373391936046e09001b2d7799084764439c"
     },
     {
       "path": "parameters.tsv",
-      "sha256": "cf3d1c43a238f671723d94ac25959577c84e61ffb6f10f011425698fcf216323"
+      "sha256": "e37bdb038f76758989c8a0b592263bcb583aa358d8c4bb5e61bb90511c58fbae"
     },
     {
       "path": "program/custodian.lp",
@@ -29,19 +148,19 @@
     },
     {
       "path": "program/kinds.lp",
-      "sha256": "e23d7240bb6c8e3175ba779ee5ae9525c105d0b306d83723e2667ef291cad58b"
+      "sha256": "10622b4718e7472b605de1d7928745182db8be07db176382fb001572b49275e0"
     },
     {
       "path": "program/parties.lp",
-      "sha256": "2e961f1b5c36518e37cea98ffb02ef9d8d3d5a20e06df108aa337f6b2a435fae"
+      "sha256": "6330d5f2b2f6c24c0713a4f77fc8ed78b953c42b541fdfaf0ba82f13d43dc50a"
     },
     {
       "path": "program/procedure.lp",
-      "sha256": "be3f1d4e1967481808c9083b4e68b623baa9d24e37e4e38affa2b88b5b3779f8"
+      "sha256": "0a2849de2ae8f93a5a0f05435ad78df5d476615039f5f8ff7f76a7be8b88f00a"
     },
     {
       "path": "program/record.lp",
-      "sha256": "2947829de48fbc2e0307fc9bb1a06c1fb241e9e365190d83f362dc804169ecdb"
+      "sha256": "fc19fbedff7b59780028e50252bc85ce39e456c186a02b68d9b2e31ea6fbbdf5"
     },
     {
       "path": "program/review.lp",
@@ -50,6 +169,10 @@
     {
       "path": "program/state.lp",
       "sha256": "aa88bbbf19d4e1e1d02d0dd499963e02c140b15e964fc7fefc95a565c0640a95"
+    },
+    {
+      "path": "fixtures/chain_and_removal.lp",
+      "sha256": "2a58e85cb5c52730d899f069631569a8ade701d974a5a5b483cc3f67d5874c90"
     },
     {
       "path": "fixtures/custodian.lp",
@@ -73,7 +196,7 @@
     },
     {
       "path": "fixtures/kinds_paused.lp",
-      "sha256": "e4a5364d53ba700d5cb670afdd022c9494364cb5d17f676e885af15478ef5038"
+      "sha256": "0f0d2c4822db3c3fb7b146cbfcc9f346539ed16709d97bf1c56489759da43e61"
     },
     {
       "path": "fixtures/kinds_present.lp",
@@ -81,15 +204,15 @@
     },
     {
       "path": "fixtures/parties.lp",
-      "sha256": "44d80a1e093ceafc1187827e332bcd3259e58e0db45da389991cedc799ffb841"
+      "sha256": "15d9d90ae5d675efd81e0cd23aa41072b5f4b3e145e4f7770a8f25a14b04d31e"
     },
     {
       "path": "fixtures/procedure.lp",
-      "sha256": "a29dccf0c02f25ecb093c5567d4dfbf18ad7114e8788103e7b63e36f33406290"
+      "sha256": "e92068c8d7dce140ff54eb309737e7902c7c7d440862ff524c80de09f1f1d723"
     },
     {
       "path": "fixtures/record.lp",
-      "sha256": "104547f89f7f8e682ce9e6d60406a3c3701fbd0f1b3124a49491891d3f7688b0"
+      "sha256": "2836d3dac529f73c5a7a3bd339f795a61b8f0d2c2ac841559367dbe8b90afa03"
     },
     {
       "path": "fixtures/review.lp",

@@ -45,11 +45,16 @@ undecided(C, P) :- candidate(C, P), candidate(C2, P), conflict(C, C2),
                    not beats(C, C2, P), not beats(C2, C, P).
 applied(C, P) :- candidate(C, P), not defeated(C, P), not undecided(C, P).
 
+% clause: C14.3
+conflict_lapsed(C, P) :- undecided(C, P), conflict_filed(C, P, T), now(N), param(conflict_ceiling, X), N - T >= X.
+applied(C, P) :- conflict_lapsed(C, P), protection(C).
+
 % clause: H1.4
 admitted_act(A) :- filed(A, _), owed(A).
 admitted_act(A) :- filed(A, P), not owed(A), balance(P, N), N > 0.
 
-% clause: P3.3
+% clause: P3.3 P3.4
 kind_present(K) :- party(P), kind_of(P, K).
 paused :- kind(K), not kind_present(K).
-blocked_by_pause(A) :- paused, act_of_power(A), not pause_exempt(A).
+blocked_by_pause(A) :- paused, act_of_power(A), not pause_exempt(A), not owed(A),
+                       not renunciation_act(A).

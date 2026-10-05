@@ -27,3 +27,16 @@ kept_open(F) :- instance_ended, open(F), finding(F, P, T), founder(P), not exit_
 
 % clause: P3.7
 ended_without_verdict(F) :- instance_ended, open(F), not kept_open(F).
+
+% clause: A2.17
+anonymization_breach_kind(E) :- anonymized(E, P), kind_of(P, K), K != human.
+
+% clause: P2.3
+citable_through_chain(F, H) :- attributed_via_chain(F, H), kind_of(H, human), citable(F, _),
+                               attribution_reviewed(F, H, R), kind_of(R, human).
+citable_through_chain(F, H) :- attributed_via_chain(F, H), kind_of(H, K), K != human, citable(F, _).
+
+% clause: P3.2
+removal_bar(R) :- reviewed_removal(_, R), founder_chain(R), not regime_exited.
+removal_effective(A) :- removes_last_of_kind(A), reviewed_removal(A, R), not removal_bar(R).
+removal_provisional(A) :- removes_last_of_kind(A), not removal_effective(A).
