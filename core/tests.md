@@ -102,7 +102,7 @@ For each principle, a system expressible in the model that satisfies the other f
 
 ### 3.3 Sufficiency against the meta-agentic instance
 
-Every unit of ADR-ETH-01 (D1–D21), of ADR-ETH-02 on the main line (T, A1–A3, H1–H3, C1–C23, the dedication, S1, S2, P1, P2), and the two units of the open amendment that adds P3 and revises C14 is mapped in two directions: each unit to what it serves, then each core floor to the units that render it.
+Every unit of ADR-ETH-01 (D1–D21), of ADR-ETH-02 on the main line (T, A1–A3, H1–H3, C1–C23, the dedication, S1, S2, P1, P2), and its P3 and revised C14, read when they were still an open amendment and since landed on the main line, is mapped in two directions: each unit to what it serves, then each core floor to the units that render it.
 
 The classes a unit can fall in:
 - *floor*: states a core floor as forces sharpen it;
@@ -213,7 +213,7 @@ Three readings formerly taken as contradictions are resolved by the core's own s
 
 ## 4. Machine-checkable statements
 
-How each floor could be tested against an instance in the style of the consolidated text's checker (open pull request #9: `fragment`, `symmetry`, `kinds`, `binding`, `fixtures`, `parameters`, and the configuration check `c18.py`). The kinds of check:
+How each floor could be tested against an instance in the style of the consolidated text's checker (`constitution/tools/check.py`: `fragment`, `symmetry`, `kinds`, `binding`, `fixtures`, `parameters`, and the configuration check `c18.py`). The kinds of check:
 - *static*: over the rules;
 - *fixture*: over asserted fact sets, with a mutant that must change the outcome;
 - *bounded*: enumeration or a game up to the declared roster cap;

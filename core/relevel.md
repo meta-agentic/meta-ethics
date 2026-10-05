@@ -1,6 +1,6 @@
 # Re-levelling plan
 
-**Status: Proposed with ADR-ETH-03, 2026-10-05.** This file says what changes in this repository and in the companion paper if ADR-ETH-03 is accepted. It proposes; it moves no existing file. The split of the core's normative text into `core/L0.md`, with its tests in `core/tests.md`, is already made in this change, because a signature must cover the normative text alone. Every other move is a separate change, made after the decision and after the consolidated text (open pull request #9) lands or is withdrawn.
+**Status: Proposed with ADR-ETH-03, 2026-10-05.** This file says what changes in this repository and in the companion paper if ADR-ETH-03 is accepted. It proposes; it moves no existing file. The split of the core's normative text into `core/L0.md`, with its tests in `core/tests.md`, is already made in this change, because a signature must cover the normative text alone. Every other move is a separate change, made after the decision; the consolidated text it moves is now on the main line under `constitution/`.
 
 ## 1. The levels, the two relations, and the vocabulary
 
@@ -33,7 +33,7 @@ The records are not rewritten: the evolution stays readable, and a past verdict 
 | Now | Proposed | Reason |
 |---|---|---|
 | `core/L0.md`, `core/tests.md`, `core/pathologies.md`, `core/instances.md` | stay | the core and its analysis |
-| `constitution/` (pull request #9) | `instances/meta-agentic/constitution/`, with `L0.md` renamed `constitution.md` | it is a constitution, level L1 |
+| `constitution/` | `instances/meta-agentic/constitution/`, with `L0.md` renamed `constitution.md` | it is a constitution, level L1 |
 | `constitution/tools/` checks that test core floors | `conformance/core/`, extended with the checks of `core/tests.md` §4 | the README already reserves `conformance/` for what every kernel must pass |
 | `constitution/tools/` checks of the meta-agentic mechanism (fragment, binding, manifest) | stay with the constitution | the fragment is the meta-agentic constitution's mechanism for LEX.2, not the core's |
 | `threat-model/` | `instances/meta-agentic/threat-model/` | it maps ADR-ETH-01 and ADR-ETH-02; `core/pathologies.md` is the core's counterpart |
@@ -67,7 +67,7 @@ The paper's thesis moves from the constitution to the core. Proposed structure:
 
 ## 5. Moving the consolidated text, and the core as a checked source
 
-What a move of the consolidated text touches, from its checker as it stands on its branch: nothing there hard-codes "L0" except the title and preamble of `L0.md` and the prose of `DESIGN.md`. A move changes three places: the `RECORDS` map in `constitution/tools/textchecks.py`, `manifest_files` beside it, and the directory name, which the CI workflow's path filter and the README's layout row also carry. The constitution's per-paragraph source tokens (`01:`, `02:`) carry over unchanged.
+What a move of the consolidated text touches, from its checker as it stands on the main line: nothing there hard-codes "L0" except the title and preamble of `L0.md` and the prose of `DESIGN.md`. A move changes three places: the `RECORDS` map in `constitution/tools/textchecks.py`, `manifest_files` beside it, and the directory name, which the CI workflow's path filter and the README's layout row also carry. The constitution's per-paragraph source tokens (`01:`, `02:`) carry over unchanged.
 
 **The core as a source.** The core is a separate artifact the constitution's inventory can point into, so the sufficiency map of `core/tests.md` §3.3 becomes a machine check rather than a table.
 

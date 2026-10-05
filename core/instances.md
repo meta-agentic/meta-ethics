@@ -4,7 +4,7 @@
 
 ## 1. The meta-agentic instance
 
-The instance designed to govern the agentic system that develops software with the founder of meta-agentic.ai. Its text is ADR-ETH-01 with ADR-ETH-02, and their consolidated rendering (open pull request #9). It aims at being a good constitution for humans and agents working together; it does not claim to be the best one.
+The instance designed to govern the agentic system that develops software with the founder of meta-agentic.ai. Its text is ADR-ETH-01 with ADR-ETH-02, and their consolidated rendering under `constitution/`. It aims at being a good constitution for humans and agents working together; it does not claim to be the best one.
 
 **Forces at full strength.** F1 adversarial parties, of both kinds. F2 a mixed ecosystem: human and non-human parties act together and implicate each other. F3 enforceability, met by stratified Datalog. F5 speed: agents act in milliseconds, humans in days. F8 decidability. F9 legal asymmetry: human parties hold rights under law that non-human parties do not.
 
