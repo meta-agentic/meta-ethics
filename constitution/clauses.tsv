@@ -1,0 +1,242 @@
+id	status	sources	enforcement	note
+CLAIMS.1	interpretive	02:C1 01:D4 01:§what-this-record-does-not-claim		
+CLAIMS.2	interpretive	01:§what-this-record-does-not-claim		
+CLAIMS.3	interpretive	01:§what-this-record-does-not-claim		
+F1.1	interpretive	01:F1		
+F2.1	interpretive	01:F2		
+F3.1	interpretive	01:F3 02:C6		
+F4.1	interpretive	01:F4		
+F5.1	interpretive	01:F5		
+F6.1	interpretive	01:F6		
+F7.1	interpretive	01:F7		
+F8.1	interpretive	01:F8		
+F9.1	interpretive	01:F9		
+T.1	todo	02:T		
+T.2	todo	02:T		
+D1.1	todo	01:D1		
+D1.2	meta	01:D1 02:C13	checker: C13 derivation/consequence split	
+D2.1	interpretive	01:D2 02:P1		
+D2.2	procedural	01:D2 02:C9	founding document; configuration check (C18)	parameter declaration
+D3.1	interpretive	01:D3		
+D3.2	todo	01:D3 02:C8		
+C1.1	meta	02:C1 01:D4	checker: stratification and one model per fixture (determinism); party-term check	
+C1.2	meta	02:C1 01:D4	checker: no party constant in any rule; party variables compared only by neq	
+C1.3	procedural	02:C1 01:D4	the published draw procedure, re-run by any party; uniformity tested in the conformance suite	
+D5.1	interpretive	01:D5		
+D5.2	todo	01:D5 02:C9 01:D19		
+D6.1	interpretive	01:D6 02:C3		
+D6.2	procedural	01:§adoption-by-instances	the instance's own records; read by the conformance suite	
+C15.1	procedural	02:C15 01:D7	conformance suite: parameter schema, and the parent's fixtures run at the instance's values	
+C15.2	procedural	02:C15 01:D7	conformance suite: parameter schema, and the parent's fixtures run at the instance's values	
+C15.3	todo	02:C15 01:D7		
+C15.4	procedural	02:C15 01:D7	conformance suite: parameter schema, and the parent's fixtures run at the instance's values	
+C15.5	interpretive	02:C15 01:D7		
+A1.1	program	02:A1 01:D8 01:D12		
+A1.2	program	02:A1 01:D8 01:D12		
+A1.3	program	02:A1 01:D8 01:D12		
+A1.4	program	02:A1 01:D8 01:D12		
+A1.5	todo	02:A1 01:D8 01:D12		
+A1.6	procedural	02:A1 01:D8 01:D12	founding document; configuration check (C18)	parameter declaration
+A1.7	todo	02:A1 01:D8 01:D11		
+C7.1	program	02:C7 01:D12		
+C7.2	todo	02:C7 01:D12		
+C7.3	program	02:C7 01:D12		
+C7.4	program	02:C7 01:D12		
+D9.1	procedural	01:D9 02:C12	any party's replay (C11, C12)	
+D9.2	todo	01:D9		
+D9.3	program	01:D9 02:P1		
+C11.1	procedural	02:C11 01:D9	any party's replay; attested facts enter as input facts only	
+C11.2	meta	02:C11 01:D9	checker: attested predicates are input-only (never a rule head)	
+C12.1	meta	02:C12 01:D9	checker: kernel-stratum rules read the record only through working-state predicates	
+C12.2	procedural	02:C12 01:D9	any party's replay; proofs of presence and absence checked by the replayer	
+C12.3	procedural	02:C12 01:D9	any party's replay; proofs of presence and absence checked by the replayer	
+C12.4	todo	02:C12 01:D9		
+D10.1	interpretive	01:D10		
+D10.2	todo	01:D10		
+D11.1	todo	01:D11		
+D11.2	todo	01:D11		
+D13.1	todo	01:D13		
+D15.1	todo	01:D15		
+D15.2	program	01:D15		
+D15.3	program	01:D15 02:C19		
+A2.1	todo	02:A2 01:D14		
+A2.2	todo	02:A2 01:D14		
+A2.3	program	02:A2 01:D14		
+A2.4	program	02:A2 01:D14		
+A2.5	program	02:A2 02:P2 02:C17		
+A2.6	program	02:A2 01:D14		
+A2.7	todo	02:A2 01:D14		
+A2.8	program	02:A2 01:D14		
+A2.9	procedural	02:A2 01:D14	the anonymizing act, appended and attested (C11); any party re-checks the chain and replays the listed verdicts; parameters in the founding document, checked by C18	
+A2.10	todo	02:A2 01:D14		
+A2.11	procedural	02:A2 02:C23	the anonymizing act, appended and attested (C11); any party re-checks the chain and replays the listed verdicts; parameters in the founding document, checked by C18	
+A2.12	todo	02:A2 01:D14		
+A2.13	todo	02:A2 01:D14		
+A2.14	todo	02:A2 02:C21		
+A2.15	todo	02:A2 01:D14		
+A2.16	procedural	02:A2 01:D14	the anonymizing act, appended and attested (C11); any party re-checks the chain and replays the listed verdicts; parameters in the founding document, checked by C18	parameter declaration
+A2.17	todo	02:A2 02:P2 01:D1		
+C23.1	procedural	02:C23 02:A2	the anonymizing act, appended and attested (C11); any party re-checks the chain and replays the listed verdicts	
+C23.2	procedural	02:C23 02:A2	the anonymizing act, appended and attested (C11); any party re-checks the chain and replays the listed verdicts	
+A3.1	program	02:A3		
+A3.2	program	02:A3		
+A3.3	meta	02:A3	checker: gating rules read only working-state predicates; ceilings finite in the parameter schema (C18)	
+A3.4	procedural	02:A3	published correctability result, re-runnable by any party; ceilings declared in the founding document, checked by C18	
+A3.5	procedural	02:A3	published correctability result, re-runnable by any party; ceilings declared in the founding document, checked by C18	
+A3.6	procedural	02:A3	published correctability result, re-runnable by any party; ceilings declared in the founding document, checked by C18	parameter declaration
+A3.7	interpretive	02:A3		
+C10.1	interpretive	02:C10 01:§open-decisions-adr-eth-01-od-n		
+D16.1	interpretive	01:D16		
+D16.2	interpretive	01:D16		
+D17.1	interpretive	01:D17		
+D18.1	todo	01:D18 02:C2		
+D18.2	interpretive	01:D18 02:C2		
+D18.3	program	02:C2 02:P1		
+D19.1	todo	01:D19		
+D20.1	procedural	01:D20	governed evolution channel	
+D21.1	interpretive	01:D21		
+C6.1	meta	02:C6 01:F3	checker: stratified negation and count, range restriction, arithmetic only in non-recursive strata, count the only aggregate	
+C6.2	meta	02:C6 01:F3	checker: range restriction; no function terms in rule heads (no rule mints an object)	
+C6.3	interpretive	02:C6 01:F3		
+C13.1	meta	02:C13	checker: derivation rules read no kind-sorted predicate or kind constant	
+C13.2	meta	02:C13	checker: derivation rules read no consequence predicate; fold rules kind-blind	
+C14.1	program	02:C14		
+C14.2	program	02:C14		
+C14.3	todo	02:C14		
+C14.4	todo	02:C14		
+C14.5	procedural	02:C14	founding document; conformance suite checks the ordering is stratified	parameter declaration
+C16.1	procedural	02:C16	any party's read of the witness; heads and prefix proofs enter as attested facts (C11)	
+C16.2	procedural	02:C16	any party's read of the witness; heads and prefix proofs enter as attested facts (C11)	
+C16.3	program	02:C16		
+C16.4	program	02:C16		
+C16.5	procedural	02:C16	any party's read of the witness; heads and prefix proofs enter as attested facts (C11)	
+C16.6	procedural	02:C16	any party's read of the witness; heads and prefix proofs enter as attested facts (C11)	parameter declaration
+C17.1	procedural	02:C17	the published draw procedure, re-run by any party; the beacon value enters as an attested fact (C11)	
+C17.2	procedural	02:C17 02:C20	the published draw procedure, re-run by any party; the beacon value enters as an attested fact (C11)	
+C17.3	procedural	02:C17	the published draw procedure, re-run by any party; the beacon value enters as an attested fact (C11)	
+C17.4	procedural	02:C17	the published draw procedure, re-run by any party; the beacon value enters as an attested fact (C11)	
+C17.5	procedural	02:C17 02:C22	the published draw procedure, re-run by any party; the beacon value enters as an attested fact (C11)	
+C17.6	todo	02:C17		
+C17.7	todo	02:C17 02:C21		
+C17.8	procedural	02:C17 02:P2	the published draw procedure, re-run by any party; the beacon value enters as an attested fact (C11)	
+C17.9	procedural	02:C17	the published draw procedure, re-run by any party; the beacon value enters as an attested fact (C11)	parameter declaration
+C21.1	procedural	02:C21	the drawn judge's declaration and the challenger's evidence, entered as attested facts (C11); a second draw (C17)	
+C21.2	program	02:C21		
+C21.3	procedural	02:C21	the drawn judge's declaration and the challenger's evidence, entered as attested facts (C11); a second draw (C17)	
+C21.4	interpretive	02:C21		
+C21.5	todo	02:C21		
+C22.1	procedural	02:C22 02:C17	a drawn judge's sameness ruling, entered as an attested act (C11)	
+C22.2	procedural	02:C22 02:C17	a drawn judge's sameness ruling, entered as an attested act (C11)	
+C18.1	procedural	02:C18	conformance suite's configuration check; result published and bound to the founding document's hash	
+C18.2	procedural	02:C18	conformance suite's configuration check; result published and bound to the founding document's hash	
+C18.3	procedural	02:C18	conformance suite's configuration check; result published and bound to the founding document's hash	
+C18.4	procedural	02:C18	conformance suite's configuration check; result published and bound to the founding document's hash	
+H1.1	interpretive	02:H1		
+H1.2	procedural	02:H1	the founding document's declared defence; the conformance suite checks that no floor is narrowed	
+H1.3	todo	02:H1		
+H1.4	program	02:H1		
+H1.5	todo	02:H1		
+H2.1	interpretive	02:H2		
+H2.2	meta	02:H2	checker: closed vocabulary; only declared predicates enter the program	
+H2.3	todo	02:H2		
+H2.4	interpretive	02:H2		
+H2.5	todo	02:H2		
+H3.1	procedural	02:H3	founding document disclosures and every party's inform channel; an exit not checkable from the record is an attested fact (C11)	
+H3.2	procedural	02:H3	founding document disclosures and every party's inform channel; an exit not checkable from the record is an attested fact (C11)	
+H3.3	todo	02:H3		
+H3.4	todo	02:H3		
+H3.5	todo	02:H3		
+H3.6	procedural	02:H3	founding document disclosures and every party's inform channel; an exit not checkable from the record is an attested fact (C11)	
+H3.7	todo	02:H3		
+H3.8	todo	02:H3		
+H3.9	todo	02:H3		
+S1.1	todo	02:S1		
+S1.2	todo	02:S1		
+S1.3	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
+S1.4	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
+S1.5	todo	02:S1 02:C9		
+S1.6	todo	02:S1		
+S1.7	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
+S1.8	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
+S1.9	todo	02:S1		
+S1.10	todo	02:S1		
+S1.11	todo	02:S1		
+S1.12	todo	02:S1		
+S1.13	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
+S1.14	program	02:S1		
+S1.15	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
+S1.16	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
+S1.17	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
+S1.18	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
+S1.19	interpretive	02:S1		
+S1.20	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	parameter declaration
+C5.1	procedural	02:C5 02:S1	merge event and landing commit, the hash appended and covered by a witnessed head (C16); signatures (S1)	
+C5.2	program	02:C5 02:S1		
+C5.3	procedural	02:S1 02:C5	merge event and landing commit, the hash appended and covered by a witnessed head (C16); signatures (S1)	
+S2.1	todo	02:S2		
+S2.2	procedural	02:S2	the party's proof of continuity, entered as an act of presence and checked by any party from the record	
+S2.3	program	02:S2		
+S2.4	todo	02:S2		
+S2.5	todo	02:S2		
+S2.6	todo	02:S2		
+S2.7	todo	02:S2		
+S2.8	procedural	02:S2	the party's proof of continuity, entered as an act of presence and checked by any party from the record	
+S2.9	procedural	02:S2	the party's proof of continuity, entered as an act of presence and checked by any party from the record	parameter declaration
+P1.1	todo	02:P1		
+P1.2	program	02:P1		
+P1.3	program	02:P1		
+P1.4	program	02:P1		
+P1.5	program	02:P1 02:C9		
+P1.6	todo	02:P1		
+P1.7	todo	02:P1		
+P1.8	todo	02:P1		
+P1.9	interpretive	02:P1		
+P1.10	todo	02:P1		
+P1.11	todo	02:P1		
+P1.12	todo	02:P1		
+P1.13	program	02:P1 01:D18 02:C2		
+P1.14	procedural	02:P1	founding document disclosures (H3); custody structure published as verification material	
+P1.15	todo	02:P1		
+P1.16	interpretive	02:P1		
+P1.17	interpretive	02:P1		
+P1.18	todo	02:P1		
+P1.19	program	02:P1 01:D9		
+P1.20	todo	02:P1 01:§accepted-costs		
+P1.21	todo	02:P1		
+P1.22	procedural	02:P1	founding document disclosures (H3); custody structure published as verification material	parameter declaration
+P2.1	program	02:P2 02:A2		
+P2.2	program	02:P2 02:A2		
+P2.3	todo	02:P2 02:A2		
+P2.4	interpretive	02:P2 02:A2		
+P2.5	program	02:P2 02:A2		
+P2.6	procedural	02:P2 02:A2	configuration check (C18); founding document	
+P2.7	todo	02:P2 02:A2		
+P2.8	procedural	02:P2 02:A2	configuration check (C18); founding document	parameter declaration
+P3.1	todo	02:P3		
+P3.2	todo	02:P3		
+P3.3	program	02:P3		
+P3.4	todo	02:P3		
+P3.5	todo	02:P3		
+P3.6	procedural	02:P3	founding document names the keeper and the forum; configuration check (C18)	
+P3.7	todo	02:P3		
+P3.8	todo	02:P3		
+P3.9	todo	02:P3		
+P3.10	procedural	02:P3	founding document names the keeper and the forum; configuration check (C18)	
+P3.11	todo	02:P3		
+P3.12	todo	02:P3		
+P3.13	procedural	02:P3	founding document names the keeper and the forum; configuration check (C18)	parameter declaration
+DEDICATION.1	interpretive	02:Dedication		
+OD4.1	open	02:§open-decisions 01:§open-decisions-adr-eth-01-od-n		
+OD5.1	open	02:§open-decisions 01:§open-decisions-adr-eth-01-od-n		
+OD23.1	open	02:§open-decisions		
+OD23.2	interpretive	02:§open-decisions		
+OD23.3	procedural	02:§open-decisions	the grant's delivered terms (A1); configuration check (C18)	
+OD23.4	procedural	02:§open-decisions 02:C18	the grant's delivered terms (A1); configuration check (C18)	
+OPEN.1	open	01:§open-decisions-adr-eth-01-od-n 02:§open-decisions		
+OPEN.2	open	01:§open-decisions-adr-eth-01-od-n 02:§open-decisions		
+OPEN.3	open	01:§open-decisions-adr-eth-01-od-n 02:§open-decisions		
+OPEN.4	open	01:§open-decisions-adr-eth-01-od-n 02:§open-decisions		
+OPEN.5	open	01:§open-decisions-adr-eth-01-od-n 02:§open-decisions		
+OPEN.6	open	01:§open-decisions-adr-eth-01-od-n 02:§open-decisions		
+OPEN.7	open	01:§open-decisions-adr-eth-01-od-n 02:§open-decisions		
+OPEN.8	open	01:§open-decisions-adr-eth-01-od-n 02:§open-decisions		
