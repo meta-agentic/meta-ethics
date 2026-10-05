@@ -44,6 +44,9 @@ cites_right_of(q4, l4, h1). irreversible_effect(q4). law_unfounded(q4, l4).
 % a finding about h1 that does not arise from q1 is cited as usual
 finding(g3, h1, 12).
 decided_seq(q4, 13).
+% q5: a citation naming only a class
+passed_channel(q5). matter_of(q5, x5). veto(ch, q5, 14). veto_signed(ch, q5). veto_cites_law(ch, q5, l5).
+cites_class(q5, l5, tenants). decided_seq(q5, 14).
 decided_seq(q0, 5). decided_seq(q1, 10). decided_seq(q2, 11). decided_seq(q3, 12).
 
 % EXPECT[P1.7]: custodian_passes(q1)
@@ -63,6 +66,7 @@ decided_seq(q0, 5). decided_seq(q1, 10). decided_seq(q2, 11). decided_seq(q3, 12
 % EXPECT-NOT[P1.7]: custodian_passes(q2)
 % EXPECT-NOT[P1.7]: consequence_withheld(q2,h1)
 % EXPECT-NOT[P1.7]: law_hold(q4)
+% EXPECT[P1.7]: consequence_withheld(q5,h2)
 % EXPECT[P1.7]: citable(g3,h1)
 % EXPECT[P1.7]: custodian_passes(q3)
 % EXPECT[P1.7]: takes_effect(v3)

@@ -32,6 +32,8 @@ veto_cites_law(ca, q42, l5). law_unfounded(q42, l6).
 
 % each vetoed act's position among decided proposals
 decided_seq(q20, 2). decided_seq(q21, 3). decided_seq(q34, 4). decided_seq(q40, 5). decided_seq(q41, 6). decided_seq(q42, 7).
+% the human whose right each citation names
+cites_right_of(q34, l9, hr). cites_right_of(q42, l5, hr).
 
 % EXPECT-NOT[P1.3]: standing_veto(ca,q20)
 % EXPECT[P1.3]: custodian_passes(q20)

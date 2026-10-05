@@ -303,3 +303,8 @@ duty_from_act	act,proposal	intake	P1.7	a duty that arises from the act
 withheld_verdict	verdict	derived	P1.7	a verdict from the act with a consequence on a protected human does not take effect
 withheld_finding	finding	derived	P1.7	a finding from the act about a protected human is not cited and carries no interim measure
 withheld_duty	party,act	derived	P1.7	a duty from the act does not run against a protected human
+names_protected	proposal,law	derived	P1.7	the citation names a human, or a class of humans, whose right the act would breach
+cited_pending	seat,proposal,law	derived	P1.7	a valid citation whose review is neither found unfounded nor found breached
+in_ceilings	seat,proposal	derived	P1.7	the citing veto is within the seat's window ceiling and the per-act bound
+protection_mode	proposal,law	derived	P1.7	beyond the seat's ceilings, or past the review's ceiling, a reversible act may pass with its consequences withheld
+genesis_cost_hold	proposal	derived	P1.7	an irreversible act held past the review's ceiling under the genesis regime: H3's declared genesis cost, marked

@@ -33,6 +33,8 @@ passed_channel(q10). matter_of(q10, x10). veto(ch, q10, 19). veto_signed(ch, q10
 % each vetoed act's position among decided proposals
 decided_seq(q1, 10). decided_seq(q2, 11). decided_seq(q3, 12). decided_seq(q4, 13). decided_seq(q5, 14).
 decided_seq(q6, 15). decided_seq(q7, 16). decided_seq(q8, 17). decided_seq(q9, 18). decided_seq(q10, 19).
+% the human whose right each citation names
+cites_right_of(q1, l1, hr). cites_right_of(q2, l2, hr). cites_right_of(q6, l2, hr). cites_right_of(q7, l1, hr). cites_right_of(q9, l1, hr). cites_right_of(q10, l2, hr).
 
 % EXPECT[P1.8]: within_ceiling(ca,q3)
 % EXPECT[P1.8]: counted_veto(ca,q2,11)

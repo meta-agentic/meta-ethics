@@ -23,45 +23,53 @@ counted_veto(S, Q, T) :- veto(S, Q, T), not law_founded(S, Q).
 law_unfounded_in_family(Q, L) :- veto_cites_law(_, Q, L), family(Q, R), family(Q2, R), law_unfounded(Q2, L).
 
 % clause: P1.7 P1.3 P1.20
-% only a filled, eligible seat's signed veto citing a law holds the act, and
-% never an owed act; a pending review holds it up to a ceiling
-valid_law_veto(S, Q, L) :- veto_cites_law(S, Q, L), veto(S, Q, _), veto_signed(S, Q), seat_filled(S),
-                           not seat_ineligible(S, Q), not owed_act(Q).
-% no lapse passes the act: past the ceiling the review is drawn again, the
-% delay is marked and counts toward D2's measure, and the proposer may
-% re-propose the act without the cited part, which this veto does not hold
+% only a filled, eligible seat's signed veto citing a law, as to the right of
+% a human it names or a class of humans it names, holds the act or protects
+% anyone, and never against an owed act
+names_protected(Q, L) :- cites_right_of(Q, L, _).
+names_protected(Q, L) :- cites_class(Q, L, _).
+valid_law_veto(S, Q, L) :- veto_cites_law(S, Q, L), names_protected(Q, L), veto(S, Q, _), veto_signed(S, Q),
+                           seat_filled(S), not seat_ineligible(S, Q), not owed_act(Q).
 % a breach found for the act or a re-proposal of it holds the act whatever
-% the seat's budget; a pending review holds it only within the seat's
-% ceilings; a law already found unfounded gives no fresh hold
+% the seat's budget and however long; a law already found unfounded gives no
+% fresh hold
 law_breach_found_in_family(Q, L) :- veto_cites_law(_, Q, L), family(Q, R), family(Q2, R), law_breach_found(Q2, L).
 law_hold(Q) :- valid_law_veto(_, Q, L), law_breach_found_in_family(Q, L).
-beyond_ceilings(S, Q) :- valid_law_veto(S, Q, _), not within_ceiling(S, Q).
-beyond_ceilings(S, Q) :- valid_law_veto(S, Q, _), not within_act_bound(Q).
-pending_hold(Q, L) :- valid_law_veto(S, Q, L), within_ceiling(S, Q), within_act_bound(Q),
-                      not law_unfounded_in_family(Q, L).
-% beyond the ceilings the act stays held where the breach could not be
-% withheld or reversed forward: an effect on a human that is not a P2
-% consequence (a disclosure of personal data, a narrowed protection)
-pending_hold(Q, L) :- valid_law_veto(S, Q, L), beyond_ceilings(S, Q), irreversible_effect(Q),
-                      not law_unfounded_in_family(Q, L).
+cited_pending(S, Q, L) :- valid_law_veto(S, Q, L), not law_unfounded_in_family(Q, L),
+                          not law_breach_found_in_family(Q, L).
+in_ceilings(S, Q) :- valid_law_veto(S, Q, _), within_ceiling(S, Q), within_act_bound(Q).
+beyond_ceilings(S, Q) :- valid_law_veto(S, Q, _), not in_ceilings(S, Q).
+% past the review's ceiling the delay is marked, counts toward D2's measure,
+% and the review is drawn again until it decides; no lapse passes the act
+law_review_overdue(Q, L) :- cited_pending(S, Q, L), veto(S, Q, T), now(N), param(law_review_ceiling, X), N - T >= X.
+law_review_redrawn(Q, L) :- law_review_overdue(Q, L).
+counts_toward_d2(Q) :- law_review_overdue(Q, _).
+% a pending review holds a reversible act within the seat's ceilings until the
+% review's ceiling; an act whose effect could not be withheld or reversed
+% forward (a disclosure of personal data, a narrowed protection, the
+% processing of a human's record, any effect that is not a P2 consequence)
+% stays held in every case until the review decides
+pending_hold(Q, L) :- cited_pending(S, Q, L), in_ceilings(S, Q), not law_review_overdue(Q, L),
+                      not irreversible_effect(Q).
+pending_hold(Q, L) :- cited_pending(_, Q, L), irreversible_effect(Q).
 law_hold(Q) :- pending_hold(Q, _).
-law_review_overdue(Q, L) :- pending_hold(Q, L), valid_law_veto(S, Q, L), veto(S, Q, T), now(N),
-                            param(law_review_ceiling, X), N - T >= X, not law_breach_found_in_family(Q, L).
+% under the genesis regime, where no reviewer outside the founder's chain
+% decides, that hold lasts the regime: H3's declared genesis cost, marked
+genesis_cost_hold(Q) :- pending_hold(Q, L), irreversible_effect(Q), law_review_overdue(Q, L), not regime_exited.
 
-% otherwise, beyond the ceilings, the act may pass, and no consequence of it
-% falls on any human the cited right protects, named or of the class the
-% citation names, until the review decides; it is a finding reviewed under P2
+% otherwise, beyond the seat's ceilings, or past the review's ceiling, the act
+% may pass, and no consequence of it falls on any human the cited right
+% protects, named or of the class the citation names, until the review
+% decides; it is a finding reviewed under P2
 protected_by(Q, L, H) :- cites_right_of(Q, L, H).
 protected_by(Q, L, H) :- cites_class(Q, L, C), in_class(H, C).
-law_protection_finding(Q, L, H) :- valid_law_veto(S, Q, L), beyond_ceilings(S, Q), not irreversible_effect(Q),
-                                   protected_by(Q, L, H), not law_unfounded_in_family(Q, L),
-                                   not law_breach_found_in_family(Q, L).
+protection_mode(Q, L) :- cited_pending(S, Q, L), beyond_ceilings(S, Q), not irreversible_effect(Q).
+protection_mode(Q, L) :- cited_pending(_, Q, L), law_review_overdue(Q, L), not irreversible_effect(Q).
+law_protection_finding(Q, L, H) :- protection_mode(Q, L), protected_by(Q, L, H).
 consequence_withheld(Q, H) :- law_protection_finding(Q, _, H).
 withheld_verdict(V) :- verdict_from_act(V, Q), consequence_on(V, H), consequence_withheld(Q, H).
 withheld_finding(F) :- finding_from_act(F, Q), finding(F, H, _), consequence_withheld(Q, H).
 withheld_duty(P, A) :- duty_from_act(A, Q), consequence_withheld(Q, P).
-law_review_redrawn(Q, L) :- law_review_overdue(Q, L).
-counts_toward_d2(Q) :- law_review_overdue(Q, _).
 
 % clause: P1.5 P1.8
 % the window is counted in decided proposals, as D2's is (decided_seq/2)
