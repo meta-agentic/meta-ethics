@@ -377,16 +377,19 @@ P1   proposed  Custodian is two seats, one of each kind   third seat (F1 — D2)
      (D2 seed, (F6), each with tie-break and veto as      (F2,F6); veto reserved to humans (F2,F6); one      genesis custody limitation; a third  one; non-human seat acts without its own
      D18,      last resort; a veto stands within a        seat choosing alone (F1); bodies breaking each     asymmetry by kind                    key; veto overridden or beyond ceiling or
      OD1,OD2,  ceiling per window and a bound per act,    other's ties (F1); veto with no ceiling (F1,A3);                                        per-act bound; choice one seat did not
-     OD3,OD6)  then review decides; L0 change always      seats regardless of kind (F6); D9 about the                                             sign; owed act stopped or undecided past
-               needs both signatures, outside the         office (F5,C2); veto over own replacement (F1);                                         ceiling; seat unfilled past ceiling; own
-               ceiling; a choice needs both or the        attestation only (F2,F6)                                                                replacement vetoed; a kind left
-               status quo stands; both recused: review                                                                                            unrepresented; L0 change to the Custodian
-               decides; empty seat: veto only, filling                                                                                            with no admissible path, or any L0 change
-               owed; an owed act's content decided by a                                                                                           passed on one signature
-               drawn party past its ceiling; owed acts
-               beyond either power; D9 about the party;
-               no veto over own replacement; non-human
-               signature consent and attestation
+     OD3,OD6)  then review decides; a veto citing a       seats regardless of kind (F6); D9 about the                                             sign; owed act stopped or undecided past
+               binding law counts toward neither ceiling  office (F5,C2); veto over own replacement (F1);                                         ceiling; seat unfilled past ceiling; own
+               and the act waits on review of that law;   attestation only (F2,F6)                                                                replacement vetoed; a kind left
+               L0 change always needs both signatures,                                                                                            unrepresented; L0 change to the Custodian
+               outside both ceilings and any drawn                                                                                                with no admissible path, or any L0 change
+               review; a choice needs both or the status                                                                                          passed on one signature; a veto citing a
+               quo stands; both recused: review decides;                                                                                          binding law counted toward a ceiling; an
+               empty seat: veto only, filling owed; an                                                                                            act passed while review finds the breach
+               owed act's content decided by a drawn                                                                                              of law its veto cited
+               party past its ceiling; owed acts beyond
+               either power; D9 about the party; no veto
+               over own replacement; non-human signature
+               consent and attestation
 P2   proposed  A2's review floor extended to every        humans only (F1,F2); a human for every subject     review needs a roster; consequences  review without a reason; chain-attributed
      (A2)      subject; a human reviews wherever a        (F5,F6); either kind where a human bears a         about every subject wait             finding cited against a human unreviewed;
                consequence is applied to a human's own    consequence (F9); kind by whom the verdict is                                           reviewer draws fail uniformity; window
