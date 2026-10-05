@@ -9,9 +9,7 @@ fork(H1, H2) :- next_head(H1, H2), not extends(H2, H1).
 covered_by_head(Sig) :- signature(Sig, _, _, T), witnessed_head(_, Th), T <= Th.
 
 % clause: S1.6
-later_signature(Sig, R) :- signature(Sig, _, R, T), signature(_, _, R, T2), T < T2.
-last_intake(R, T) :- signature(Sig, _, R, T), not later_signature(Sig, R).
-stale(Sig) :- signature(Sig, _, R, _), signature_head(Sig, Th), last_intake(R, TL),
+stale(Sig) :- signature(Sig, _, R, _), signature_head(Sig, Th), signature(_, _, R, TL),
               param(staleness_window, W), TL - Th > W.
 
 % clause: C5.2 S1.14 S1.6

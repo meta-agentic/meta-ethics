@@ -17,6 +17,14 @@ removes_last_of_kind(z1). reviewed_removal(z1, r1).
 removes_last_of_kind(z2). reviewed_removal(z2, r2).
 removes_last_of_kind(z3).
 
+finding(g2, n2, 5). closed_in_favour(g2). attributed_via_chain(g2, n).
+attribution_reviewed(g1, h, n).
+attributed_via_chain(g2, r2). attribution_reviewed(g2, r2, r1).
+
+% EXPECT-NOT[P2.3]: citable_through_chain(g2,n)
+% EXPECT-NOT[P2.3]: citable_through_chain(g2,r2)
+% EXPECT-NOT[P2.3]: citable_through_chain(g1,n2)
+% EXPECT-NOT[P3.2]: removal_provisional(z2)
 % EXPECT[P2.3]: citable_through_chain(g1,n)
 % EXPECT[P2.3]: citable_through_chain(g1,r2)
 % EXPECT-NOT[P2.3]: citable_through_chain(g1,h)

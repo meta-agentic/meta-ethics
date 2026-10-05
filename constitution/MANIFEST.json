@@ -120,7 +120,7 @@
     "P3.5"
   ],
   "digest_rule": "sha256 over the lines '<sha256>  <path>\\n' of the entries, in the order listed",
-  "combined_sha256": "c1b029a349031d40831317a3d3d771b6c5527631edfc9cb32867d662e066badb",
+  "combined_sha256": "21622209d9f82e3b27013dabb3ab9ef7c094cf9503da485e8dbbb0f4addd67bf",
   "entries": [
     {
       "path": "L0.md",
@@ -136,7 +136,7 @@
     },
     {
       "path": "vocabulary.tsv",
-      "sha256": "604fb7b4c917b8a470c508a186c66373391936046e09001b2d7799084764439c"
+      "sha256": "71d34edd8b341abeca25d3dd6ed984764b3eddf0937ab3582450fa2848510d53"
     },
     {
       "path": "parameters.tsv",
@@ -160,7 +160,7 @@
     },
     {
       "path": "program/record.lp",
-      "sha256": "fc19fbedff7b59780028e50252bc85ce39e456c186a02b68d9b2e31ea6fbbdf5"
+      "sha256": "608661951601257f18e092804f2808fdf62eedf87701b056f5668729824d4df1"
     },
     {
       "path": "program/review.lp",
@@ -172,15 +172,15 @@
     },
     {
       "path": "fixtures/chain_and_removal.lp",
-      "sha256": "2a58e85cb5c52730d899f069631569a8ade701d974a5a5b483cc3f67d5874c90"
+      "sha256": "89d12c5ae39e98326f1ef79b76bff01d961605d3c9aa5289431bdcb7eb41c4a0"
     },
     {
       "path": "fixtures/custodian.lp",
-      "sha256": "c34da638401b2cd3215e720305e88f6e71dbde68ec57a840c9931b09b62c08d1"
+      "sha256": "939ca4829f20dd3110909e0678f69e0b5e1a9d5b1a8dce61a58f28886640ba30"
     },
     {
       "path": "fixtures/custodian_empty_seat.lp",
-      "sha256": "4822b9dd5b17cc5ce5b3cf9a56bb946b6870f0e4579a2038aa30565876b4a3bc"
+      "sha256": "d202fa9dcd69c617751fdc29ccdf829ff171e3fed34bbde4d9d11d074e2d3715"
     },
     {
       "path": "fixtures/custodian_law.lp",
@@ -188,15 +188,47 @@
     },
     {
       "path": "fixtures/genesis_regime.lp",
-      "sha256": "26a0f5ab295a9a3614eb7116a0f3a8131a788670f3dda45ae00d665fa28380ec"
+      "sha256": "b1b80af3e458ccd7bc7b8a83de7196ec357dadfd2a63d6853e0f3285691b9512"
     },
     {
       "path": "fixtures/instance_end.lp",
       "sha256": "e6b1dfc29ab9f2f20ea99dfa6f9fe2bbb264b2a27ad0e1fb2f6f7918ccb862a9"
     },
     {
+      "path": "fixtures/kill_custodian.lp",
+      "sha256": "e4722d681e1c7fc8a2815eb69291ea60231de2abd8d8df3bcdfd75eb68737b1b"
+    },
+    {
+      "path": "fixtures/kill_end.lp",
+      "sha256": "dd769a471ccb368588f1a181b7c54a4df655146d97db3685e2a59c3b9c7e5e32"
+    },
+    {
+      "path": "fixtures/kill_founder.lp",
+      "sha256": "cc6096174db9648edc9ef1da40eef0dc978e6009f6d01da3beed3368f72693c1"
+    },
+    {
+      "path": "fixtures/kill_genesis_exited.lp",
+      "sha256": "65a67c26dc79c633af8bed12f6106996add1c4fa659650216674466710b16cb3"
+    },
+    {
+      "path": "fixtures/kill_parties.lp",
+      "sha256": "613eb46d30f73c0af0252ff94d5f29d585f53cf72cd66704f79770cbe3e09838"
+    },
+    {
+      "path": "fixtures/kill_record.lp",
+      "sha256": "d98a5ae8aaff0606ccf29beafd2ef9263a5ec622aa47e6f6376203b1a461ab2e"
+    },
+    {
+      "path": "fixtures/kill_regime_window.lp",
+      "sha256": "82fdcb0f3948bd82a7c57714dbfe6e3c38911e1ce490f0abe491b1294e8c5088"
+    },
+    {
+      "path": "fixtures/kill_state.lp",
+      "sha256": "7727526d58e011ee404847936ac7152b37ddb13302ee93ce347e1f7a822e7197"
+    },
+    {
       "path": "fixtures/kinds_paused.lp",
-      "sha256": "0f0d2c4822db3c3fb7b146cbfcc9f346539ed16709d97bf1c56489759da43e61"
+      "sha256": "3b469d4c7318fd185df5f4bc7272e2d98595fe895af8f535d196d51b3136b528"
     },
     {
       "path": "fixtures/kinds_present.lp",
@@ -208,7 +240,7 @@
     },
     {
       "path": "fixtures/procedure.lp",
-      "sha256": "e92068c8d7dce140ff54eb309737e7902c7c7d440862ff524c80de09f1f1d723"
+      "sha256": "c650ebcef1169ce16b189ca02fcae823ce59e39607eb61589882969d4a92789a"
     },
     {
       "path": "fixtures/record.lp",
@@ -216,11 +248,11 @@
     },
     {
       "path": "fixtures/review.lp",
-      "sha256": "d2184018273b3b0eb73061b121a1b10d5fb159b4adc221532bc7a682f15e3fdb"
+      "sha256": "f1b03601d6232fdd3821eb2de4ea27eea6dc666ddff806e03e9a06289bae8749"
     },
     {
       "path": "fixtures/review_genesis.lp",
-      "sha256": "c3ec120fbc9c1b48642cb3bee915edf3d3edbf29a54cd35c703719950c87bf50"
+      "sha256": "cb49f4b6f7f17dfe8a12c5d94ff172ce945c250b8d4b99da33e3b7f984e46ede"
     },
     {
       "path": "fixtures/state.lp",

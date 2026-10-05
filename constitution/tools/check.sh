@@ -1,5 +1,6 @@
 #!/bin/sh
-# Runs every mechanical check of the consolidated L0 (tools/check.py).
+# Runs every mechanical check of the consolidated L0 (tools/check.py), then
+# the mutation check of the fixtures (tools/mutants.py).
 #
 #   tools/check.sh                    run the checks; exit 1 on any failure
 #   tools/check.sh --write-manifest   recompute MANIFEST.json, then run them
@@ -16,4 +17,7 @@ if [ -z "$PYTHON" ]; then
   fi
   PYTHON="$(pwd)/.venv/bin/python"
 fi
-exec "$PYTHON" tools/check.py "$@"
+status=0
+"$PYTHON" tools/check.py "$@" || status=1
+"$PYTHON" tools/mutants.py || status=1
+exit $status

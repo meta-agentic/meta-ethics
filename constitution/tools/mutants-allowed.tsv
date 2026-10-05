@@ -1,0 +1,38 @@
+mutant	reason
+seat_ineligible(S,Q) :- custodian_seat(S); seat_holder(P,S); about(Q,P). | drop custodian_seat(S)	no outcome reads it: seat_ineligible/2 is asked only about Custodian seats
+seat_ineligible(S,Q) :- custodian_seat(S); seat_holder(P,S); matter_of(Q,X); recused(P,X). | drop custodian_seat(S)	no outcome reads it: seat_ineligible/2 is asked only about Custodian seats
+seat_ineligible(S,Q) :- custodian_seat(S); replaces_seat(Q,S,_). | drop custodian_seat(S)	no outcome reads it: seat_ineligible/2 is asked only about Custodian seats
+seat_filled(S) :- custodian_seat(S); seat_holder(_,S). | drop custodian_seat(S)	no outcome reads it: seat_filled/1 is asked only about Custodian seats
+standing_veto(S,Q) :- veto(S,Q,_); veto_signed(S,Q); seat_filled(S); not seat_ineligible(S,Q); within_ceiling(S,Q); within_act_bound(Q); not owed_act(Q). | drop veto(S,Q,_)	type guard: a veto's signature is verified only for a recorded veto
+standing_veto(S,Q) :- veto(S,Q,_); veto_signed(S,Q); seat_filled(S); not seat_ineligible(S,Q); within_ceiling(S,Q); within_act_bound(Q); not owed_act(Q). | drop seat_filled(S)	type guard: a veto is the act of a seat's holder, so an empty seat records none
+eligible_seat(S,Q) :- custodian_seat(S); seat_filled(S); passed_channel(Q); not seat_ineligible(S,Q). | drop custodian_seat(S)	type guard: seat_filled/1 holds only for a Custodian seat
+custodian_passes(Q) :- passed_channel(Q); not vetoed(Q); not law_hold(Q); some_eligible_seat(Q). | drop passed_channel(Q)	type guard: an eligible seat or a review of the act exists only for an act the channel passed
+custodian_passes(Q) :- passed_channel(Q); not vetoed(Q); not law_hold(Q); not some_eligible_seat(Q); act_reviewed(Q); not stopped_by_review(Q). | drop passed_channel(Q)	type guard: an eligible seat or a review of the act exists only for an act the channel passed
+custodian_passes(Q) :- passed_channel(Q); not vetoed(Q); not law_hold(Q); not some_eligible_seat(Q); act_reviewed(Q); not stopped_by_review(Q). | drop not vetoed(Q)	equivalent: where no seat is eligible no veto stands (P1.3), so the literal is always true
+custodian_passes(Q) :- passed_channel(Q); not vetoed(Q); not law_hold(Q); not some_eligible_seat(Q); act_reviewed(Q); not stopped_by_review(Q). | drop not some_eligible_seat(Q)	equivalent: where a seat is eligible and nothing is vetoed or held, the first rule derives the same
+seat_choice(S,Q,O) :- choice(S,Q,O); seat_filled(S); not seat_ineligible(S,Q). | drop seat_filled(S)	type guard: a choice is the act of a seat's holder, so an empty seat records none
+dissent(Q,O) :- choice_needed(Q); option(Q,O); custodian_seat(S); not seat_choice(S,Q,O). | drop choice_needed(Q)	type guard: option/2 is recorded only for an act that must be chosen
+chosen(Q,O) :- choice_needed(Q); option(Q,O); not dissent(Q,O). | drop choice_needed(Q)	type guard: option/2 is recorded only for an act that must be chosen
+composition_breach(S) :- custodian_seat(S); seat_holder(P,S); seat_kind(S,K); kind_of(P,K2); K != K2. | drop custodian_seat(S)	type guard: seat_kind/2 is declared only for Custodian seats
+citable_through_chain(F,H) :- attributed_via_chain(F,H); kind_of(H,human); citable(F,_); attribution_reviewed(F,H,R); kind_of(R,human). | drop attributed_via_chain(F,H)	type guard: a review of an attribution is recorded only for an attribution
+citable_through_chain(F,H) :- attributed_via_chain(F,H); kind_of(H,human); citable(F,_); attribution_reviewed(F,H,R); kind_of(R,human). | drop kind_of(H,human)	equivalent: for a non-human party the second rule derives the same without the review
+removal_bar(R) :- reviewed_removal(_,R); founder_chain(R); not regime_exited. | drop reviewed_removal(_,R)	no outcome reads it: removal_effective/1 asks only after the reviewer of the removal
+removal_effective(A) :- removes_last_of_kind(A); reviewed_removal(A,R); not removal_bar(R). | drop removes_last_of_kind(A)	type guard: a removal is reviewed only where it would remove the last party of a kind
+active(M) :- mandate(M,_,_); issued(M,T0); now(T); T0 <= T; not revoked_by_now(M). | drop mandate(M,_,_)	type guard: issued/2 is recorded only for a mandate
+duty_runs(M) :- mandate(M,_,_); terms_delivered(M); accepted(M); not renounced_by_now(M). | drop mandate(M,_,_)	type guard: terms are delivered only for a mandate
+interim_active(I) :- interim(I,F,T); finding(F,_,_); now(N); param(interim_ceiling,C); (N-T) < C; not instance_ended. | drop finding(F,_,_)	type guard: an interim measure is recorded only for a finding
+ratification_signed(R,S) :- signature(Sig,P,R,_); seat_holder(P,S); custodian_seat(S); signature_valid(Sig); covered_by_head(Sig); not stale(Sig). | drop custodian_seat(S)	no outcome reads it: ratified/1 asks only after Custodian seats
+beats(C1,C2,P) :- candidate(C1,P); candidate(C2,P); conflict(C1,C2); prevails(C1,C2). | drop candidate(C1,P)	type guard: a prevailing or resolving consequence enters the conflict only as a candidate for the party
+beats(C1,C2,P) :- candidate(C1,P); candidate(C2,P); conflict(C1,C2); prevails(C1,C2). | drop candidate(C2,P)	type guard: as above, for the consequence that yields
+beats(C1,C2,P) :- candidate(C1,P); candidate(C2,P); conflict(C1,C2); prevails(C1,C2). | drop conflict(C1,C2)	type guard: an ordering or a resolution is recorded only between conflicting consequences
+beats(C1,C2,P) :- candidate(C1,P); candidate(C2,P); conflict(C1,C2); resolution(C1,C2,P); not prevails(C2,C1). | drop candidate(C1,P)	type guard: a prevailing or resolving consequence enters the conflict only as a candidate for the party
+beats(C1,C2,P) :- candidate(C1,P); candidate(C2,P); conflict(C1,C2); resolution(C1,C2,P); not prevails(C2,C1). | drop candidate(C2,P)	type guard: as above, for the consequence that yields
+beats(C1,C2,P) :- candidate(C1,P); candidate(C2,P); conflict(C1,C2); resolution(C1,C2,P); not prevails(C2,C1). | drop conflict(C1,C2)	type guard: an ordering or a resolution is recorded only between conflicting consequences
+undecided(C,P) :- candidate(C,P); candidate(C2,P); conflict(C,C2); not beats(C,C2,P); not beats(C2,C,P). | drop candidate(C,P)	no outcome reads it: applied/2 asks only about candidates
+admitted_act(A) :- filed(A,P); not owed(A); balance(P,N); N > 0. | drop not owed(A)	equivalent: an owed act is admitted by the rule above whatever the balance
+reviewer_kind_ok(V,R) :- reviewed(V,R); needs_human_reviewer(V); kind_of(R,human). | drop reviewed(V,R)	implied: review_done/1 reads it only together with the recorded review
+reviewer_kind_ok(V,R) :- reviewed(V,R); needs_human_reviewer(V); kind_of(R,human). | drop needs_human_reviewer(V)	equivalent: a human reviewer satisfies every verdict, and the rule above admits it where no human is needed
+review_done(V) :- reviewed(V,R); drawn_reviewer(V,R); not implicated(R,V); reviewer_kind_ok(V,R); not genesis_bar(R). | drop reviewed(V,R)	implied: reviewer_kind_ok/2 holds only for a recorded review
+takes_effect(V) :- verdict(V,_,_); bears_consequence(V); review_done(V); window_passed(V). | drop verdict(V,_,_)	type guard: bears_consequence/1 is recorded only for a verdict
+provisional(V) :- verdict(V,_,_); bears_consequence(V); not takes_effect(V). | drop verdict(V,_,_)	type guard: bears_consequence/1 is recorded only for a verdict
+valid_closure(F) :- closure(C,F); witnessed_by(C,W); discharges(C,F); finding(F,P,_); W != P; not in_chain(W,P); not founder_finding_held(F). | drop closure(C,F)	type guard: witnessing and discharge are recorded only for a closing act

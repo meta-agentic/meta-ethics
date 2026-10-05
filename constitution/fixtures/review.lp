@@ -35,7 +35,28 @@ verdict_delivered(v9, 5). drawn_reviewer(v9, n3). reviewed(v9, n3). benefits_fro
 verdict(v10, n2, 5). bears_consequence(v10). consequence_on(v10, n2). filed_by(v10, h1).
 verdict_delivered(v10, 5). drawn_reviewer(v10, h2). reviewed(v10, h2). acted_in(h2, v10).
 
+verdict(v11, n3, 5). bears_consequence(v11). consequence_on(v11, n3). filed_by(v11, h1).
+verdict_delivered(v11, 5). drawn_reviewer(v11, n3). reviewed(v11, n3).
+verdict(v12, n3, 5). bears_consequence(v12). consequence_on(v12, n3). filed_by(v12, n2).
+verdict_delivered(v12, 5). drawn_reviewer(v12, n2). reviewed(v12, n2).
+verdict(v13, n3, 5). bears_consequence(v13). consequence_on(v13, n3). filed_by(v13, n2).
+verdict_delivered(v13, 5). drawn_reviewer(v13, n1). reviewed(v13, n1).
+verdict(v14, n3, 5). bears_consequence(v14). consequence_on(v14, n3). filed_by(v14, h1).
+verdict_delivered(v14, 5). reviewed(v14, h2).
+verdict(v15, n3, 5). consequence_on(v15, n3). filed_by(v15, h1).
+verdict_delivered(v15, 5). drawn_reviewer(v15, h2). reviewed(v15, h2).
+verdict(v16, h2, 5). bears_consequence(v16). consequence_on(v16, n3). filed_by(v16, h1).
+verdict_delivered(v16, 5). drawn_reviewer(v16, n1). reviewed(v16, n1).
+
 % EXPECT[A2.5]: takes_effect(v1)
+% EXPECT-NOT[A2.5]: provisional(v1)
+% EXPECT-NOT[P2.1]: takes_effect(v11)
+% EXPECT-NOT[P2.1]: takes_effect(v12)
+% EXPECT-NOT[P2.1]: takes_effect(v13)
+% EXPECT-NOT[P2.1]: takes_effect(v14)
+% EXPECT-NOT[P2.1]: takes_effect(v15)
+% EXPECT-NOT[P2.1]: provisional(v15)
+% EXPECT[P2.5]: takes_effect(v16)
 % EXPECT[A2.5]: provisional(v4)
 % EXPECT-NOT[A2.5]: takes_effect(v4)
 % EXPECT[P2.1]: implicated(n1,v3)

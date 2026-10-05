@@ -15,6 +15,13 @@ verdict_delivered(v2, 10). drawn_reviewer(v2, r2). reviewed(v2, r2).
 verdict(v3, r2, 10). bears_consequence(v3). consequence_on(v3, r2). filed_by(v3, h).
 verdict_delivered(v3, 10). drawn_reviewer(v3, f). reviewed(v3, f).
 
+mandate(m5, r3, s). delegated_from(m5, m2). issued(m5, 0). kind_of(r3, human).
+root_grant(m6). mandate(m6, r4, s). issued(m6, 0). founder_revocable(m6). kind_of(r4, human).
+verdict(v4, h, 10). bears_consequence(v4). consequence_on(v4, h). filed_by(v4, h).
+verdict_delivered(v4, 10). drawn_reviewer(v4, r3). reviewed(v4, r3).
+
+% EXPECT[P2.7]: takes_effect(v4)
+% EXPECT-NOT[H3.4]: genesis_bar(r4)
 % EXPECT[C7.3]: in_chain(r1,f)
 % EXPECT-NOT[C7.3]: in_chain(r2,f)
 % EXPECT[P2.7]: provisional(v1)

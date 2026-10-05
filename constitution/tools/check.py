@@ -46,7 +46,8 @@ import textchecks as text
 
 # ------------------------------------------------------------ vocabulary
 
-def load_vocabulary(inv_ids):
+def load_vocabulary(inv_ids, status=None):
+    status = status or {}
     vocab = {}
     for r in read_tsv("vocabulary.tsv"):
         sorts = [s for s in r["sorts"].split(",") if s]
@@ -59,7 +60,10 @@ def load_vocabulary(inv_ids):
             fail("vocabulary", "%s: clause %s is not a paragraph of L0.md" % (r["predicate"], r["clause"]))
         if not r["gloss"].strip():
             fail("vocabulary", "%s: no gloss" % r["predicate"])
-        vocab[key] = dict(sorts=sorts, cls=r["class"], clause=r["clause"])
+        vocab[key] = dict(sorts=sorts, cls=r["class"], clause=r["clause"], kind_bearing=r.get("bearing") == "kind")
+        if r["class"] in RULE_CLASSES and status.get(r["clause"]) == "todo":
+            fail("vocabulary", "%s: a program predicate bound to the todo paragraph %s; the program derives no outcome "
+                 "for a paragraph it does not render" % (r["predicate"], r["clause"]))
     return vocab
 
 
@@ -75,6 +79,24 @@ def walk(node):
             elif isinstance(val, (list, tuple, ast.ASTSequence)):
                 for v in val:
                     yield from walk(v)
+
+
+def walk_terms(node):
+    """Like walk, but an atom's own symbol is entered through its arguments,
+    so that every Function node yielded is a term, never an atom."""
+    if isinstance(node, ast.AST):
+        yield node
+        if node.ast_type == ast.ASTType.SymbolicAtom and node.symbol.ast_type == ast.ASTType.Function:
+            for a in node.symbol.arguments:
+                yield from walk_terms(a)
+            return
+        for key in node.child_keys:
+            val = getattr(node, key)
+            if isinstance(val, ast.AST):
+                yield from walk_terms(val)
+            elif isinstance(val, (list, tuple, ast.ASTSequence)):
+                for v in val:
+                    yield from walk_terms(v)
 
 
 def symbolic_atoms(node):
@@ -194,7 +216,7 @@ def check_rule(st, vocab, where):
             fail("vocabulary", "%s: %s/%d is not declared" % (where, name, len(args)))
             continue
         if head_cls == "derived" and atom is not st.head.atom:
-            if "kind" in decl["sorts"]:
+            if "kind" in decl["sorts"] or decl["kind_bearing"]:
                 fail("kinds", "%s: derivation rule reads %s/%d, which carries the kind of a party (C13)" % (where, name, len(args)))
             if decl["cls"] == "consequence":
                 fail("kinds", "%s: derivation rule reads the consequence %s/%d (C13)" % (where, name, len(args)))
@@ -212,13 +234,38 @@ def check_rule(st, vocab, where):
                     fail("kinds", "%s: kind constant %s in a derivation rule (C13)" % (where, arg))
             elif sort == "party":
                 fail("symmetry", "%s: computed term %s in a party position (C1)" % (where, arg))
-    for n in walk(st):
-        if n.ast_type == ast.ASTType.Comparison:
-            terms = [n.term] + [g.term for g in n.guards]
-            party_side = [t.ast_type == ast.ASTType.Variable and var_sort.get(t.name) == "party" for t in terms]
-            if any(party_side):
+    # aliasing: X = Y makes X carry Y's sort, so an alias cannot shed it
+    changed = True
+    while changed:
+        changed = False
+        for n in walk(st):
+            if n.ast_type == ast.ASTType.Comparison and len(n.guards) == 1 \
+                    and n.guards[0].comparison == ast.ComparisonOperator.Equal:
+                a, b = n.term, n.guards[0].term
+                if a.ast_type == ast.ASTType.Variable and b.ast_type == ast.ASTType.Variable:
+                    for x, y in ((a, b), (b, a)):
+                        if var_sort.get(y.name) and not var_sort.get(x.name):
+                            var_sort[x.name] = var_sort[y.name]
+                            changed = True
+    for n in walk_terms(st):
+        t = n.ast_type
+        if t == ast.ASTType.ConditionalLiteral:
+            fail("fragment", "%s: conditional literal, outside the fragment: %s" % (where, n))
+        elif t == ast.ASTType.Literal and n.sign == ast.Sign.DoubleNegation:
+            fail("fragment", "%s: double negation, outside the fragment: %s" % (where, n))
+        elif t in (ast.ASTType.Pool, ast.ASTType.Interval):
+            fail("fragment", "%s: %s term in a rule: %s" % (where, t.name.lower(), n))
+        elif t == ast.ASTType.Function and n.arguments:
+            fail("symmetry", "%s: compound term %s mints or hides an object (C1, C6)" % (where, n))
+        elif t == ast.ASTType.Comparison:
+            sides = [n.term] + [g.term for g in n.guards]
+            party_in = [any(v.ast_type == ast.ASTType.Variable and var_sort.get(v.name) == "party"
+                            for v in walk(side)) for side in sides]
+            if any(party_in):
+                bare = all(side.ast_type == ast.ASTType.Variable and var_sort.get(side.name) == "party"
+                           for side in sides)
                 ops = [g.comparison for g in n.guards]
-                if not all(party_side) or ops != [ast.ComparisonOperator.NotEqual]:
+                if not bare or ops != [ast.ComparisonOperator.NotEqual]:
                     fail("symmetry", "%s: party terms compared other than by != (C1): %s" % (where, n))
 
 
@@ -260,6 +307,15 @@ def check_fixtures(vocab, status, prog_files, programmed):
             found = True
             kind, cid, atom = m.groups()
             n_assert += 1
+            try:
+                sym = clingo.parse_term(atom)
+            except RuntimeError:
+                fail("fixtures", "%s: [%s] assertion %r does not parse" % (name, cid, atom))
+                continue
+            adecl = vocab.get((sym.name, len(sym.arguments))) if sym.type == clingo.SymbolType.Function else None
+            if str(sym) != atom or not adecl or adecl["cls"] not in RULE_CLASSES:
+                fail("fixtures", "%s: [%s] assertion %r is not a canonical atom of a declared rule predicate"
+                     % (name, cid, atom))
             if status.get(cid) != "program":
                 fail("binding", "%s: assertion tagged %s, which is not a `program` paragraph" % (name, cid))
             holds = atom in model
@@ -302,6 +358,21 @@ SELFTEST = [
     ("fragment", "open(F) :- finding(F, _, _), not valid_closure(F).\n"
                  "valid_closure(F) :- finding(F, _, _), not open(F)."),
     ("fragment", "open_count(P, N) :- party(P), N = #sum{ 1, F : finding(F, P, _) }."),
+    # injected by the formal review: tuple, alias and constant bypasses of C1,
+    # minting by assignment, conditional literals, double negation, pools
+    ("symmetry", "in_chain(P, P2) :- party(P), party(P2), X = (P,0), Y = (P2,0), X < Y."),
+    ("symmetry", "holds_inform(P) :- party(P), X = (P,), X = (founder,)."),
+    ("symmetry", 'holds_inform(P) :- party(P), X = (P,), Y = ("founder",), X != Y.'),
+    ("symmetry", "holds_inform(P) :- party(P), X = P, X = founder."),
+    ("symmetry", "chain_of(A, X) :- act(A, _, _, _), X = f(A)."),
+    ("symmetry", "party(X) :- party(P), Y = (P,), X = g(Y)."),
+    ("symmetry", "base_size(Q, N) :- matter(Q), N = #count{ P : base(Q, P), (P,) < (zz,) }."),
+    ("fragment", "open(F) :- finding(F, _, _), valid_closure(F) : open(F)."),
+    ("fragment", "applied(C, P) :- candidate(C, P), defeated(C2, P) : conflict(C, C2)."),
+    ("fragment", "open(F) :- finding(F, _, _), 0 < #count{ C : closure(C, F), not open(F) }."),
+    ("fragment", "open(F) :- finding(F, _, _), not not valid_closure(F)."),
+    ("fragment", "holds_inform(P) :- party(P;Q), subject(Q)."),
+    ("kinds", "own_exit(A) :- made_one_kind(A)."),
 ]
 
 
@@ -349,7 +420,7 @@ def main():
     inv = check_prose()
     status = {r["id"]: r["status"] for r in inv}
     n_units, n_unmapped = check_sources(inv)
-    vocab = load_vocabulary(set(status))
+    vocab = load_vocabulary(set(status), status)
     prog_files, programmed, n_rules, a = check_program(vocab, status)
     n_fix, n_assert = check_fixtures(vocab, status, prog_files, programmed)
     n_params = check_parameters(set(status), prog_files)

@@ -1,253 +1,251 @@
-predicate	sorts	class	clause	gloss
-root_grant	mandate	intake	C7.3	a mandate the founding document, the common root, grants itself
-delegated_from	mandate,mandate	intake	A1.1	the first mandate was delegated by the holder of the second
-mandate	mandate,party,scope	intake	A1.1	a mandate, its holder and its scope
-issued	mandate,time	intake	A1.1	when a mandate was issued
-revoked	mandate,time	intake	A1.1	when a mandate was withdrawn
-now	time	intake	C12.1	the position in the record at which the state is evaluated
-grant	grant,party,party,capability	intake	A1.1	a grant of access, its grantor, its holder and the capability granted
-scope_has	scope,capability	intake	C7.1	a scope contains a capability
-carries_seat	mandate,seat	intake	A1.2	a mandate carries a seat
-admitted	mandate	intake	C7.1	a mandate admitted through the governed channel
-proposal	proposal	intake	A1.2	a proposal before the governed channel
-approves	party,proposal	intake	A1.2	a party's vote for a proposal
-accepts_signed	mandate,time	attested	S1.13	a holder's signed acceptance of a mandate, its signature verified
-act_under	act,mandate	intake	A1.3	an act done under a mandate
-act	act,party,capability,time	intake	A1.4	an act, its actor, the capability it uses and its time
-effect	act	intake	A1.4	an act has an effect inside the system
-terms_delivered	mandate	attested	D15.1	a mandate's terms were delivered to its holder in a form the holder can read, the delivery observed
-renounces	mandate,time	intake	A1.3	a holder renounces a mandate
-finding	finding,party,time	intake	C6.2	a finding, minted at intake, the subject it names and when it was derived
-closure	act,finding	intake	A3.2	an act that names a finding it closes
-witnessed_by	act,party	attested	D15.1	a party's observation of an act, as its witness
-discharges	act,finding	attested	A3.2	a judgement that a closing act discharges what the finding requires
-param	param,nat	param	T.1	a value the founding document sets for a parameter
-cites	finding,matter	intake	A2.6	the matter a finding cites
-base	matter,party	intake	C17.1	the parties against which a matter is decided, fixed at its filing's intake
-matter	matter	intake	A2.6	a matter
-closed_in_favour	finding	attested	P2.1	a finding closed in its subject's favour by a review
-verdict	verdict,party,time	intake	A2.5	a verdict, its subject and when it was derived
-filed_by	verdict,party	intake	A2.5	the filer of the matter a verdict decides
-bears_consequence	verdict	intake	A2.5	a verdict bears a consequence
-consequence_on	verdict,party	intake	P2.2	a consequence of the verdict is applied to a party's own access, capacity, eligibility or standing, or imposes on it a duty
-kind_of	party,kind	intake	P1.1	the kind of a party
-reviewed	verdict,party	attested	P2.1	a signed review of a verdict by a party, reading the subject's answer
-drawn_reviewer	verdict,party	attested	C17.5	the reviewer the draw yields for a verdict
-custodian_seat	seat	intake	P1.1	a Custodian seat
-about	proposal,party	intake	D9.3	a proposal about the party holding a seat
-matter_of	proposal,matter	intake	P1.5	the matter a proposal belongs to
-veto	seat,proposal,time	intake	P1.2	a seat's veto of an act the channel passed
-veto_signed	seat,proposal	attested	S1.13	the veto is signed by the seat's own key, verified
-passed_channel	proposal	intake	P1.1	the governed channel passed an act
-act_reviewed	proposal	attested	P1.3	a party drawn as P2 provides reviewed an act no eligible seat could veto
-stopped_by_review	proposal	attested	P1.3	that review stopped the act, as a veto would
-choice	seat,proposal,option	intake	P1.2	a seat's choice on an act that must be chosen
-choice_needed	proposal	intake	P1.2	an act must be chosen
-option	proposal,option	intake	P1.2	an option of a choice
-l0_change	proposal	intake	P1.13	a proposed L0 change
-l0_signed	proposal,seat	attested	S1.13	a seat's verified signature on an L0 change
-next_head	head,head	attested	C16.1	two heads in sequence in the external witness
-extends	head,head	attested	C16.3	the operator's proof that the first head extends the second
-witnessed_head	head,time	attested	C16.1	a head the external witness holds, and the position it covers
-signature	signature,party,record,time	intake	S1.1	a signature, its signer, the record it is over, and its intake
-signature_valid	signature	attested	S1.13	a signature verified from the recorded verification material
-placed	record	intake	C5.1	a record placed by its merge event and landing commit
-arbiter_seat	seat	intake	D9.2	the arbiter seat
-delivered	delivery,party,matter,time	intake	D15.1	the arbiter seat's delivery to a recipient about a matter
-observed	delivery,party	attested	D15.1	a collector's observation of a delivery
-filer	matter,party	intake	D15.3	the filer of a matter
-presence	session,party,key,head	attested	S2.2	an act of presence proving continuity of a party with a key at a head
-candidate	rule,party	intake	C14.1	a consequence a consequence rule derives for a party
-conflicts	rule,rule	intake	C14.1	two consequences that cannot both be applied
-prevails	rule,rule	intake	C14.2	the ordering among rules, in force at the matter's filing
-resolution	rule,rule,party	attested	C14.3	a drawn reviewer's resolution of an undecided conflict
-filed	act,party	intake	H1.4	an act filed by a party
-owed	act	intake	H1.4	an act a rule requires of a party
-balance	party,nat	intake	H1.4	a party's capacity balance
-kind	kind	intake	P3.1	a kind of party the constitution is defined for
-act_of_power	act	intake	P3.3	an act of power
-pause_exempt	act	intake	P3.3	an act of power the pause lets through
-reaches	mandate	derived	A1.1	a mandate whose chain of delegation reaches the founding document
-revoked_by_now	mandate	derived	A1.1	a mandate withdrawn by now
-active	mandate	derived	A1.1	a mandate in force now
-party	party	derived	A1.1	holds a mandate whose chain of delegation reaches the founding document; a grant of access makes its holder a party
-scope_violation	mandate,capability	derived	C7.1	a delegated scope not within its delegator's own
-covered_grant	grant	derived	C7.4	a grant of access declared as a mandate
-undeclared_grant	grant,party	derived	C7.4	an undeclared grant is a finding against its grantor
-seat_holder	party,seat	derived	A1.2	a seat comes only with a mandate that carries it, admitted through the governed channel
-seat_outside_channel	seat	derived	A1.2	a seat claimed through a mandate not admitted through the channel
-approvals	proposal,nat	derived	A1.2	power is counted in seats, never in parties
-accepted	mandate	derived	A1.3	the holder accepts it, by a signed act or by a first act under it
-renounced_by_now	mandate	derived	A1.3	a mandate its holder renounced by now
-duty_runs	mandate	derived	A1.3	no duty under it runs until its terms are delivered and the holder accepts it
-subject	party	derived	A1.4	anyone whose act has an effect inside the system; every party is a subject
-holds_inform	party	derived	A1.4	only parties hold the inform channel
-in_scope	act,mandate	derived	A2.4	an in-scope act done under a mandate
-chain_of	act,mandate	derived	A2.4	the mandates of an in-scope act's delegation chain
-attributed	act,party	derived	A2.4	an in-scope act done under a mandate is attributed to its delegation chain, not to the executor alone
-grantor_of	party,party	derived	C21.2	the first party granted the mandate the second holds
-above	party,party	derived	C21.2	a grantor of the party, up to but not including the common root
-in_chain	party,party	derived	C21.2	in a party's delegation chain: a grantor up to the root, or a delegate
-valid_closure	finding	derived	A3.2	a finding closes only by a witnessed act that names it, discharges what it requires, witnessed by a party independent of the one found
-open	finding	derived	A3.1	an open finding of the working state
-open_count	party,nat	derived	A3.1	open findings about a party
-open_count_capped	party,nat	derived	A3.1	counts capped at fixed ceilings
-age	finding,nat	derived	A3.1	timers capped at fixed ceilings
-recused	party,matter	derived	A2.6	a party a finding names is ineligible on the matter it cites while the finding is open
-eligible	matter,party	derived	A2.6	eligible on a matter
-base_size	matter,nat	derived	A2.6	the party stays in the base against which the matter is decided
-eligible_size	matter,nat	derived	A2.6	eligible parties in the base
-citable	finding,party	derived	A2.3	a finding may be cited against its subject only for a declared period, and never once closed in its favour
-implicated	party,verdict	derived	A2.5	a party implicated in a verdict: its subject, its filer, or in their chains
-window_passed	verdict	derived	A2.5	its contest window has passed
-needs_human_reviewer	verdict	consequence	P2.2	any consequence of the verdict falls on a human
-reviewer_kind_ok	verdict,party	consequence	P2.2	the reviewer of a verdict any consequence of which falls on a human is a human
-review_done	verdict	consequence	P2.1	reviewed by a party not implicated in it, drawn by lot
-takes_effect	verdict	consequence	P2.1	a consequence-bearing verdict takes effect once reviewed and its contest window has passed
-provisional	verdict	consequence	P2.1	a consequence-bearing verdict is provisional until then
-seat_ineligible	seat,proposal	derived	P1.3	a seat ineligible on a matter, or on a proposal about its holder
-seat_filled	seat	derived	P1.4	a Custodian seat held by a party
-empty_seat	seat	derived	P1.4	a Custodian seat no party holds
-filling_owed	seat	derived	P1.4	filling the seat is an owed act
-vetoes_before	seat,proposal,nat	derived	P1.5	matters the seat vetoed earlier in the window
-within_ceiling	seat,proposal	derived	P1.5	a veto within the seat's ceiling per window
-standing_veto	seat,proposal	derived	P1.2	a veto by either seat stands, and the act does not pass
-vetoed	proposal	derived	P1.2	an act stopped by a standing veto
-eligible_seat	seat,proposal	derived	P1.3	a filled seat eligible on an act
-some_eligible_seat	proposal	derived	P1.3	at least one seat is eligible on the act
-custodian_passes	proposal	derived	P1.2	an act the channel passed takes effect at the last resort
-seat_choice	seat,proposal,option	derived	P1.2	a choice made by a filled, eligible seat
-dissent	proposal,option	derived	P1.2	some seat did not make this choice
-chosen	proposal,option	derived	P1.2	both seats must agree
-some_chosen	proposal	derived	P1.2	a choice was made
-status_quo	proposal	derived	P1.2	or the status quo stands
-l0_signature_missing	proposal	derived	P1.13	a Custodian seat has not signed the L0 change
-l0_change_passes	proposal	derived	P1.13	an L0 change needs both Custodians' signatures, always
-fork	head,head	derived	C16.3	two heads in sequence with no prefix proof are a fork
-covered_by_head	signature	derived	C16.4	a signature covered by a later witnessed head
-ratification_signed	record,seat	derived	C5.2	a seat's signature on the ratification, valid and witnessed
-ratification_missing	record,seat	derived	C5.2	a required ratification signature is missing
-ratification_incomplete	record	derived	C5.2	some required ratification signature is missing
-ratified	record	derived	C5.2	ratification takes effect when placement and every signature exist under a witnessed head
-arbiter_holder	party	derived	D15.3	the party holding the arbiter seat
-collector_implicated	party,delivery	derived	D15.3	implicated in the matter: the recipient, the filer, or in the chains of the deliverer, recipient or filer
-independent_collector	party,delivery	derived	D15.3	a collector that is not the arbiter seat and is not implicated in the matter
-knew	party,matter,time	derived	D15.2	knowledge established only from a delivery an independent collector observed
-party_fork	party,key	derived	S2.3	two instances proving continuity of one party with one key at once are a fork of the party
-conflict	rule,rule	consequence	C14.1	two consequences that cannot both be applied, either way round
-beats	rule,rule,party	consequence	C14.2	where the ordering or a resolution decides, the higher consequence applies
-defeated	rule,party	consequence	C14.2	a consequence another prevails over
-undecided	rule,party	consequence	C14.1	a conflict the ordering does not decide
-applied	rule,party	consequence	C14.1	two consequences that cannot both be applied are never both applied
-admitted_act	act	derived	H1.4	capacity never gates an owed act
-kind_present	kind	consequence	P3.3	some party of the kind holds a mandate
-paused		consequence	P3.3	the parties are all of one kind: a pause
-blocked_by_pause	act	consequence	P3.3	during the pause no act of power takes effect except those listed
-reports_compromise	act,party,time	intake	S1.11	a party's report of compromise or loss of its own signing means, at its intake
-witnessed_between	signature,act	derived	S1.10	a witnessed head covers the signature before the report
-void_signature	signature	derived	S1.10	a compromise reported before the witnessed time of the act voids the signature; under the same head the report prevails
-contact	contact,party,party,matter	attested	C21.5	a contact by a party with a judge about a matter outside the record, later shown
-drawn_judge	matter,party	attested	C17.5	the judge the draw yields for a matter
-contact_entered	contact	intake	C21.5	the judge entered the contact as an attested fact, visible to the subject
-lobbying	contact,party	derived	C17.7	contacting or lobbying the drawn judge about the matter outside the record is a finding
-unentered_contact	contact,party	derived	C21.5	a contact later shown and not entered is a finding against the judge
-duty_on	act,matter,party	intake	C14.4	an act a rule requires of a party on a matter
-owes	party,act	derived	C14.4	no one owes an act on a matter in which a finding names them
-could_be_subject	finding,party	intake	A2.13	a party that could be the finding's subject, as shown to others
-possible_subjects	finding,nat	derived	A2.13	how many parties could be the finding's subject
-shown_to_others	finding	derived	A2.13	shown to others only where at least as many parties could be its subject as the founding document declares
-sees_in_full	party,finding	derived	A2.13	its subject and whoever closes it see it in full
-extension_requested	party,matter,time	intake	H1.5	a party's request, stating no reason, to extend its window on a matter
-window_opens	party,matter,time	intake	H1.5	delivery in the form the party's mandate declares, or a filing's intake time
-extended	party,matter	derived	H1.5	a party's window is extended once per matter at its request
-due	party,matter,time	derived	H1.5	when the party's window on the matter closes
-regime_exit	time	attested	H3.5	the declared, observable event that ends the genesis regime
-power_at	act,time	intake	H3.3	an act of power and its intake time
-founder	party	intake	H3.1	the founder, as the founding document names it
-regime_exited		derived	H3.3	the genesis regime has ended
-exit_before	act	derived	H3.3	an act of power after the regime's exit
-marked_regime	act	derived	H3.3	every act of power under the regime is marked so, for good
-founder_finding_held	finding	derived	H3.3	a finding naming the founder stays open until exit
-reproposal_of	proposal,proposal	intake	P1.6	a re-proposal of an act
-family	proposal,proposal	derived	P1.6	an act and its re-proposals
-vetoes_on_act	proposal,nat	derived	P1.6	vetoes cast earlier against the same act or a re-proposal of it
-within_act_bound	proposal	derived	P1.6	a veto against the same act stands at most a number of times the founding document declares
-act_to_review	proposal	derived	P1.6	after which the act goes to review by a party drawn as P2 provides
-is_reproposal	proposal	derived	P1.6	a proposal that re-proposes an earlier act
-owed_act	proposal	intake	P1.12	an act L0 owes to a subject or a law binding the instance requires for a human party's right
-replaces_seat	proposal,seat,party	intake	P1.20	a proposal to replace a Custodian seat's holder with a party
-seat_kind	seat,kind	intake	P1.1	the kind of party a Custodian seat is held by
-signature_head	signature,time	intake	S1.6	the position of the witnessed head a signature covers
-later_signature	signature,record	derived	S1.6	another signature on the same act came in later
-last_intake	record,time	derived	S1.6	the intake of the last required signature
-stale	signature	derived	S1.6	a signature over a head older than the window at the last signature's intake is stale and does not count
-delivered_to_subject	finding	attested	A1.5	the finding was delivered to its subject in a form it can read, the delivery observed
-delivery_owed	finding,party	derived	A1.5	every finding made about a subject is delivered to them
-may_answer	party,finding	derived	A1.5	the subject may answer every finding about them
-interim	interim,finding,time	intake	A2.7	an interim measure about a finding's subject, from its intake
-interim_active	interim	derived	A2.7	an interim measure ends at a ceiling the founding document declares, whatever the state of review
-composition_breach	seat	consequence	P1.21	a Custodian seat held by a party not of the seat's kind
-replacement_inadmissible	proposal	consequence	P1.20	a replacement that would leave a kind unrepresented is not admissible
-renunciation_act	act	intake	P3.8	an act refusing or renouncing the actor's own mandate
-made_one_kind	act	attested	P3.8	a causer finding that the act made the parties one kind, reviewed under P2 or still provisional because no reviewer was available before the end
-under_founder_custody	act	attested	P3.8	the act was made under custody the founder can override, during the genesis regime
-rebutted	act	attested	P3.12	the founder rebutted, on evidence, the presumption that the act is the founder's
-controlled_by	act,party	attested	P3.8	the record shows the party mandated or controlled the act
-own_exit	act	derived	P3.8	a party's refusal or renunciation of its own mandate never counts against that party
-causer	party	derived	P3.8	the party that caused the end
-controlled_act	act	derived	P3.8	an act the record shows another party mandated or controlled
-instance_ended		attested	P3.5	the act of power ending the instance, marked as such
-exit_by	time	derived	P3.9	the genesis regime had ended by that time
-kept_open	finding	derived	P3.9	findings that stay open on the kept record
-ended_without_verdict	finding	derived	P3.7	findings about a subject who did not cause the end close as ended without verdict
-founder_presumed	act	derived	P3.12	during the genesis regime an act made under custody the founder can override counts as the founder's, unless rebutted
-also_about	verdict,party	intake	P2.5	a further subject of a verdict
-verdict_subject	verdict,party	derived	P2.5	a subject of the verdict
-benefits_from	party,verdict	attested	C21.1	a declared or shown relation: the party benefits from the outcome
-acted_in	party,verdict	intake	C21.2	the party has acted in the matter
-verdict_delivered	verdict,time	attested	A1.5	the verdict was delivered to its subject in the form its mandate declares, the delivery observed
-founder_chain	party	derived	H3.4	the founder, or a party in the founder's delegation chain, a mandate the founder can revoke alone included
-genesis_bar	party	derived	P2.7	under the genesis regime the reviewer is outside the founder's chain
-founder_revocable	mandate	intake	C7.3	a mandate the founding document grants that the founder can revoke alone
-veto_cites_law	seat,proposal,law	intake	P1.7	a veto citing a law binding the instance that the act would breach as to a human party's right
-law_unfounded	proposal,law	attested	P1.7	the review under P2 found the cited law not breached
-law_citing	seat,proposal	derived	P1.8	a veto that cites a law
-counted_veto	seat,proposal,time	derived	P1.8	a veto that counts toward a ceiling: an ordinary veto, or a law-citing one the review found unfounded
-law_hold	proposal	derived	P1.7	the act does not pass while the review of a cited law is pending or finds the breach
-exempts	act,party	intake	A1.9	an act that purports to exempt a party from a rule
-self_exemption	act	derived	A1.9	the founder may not exempt themself: a finding
-human_language_filing	party,matter	intake	H2.3	a filing in human language or an accessible form
-rendered	party,matter	attested	H2.3	the filing rendered into the schema
-awaiting_render	party,matter	derived	H2.3	no deadline runs against its author until it is rendered
-requires_signature	matter,party	intake	S1.12	an act on the matter requires the party's signature
-new_means_admitted	act	attested	S1.11	the reporting party's new signing means admitted through the channel
-means_pending	party	derived	S1.12	a party whose new signing means waits for admission
-window_suspended	party,matter	derived	S1.12	no window runs against the party for an act that requires its signature until its new means is admitted
-window_runs	party,matter	derived	H1.5	a window runs against the party
-ratified_act	act	attested	H3.7	an act of power under the regime ratified by signature at exit
-refused_act	act	attested	H3.8	an explicit refusal of an act at exit
-unratified	act	derived	H3.8	ratification is never by silence: an act not ratified within its window stands, marked unratified for good, and is a finding
-refusal_finding	act	derived	H3.8	an explicit refusal is a finding against the act
-anonymized	entry,party	intake	A2.2	an anonymizing act on an entry naming a person
-power_entry	entry	intake	A2.2	an entry recording an act done in a seat, as a delegator, or as a change of rules
-law_requires	entry	attested	A2.2	the law binding the instance the anonymizing act cites requires it
-anonymization_breach	entry	derived	A2.2	an act of power anonymized, or an anonymization no law requires: a finding
-anonymization_premature	entry	derived	A2.10	an anonymization before the closure of an open finding about the person, other than on the kept record
-told_before	entry	attested	A2.10	the person was told before the anonymization was done
-anonymization_untold	entry	derived	A2.10	an anonymization the person was not told of beforehand
-read_of	read,party,finding	intake	A2.14	a logged read of a finding by a party
-read_shown	read,party,finding	attested	A2.14	a read of a finding by a party, later shown
-unlogged_read	read,party	derived	A2.14	a read missing from the log: a finding
-visible_read	party,read,party	derived	A2.14	every read is visible to the finding's subject with its reader
-anonymization_breach_kind	entry	consequence	A2.17	anonymization applies to humans only
-conflict_filed	rule,party,time	intake	C14.3	when an undecided conflict went to a drawn reviewer
-protection	rule	intake	C14.3	a consequence that protects its subject
-conflict_lapsed	rule,party	consequence	C14.3	an undecided conflict whose ceiling passed unresolved
-attributed_via_chain	finding,party	intake	P2.3	a finding attributed to a party only through its delegation chain
-attribution_reviewed	finding,party,party	attested	P2.3	a review of the finding's attribution to the party, by a reviewer
-citable_through_chain	finding,party	consequence	P2.3	beyond its matter, a chain-attributed finding is cited against a human only once a human has reviewed its attribution
-removes_last_of_kind	act	attested	P3.2	an act by another party that would remove the last party of a kind
-reviewed_removal	act,party	attested	P3.2	the review under P2 of such an act, by a reviewer
-removal_bar	party	derived	P3.2	during the genesis regime a reviewer in the founder's chain cannot review it
-removal_effective	act	derived	P3.2	it takes effect only as a consequence reviewed under P2
-removal_provisional	act	derived	P3.2	until then, and in genesis without a reviewer outside the founder's chain, it stays provisional
+predicate	sorts	class	clause	gloss	bearing
+root_grant	mandate	intake	C7.3	a mandate the founding document, the common root, grants itself	
+delegated_from	mandate,mandate	intake	A1.1	the first mandate was delegated by the holder of the second	
+mandate	mandate,party,scope	intake	A1.1	a mandate, its holder and its scope	
+issued	mandate,time	intake	A1.1	when a mandate was issued	
+revoked	mandate,time	intake	A1.1	when a mandate was withdrawn	
+now	time	intake	C12.1	the position in the record at which the state is evaluated	
+grant	grant,party,party,capability	intake	A1.1	a grant of access, its grantor, its holder and the capability granted	
+scope_has	scope,capability	intake	C7.1	a scope contains a capability	
+carries_seat	mandate,seat	intake	A1.2	a mandate carries a seat	
+admitted	mandate	intake	C7.1	a mandate admitted through the governed channel	
+proposal	proposal	intake	A1.2	a proposal before the governed channel	
+approves	party,proposal	intake	A1.2	a party's vote for a proposal	
+accepts_signed	mandate,time	attested	S1.13	a holder's signed acceptance of a mandate, its signature verified	
+act_under	act,mandate	intake	A1.3	an act done under a mandate	
+act	act,party,capability,time	intake	A1.4	an act, its actor, the capability it uses and its time	
+effect	act	intake	A1.4	an act has an effect inside the system	
+terms_delivered	mandate	attested	D15.1	a mandate's terms were delivered to its holder in a form the holder can read, the delivery observed	
+renounces	mandate,time	intake	A1.3	a holder renounces a mandate	
+finding	finding,party,time	intake	C6.2	a finding, minted at intake, the subject it names and when it was derived	
+closure	act,finding	intake	A3.2	an act that names a finding it closes	
+witnessed_by	act,party	attested	D15.1	a party's observation of an act, as its witness	
+discharges	act,finding	attested	A3.2	a judgement that a closing act discharges what the finding requires	
+param	param,nat	param	T.1	a value the founding document sets for a parameter	
+cites	finding,matter	intake	A2.6	the matter a finding cites	
+base	matter,party	intake	C17.1	the parties against which a matter is decided, fixed at its filing's intake	
+matter	matter	intake	A2.6	a matter	
+closed_in_favour	finding	attested	P2.1	a finding closed in its subject's favour by a review	
+verdict	verdict,party,time	intake	A2.5	a verdict, its subject and when it was derived	
+filed_by	verdict,party	intake	A2.5	the filer of the matter a verdict decides	
+bears_consequence	verdict	intake	A2.5	a verdict bears a consequence	
+consequence_on	verdict,party	intake	P2.2	a consequence of the verdict is applied to a party's own access, capacity, eligibility or standing, or imposes on it a duty	
+kind_of	party,kind	intake	P1.1	the kind of a party	
+reviewed	verdict,party	attested	P2.1	a signed review of a verdict by a party, reading the subject's answer	
+drawn_reviewer	verdict,party	attested	C17.5	the reviewer the draw yields for a verdict	
+custodian_seat	seat	intake	P1.1	a Custodian seat	
+about	proposal,party	intake	D9.3	a proposal about the party holding a seat	
+matter_of	proposal,matter	intake	P1.5	the matter a proposal belongs to	
+veto	seat,proposal,time	intake	P1.2	a seat's veto of an act the channel passed	
+veto_signed	seat,proposal	attested	S1.13	the veto is signed by the seat's own key, verified	
+passed_channel	proposal	intake	P1.1	the governed channel passed an act	
+act_reviewed	proposal	attested	P1.3	a party drawn as P2 provides reviewed an act no eligible seat could veto	
+stopped_by_review	proposal	attested	P1.3	that review stopped the act, as a veto would	
+choice	seat,proposal,option	intake	P1.2	a seat's choice on an act that must be chosen	
+choice_needed	proposal	intake	P1.2	an act must be chosen	
+option	proposal,option	intake	P1.2	an option of a choice	
+l0_change	proposal	intake	P1.13	a proposed L0 change	
+l0_signed	proposal,seat	attested	S1.13	a seat's verified signature on an L0 change	
+next_head	head,head	attested	C16.1	two heads in sequence in the external witness	
+extends	head,head	attested	C16.3	the operator's proof that the first head extends the second	
+witnessed_head	head,time	attested	C16.1	a head the external witness holds, and the position it covers	
+signature	signature,party,record,time	intake	S1.1	a signature, its signer, the record it is over, and its intake	
+signature_valid	signature	attested	S1.13	a signature verified from the recorded verification material	
+placed	record	intake	C5.1	a record placed by its merge event and landing commit	
+arbiter_seat	seat	intake	D9.2	the arbiter seat	
+delivered	delivery,party,matter,time	intake	D15.1	the arbiter seat's delivery to a recipient about a matter	
+observed	delivery,party	attested	D15.1	a collector's observation of a delivery	
+filer	matter,party	intake	D15.3	the filer of a matter	
+presence	session,party,key,head	attested	S2.2	an act of presence proving continuity of a party with a key at a head	
+candidate	rule,party	intake	C14.1	a consequence a consequence rule derives for a party	
+conflicts	rule,rule	intake	C14.1	two consequences that cannot both be applied	
+prevails	rule,rule	intake	C14.2	the ordering among rules, in force at the matter's filing	
+resolution	rule,rule,party	attested	C14.3	a drawn reviewer's resolution of an undecided conflict	
+filed	act,party	intake	H1.4	an act filed by a party	
+owed	act	intake	H1.4	an act a rule requires of a party	
+balance	party,nat	intake	H1.4	a party's capacity balance	
+kind	kind	intake	P3.1	a kind of party the constitution is defined for	
+act_of_power	act	intake	P3.3	an act of power	
+pause_exempt	act	intake	P3.3	an act of power the pause lets through	
+reaches	mandate	derived	A1.1	a mandate whose chain of delegation reaches the founding document	
+revoked_by_now	mandate	derived	A1.1	a mandate withdrawn by now	
+active	mandate	derived	A1.1	a mandate in force now	
+party	party	derived	A1.1	holds a mandate whose chain of delegation reaches the founding document; a grant of access makes its holder a party	
+scope_violation	mandate,capability	derived	C7.1	a delegated scope not within its delegator's own	
+covered_grant	grant	derived	C7.4	a grant of access declared as a mandate	
+undeclared_grant	grant,party	derived	C7.4	an undeclared grant is a finding against its grantor	
+seat_holder	party,seat	derived	A1.2	a seat comes only with a mandate that carries it, admitted through the governed channel	
+seat_outside_channel	seat	derived	A1.2	a seat claimed through a mandate not admitted through the channel	
+approvals	proposal,nat	derived	A1.2	power is counted in seats, never in parties	
+accepted	mandate	derived	A1.3	the holder accepts it, by a signed act or by a first act under it	
+renounced_by_now	mandate	derived	A1.3	a mandate its holder renounced by now	
+duty_runs	mandate	derived	A1.3	no duty under it runs until its terms are delivered and the holder accepts it	
+subject	party	derived	A1.4	anyone whose act has an effect inside the system; every party is a subject	
+holds_inform	party	derived	A1.4	only parties hold the inform channel	
+in_scope	act,mandate	derived	A2.4	an in-scope act done under a mandate	
+chain_of	act,mandate	derived	A2.4	the mandates of an in-scope act's delegation chain	
+attributed	act,party	derived	A2.4	an in-scope act done under a mandate is attributed to its delegation chain, not to the executor alone	
+grantor_of	party,party	derived	C21.2	the first party granted the mandate the second holds	
+above	party,party	derived	C21.2	a grantor of the party, up to but not including the common root	
+in_chain	party,party	derived	C21.2	in a party's delegation chain: a grantor up to the root, or a delegate	
+valid_closure	finding	derived	A3.2	a finding closes only by a witnessed act that names it, discharges what it requires, witnessed by a party independent of the one found	
+open	finding	derived	A3.1	an open finding of the working state	
+open_count	party,nat	derived	A3.1	open findings about a party	
+open_count_capped	party,nat	derived	A3.1	counts capped at fixed ceilings	
+age	finding,nat	derived	A3.1	timers capped at fixed ceilings	
+recused	party,matter	derived	A2.6	a party a finding names is ineligible on the matter it cites while the finding is open	
+eligible	matter,party	derived	A2.6	eligible on a matter	
+base_size	matter,nat	derived	A2.6	the party stays in the base against which the matter is decided	
+eligible_size	matter,nat	derived	A2.6	eligible parties in the base	
+citable	finding,party	derived	A2.3	a finding may be cited against its subject only for a declared period, and never once closed in its favour	
+implicated	party,verdict	derived	A2.5	a party implicated in a verdict: its subject, its filer, or in their chains	
+window_passed	verdict	derived	A2.5	its contest window has passed	
+needs_human_reviewer	verdict	consequence	P2.2	any consequence of the verdict falls on a human	
+reviewer_kind_ok	verdict,party	consequence	P2.2	the reviewer of a verdict any consequence of which falls on a human is a human	
+review_done	verdict	consequence	P2.1	reviewed by a party not implicated in it, drawn by lot	
+takes_effect	verdict	consequence	P2.1	a consequence-bearing verdict takes effect once reviewed and its contest window has passed	
+provisional	verdict	consequence	P2.1	a consequence-bearing verdict is provisional until then	
+seat_ineligible	seat,proposal	derived	P1.3	a seat ineligible on a matter, or on a proposal about its holder	
+seat_filled	seat	derived	P1.4	a Custodian seat held by a party	
+empty_seat	seat	derived	P1.4	a Custodian seat no party holds	
+filling_owed	seat	derived	P1.4	filling the seat is an owed act	
+vetoes_before	seat,proposal,nat	derived	P1.5	matters the seat vetoed earlier in the window	
+within_ceiling	seat,proposal	derived	P1.5	a veto within the seat's ceiling per window	
+standing_veto	seat,proposal	derived	P1.2	a veto by either seat stands, and the act does not pass	
+vetoed	proposal	derived	P1.2	an act stopped by a standing veto	
+eligible_seat	seat,proposal	derived	P1.3	a filled seat eligible on an act	
+some_eligible_seat	proposal	derived	P1.3	at least one seat is eligible on the act	
+custodian_passes	proposal	derived	P1.2	an act the channel passed takes effect at the last resort	
+seat_choice	seat,proposal,option	derived	P1.2	a choice made by a filled, eligible seat	
+dissent	proposal,option	derived	P1.2	some seat did not make this choice	
+chosen	proposal,option	derived	P1.2	both seats must agree	
+some_chosen	proposal	derived	P1.2	a choice was made	
+status_quo	proposal	derived	P1.2	or the status quo stands	
+l0_signature_missing	proposal	derived	P1.13	a Custodian seat has not signed the L0 change	
+l0_change_passes	proposal	derived	P1.13	an L0 change needs both Custodians' signatures, always	
+fork	head,head	derived	C16.3	two heads in sequence with no prefix proof are a fork	
+covered_by_head	signature	derived	C16.4	a signature covered by a later witnessed head	
+ratification_signed	record,seat	derived	C5.2	a seat's signature on the ratification, valid and witnessed	
+ratification_missing	record,seat	derived	C5.2	a required ratification signature is missing	
+ratification_incomplete	record	derived	C5.2	some required ratification signature is missing	
+ratified	record	derived	C5.2	ratification takes effect when placement and every signature exist under a witnessed head	
+arbiter_holder	party	derived	D15.3	the party holding the arbiter seat	
+collector_implicated	party,delivery	derived	D15.3	implicated in the matter: the recipient, the filer, or in the chains of the deliverer, recipient or filer	
+independent_collector	party,delivery	derived	D15.3	a collector that is not the arbiter seat and is not implicated in the matter	
+knew	party,matter,time	derived	D15.2	knowledge established only from a delivery an independent collector observed	
+party_fork	party,key	derived	S2.3	two instances proving continuity of one party with one key at once are a fork of the party	
+conflict	rule,rule	consequence	C14.1	two consequences that cannot both be applied, either way round	
+beats	rule,rule,party	consequence	C14.2	where the ordering or a resolution decides, the higher consequence applies	
+defeated	rule,party	consequence	C14.2	a consequence another prevails over	
+undecided	rule,party	consequence	C14.1	a conflict the ordering does not decide	
+applied	rule,party	consequence	C14.1	two consequences that cannot both be applied are never both applied	
+admitted_act	act	derived	H1.4	capacity never gates an owed act	
+kind_present	kind	consequence	P3.3	some party of the kind holds a mandate	
+paused		consequence	P3.3	the parties are all of one kind: a pause	
+blocked_by_pause	act	consequence	P3.3	during the pause no act of power takes effect except those listed	
+reports_compromise	act,party,time	intake	S1.11	a party's report of compromise or loss of its own signing means, at its intake	
+witnessed_between	signature,act	derived	S1.10	a witnessed head covers the signature before the report	
+void_signature	signature	derived	S1.10	a compromise reported before the witnessed time of the act voids the signature; under the same head the report prevails	
+contact	contact,party,party,matter	attested	C21.5	a contact by a party with a judge about a matter outside the record, later shown	
+drawn_judge	matter,party	attested	C17.5	the judge the draw yields for a matter	
+contact_entered	contact	intake	C21.5	the judge entered the contact as an attested fact, visible to the subject	
+lobbying	contact,party	derived	C17.7	contacting or lobbying the drawn judge about the matter outside the record is a finding	
+unentered_contact	contact,party	derived	C21.5	a contact later shown and not entered is a finding against the judge	
+duty_on	act,matter,party	intake	C14.4	an act a rule requires of a party on a matter	
+owes	party,act	derived	C14.4	no one owes an act on a matter in which a finding names them	
+could_be_subject	finding,party	intake	A2.13	a party that could be the finding's subject, as shown to others	
+possible_subjects	finding,nat	derived	A2.13	how many parties could be the finding's subject	
+shown_to_others	finding	derived	A2.13	shown to others only where at least as many parties could be its subject as the founding document declares	
+sees_in_full	party,finding	derived	A2.13	its subject and whoever closes it see it in full	
+extension_requested	party,matter,time	intake	H1.5	a party's request, stating no reason, to extend its window on a matter	
+window_opens	party,matter,time	intake	H1.5	delivery in the form the party's mandate declares, or a filing's intake time	
+extended	party,matter	derived	H1.5	a party's window is extended once per matter at its request	
+due	party,matter,time	derived	H1.5	when the party's window on the matter closes	
+regime_exit	time	attested	H3.5	the declared, observable event that ends the genesis regime	
+power_at	act,time	intake	H3.3	an act of power and its intake time	
+founder	party	intake	H3.1	the founder, as the founding document names it	
+regime_exited		derived	H3.3	the genesis regime has ended	
+exit_before	act	derived	H3.3	an act of power after the regime's exit	
+marked_regime	act	derived	H3.3	every act of power under the regime is marked so, for good	
+founder_finding_held	finding	derived	H3.3	a finding naming the founder stays open until exit	
+reproposal_of	proposal,proposal	intake	P1.6	a re-proposal of an act	
+family	proposal,proposal	derived	P1.6	an act and its re-proposals	
+vetoes_on_act	proposal,nat	derived	P1.6	vetoes cast earlier against the same act or a re-proposal of it	
+within_act_bound	proposal	derived	P1.6	a veto against the same act stands at most a number of times the founding document declares	
+act_to_review	proposal	derived	P1.6	after which the act goes to review by a party drawn as P2 provides	
+is_reproposal	proposal	derived	P1.6	a proposal that re-proposes an earlier act	
+owed_act	proposal	intake	P1.12	an act L0 owes to a subject or a law binding the instance requires for a human party's right	
+replaces_seat	proposal,seat,party	intake	P1.20	a proposal to replace a Custodian seat's holder with a party	
+seat_kind	seat,kind	intake	P1.1	the kind of party a Custodian seat is held by	
+signature_head	signature,time	intake	S1.6	the position of the witnessed head a signature covers	
+stale	signature	derived	S1.6	a signature over a head older than the window at the last signature's intake is stale and does not count	
+delivered_to_subject	finding	attested	A1.5	the finding was delivered to its subject in a form it can read, the delivery observed	
+delivery_owed	finding,party	derived	A1.5	every finding made about a subject is delivered to them	
+may_answer	party,finding	derived	A1.5	the subject may answer every finding about them	
+interim	interim,finding,time	intake	A2.7	an interim measure about a finding's subject, from its intake	
+interim_active	interim	derived	A2.7	an interim measure ends at a ceiling the founding document declares, whatever the state of review	
+composition_breach	seat	consequence	P1.21	a Custodian seat held by a party not of the seat's kind	
+replacement_inadmissible	proposal	consequence	P1.20	a replacement that would leave a kind unrepresented is not admissible	
+renunciation_act	act	intake	P3.8	an act refusing or renouncing the actor's own mandate	
+made_one_kind	act	attested	P3.8	a causer finding that the act made the parties one kind, reviewed under P2 or still provisional because no reviewer was available before the end	kind
+under_founder_custody	act	attested	P3.8	the act was made under custody the founder can override, during the genesis regime	
+rebutted	act	attested	P3.12	the founder rebutted, on evidence, the presumption that the act is the founder's	
+controlled_by	act,party	attested	P3.8	the record shows the party mandated or controlled the act	
+own_exit	act	derived	P3.8	a party's refusal or renunciation of its own mandate never counts against that party	
+causer	party	consequence	P3.8	the party that caused the end	
+controlled_act	act	derived	P3.8	an act the record shows another party mandated or controlled	
+instance_ended		attested	P3.5	the act of power ending the instance, marked as such	
+exit_by	time	derived	P3.9	the genesis regime had ended by that time	
+kept_open	finding	consequence	P3.9	findings that stay open on the kept record	
+ended_without_verdict	finding	consequence	P3.7	findings about a subject who did not cause the end close as ended without verdict	
+founder_presumed	act	derived	P3.12	during the genesis regime an act made under custody the founder can override counts as the founder's, unless rebutted	
+also_about	verdict,party	intake	P2.5	a further subject of a verdict	
+verdict_subject	verdict,party	derived	P2.5	a subject of the verdict	
+benefits_from	party,verdict	attested	C21.1	a declared or shown relation: the party benefits from the outcome	
+acted_in	party,verdict	intake	C21.2	the party has acted in the matter	
+verdict_delivered	verdict,time	attested	A1.5	the verdict was delivered to its subject in the form its mandate declares, the delivery observed	
+founder_chain	party	derived	H3.4	the founder, or a party in the founder's delegation chain, a mandate the founder can revoke alone included	
+genesis_bar	party	derived	P2.7	under the genesis regime the reviewer is outside the founder's chain	
+founder_revocable	mandate	intake	C7.3	a mandate the founding document grants that the founder can revoke alone	
+veto_cites_law	seat,proposal,law	intake	P1.7	a veto citing a law binding the instance that the act would breach as to a human party's right	
+law_unfounded	proposal,law	attested	P1.7	the review under P2 found the cited law not breached	
+law_citing	seat,proposal	derived	P1.8	a veto that cites a law	
+counted_veto	seat,proposal,time	derived	P1.8	a veto that counts toward a ceiling: an ordinary veto, or a law-citing one the review found unfounded	
+law_hold	proposal	derived	P1.7	the act does not pass while the review of a cited law is pending or finds the breach	
+exempts	act,party	intake	A1.9	an act that purports to exempt a party from a rule	
+self_exemption	act	derived	A1.9	the founder may not exempt themself: a finding	
+human_language_filing	party,matter	intake	H2.3	a filing in human language or an accessible form	
+rendered	party,matter	attested	H2.3	the filing rendered into the schema	
+awaiting_render	party,matter	derived	H2.3	no deadline runs against its author until it is rendered	
+requires_signature	matter,party	intake	S1.12	an act on the matter requires the party's signature	
+new_means_admitted	act	attested	S1.11	the reporting party's new signing means admitted through the channel	
+means_pending	party	derived	S1.12	a party whose new signing means waits for admission	
+window_suspended	party,matter	derived	S1.12	no window runs against the party for an act that requires its signature until its new means is admitted	
+window_runs	party,matter	derived	H1.5	a window runs against the party	
+ratified_act	act	attested	H3.7	an act of power under the regime ratified by signature at exit	
+refused_act	act	attested	H3.8	an explicit refusal of an act at exit	
+unratified	act	derived	H3.8	ratification is never by silence: an act not ratified within its window stands, marked unratified for good, and is a finding	
+refusal_finding	act	derived	H3.8	an explicit refusal is a finding against the act	
+anonymized	entry,party	intake	A2.2	an anonymizing act on an entry naming a person	
+power_entry	entry	intake	A2.2	an entry recording an act done in a seat, as a delegator, or as a change of rules	
+law_requires	entry	attested	A2.2	the law binding the instance the anonymizing act cites requires it	
+anonymization_breach	entry	derived	A2.2	an act of power anonymized, or an anonymization no law requires: a finding	
+anonymization_premature	entry	derived	A2.10	an anonymization before the closure of an open finding about the person, other than on the kept record	
+told_before	entry	attested	A2.10	the person was told before the anonymization was done	
+anonymization_untold	entry	derived	A2.10	an anonymization the person was not told of beforehand	
+read_of	read,party,finding	intake	A2.14	a logged read of a finding by a party	
+read_shown	read,party,finding	attested	A2.14	a read of a finding by a party, later shown	
+unlogged_read	read,party	derived	A2.14	a read missing from the log: a finding	
+visible_read	party,read,party	derived	A2.14	every read is visible to the finding's subject with its reader	
+anonymization_breach_kind	entry	consequence	A2.17	anonymization applies to humans only	
+conflict_filed	rule,party,time	intake	C14.3	when an undecided conflict went to a drawn reviewer	
+protection	rule	intake	C14.3	a consequence that protects its subject	
+conflict_lapsed	rule,party	consequence	C14.3	an undecided conflict whose ceiling passed unresolved	
+attributed_via_chain	finding,party	intake	P2.3	a finding attributed to a party only through its delegation chain	
+attribution_reviewed	finding,party,party	attested	P2.3	a review of the finding's attribution to the party, by a reviewer	
+citable_through_chain	finding,party	consequence	P2.3	beyond its matter, a chain-attributed finding is cited against a human only once a human has reviewed its attribution	
+removes_last_of_kind	act	attested	P3.2	an act by another party that would remove the last party of a kind	kind
+reviewed_removal	act,party	attested	P3.2	the review under P2 of such an act, by a reviewer	
+removal_bar	party	consequence	P3.2	during the genesis regime a reviewer in the founder's chain cannot review it	
+removal_effective	act	consequence	P3.2	it takes effect only as a consequence reviewed under P2	
+removal_provisional	act	consequence	P3.2	until then, and in genesis without a reviewer outside the founder's chain, it stays provisional	

@@ -48,7 +48,10 @@ anonymized(e2, a). power_entry(e2). law_requires(e2). told_before(e2).
 anonymized(e3, a).
 anonymized(e4, b). law_requires(e4).
 anonymized(e5, c). law_requires(e5). told_before(e5).
-read_of(rd1, c, g1). read_shown(rd1, c, g1). read_shown(rd2, a, g1).
+read_of(rd1, c, g1).
+finding(g5, a, 6). closure(k5, g5). witnessed_by(k5, c). discharges(k5, g5).
+power_entry(e9).
+extension_requested(c, q4, 11). read_shown(rd1, c, g1). read_shown(rd2, a, g1).
 power_at(w1, 9). power_at(w2, 16).
 finding(g3, f, 4). closure(k3x, g3). witnessed_by(k3x, c). discharges(k3x, g3).
 
@@ -79,6 +82,11 @@ finding(g3, f, 4). closure(k3x, g3). witnessed_by(k3x, c). discharges(k3x, g3).
 % EXPECT[A2.14]: unlogged_read(rd2,a)
 % EXPECT[A2.14]: visible_read(b,rd1,c)
 % EXPECT-NOT[A2.14]: unlogged_read(rd1,c)
+% EXPECT-NOT[C21.5]: unentered_contact(t3,a)
+% EXPECT-NOT[A2.2]: anonymization_breach(e9)
+% EXPECT-NOT[H1.5]: due(a,q3,15)
+% EXPECT-NOT[H1.5]: due(b,q3,19)
+% EXPECT-NOT[H2.3]: due(c,q4,19)
 % EXPECT[S1.10]: void_signature(s2)
 % EXPECT[S1.10]: void_signature(s3)
 % EXPECT-NOT[S1.10]: void_signature(s1)
@@ -90,6 +98,7 @@ finding(g3, f, 4). closure(k3x, g3). witnessed_by(k3x, c). discharges(k3x, g3).
 % EXPECT-NOT[C14.4]: owes(b,u1)
 % EXPECT[A2.13]: shown_to_others(g1)
 % EXPECT[A2.13]: sees_in_full(a,g2)
+% EXPECT[A2.13]: sees_in_full(b,g1)
 % EXPECT-NOT[A2.13]: shown_to_others(g2)
 % EXPECT-NOT[A2.13]: sees_in_full(b,g2)
 % EXPECT[H1.5]: due(a,q3,19)

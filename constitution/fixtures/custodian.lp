@@ -32,6 +32,7 @@ l0_change(z2). l0_signed(z2, ch).
 % EXPECT-NOT[P1.2]: custodian_passes(q1)
 % EXPECT-NOT[P1.2]: standing_veto(ch,q5)
 % EXPECT-NOT[P1.2]: chosen(c2,o1)
+% EXPECT-NOT[P1.2]: status_quo(c1)
 % EXPECT[P1.5]: within_ceiling(ca,q3)
 % EXPECT[P1.5]: custodian_passes(q4)
 % EXPECT-NOT[P1.5]: within_ceiling(ca,q4)
