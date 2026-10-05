@@ -26,6 +26,8 @@ passed_channel(p5). matter_of(p5, y5). veto(ch, p5, 21). veto_signed(ch, p5). ve
 passed_channel(p6). matter_of(p6, y6). veto(ch, p6, 995). veto_signed(ch, p6). veto_cites_law(ch, p6, l6).
 cites_right_of(p6, l6, h6). irreversible_effect(p6). decided_seq(p6, 995).
 decided_seq(p1, 1). decided_seq(p2, 6). decided_seq(p3, 11). decided_seq(p4, 16). decided_seq(p5, 21).
+% the filer marks each other act's effect reversible
+reversible_marking(p1). reversible_marking(p3). reversible_marking(p5).
 
 % EXPECT[LV.5]: pr_within_ceiling(ch,p5)
 % EXPECT-NOT[LV.2]: pr_law_hold(p1)

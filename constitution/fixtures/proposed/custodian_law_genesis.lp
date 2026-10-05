@@ -14,6 +14,8 @@ passed_channel(q2). matter_of(q2, x2). veto(ch, q2, 20). veto_signed(ch, q2).
 decided_seq(q1, 10). decided_seq(q2, 20).
 % the human whose right each citation names
 cites_right_of(q1, l1, hr).
+% the filer marks each other act's effect reversible
+reversible_marking(q1). reversible_marking(q2).
 
 % EXPECT-NOT[LV.2]: pr_law_hold(q1)
 % EXPECT[LV.3]: pr_consequence_withheld(q1,hr)

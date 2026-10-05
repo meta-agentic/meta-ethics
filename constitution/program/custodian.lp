@@ -13,15 +13,15 @@ seat_filled(S) :- custodian_seat(S), seat_holder(_, S).
 empty_seat(S) :- custodian_seat(S), not seat_filled(S).
 filling_owed(S) :- empty_seat(S).
 
-% clause: P1.8
+% clause: P1.8 P1.5
 % a law-citing veto the review finds founded never counts toward a ceiling;
-% one it finds unfounded counts toward both; a veto citing a law already
-% reviewed for the act or a re-proposal of it is an ordinary veto and counts,
-% unless that review found the law breached
-law_citing(S, Q) :- veto_cites_law(S, Q, L), cites_right_of(Q, L, _).
+% every other veto counts, a pending or unfounded citation included: P1.8
+% read with P1.5, which bounds every veto; re-citing a law already reviewed
+% for the act or a re-proposal of it is an ordinary veto
+law_founded(S, Q) :- veto(S, Q, _), veto_cites_law(S, Q, L), family(Q, R), family(Q2, R),
+                     law_breach_found(Q2, L).
 law_unfounded_in_family(Q, L) :- veto_cites_law(_, Q, L), family(Q, R), family(Q2, R), law_unfounded(Q2, L).
-counted_veto(S, Q, T) :- veto(S, Q, T), not law_citing(S, Q).
-counted_veto(S, Q, T) :- veto(S, Q, T), veto_cites_law(S, Q, L), law_unfounded_in_family(Q, L).
+counted_veto(S, Q, T) :- veto(S, Q, T), not law_founded(S, Q).
 
 % clause: P1.7 P1.3 P1.20
 % a veto that cites a law as to a human party's right: only a filled,

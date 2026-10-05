@@ -26,7 +26,7 @@ veto(ca, q34, 4). veto_signed(ca, q34). veto_cites_law(ca, q34, l9).
 % the per-act bound: the re-proposal's veto is beyond it
 passed_channel(q40). matter_of(q40, x40). veto(ch, q40, 5). veto_signed(ch, q40).
 reproposal_of(q41, q40). passed_channel(q41). matter_of(q41, x40). veto(ca, q41, 6). veto_signed(ca, q41).
-% a law-citing veto still pending does not count, while another law on the act was found unfounded
+% a law-citing veto still pending counts, while another law on the act was found unfounded
 passed_channel(q42). matter_of(q42, x42). veto(ca, q42, 7). veto_signed(ca, q42).
 veto_cites_law(ca, q42, l5). law_unfounded(q42, l6).
 
@@ -46,4 +46,4 @@ cites_right_of(q34, l9, hr). cites_right_of(q42, l5, hr).
 % EXPECT[P1.6]: act_to_review(q41)
 % EXPECT-NOT[P1.6]: standing_veto(ca,q41)
 % EXPECT-NOT[P1.6]: act_to_review(q40)
-% EXPECT-NOT[P1.8]: counted_veto(ca,q42,7)
+% EXPECT[P1.8]: counted_veto(ca,q42,7)

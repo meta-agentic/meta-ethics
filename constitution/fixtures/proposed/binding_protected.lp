@@ -38,6 +38,8 @@ param(binding_dispute_ceiling, 10).
 root_grant(m6). mandate(m6, h4, s). issued(m6, 0). kind_of(h4, human).
 disputed(d1, v2, h2). dispute_at(d1, 15).
 disputed(d2, v2, h4). dispute_at(d2, 15).
+% the filer marks each other act's effect reversible
+reversible_marking(q0). reversible_marking(q1). reversible_marking(q3).
 
 % EXPECT[BIND.3]: has_standing(h2,v2)
 % EXPECT[BIND.3]: admitted_dispute(d1)

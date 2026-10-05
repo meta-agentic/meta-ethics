@@ -43,6 +43,8 @@ decided_seq(q1, 25). decided_seq(q2, 25). decided_seq(q3, 25). decided_seq(q4, 2
 decided_seq(q6, 25). decided_seq(q7, 12). decided_seq(q8, 13).
 % the human whose right each citation names
 cites_right_of(q1, l1, hr). cites_right_of(q2, l2, hr). cites_right_of(q3, l3, hr). cites_right_of(q4, l4, hr). cites_right_of(q5, l5, hr). cites_right_of(q7, l7, hr). cites_right_of(q8, l8, hr). cites_right_of(q10, l10, hr).
+% the filer marks each other act's effect reversible
+reversible_marking(q1). reversible_marking(q2). reversible_marking(q3). reversible_marking(q4). reversible_marking(q5). reversible_marking(q6). reversible_marking(q7). reversible_marking(q8). reversible_marking(q9). reversible_marking(q12). reversible_marking(q10).
 
 % EXPECT-NOT[LV.2]: pr_law_hold(q1)
 % EXPECT-NOT[LV.2]: pr_law_hold(q2)

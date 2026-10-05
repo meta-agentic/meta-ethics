@@ -43,13 +43,13 @@ cites_right_of(q7, l7, h1). law_breach_found(q7, l7).
 passed_channel(q8). matter_of(q8, x8). veto(ca, q8, 12). veto_signed(ca, q8). veto_cites_law(ca, q8, l8).
 cites_right_of(q8, l8, h1). law_unfounded(q8, l8).
 % re-proposals: re-citing the unfounded law holds nothing and counts; re-citing
-% the breached law holds and does not count
+% the breached law holds and does not count; a pending citation counts (P1.5)
 reproposal_of(q9, q8). passed_channel(q9). matter_of(q9, x8). veto(ch, q9, 13). veto_signed(ch, q9).
 veto_cites_law(ch, q9, l8). cites_right_of(q9, l8, h1).
 reproposal_of(q10, q7). passed_channel(q10). matter_of(q10, x7). veto(ca, q10, 14). veto_signed(ca, q10).
 veto_cites_law(ca, q10, l7). cites_right_of(q10, l7, h1).
-% on a re-proposal of q8, ca's veto citing a new law counts not, though ch
-% re-cites the unfounded one; an unrelated act citing that law is held
+% on a re-proposal of q8, ca's veto citing a new law, still pending, counts;
+% an unrelated act citing the unfounded law is held
 reproposal_of(q11, q8). passed_channel(q11). matter_of(q11, x8).
 veto(ca, q11, 15). veto_signed(ca, q11). veto_cites_law(ca, q11, l11). cites_right_of(q11, l11, h1).
 veto(ch, q11, 16). veto_signed(ch, q11). veto_cites_law(ch, q11, l8).
@@ -60,6 +60,11 @@ decided_seq(q11, 15). decided_seq(q16, 17).
 param(conflict_ceiling, 5).
 candidate(shield, h3). candidate(fine3, h3). conflicts(fine3, shield). protection(shield).
 conflict_filed(shield, h3, 1). candidate_from_act(shield, h3, q6).
+% an ordinary veto on q7 by another seat counts though ch's law was found
+% breached; a citation of l7 on an unrelated act counts too
+veto(ca, q7, 18). veto_signed(ca, q7).
+passed_channel(q17). matter_of(q17, x17). veto(ch, q17, 19). veto_signed(ch, q17). veto_cites_law(ch, q17, l7).
+cites_right_of(q17, l7, h1). decided_seq(q17, 19).
 % an act no one vetoed, which passes
 passed_channel(q15). matter_of(q15, x15).
 % consequences arising from the held q6 and q7, and from the passing q15
@@ -97,7 +102,7 @@ decided_seq(q6, 10). decided_seq(q7, 11). decided_seq(q8, 12). decided_seq(q9, 1
 % EXPECT-NOT[P1.7]: custodian_passes(q6)
 % EXPECT[P1.7]: custodian_passes(q15)
 % EXPECT-NOT[P1.7]: custodian_passes(q12)
-% EXPECT-NOT[P1.8]: counted_veto(ch,q6,10)
+% EXPECT[P1.8]: counted_veto(ch,q6,10)
 % EXPECT-NOT[P1.8]: counted_veto(ch,q7,11)
 % EXPECT[P1.8]: counted_veto(ca,q8,12)
 % EXPECT[P1.8]: counted_veto(ch,q9,13)
@@ -115,7 +120,9 @@ decided_seq(q6, 10). decided_seq(q7, 11). decided_seq(q8, 12). decided_seq(q9, 1
 % EXPECT[P1.7]: owes(h3,u2)
 % EXPECT-NOT[P1.7]: applied(fine,h1)
 % EXPECT[P1.7]: applied(warn,h3)
-% EXPECT-NOT[P1.8]: counted_veto(ca,q11,15)
+% EXPECT[P1.8]: counted_veto(ca,q11,15)
 % EXPECT-NOT[P1.7]: valid_law_veto(ch,q11,l11)
 % EXPECT[P1.7]: law_hold(q16)
 % EXPECT-NOT[P1.7]: applied(shield,h3)
+% EXPECT[P1.8]: counted_veto(ca,q7,18)
+% EXPECT[P1.8]: counted_veto(ch,q17,19)
