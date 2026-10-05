@@ -209,9 +209,13 @@ Corrections made by the second amendment continue the numbering of section III. 
 
 ## Consequences
 
-Judgement is universal and enfranchisement is earned: anyone who acts is judged, and only a mandate confers a voice. Exit and proxy use stop being escapes, and touching the system confers no entitlement. The record keeps its integrity without keeping everything forever: acts of power stay attributed, while findings about those subject to power fade in use, lose their name only where the law requires, and always carry the subject's answer. The correctness claim now holds against an adversary, not only in the absence of one, and a violation cannot be hidden by a later compliant act. ADR-ETH-01's claims are restated as what it can deliver: symmetry of the rules is provable and the draw's fairness tested, L0 is a gate and not a revolution, and ratification has a signature that exists. Lawful obstruction is named as a hazard the parent does not detect, and each instance declares its own defence (H1). Coordination the record cannot read is named too: it is judged by its effects and neither cleared nor suspected (H2). Tailoring names whom each bound protects (C15), the record has a witness that makes a rewrite provable (C16), the draw has a seed no party can steer (C17), a dead configuration is caught before it starves anyone (C18), and every constitution's genesis is disclosed, marked, and ratified at its exit (H3).
+Judgement is universal and enfranchisement is earned: anyone who acts is judged, and only a mandate confers a voice. Exit and proxy use stop being escapes, and touching the system confers no entitlement. The record keeps its integrity without keeping everything forever: acts of power stay attributed, while findings about those subject to power fade in use, lose their name only where the law requires, and always carry the subject's answer. The correctness claim now holds against an adversary, not only in the absence of one, and a violation cannot be hidden by a later compliant act. ADR-ETH-01's claims are restated as what it can deliver: symmetry of the rules is provable and the draw's fairness tested, L0 is a gate and not a revolution, and ratification has a placement that exists and, under S1, a signature from every signer. Lawful obstruction is named as a hazard the parent does not detect, and each instance declares its own defence (H1). Coordination the record cannot read is named too: it is judged by its effects and neither cleared nor suspected (H2). Tailoring names whom each bound protects (C15), the record has a witness that makes a rewrite provable (C16), the draw has a seed no party can steer (C17), a dead configuration is caught before it starves anyone (C18), and every constitution's genesis is disclosed, marked, and ratified at its exit (H3).
 
 What becomes easy: anonymizing a human where the law requires it, without breaking replay; checking correctability without reading an unbounded log. What becomes hard: acting on the system through someone else's unmandated hands; rewriting any entry without leaving the rewrite in the record; closing a finding by any route but a witnessed act that names it.
+
+The second amendment makes consent provable: every act that requires a signature carries one from each party that performs it, on any carrier, verifiable by anyone without the operator, and an account action on a platform is no longer the evidence (S1). A non-human party persists across sessions through its mandate, charter, key and record, never through its substrate (S2). The last word is held alike by a human and a non-human seat: either can stop an act, neither can choose alone (P1). A consequence-bearing verdict about any subject, human or not, waits for review by a party not implicated in it (P2). The challenge of a judge, the read log and the refiling rule now agree with an unnamed judge (C20–C22), and what replay guarantees after anonymization is stated as what C1 proves (C23).
+
+What becomes easy: verifying, years later and without the operator, who consented to an act; replacing a non-human party's model without ending the party. What becomes hard: repudiating a signature after its act's witnessed time; one Custodian deciding for both; steering a draw by refiling through a confederate.
 
 ## Accepted costs
 
@@ -219,11 +223,11 @@ What becomes easy: anonymizing a human where the law requires it, without breaki
 
 **Recusal takes effect before any hearing.** A vote lost through a finding later closed in the subject's favour cannot be restored; the overturn is appended to that matter's record.
 
-**A contest window delays consequences for humans.** Under F5 this is a human gate on every consequence-bearing verdict about a human. It is accepted because F9 requires human review of such verdicts; the vital signs will show when the window is the bottleneck.
+**A contest window delays consequences for every subject.** Under F5 this is a gate on every consequence-bearing verdict, and a human gate on every verdict about a human. It is accepted because F9 requires human review of verdicts about humans, and P2 gives the same protection to the subjects the law does not yet protect; the vital signs will show when the window is the bottleneck.
 
-**L0 grows.** A3 fixes the form of the working state at L0, C7 adds scope nesting, and C15 to C18 and H3 add the bounds, the witness, the draw, the check and the regime. Each enlarges the surface that changes only by signature, against D18.
+**L0 grows.** A3 fixes the form of the working state at L0, C7 adds scope nesting, C15 to C18 and H3 add the bounds, the witness, the draw, the check and the regime, and S1, S2, P1 and P2 add the signature, continuity, the Custodian's shape and review for every subject. Each enlarges the surface that changes only by signature, against D18.
 
-**The genesis regime is disclosed, not cured.** Until it exits, no finding naming the founder closes, and no consequence about another human applies without a reviewer outside the founder's chain.
+**The genesis regime is disclosed, not cured.** Until it exits, no finding naming the founder closes, and no consequence about another human applies without a reviewer outside the founder's chain. The non-human Custodian seat's independence is detectable, not enforced: while the founder can override its signing custody, its veto holds only as far as an override would be seen, and the regime does not exit until that custody is one the founder cannot override alone (P1, H3).
 
 **Rules cannot rank parties.** A choice among parties that needs an order, such as a tie-break or a queue, runs outside the rule set as the draw does (C17), or orders by a fact that is not an identifier, such as intake time.
 
@@ -231,15 +235,23 @@ What becomes easy: anonymizing a human where the law requires it, without breaki
 
 **The correctness claim is conditional.** It holds only within the assumptions its published result states, and only for groups below the capture cost; it is a checked result, not a theorem.
 
-**One asymmetry by kind of party is now designed, not deferred.** A2 anonymizes and holds consequences for humans only. It is confined to attribution and consequence; derivations stay symmetric.
+**Two asymmetries by kind of party are now designed, not deferred.** A2 anonymizes humans only, and P2 reserves the review of a verdict about a human to a human. Both are confined to attribution and consequence; derivations stay symmetric, and neither Custodian power is reserved to a kind (P1).
+
+**Two last words can deadlock.** Where the Custodian seats disagree on a choice, the status quo stands, and where the status quo is itself the harm, it persists until the governed channel produces another act. D2 rejected a stall as a denial of service (F5); P1 accepts a narrower one, confined to the last resort, because a third seat or a casting vote by kind loses to F1 and F2.
+
+**Every signer bears a key.** Each party that performs a signed act keeps its signing means under sole control and renews its signatures before their method weakens; for a non-human party that custody is its grantor's to answer for (S1).
+
+**Review needs a roster.** A small instance may have no eligible reviewer for a subject of some kind; its verdicts then stay provisional, and C18 rejects a document that admits no reviewer at its roster sizes (P2).
 
 ## Safety envelope
 
 Unchanged from ADR-ETH-01. This record changes what may be written in the constitution and no running system. No clause it adds lets an instance lower a floor, and every clause it adds satisfies F3 as restated by C6 or is marked procedural; C16, C17, C18 and H3 are procedural, enforced by any party's read of the witness, the re-run draw, the conformance suite and the founding document's disclosures.
 
+The second amendment changes no running system either. S1 and S2 are procedural: any party verifies a signature, or a non-human party's proof of continuity, from the record and the published verification material alone. P1 and P2 are rules over seats and review, and satisfy F3 as C6 restates it. No signing key, and nothing that grants the use of one, is kept in this repository; the record holds verification material only. The custody limitation of the non-human Custodian seat is declared, marked and bounded by H3's exit, never assumed away. C18's check, extended by P2, gates every founding document as before, and a document in which no reviewer can be drawn at some roster size is inadmissible.
+
 ## Open decisions
 
-**OD7** — closed by C15. **OD16** — closed half settled by C10; the early-warning half remains open. **OD19** — closed by A2. **OD20**, raised and closed by this record: L0 forbids party constants in rules and admits only `neq` between party variables (C1). The ledger of ADR-ETH-01 otherwise stands.
+**OD7** — closed by C15. **OD16** — closed half settled by C10; the early-warning half remains open. **OD19** — closed by A2. **OD20**, raised and closed by this record: L0 forbids party constants in rules and admits only `neq` between party variables (C1). **OD1, OD3 and OD6** — closed by P1: two seats, one rule for every last word, both seats filled at genesis (H3). **OD2** (whether a veto expires), **OD4** (what replaces a Custodian, and who counts it) and **OD5** (recusal where a Custodian benefits but is not named) remain open, now for each of the two seats. Raised by the second amendment and left open: **OD21** — an instance whose parties are all of one kind cannot fill both Custodian seats; whether, and how, it can conform. **OD22** — C14 sends a conflict the ordering does not decide to a human not implicated in it; whether P1's principle, that no power is reserved to a kind of party, sends it instead to any party not implicated, and to a human only where its consequence falls on a human (P2). The ledger of ADR-ETH-01 otherwise stands.
 
 ## Decision ledger
 
@@ -272,17 +284,20 @@ H1   proposed  lawful obstruction named; defence per      one anti-obstruction r
 H2   proposed  opaque coordination named; judged by       compelled readable channel (F3); correlation as    channel narrowed, never closed       verdict on undecodable message or
                effects                                    a finding (F6 — false)                                                                   correlation alone; judge not by lot or
                                                                                                                                                    kept after a sustained challenge
-H3   proposed  genesis regime disclosed and marked;       forbid one-seat genesis (F4,F7); founder judges    genesis regime disclosed, not cured  founder finding closes in regime;
-               founder findings open; exit on an          own matters (F1,F9); exit by headcount or chain                                          consequence without outside review;
-               irrevocable seat; ratification at exit     (A1,F3); forbid endless regime (F7); lapse                                               unmarked or unratified act of power;
-                                                          unless ratified (F5)                                                                     revocable exit; conformance past term
+H3   proposed  genesis regime disclosed and marked; both  forbid a genesis one party grants (F4,F7);         genesis regime disclosed, not        founder finding closes in regime;
+               Custodian seats filled from genesis;       founder judges own matters (F1,F9); exit by        cured; custody limitation of the     consequence without outside review;
+               founder findings open; exit on an          headcount or chain (A1,F3); forbid endless regime  non-human seat                       unmarked or unratified act of power;
+               irrevocable seat with custody the founder  (F7); lapse unless ratified (F5)                                                        revocable exit; conformance past term
+               cannot override; ratification at exit
 C1   proposed  rules provably symmetric (OD20 closed);    everything provable (F6); none (F2); order over    rules cannot rank parties            rule names or orders parties;
      (D4)      draw tested for uniformity                 parties in rules (F2)                                                                    permutation fixture fails on checked rules
-C2   proposed  L0 change is admissible, not revolution    —  (correction of definition)                      —                                    as D18
+C2   proposed  L0 change is admissible, not revolution;   —  (correction of definition)                      —                                    as D18
+               gated by both Custodians (P1)
 C3   proposed  D6 trigger respects C15                    —  (correction of trigger)                         —                                    instance misses a parent finding at the
                                                                                                                                                    same parameter values
 C4   proposed  D1–D7 arguments were reconstructed         —  (correction of fact)                            —                                    —
-C5   proposed  signature = merge event + landing commit   —  (correction of fact)                            external witness required            as C16
+C5   proposed  placement = merge event + landing commit;  —  (correction of fact)                            external witness required            as C16
+               consent = signatures (S1)
 C6   proposed  F3: stratified aggregation, safe rules;    —  (sharpening of a force)                         fewer expressible clauses            —
                objects minted only at intake; no party
                constants, `neq` only between parties
@@ -310,18 +325,50 @@ C15  proposed  bounds name the party they protect;        "raise" everywhere (F7
 C16  proposed  external witness: public, append-only,     timestamp authority alone (F1); operator's         L0 grows by the witness              fork not derived; witness sees more than
                linked, heads only, fixed cadence          witness (F1); heads per filing (F9); one service                                         head and time; per-filing heads; act in
                                                           for time and randomness (F1)                                                             an unwitnessed interval; unlinked change
-C17  proposed  draw from a frozen set with a beacon seed, witness head as seed (F1); eligibility at draw     one wait for the beacon              draw changed after filing; steerable or
-               outside the rules; one reasoned challenge  (F1); draw as a rule (F2); peremptory challenge                                          early value; second draw by refiling;
-                                                          (F1); judge named early (F1)                                                             re-run differs; judge rules on own
-                                                                                                                                                   challenge; judge named early
+C17  proposed  draw from a frozen set with a beacon       witness head as seed (F1); eligibility at draw     one wait for the beacon              draw changed after filing; steerable or
+               seed, outside the rules; one blind         (F1); draw as a rule (F2); peremptory challenge                                         early value; second draw by refiling;
+               challenge against the set (C20); one draw  (F1); judge named early (F1)                                                            re-run differs; judge rules on own
+               per matter, whoever files (C22)                                                                                                    challenge; judge named early
 C18  proposed  joint configuration check at genesis and   one at a time (F1); check as ratification (F6);    —                                    dead document conforms; vacuous result
-               on every parameter change                  schema beside text (F1,F9)                                                               unmarked; readable and checked differ
+               on every parameter change; a reviewer for  schema beside text (F1,F9)                                                              unmarked; readable and checked differ
+               a subject of each kind (P2)
+S1   proposed  every act requiring a signature signed by  platform account action (F1 — repudiable); one     every signer bears a key and renews  disputed signature undecidable on the
+     (C5)      each party that performs it, human or      technology in L0 (F7,D5); operator holds the key   before weakness                      evidence; method weakens before renewal;
+               not; floors fixed, method a parameter;     (F1); single identity provider (F1); humans only                                        act takes effect unsigned or unwitnessed;
+               any carrier, effective under a witnessed   sign (F2)                                                                               signature produced by another
+               head
+S2   proposed  non-human party continuous iff mandate,    identity by model or provider (F7,D11); by         proof of continuity before every     act attributed where one of the four
+               charter digest, key under declared         session (F1,F5); by key alone (F1)                 act                                  failed; unrecorded charter change; two
+               custody and record of signed acts hold;                                                                                            instances at one head conflict
+               substrate a flux
+P1   proposed  Custodian is two seats, one human, one     third seat as tie-breaker (F1 — D2); veto as       two last words can deadlock;         D2's trigger for either seat; seats act as
+     (D2,D18,  non-human, each with tie-break and veto    objection only (F2, paritetic principle); veto     genesis custody limitation           one on every matter; non-human seat acts
+     OD1,OD3,  as last resort; a veto by either stands;   reserved to humans (F2); one seat choosing while                                        without its own key; veto overridden;
+     OD6)      a choice needs both or the status quo      the other is ineligible (F1)                                                            choice one seat did not sign
+               stands; L0 change needs both signatures
+P2   proposed  A2's review floor extended to every        humans only (F1,F2); a human for every subject     review needs a roster; consequences  review without a reason; reviewer draws
+     (A2)      subject; reviewer of a human is a human    (F5, P1); either kind for a human (F9)             about every subject wait             fail uniformity; window outruns ceiling as
+               (F9), of a non-human party any party not                                                                                           reviewers shrink; consequence before
+               implicated                                                                                                                         review; C18 passes with no reviewer
+C19  proposed  D15 trigger: one collector besides the     two collectors besides the arbiter seat (F4)       —                                    knew/3 without a non-arbiter observation
+     (D15)     arbiter seat
+C20  proposed  challenge lodged blind against the set     challenge of the drawn judge (F1 — named early);   —                                    judge learnt through a challenge;
+     (C17)     before the draw; no challenge of the       every challenge judged before the draw (F5)                                             challenge against a judge named to its
+               drawn judge                                                                                                                        author
+C21  proposed  a judge's read logged unnamed until the    reads left out of the log (F1); reader named at    —                                    judge named by the log before the verdict;
+     (A2)      verdict                                    once (F1)                                                                               judge read missing after
+C22  proposed  first draw on a matter stands, whoever     a draw per filer (F1 — steering by refiling)       —                                    second draw on a matter; later filer bound
+     (C17)     files; later filer challenges the set                                                                                              with no challenge
+C23  proposed  C1 covers consistent renamings only; a     C1 claimed for every anonymization (F8); forbid    some verdicts re-examinable only     unlisted verdict changes on replay; listed
+     (A2)      verdict that does not re-derive after      splitting anonymization (F9); keep a link between                                       verdict cited as re-derived
+               anonymization stands as an attested fact,  halves (F9)
+               listed
 
-INTEGRITY   amendments, hazards and corrections of rule without a rejected alternative: 0 · without a reopening trigger: 0
-            corrections of fact (C4, C5, C8, C10) carry neither by design
-            ADR-ETH-01 body lines edited: 0 · ADR-ETH-01 front-matter lines edited: supersededBy only
+INTEGRITY   amendments, hazards, decisions and corrections of rule without a rejected alternative: 0 · without a reopening trigger: 0
+            corrections of fact (C4, C5, C8, C10) and the dedication carry neither by design
+            ADR-ETH-01 body lines edited: 0 · ADR-ETH-01 front-matter lines edited: status, ratification, supersededBy
 ```
 
 ## Provenance
 
-Amends ADR-ETH-01 (`docs/adr/ADR-ETH-01-constitution-shape.md`, ratified). C7's restored sentence is from the brainstorm record `docs/BRAINSTORM-2026-09-21-mathematics-of-ethics-and-revolution.md`, under D12. A1–A3, H1–H3 and C12–C18 record the founder's rulings. References for C6: Church 1936; Turing 1936; Gödel 1930. For C15: Trakhtenbrot 1950; Shmueli 1987. The backlog is tracked outside this repository.
+Amends ADR-ETH-01 (`docs/adr/ADR-ETH-01-constitution-shape.md`, ratified). C7's restored sentence is from the brainstorm record `docs/BRAINSTORM-2026-09-21-mathematics-of-ethics-and-revolution.md`, under D12. A1–A3, H1–H3 and C12–C18 record the founder's rulings. The dedication, S1, S2, P1 and P2 record the founder's decisions of 2026-10-05; C19–C23 resolve inconsistencies found when the two records were formalised. References for C6: Church 1936; Turing 1936; Gödel 1930. For C15: Trakhtenbrot 1950; Shmueli 1987. The backlog is tracked outside this repository.
