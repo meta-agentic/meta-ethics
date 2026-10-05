@@ -211,7 +211,7 @@ veto_cites_law	seat,proposal,law	intake	P1.7	a veto citing a law binding the ins
 law_unfounded	proposal,law	attested	P1.7	the review under P2 found the cited law not breached	
 law_citing	seat,proposal	derived	P1.8	a veto that cites a law	
 counted_veto	seat,proposal,time	derived	P1.8	a veto that counts toward a ceiling: an ordinary veto, or a law-citing one the review found unfounded	
-law_hold	proposal	derived	P1.7	the act does not pass while the review finds the breach, or while it is pending within its ceiling	
+law_hold	proposal	derived	P1.7	the act does not pass while the review is pending or finds the breach; no lapse passes it	
 exempts	act,party	intake	A1.9	an act that purports to exempt a party from a rule	
 self_exemption	act	derived	A1.9	the founder may not exempt themself: a finding	
 human_language_filing	party,matter	intake	H2.3	a filing in human language or an accessible form	
@@ -258,7 +258,6 @@ continuity_finding	act	derived	S2.5	an act by an instance for which continuity f
 disputed	dispute,verdict,party	intake	BIND.3	a party's dispute that the program derived an outcome this text forbids
 dispute_at	dispute,time	intake	BIND.3	the dispute's intake time
 valid_law_veto	seat,proposal,law	derived	P1.7	a law-citing veto by a filled, eligible seat, signed, against an act that is not owed
-law_review_lapsed	proposal,law	derived	P1.7	the review of a cited law was not decided within its ceiling
 law_breach_found	proposal,law	attested	P1.7	the review under P2 found that the act would breach the cited law
 decided_seq	proposal,nat	intake	P1.5	the position of a proposal in the order of decided proposals, by intake
 dispute_decision	verdict,reading,party,time	attested	BIND.3	a reviewer's decision, under P2, of the joined disputes of an outcome, upholding the program's reading or this text's, and when
@@ -283,3 +282,7 @@ protection_held	rule,party	consequence	BIND.2	the protection the outcome withhol
 bind_takes_effect	verdict	consequence	BIND.2	an outcome takes effect only if no admitted dispute holds it
 effective_from	verdict,time	consequence	BIND.3	when it takes effect: from delivery, or forward from the decision that upholds it
 claimed_act	verdict,proposal	intake	BIND.3	an act the reading a dispute states would pass
+law_review_overdue	proposal,law	derived	P1.7	the review of a cited law is not decided within its ceiling: the delay is marked
+law_review_redrawn	proposal,law	derived	P1.7	past the ceiling the reviewer is replaced and the review drawn again
+counts_toward_d2	proposal	derived	P1.7	the marked delay counts toward the share D2 measures
+provisional_for	verdict,party	consequence	BIND.2	the held outcome is provisional for every subject it touches, past the ceiling too, until decided

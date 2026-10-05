@@ -52,6 +52,14 @@ disputed(dr, vl, n). dispute_at(dr, 15).
 disputed(da, vl, h). dispute_at(da, 20).
 % r2's protection is withheld by v4, but r2 does not dispute
 withheld_protection(v4, r2, keep_x).
+% standing without a mandate: a subject with none, and a former party, whose
+% protection the outcome withholds
+verdict(vw, u, 10). also_about(vw, o). bears_consequence(vw). consequence_on(vw, u). consequence_on(vw, o).
+filed_by(vw, n). verdict_delivered(vw, 10). drawn_reviewer(vw, r2). reviewed(vw, r2).
+withheld_protection(vw, u, keep_answer).
+disputed(du, vw, u). dispute_at(du, 12).
+root_grant(m6). mandate(m6, xp, s). issued(m6, 0). revoked(m6, 5).
+withheld_protection(vw, xp, keep_reply). disputed(dx, vw, xp). dispute_at(dx, 13).
 % v4: within the ceiling
 disputed(d6, v4, h). dispute_at(d6, 35).
 
@@ -83,6 +91,13 @@ disputed(d6, v4, h). dispute_at(d6, 35).
 % EXPECT[BIND.3]: upheld(v9)
 % EXPECT[BIND.3]: dispute_open(v4)
 % EXPECT-NOT[BIND.3]: dispute_lapsed(v4)
+% EXPECT[BIND.3]: admitted_dispute(du)
+% EXPECT[BIND.3]: admitted_dispute(dx)
+% EXPECT[BIND.3]: protection_held(keep_reply,xp)
+% EXPECT[BIND.3]: dispute_lapsed(vw)
+% EXPECT[BIND.2]: provisional_for(vw,o)
+% EXPECT[BIND.2]: provisional_for(vw,u)
+% EXPECT-NOT[BIND.2]: provisional_for(v3,n)
 % EXPECT[BIND.2]: bind_takes_effect(v3)
 % EXPECT[BIND.2]: effective_from(v3,10)
 % EXPECT-NOT[BIND.2]: binding_held(v3)

@@ -33,3 +33,4 @@ protection_held(X, P) :- admitted_dispute(D), disputed(D, V, P), withheld_protec
 bind_takes_effect(V) :- takes_effect(V), not binding_held(V).
 effective_from(V, T) :- bind_takes_effect(V), verdict_delivered(V, T), not dispute_of(V).
 effective_from(V, T) :- bind_takes_effect(V), upheld_program(V, T).
+provisional_for(V, P) :- binding_held(V), verdict_subject(V, P).

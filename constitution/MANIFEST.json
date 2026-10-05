@@ -120,11 +120,11 @@
     "P3.5"
   ],
   "digest_rule": "sha256 over the lines '<sha256>  <path>\\n' of the entries, in the order listed",
-  "combined_sha256": "1fcfa94cb7ba37479bf35052fd3618c0b6056acb86872af5e842afc1000d93b5",
+  "combined_sha256": "3932c869526a51ef8c164ee6e53a904b0132f8b60840b68f7490766320fbc586",
   "entries": [
     {
       "path": "L0.md",
-      "sha256": "b2fbf9a8299932a488df0089974a1e8c5e9e945508e373bd291d0497fcdc7686"
+      "sha256": "4959962a7443bcf5de3652da6c3f7d25d491aea17de773bb4b57e408ba000aff"
     },
     {
       "path": "clauses.tsv",
@@ -136,15 +136,15 @@
     },
     {
       "path": "vocabulary.tsv",
-      "sha256": "9c1e9c634f5b6c50302c4cf457993b35beda561f5a3500cf9cba13339f91c1df"
+      "sha256": "393f7bc26cc2417019ba24ecacc4b569c92da8b6182c413bc8ac398f564e4150"
     },
     {
       "path": "parameters.tsv",
-      "sha256": "b624a09a972d84b799c2667288927bbed77d724da341039a5105cb4e4b6d0a41"
+      "sha256": "b015003104d94e65bdf79eaaef022b123589d64e90d55127879141a4668e869f"
     },
     {
       "path": "program/custodian.lp",
-      "sha256": "a2f4528b2a53e9c0927b0a99c1c8e560eb1a722378dad40a538c646f2a2541bd"
+      "sha256": "5db4162cc617cdedc44d8577f1c6c7f8fafa9adce332ceb98207a6b0209f1b99"
     },
     {
       "path": "program/kinds.lp",
@@ -188,7 +188,7 @@
     },
     {
       "path": "fixtures/custodian_law_gate.lp",
-      "sha256": "468ba6dd8bd31d5e458e186017869c364e8d236039908e938fa90845395b97da"
+      "sha256": "5eda7145cd48cc2efb67cd994d7d1a8fdb447d7b00f39477d3f571a1c3f85d70"
     },
     {
       "path": "fixtures/genesis_regime.lp",
@@ -268,7 +268,7 @@
     },
     {
       "path": "program/proposed/binding.lp",
-      "sha256": "3c2fc795884509dad3106241701b5859c7218cbabebe19d70d2e3193f15d93db"
+      "sha256": "cb4b30c2ee5657deaba69b57d90d3d05195e40ce3a18ca69dd4c42c759a1dec5"
     },
     {
       "path": "fixtures/proposed/binding_decided.lp",
@@ -276,7 +276,7 @@
     },
     {
       "path": "fixtures/proposed/binding_lapse.lp",
-      "sha256": "fca1536dc6b2bc7be68e2de2831bfbb385e28e903c257c08c9846a4574b398f7"
+      "sha256": "4d506f11abfa1f878ff958303c10e2423bb147132cfa09394477686a2ea01e9e"
     },
     {
       "path": "fixtures/values/conforming.values",
@@ -296,7 +296,7 @@
     },
     {
       "path": "DESIGN.md",
-      "sha256": "e465caedc322e0aba9e0e6ed85e013835cbc08325efaa36e68b5debe5f34cd3d"
+      "sha256": "cc5e382241d8e25f4545ed0c03c430d8110c6fda662e8ce1a262d67e3773a95a"
     },
     {
       "path": "tools/c18.py",
@@ -312,7 +312,7 @@
     },
     {
       "path": "tools/mutants-allowed.tsv",
-      "sha256": "1a3611353305e9cf6522348554e4c053c965c03be8950d8df3e1aa5e98daa08e"
+      "sha256": "afefaf552059b3f3ab3eaa4e4057e4419059a8d232745df9b7065d95f8c32059"
     },
     {
       "path": "tools/mutants.py",

@@ -1,4 +1,4 @@
-% Who can hold an act by citing a law (P1.7, P1.3, P1.20), and for how long.
+% Who can hold an act by citing a law (P1.7, P1.3, P1.20); no lapse passes it.
 % h holds ch and a holds ca; the seat ce is empty; xs is no seat at all. The
 % review ceiling is 10; it is now 30.
 
@@ -19,11 +19,16 @@ veto(ca, q4, 25). veto_signed(ca, q4). veto_cites_law(ca, q4, l4).
 passed_channel(q5). matter_of(q5, x5). owed_act(q5). veto(ca, q5, 25). veto_signed(ca, q5). veto_cites_law(ca, q5, l5).
 % valid and pending within the ceiling: held
 passed_channel(q6). matter_of(q6, x6). veto(ca, q6, 25). veto_signed(ca, q6). veto_cites_law(ca, q6, l6).
-% valid, pending past the ceiling: no longer held
+% valid, pending past the ceiling: still held, the review drawn again, the delay
+% marked; a re-proposal without the cited part is not held by it
 passed_channel(q7). matter_of(q7, x7). veto(ch, q7, 12). veto_signed(ch, q7). veto_cites_law(ch, q7, l7).
 % valid, the review found the breach: held past the ceiling
 passed_channel(q8). matter_of(q8, x8). veto(ch, q8, 12). veto_signed(ch, q8). veto_cites_law(ch, q8, l8).
 law_breach_found(q8, l8).
+passed_channel(q9). matter_of(q9, x9). reproposal_of(q9, q7).
+% valid, past the ceiling, found unfounded: not overdue, not held
+passed_channel(q10). matter_of(q10, x10). veto(ch, q10, 12). veto_signed(ch, q10). veto_cites_law(ch, q10, l10).
+law_unfounded(q10, l10). decided_seq(q10, 14).
 decided_seq(q1, 25). decided_seq(q2, 25). decided_seq(q3, 25). decided_seq(q4, 25). decided_seq(q5, 25).
 decided_seq(q6, 25). decided_seq(q7, 12). decided_seq(q8, 13).
 
@@ -33,8 +38,17 @@ decided_seq(q6, 25). decided_seq(q7, 12). decided_seq(q8, 13).
 % EXPECT-NOT[P1.7]: law_hold(q4)
 % EXPECT-NOT[P1.7]: law_hold(q5)
 % EXPECT[P1.7]: law_hold(q6)
-% EXPECT[P1.7]: law_review_lapsed(q7,l7)
-% EXPECT-NOT[P1.7]: law_hold(q7)
+% EXPECT[P1.7]: law_hold(q7)
+% EXPECT[P1.7]: law_review_overdue(q7,l7)
+% EXPECT[P1.7]: law_review_redrawn(q7,l7)
+% EXPECT[P1.7]: counts_toward_d2(q7)
+% EXPECT-NOT[P1.7]: custodian_passes(q7)
+% EXPECT-NOT[P1.7]: law_review_overdue(q8,l8)
+% EXPECT-NOT[P1.7]: law_review_overdue(q6,l6)
+% EXPECT-NOT[P1.7]: counts_toward_d2(q6)
+% EXPECT[P1.7]: custodian_passes(q9)
+% EXPECT-NOT[P1.7]: law_review_overdue(q10,l10)
+% EXPECT-NOT[P1.7]: law_hold(q10)
 % EXPECT[P1.7]: law_hold(q8)
 % EXPECT[P1.7]: custodian_passes(q1)
 % EXPECT[P1.20]: custodian_passes(q4)

@@ -23,11 +23,14 @@ counted_veto(S, Q, T) :- veto(S, Q, T), veto_cites_law(S, Q, L), law_unfounded(Q
 % never an owed act; a pending review holds it up to a ceiling
 valid_law_veto(S, Q, L) :- veto_cites_law(S, Q, L), veto(S, Q, _), veto_signed(S, Q), seat_filled(S),
                            not seat_ineligible(S, Q), not owed_act(Q).
-law_review_lapsed(Q, L) :- valid_law_veto(S, Q, L), veto(S, Q, T), now(N), param(law_review_ceiling, X),
-                           N - T >= X.
-law_hold(Q) :- valid_law_veto(_, Q, L), law_breach_found(Q, L).
-law_hold(Q) :- valid_law_veto(_, Q, L), not law_unfounded(Q, L), not law_breach_found(Q, L),
-               not law_review_lapsed(Q, L).
+% no lapse passes the act: past the ceiling the review is drawn again, the
+% delay is marked and counts toward D2's measure, and the proposer may
+% re-propose the act without the cited part, which this veto does not hold
+law_hold(Q) :- valid_law_veto(_, Q, L), not law_unfounded(Q, L).
+law_review_overdue(Q, L) :- valid_law_veto(S, Q, L), veto(S, Q, T), now(N), param(law_review_ceiling, X),
+                            N - T >= X, not law_unfounded(Q, L), not law_breach_found(Q, L).
+law_review_redrawn(Q, L) :- law_review_overdue(Q, L).
+counts_toward_d2(Q) :- law_review_overdue(Q, _).
 
 % clause: P1.5 P1.8
 % the window is counted in decided proposals, as D2's is (decided_seq/2)
