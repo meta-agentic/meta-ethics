@@ -26,6 +26,15 @@ The candidate given to ADR-ETH-03 was five principles: Memory, Delegation, Impar
 16. **Correctability was cooperative.** A unanimity rule and two seats that guard each other passed. *Changed:* COR.1 holds against every group below capture, in the form ADR-ETH-02 A3 uses; COR.2 forbids cycles in the replacement-dependency graph.
 17. **No matter had to end, and a favourable verdict could be reopened without end.** *Changed:* COR.3 bounds every matter and provisional status; COR.4 forbids double jeopardy.
 18. **The genesis lemma did not hold in the model, and the founding regime could be extended or ended by declaration.** *Changed:* GEN is a declared transient, not a principle; its lemma is restated in the model's terms; GEN.2 is held to the other floors.
+19. **The admissibility relation could carry burdens past every floor.** A condition such as "acts by kind b are not admitted" changed capacity without being a consequence. *Changed:* *binds* covers any component of $\Gamma$; $A$ is invariant under renaming (IMP.1) and under permutation of attribute values (IMP.3); a condition of $A$ that reads an actor's own status is a consequence.
+20. **The change operator checked only state floors, so a change could install unanimity.** *Changed:* floors are tagged **[Γ]**, **[state]** or **[run]**, and $\Delta$ admits a rule set only if it meets every [Γ] floor, decided at admission by the bounded checks of §4.
+21. **The procedure exclusion of implication let a decider review its own decision.** *Changed:* ground (iii) excepts reviewing or re-examining one's own decision.
+22. **Universality forbade duties of office.** *Changed:* IMP.4 forbids reading a position only to exempt its holder.
+23. **Admission by attribute excluded qualification and legal capacity.** *Changed:* an attestation of one's own acts made elsewhere is not an attribute; admission may read legal capacity or age where declared as a general criterion or required by a named law.
+24. **Discretion at grants and revocations was governed by no floor.** A blind rule with a gatekeeper who grants to one class, or a purge of one kind's mandates, passed. *Changed:* DEL.8.
+25. **Lapse in the subject's favour gave impunity to a party whose grants filled every seat.** *Changed:* COR.3 provides a decider from outside every implicated chain, and lapse is unavailable to a subject whose grants emptied the bench; GEN.2 lapses an unre-decided genesis act's consequences on everyone but the founder and those who accepted it.
+26. **Three protections of subjects reached parties only.** *Changed:* MEM.3, MEM.5 and LEX.5 reach subjects and actors.
+27. **An answerable actor could be named without its consent, and leaving the core had no gate.** *Changed:* DEL.6 requires the named actor's accepted entry; DEL.7 requires the most demanding gate, under IMP.5, and a chance for every subject to answer.
 
 Oligarchy and plutocracy are not excluded as such. "A few decide" and "weight follows stake" are violations only through cycles of mutual replacement, a blocking group below capture, barring by attribute, or binding those who cannot leave. Over parties who accepted, can leave at no cost and can replace the few, they are declared values (`core/pathologies.md` X45, X46).
 
@@ -33,7 +42,7 @@ Fuller's eight ways to fail to make law are restated as follows: generality as I
 
 ## 2. Clauses and definitions
 
-The core has **37 floors**: MEM 5, DEL 7, LEX 8, IMP 5, VOX 7, COR 4 in six principles, and GEN.2 in the declared transient. §1 of `core/L0.md` holds the **definitions of the model**: systems as abstractions, attribute and kind, act time, skeleton, the rule set's six components, state, live edge, party, subject, instrument, binding, implication, positions and capture, change, attestation, provisional status, runs, and the two relations between levels. A definition binds no one; it fixes what a floor means.
+The core has **38 floors**: MEM 5, DEL 8, LEX 8, IMP 5, VOX 7, COR 4 in six principles, and GEN.2 in the declared transient. §1 of `core/L0.md` holds the **definitions of the model**: systems as abstractions, attribute and kind, act time, skeleton, the rule set's six components, state, live edge, party, subject, instrument, binding, implication, positions and capture, change, attestation, provisional status, runs, and the two relations between levels. A definition binds no one; it fixes what a floor means.
 
 ## 3. Tests
 
@@ -46,21 +55,21 @@ The core has **37 floors**: MEM 5, DEL 7, LEX 8, IMP 5, VOX 7, COR 4 in six prin
 
 | Class | Count | Result |
 |---|---|---|
-| Structural | 47 | every one excluded by at least one clause |
-| Mixed | 13 | the structural part excluded; the remainder named |
+| Structural | 48 | every one excluded by at least one clause |
+| Mixed | 14 | the structural part excluded; the remainder named |
 | Beyond | 5 | not excluded; made visible, attributed, answerable and correctable where the core can, and named |
-| Total | 65 | |
+| Total | 67 | |
 
 Per principle, the pathologies whose *Excluded by* list names one of its clauses. The table is generated from those lists, not written by hand:
 
 | Principle | Pathologies |
 |---|---|
 | MEM | X01 Revisionism, X02 Unattributed power, X03 Surveillance, X04 Whitewashing, X05 Exit as erasure, X07 Operator capture, X08 Covert steering, X25 Totalitarian reach, X31 Corruption, X42 Information control, X55 Selective observation, X61 Forgery, X65 Party fork |
-| DEL | X02 Unattributed power, X04 Whitewashing, X06 Usurpation, X07 Operator capture, X08 Covert steering, X09 Sybil capture, X10 Proxy amplification, X11 Clientelism, X12 Bondage, X13 Lock-in, X14 Colonial binding, X16 Anarchy, X21 Collective punishment, X24 State of exception, X25 Totalitarian reach, X43 Paternalism, X45 Oligarchy, X46 Plutocracy, X48 Junta, X52 Externality on outsiders, X58 Exclusion from standing, X63 Liability by hierarchy, X64 Capture through filled positions |
+| DEL | X02 Unattributed power, X04 Whitewashing, X06 Usurpation, X07 Operator capture, X08 Covert steering, X09 Sybil capture, X10 Proxy amplification, X11 Clientelism, X12 Bondage, X13 Lock-in, X14 Colonial binding, X16 Anarchy, X21 Collective punishment, X24 State of exception, X25 Totalitarian reach, X43 Paternalism, X45 Oligarchy, X46 Plutocracy, X48 Junta, X52 Externality on outsiders, X58 Exclusion from standing, X63 Liability by hierarchy, X64 Capture through filled positions, X66 Exclusion by discretion |
 | LEX | X03 Surveillance, X08 Covert steering, X14 Colonial binding, X15 Arbitrary rule, X16 Anarchy, X17 Retroactive law, X18 Secret law, X19 Impossible law, X20 Pre-emptive punishment, X21 Collective punishment, X22 Show trial, X23 Selective enforcement, X24 State of exception, X25 Totalitarian reach, X26 Endless opaque process, X27 Mob rule, X33 Self-promotion of optimisers, X39 Opacity, X48 Junta, X55 Selective observation, X63 Liability by hierarchy |
-| IMP | X05 Exit as erasure, X07 Operator capture, X11 Clientelism, X22 Show trial, X23 Selective enforcement, X28 Personal law, X29 Caste, X30 Dynasty, X31 Corruption, X32 Judge in own cause, X33 Self-promotion of optimisers, X34 Base manipulation, X35 Rule by unamendable doctrine, X36 Monoculture of judges, X45 Oligarchy, X55 Selective observation, X58 Exclusion from standing, X62 Disqualification by accusation |
+| IMP | X05 Exit as erasure, X07 Operator capture, X11 Clientelism, X22 Show trial, X23 Selective enforcement, X28 Personal law, X29 Caste, X30 Dynasty, X31 Corruption, X32 Judge in own cause, X33 Self-promotion of optimisers, X34 Base manipulation, X35 Rule by unamendable doctrine, X36 Monoculture of judges, X45 Oligarchy, X55 Selective observation, X58 Exclusion from standing, X62 Disqualification by accusation, X67 Impunity by exhaustion |
 | VOX | X03 Surveillance, X13 Lock-in, X18 Secret law, X22 Show trial, X26 Endless opaque process, X27 Mob rule, X37 Summary judgement, X38 Silencing, X39 Opacity, X40 Tempo capture, X41 Rubber-stamp review, X42 Information control, X43 Paternalism, X52 Externality on outsiders, X59 Indefinite provisional status |
-| COR | X16 Anarchy, X26 Endless opaque process, X30 Dynasty, X35 Rule by unamendable doctrine, X40 Tempo capture, X44 Entrenchment, X45 Oligarchy, X46 Plutocracy, X47 Gerontocracy, X48 Junta, X49 Paralysis, X50 Revolution-only correction, X59 Indefinite provisional status, X60 Double jeopardy |
+| COR | X16 Anarchy, X26 Endless opaque process, X30 Dynasty, X35 Rule by unamendable doctrine, X40 Tempo capture, X44 Entrenchment, X45 Oligarchy, X46 Plutocracy, X47 Gerontocracy, X48 Junta, X49 Paralysis, X50 Revolution-only correction, X59 Indefinite provisional status, X60 Double jeopardy, X67 Impunity by exhaustion |
 
 ### 3.2 Minimality
 
@@ -90,8 +99,15 @@ For each principle, a system expressible in the model that satisfies the other f
 | COR.3 | a probation that never ends (X59) |
 | COR.4 | an acquittal reopened without new evidence (X60) |
 | MEM.2 | an entry naming a false author (X61) |
+| DEL.8 | a purge of one kind's mandates, each revoked at will (X66) |
+| COR.3 (outside decider) | a founder whose grants filled every seat, every matter about it lapsing (X67) |
+| IMP.5 (iii) exception | a judge reviewing its own verdict on appeal (X32) |
+| IMP.3 ($A$ invariance) | acts by one kind not admitted, everything else blind |
 
 **Couplings checked.** Several clauses refer to another principle; none makes a principle derivable from the others.
+- DEL.8 applies VOX, IMP and LEX to grants and revocations, which are acts of a grantor and not consequences; its witness (a purge by individually valid revocations) violates no clause outside DEL. The VOX witness revokes nothing, so DEL.8's reliance on VOX is not engaged.
+- COR.3's outside decider uses IMP.5's implication; its witness keeps every decider unimplicated except through the subject's grants.
+- $\Delta$ now refuses any rule set failing a [Γ] floor. The COR witness's rule set is the founding one, never admitted by $\Delta$, so it stays a system of the model, and no change can reach it from a conforming rule set — which is what the gate is for.
 - DEL.3's acceptance by staying refers to VOX.1's notice. The VOX witness therefore adds no duty by change.
 - VOX.7 refers to COR.3 for its ceiling and adds scope and remedy; it is not a restatement.
 - LEX.2 refers to IMP.5 and VOX.3 for attesters; it applies them to attesters and does not restate them.
@@ -117,7 +133,7 @@ The classes a unit can fall in:
 
 | Unit | Serves | Forces | Class |
 |---|---|---|---|
-| D1 symmetry | IMP.2, IMP.3 | F1, F2 | floor; consequence tables by kind are value |
+| D1 symmetry | IMP.2, IMP.3 | F1, F2 | floor; D1.2's consequence tables by kind contradict IMP.3 |
 | D2 a last word | COR.3 | F5, F1 | floor; the seat is mechanism |
 | D3 procedural | the core's scope (`core/L0.md` §4) | F6 | meta |
 | D4, C1 claims | LEX.2, IMP.1 | F2, F6, F8 | floor |
@@ -163,27 +179,28 @@ The classes a unit can fall in:
 |---|---|---|---|
 | MEM.1 | partial | A2, C16, C23 | A2: the anonymising act replaces content and keeps each entry's digest, author, type and position |
 | MEM.2 | partial | S1, H2, D11 | enter nothing that no rule reads and no declared purpose covers |
-| MEM.3 | covered | C16, S1 | — |
+| MEM.3 | partial | C16, S1 | the witness is readable by any party; a subject that is not a party should verify the entries about it too |
 | MEM.4 | covered | A1, A2 | — |
-| MEM.5 | covered | A2 (identifier-free views, read log), S1 (key resolution logged) | — |
+| MEM.5 | partial | A2 (identifier-free views, read log), S1 (key resolution logged) | reads by actors that are not parties — a substrate provider, an outside service — are entered as well |
 | DEL.1 | partial | A1, C7 | standing under a mandate runs from acceptance (A1 makes a grantee a party before it accepts) |
 | DEL.2 | partial | C7, A1, P1 | count positions held in one chain once in every winning set, not only at the Custodian |
 | DEL.3 | partial | A1 | a duty added by change binds after delivery and a declared interval in which the holder may renounce |
 | DEL.4 | partial | A1, P3 | no cost the instance controls; the leaver takes its record and constituting state |
-| DEL.5 | **contradicts** | A2, P2, D15, S2 | A2 and P2 cite a chain-attributed finding against a grantor after review of the attribution, with no act, custody or knowledge of the grantor's own. Edit: cite it only where the record shows the grantor's undeclared or out-of-scope grant, its custody, or its knowledge with a failure to act, as S2 already provides for steering |
+| DEL.5 | **contradicts** | P2 (the sentence on findings attributed through a chain), D15, S2, P3 | P2 cites a finding attributed to a human only through a chain against that human after review of the attribution, with no act, custody or knowledge of the human's own; it says nothing for non-human grantors. Edit: cite a chain-attributed finding against any grantor, human or not, only where the record shows its undeclared or out-of-scope grant, its custody, or its knowledge with a failure to act, as S2 already provides for steering; and P3's genesis presumption counts an overridable seat's act as the founder's for DEL.5's custody ground only |
 | DEL.6 | partial | C18 (OD23 declaration) | name an actor answerable for the instance's acts in each jurisdiction; no outward act while none is named |
-| DEL.7 | none | — | provide for the instance's own departure from the core |
+| DEL.7 | none | — | provide for the instance's own departure from the core, by its most demanding gate, with notice and a free exit |
+| DEL.8 | partial | C7, A1 | admission and appointment are matters with recorded reasons, judged alike; revocation only under a rule, never of a class |
 | LEX.1 | partial | C9 (D1 trigger) | a derived consequence not applied, with no recorded reasoned act closing it, is a finding |
 | LEX.2 | partial | C11, C12, C14 | C14's resolution of an undecided conflict is entered as a judgement, and the consequence is derived from it |
-| LEX.3 | **contradicts** | C12, C14, H2, D21 | C12's provenance names "the rule set" with no per-act version, so a verdict is derived under the rules at derivation. Edit: bind provenance to the rules in force at each judged act's intake, and apply a milder rule adopted before the verdict |
-| LEX.4 | **contradicts** | H2, S2, P3 | P3's pause stops every party's acts of power because of one actor's departure, with no notice or hearing. Edit: recast the pause as a condition of the admissibility relation, applying alike to every party, not as a consequence on any |
-| LEX.5 | partial | C14, C18, H1 | every party can comply whatever the others do |
+| LEX.3 | **contradicts** | C12, C14, H2, D21 | C12's provenance names "the rule set" with no per-act version, and no program file has a rule-version or `in_force` predicate, so replay uses the current rules. Edit: bind provenance to the rules in force at each judged act's intake, and apply a milder rule adopted before the verdict |
+| LEX.4 | **contradicts** | H2, S2, P3 | P3's pause stops every party's acts of power because of one actor's departure, with no notice or hearing; `vocabulary.tsv` classes `paused` and `blocked_by_pause` as consequences. Edit: recast the pause as a condition of the admissibility relation that reads no actor and applies alike to every party |
+| LEX.5 | partial | C14, C18, H1 | every actor a rule can bind can comply whatever the others do |
 | LEX.6 | covered | D10, D11 | — |
 | LEX.7 | none | — | alike acts attested differently are a finding |
 | LEX.8 | partial | C12 (fold version in provenance) | the fold and the admissibility relation change only through the governed channel |
 | IMP.1 | covered | C1 | — |
 | IMP.2 | covered | C13 | — |
-| IMP.3 | partial | C13, P1, P2, A2, P3 | C13 lets consequences read kind with no restriction; restrict it to safeguards. The instance's own kind-reading rules — P1 eligibility, P2's reviewer, A2's anonymisation, P3's admission — already conform |
+| IMP.3 | **contradicts** | D1, C13, P1, P2, A2, P3 | D1's second sentence lets consequence tables differ by kind of party, while IMP.3 lets an attribute shape safeguards only. Edit: "safeguards in consequences may differ by kind"; and restrict C13 to safeguards. P1 eligibility, P2's reviewer, A2's anonymisation and P3's admission already conform |
 | IMP.4 | covered | D8, D9, A1 | — |
 | IMP.5 | covered | A2, C17, C21, H3 | — |
 | VOX.1 | partial | A1, D13 | deliver a change that adds a duty a declared interval before it binds |
@@ -193,18 +210,21 @@ The classes a unit can fall in:
 | VOX.5 | partial | S1, H1, P3 | a general clause |
 | VOX.6 | none | — | any affected actor files and is answered |
 | VOX.7 | partial | A2 | undo or remedy an interim measure's effects when the finding fails |
-| COR.1 | partial | A3, C18, P1 | A3's adversarial check for rules, not only for findings; the Custodian's replacement (OD4) |
+| COR.1 | **contradicts** | A2, C15, A3, C18, P1 | A2's last sentence and C15 require the consent of every party a protection covers to narrow it, so a single affected party, below capture, blocks the change for good. Edit: either the core admits a declared protection ratchet, or those clauses use a gate the protected parties hold collectively (ADR-ETH-03 OD32). Also open: A3's adversarial check for rules, and the Custodian's replacement (OD4) |
 | COR.2 | partial | P1, D9 | decide what replaces a Custodian (OD4) and check the replacement graph is acyclic |
-| COR.3 | **contradicts** | A2, P2, A3, H1, C14 | A2 and P2 keep a verdict provisional with no ceiling where no eligible reviewer exists, while its subject stays recused on the matter. Edit: a ceiling at which such a verdict lapses in the subject's favour, as the revised C14 already provides for undecided conflicts; and a bound on each matter's total delay |
+| COR.3 | **contradicts** | A2, P2, A3, H1, C14 | A2 and P2 keep a verdict provisional with no ceiling where no eligible reviewer exists, while its subject stays recused. Edit: a ceiling at which such a verdict lapses in the subject's favour, as the revised C14 already provides, except where the subject's own grants made every reviewer implicated, when a reviewer is provided from outside every implicated chain; and a bound on each matter's total delay |
+| COR.3 | **contradicts** | P3 (the kept record's findings and their forum) | Findings kept open on an ended instance's record, those naming the founder from the genesis regime included, are decided by the forum only on request, with no ceiling when none is made. Edit: a ceiling from the end at which a kept finding not requested closes as ended without verdict; or a statement that the floors stop at an instance's end, naming those that survive (MEM.1, MEM.3, VOX.2, VOX.3) |
 | COR.4 | partial | A2, C22, H1 | re-examination against a subject after a favourable verdict only on new recorded evidence, a finite number of times |
-| GEN.2 | partial | H3, P1 | deliver the regime's declaration to every subject; forbid lengthening its duration except by parties not implicated; lapse its consequences on others past the ceiling |
+| GEN.2 | **contradicts** | H3, P1 | H3 lets an act not ratified within its window stand, consequences included, while GEN.2 lapses its consequences on every actor but the founder and those who accepted it. Edit: H3's unratified act stands as to the founder and its acceptors only. Also missing: delivery of the regime's declaration to every subject, and a bar on lengthening its duration except by parties not implicated |
 
 | Status | Count |
 |---|---|
-| covered | 11 |
+| covered | 9 |
 | partial | 19 |
 | none | 3 |
-| contradicts | 4 |
+| contradicts | 7 |
+
+Seven floors are contradicted, by eight clauses of the instance: COR.3 by two. Each contradiction is closed by the founder's edit to the records named in its row; this record makes none of them.
 
 Three readings formerly taken as contradictions are resolved by the core's own statements, not by an instance edit:
 - A2's anonymisation is compatible with MEM.1 once append-only is stated over skeletons and the anonymising act is itself appended.
@@ -223,6 +243,7 @@ A check marked **proxy** is weaker than its floor, and the row says where.
 
 | Floor | Kind | Check | Proxy? |
 |---|---|---|---|
+| $\Delta$ | bounded | a change is admitted only if the resulting rule set passes every **[Γ]** check below | — |
 | MEM.1, MEM.3 | procedural | every witnessed head extends its predecessor by a prefix proof over skeletons; a pair without one derives `fork` | — |
 | MEM.2 | static + procedural | every intake predicate carries an author argument, bound to a signature (S1); every intake predicate is read by some rule or listed with a declared purpose; the observed/judged gap is published | — |
 | MEM.4 | static | no derivation of a finding reads `renounce` under negation | — |
@@ -233,6 +254,7 @@ A check marked **proxy** is weaker than its floor, and the row says where.
 | DEL.4 | static + fixture | no rule blocks `renounce` or reads it in a burden; a renunciation fixture derives `export` for the leaver's record and state | — |
 | DEL.5 | static | every consequence rule on a grantor binds it through `undeclared_grant`, `out_of_scope_grant`, `custody`, or `knew` with `failed_to_act` | — |
 | DEL.6 | fixture | `answerable(J, A)` holds for every declared jurisdiction at every fixture state; with none, every outward act derives `inadmissible` | — |
+| DEL.8 | fixture | every admission or appointment by a grantor has a `reasons` entry and a delivered decision; a revocation without a rule, or whose set of revoked mandates is defined by an attribute, derives `unruled_revocation` | **proxy**: a purge done one revocation at a time shows only in the pattern, which a vital sign measures |
 | DEL.7 | procedural | a re-founding decision carries delivery to every subject and the declared renunciation window | — |
 | LEX.1 | fixture | `applied(Q)` without `consequence(Q)` derives `unruled`; `consequence(Q)` past its time without `applied(Q)` or a closing act derives `unapplied`; both empty | — |
 | LEX.2 | static | the fragment gives one model per fact set; no attestation predicate is the head of a breach, finding or consequence rule | — |
@@ -242,10 +264,10 @@ A check marked **proxy** is weaker than its floor, and the row says where.
 | LEX.6 | static | every observation predicate is produced by a rule or a declared collector; no rule reaches outside the perimeter predicate | — |
 | LEX.7 | fixture | two attestations over renamed-equal act descriptions with different judgements derive `unlike` | **proxy**: only for act descriptions the vocabulary makes comparable |
 | LEX.8 | procedural | the fold version and admissibility relation in each provenance are ones a recorded change admitted | — |
-| IMP.1 | static + fixture | no party constant; party terms compared only by `!=`; permutation fixtures give permuted models | — |
+| IMP.1 | static + fixture | no party constant in any rule of $D$, $C$ or $A$; party terms compared only by `!=`; permutation fixtures give permuted models and permuted admissibility | — |
 | IMP.2 | static | no derivation rule reads an attribute-bearing predicate | — |
-| IMP.3 | static + fixture | every consequence head that reads an attribute belongs to the closed safeguard class; gate and eligibility rules on each fixture and its attribute-swapped image give equal models up to the swap; admission rules read no attribute but kind | — |
-| IMP.4 | static | no derivation of a breach or finding reads whether its subject holds a position | — |
+| IMP.3 | static + fixture | every consequence head that reads an attribute belongs to the closed safeguard class; gate, eligibility and admissibility rules on each fixture and its attribute-swapped image give equal models up to the swap; admission rules read no attribute but kind | — |
+| IMP.4 | static | position-holding appears in no derivation under negation | — |
 | IMP.5 | fixture | `implicated(P, M)` with `decides(P, M)` derives `own_cause`; the deciding set is read at filing, before filer-asserted names | — |
 | VOX.1–4 | fixture | `binds(Q, X)` without `delivered`, `window_passed` and `reviewed` with `answer_read` derives `bound_unheard`; mutants drop each fact | — |
 | VOX.5 | static | voice-act predicates reach no burden-class head at any polarity | — |
@@ -253,7 +275,7 @@ A check marked **proxy** is weaker than its floor, and the row says where.
 | VOX.7 | fixture | an unconfirmed interim consequence past its ceiling derives `lapsed`; a failed finding derives `remedy_owed` for each interim effect | — |
 | COR.1 | bounded | for each rule and each group below capture up to the cap, the published closure procedure changes the rule without the group's acts (A3's form) | **proxy** beyond the cap |
 | COR.2 | bounded | the replacement-dependency graph is acyclic, and every position has a replacement path free of its holder's acts | **proxy** beyond the cap |
-| COR.3 | static + fixture | every predicate of the `lever` vocabulary class is bounded by a parameter, and so is each matter's total delay; a provisional status past its ceiling derives `decided` or `lapsed` | — |
+| COR.3 | static + fixture + bounded | every predicate of the `lever` vocabulary class is bounded by a parameter, and so is each matter's total delay; a provisional status past its ceiling derives `decided` or `lapsed`; for every matter whose deciders are all implicated, a decider outside every implicated chain exists up to the cap | — |
 | COR.4 | procedural + fixture | the published closure result of A3; `reopen_against(V)` without new evidence or beyond the count derives `jeopardy` | — |
 | GEN.2 | procedural | the regime's declaration, ceiling, ending event and re-decision window are in the founding document and the record | — |
 
