@@ -1,0 +1,87 @@
+{
+  "object": "the L0 constitution as it stands, prose and program bound by clause",
+  "digest_rule": "sha256 over the lines '<sha256>  <path>\\n' of the entries, in the order listed",
+  "combined_sha256": "66c77cbaa567549906f757c36b0a7b0aa766eb9a4af5eb7e0ebc2eec19a95bcb",
+  "entries": [
+    {
+      "path": "L0.md",
+      "sha256": "e66c35122c41620713829d7b61c839fdd497a8855e8a92651c2878f9c6b2f849"
+    },
+    {
+      "path": "clauses.tsv",
+      "sha256": "fb2d02d5c24152021e33e45918c0c4ff30aa25479c936c3d2c7a1eb206e68668"
+    },
+    {
+      "path": "unmapped.tsv",
+      "sha256": "e0aad0a682c3b93d70536bcbe3fc717a3d48b94b3e80559ddfb7f1714067ca60"
+    },
+    {
+      "path": "vocabulary.tsv",
+      "sha256": "ca9b88b3ddb4997557a47ad9941fcbe8423924b55773c21c3c88f62d4e2d7fd7"
+    },
+    {
+      "path": "parameters.tsv",
+      "sha256": "84c3dc355d68adf2c53e2f1f64e20460897485d1d66af6779dfea869d9e8d406"
+    },
+    {
+      "path": "program/custodian.lp",
+      "sha256": "276c5f8bc2afe134fbe668dd7d13abc1a584643d83ca2a17e5512c1108960890"
+    },
+    {
+      "path": "program/parties.lp",
+      "sha256": "aec9e964ea11cb85d67f170404c6b48bee421512369f1d81191f43a5c8352b52"
+    },
+    {
+      "path": "program/record.lp",
+      "sha256": "ae0ed5efe6ccca609fdcf4d2bd81a4c0ca4ce25a283497d0ae691cd59a5196a3"
+    },
+    {
+      "path": "program/review.lp",
+      "sha256": "c1d291d55f1687a6e69b388500168b6f8bffc0ef11e434067dda2ccdcd0c4d72"
+    },
+    {
+      "path": "program/state.lp",
+      "sha256": "a4fe4fa782c75417d051b4800deb27bee58409dc85db85aedfe404cf4e2b04a6"
+    },
+    {
+      "path": "fixtures/custodian.lp",
+      "sha256": "89853b3e0938f4b872e5c9dc2dbb5d4114472d23050a30f62fd784f5a88709d2"
+    },
+    {
+      "path": "fixtures/custodian_empty_seat.lp",
+      "sha256": "ae73e64f954e39892520f642cb50d0b064ea44a41d8b971448032a92256b5507"
+    },
+    {
+      "path": "fixtures/kinds_paused.lp",
+      "sha256": "e4a5364d53ba700d5cb670afdd022c9494364cb5d17f676e885af15478ef5038"
+    },
+    {
+      "path": "fixtures/kinds_present.lp",
+      "sha256": "5f5a05055f8a519a61517dc540b05d12a46001f79bd6796978ebeaa4de1733c9"
+    },
+    {
+      "path": "fixtures/parties.lp",
+      "sha256": "84bac2721e0948e9f47df26a481b3a5b37992039cdecbf6952c3276b2a33097f"
+    },
+    {
+      "path": "fixtures/record.lp",
+      "sha256": "f9fc245476e90f07522f18379e2ca4c025e086a1f66d54ed675f3beac1c3addc"
+    },
+    {
+      "path": "fixtures/review.lp",
+      "sha256": "1e76c939ea3ffbba214b5220ef9c4f56ace2c1641393cc08b01ccdceebe153ef"
+    },
+    {
+      "path": "fixtures/state.lp",
+      "sha256": "54c47779c4189fc711169358529db40eb88a2be2737eaf09b06ea49e76117395"
+    },
+    {
+      "path": "../docs/adr/ADR-ETH-01-constitution-shape.md",
+      "sha256": "9516e09d10cc247965071f58b7e6a7c726fd8f71a2ae38375609789c8d9145e5"
+    },
+    {
+      "path": "../docs/adr/ADR-ETH-02-first-amendment.md",
+      "sha256": "dab2f18894075328e9e5900a7ab682ae2467d3593622a463a91303ecc72b2ce5"
+    }
+  ]
+}
