@@ -120,7 +120,7 @@
     "P3.5"
   ],
   "digest_rule": "sha256 over the lines '<sha256>  <path>\\n' of the entries, in the order listed",
-  "combined_sha256": "6aa635062114ee0d4803975b01647feef84010956d094ac2fdcd34596e355807",
+  "combined_sha256": "8c17a7f710cc07e8ca007b27b1fde342d3fb330a0d335204632f33d0e7cc643d",
   "entries": [
     {
       "path": "L0.md",
@@ -140,7 +140,7 @@
     },
     {
       "path": "parameters.tsv",
-      "sha256": "b015003104d94e65bdf79eaaef022b123589d64e90d55127879141a4668e869f"
+      "sha256": "c02a0314108a98f7a7934d09b7e88e62f037039a20bb1b37d46edb9bdc4af708"
     },
     {
       "path": "program/custodian.lp",
