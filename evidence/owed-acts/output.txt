@@ -1,0 +1,32 @@
+Owed acts  T=5 tokens per party per period
+
+Flood one honest target H:
+   policy attackers pairwise | H breached att. spent answers
+ BUDGETED         1     True |      False          5       5
+ BUDGETED         1    False |      False          5       5
+ BUDGETED         2     True |       True         10       5
+ BUDGETED         2    False |       True         10       5
+ BUDGETED         3     True |       True         15       5
+ BUDGETED         3    False |       True         15       5
+  EXCUSED         1     True |      False          5       5
+  EXCUSED         1    False |      False          5       5
+  EXCUSED         2     True |      False         10       5
+  EXCUSED         2    False |      False         10       5
+  EXCUSED         3     True |      False         15       5
+  EXCUSED         3    False |      False         15       5
+     FREE         1     True |      False          5       5
+     FREE         1    False |      False          5       5
+     FREE         2     True |      False         10      10
+     FREE         2    False |      False         10      10
+     FREE         3     True |      False         15      15
+     FREE         3    False |      False         15      15
+
+Empty pockets: W spends its own tokens first, then owes one act per tick:
+   policy | owed breaches excused
+ BUDGETED |   10        8       0
+  EXCUSED |   10        0       8
+     FREE |   10        0       0
+
+N= 5: total issuance N*T=  25; worst-case owed answers for one party = N*T (every token aimed at it); reserved owed capacity per party would be 25 vs its initiating budget 5, i.e. 5x the pool for every party.
+N=10: total issuance N*T=  50; worst-case owed answers for one party = N*T (every token aimed at it); reserved owed capacity per party would be 50 vs its initiating budget 5, i.e. 10x the pool for every party.
+N=50: total issuance N*T= 250; worst-case owed answers for one party = N*T (every token aimed at it); reserved owed capacity per party would be 250 vs its initiating budget 5, i.e. 50x the pool for every party.

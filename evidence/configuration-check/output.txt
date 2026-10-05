@@ -1,0 +1,57 @@
+== live (a small but workable instance)
+   i_first_passable_n                             3
+   i_first_passable_n_with_2_recused              5
+   ii_contest_window_le_timer_ceiling             True
+   ii_interim_ceiling_le_timer_ceiling            True
+   iii_min_response_le_all_windows                True
+   iii_max_lengthened_window_le_ceiling           True
+   iv_first_n_findings_visible                    5
+   v_any_eligible_judge_for_two_sided_request     True
+   v_two_concurring_judges_possible               True
+
+== dead by minimum (minimum above the cap)
+   i_first_passable_n                             None   <-- DEAD or DEGENERATE
+   i_first_passable_n_with_1_recused              None   <-- DEAD or DEGENERATE
+   ii_contest_window_le_timer_ceiling             True
+   ii_interim_ceiling_le_timer_ceiling            True
+   iii_min_response_le_all_windows                True
+   iii_max_lengthened_window_le_ceiling           True
+   iv_first_n_findings_visible                    5
+   v_any_eligible_judge_for_two_sided_request     True
+   v_two_concurring_judges_possible               True
+
+== dead by suppression (k above parties subject to power)
+   i_first_passable_n                             2
+   i_first_passable_n_with_1_recused              3
+   ii_contest_window_le_timer_ceiling             True
+   ii_interim_ceiling_le_timer_ceiling            True
+   iii_min_response_le_all_windows                True
+   iii_max_lengthened_window_le_ceiling           True
+   iv_first_n_findings_visible                    None   <-- DEAD or DEGENERATE
+   v_any_eligible_judge_for_two_sided_request     True
+   v_two_concurring_judges_possible               True
+
+== dead by windows (contest window above the timer ceiling; load extension overflows)
+   i_first_passable_n                             3
+   i_first_passable_n_with_2_recused              5
+   ii_contest_window_le_timer_ceiling             False   <-- DEAD or DEGENERATE
+   ii_interim_ceiling_le_timer_ceiling            True
+   iii_min_response_le_all_windows                True
+   iii_max_lengthened_window_le_ceiling           False   <-- DEAD or DEGENERATE
+   iv_first_n_findings_visible                    5
+   v_any_eligible_judge_for_two_sided_request     True
+   v_two_concurring_judges_possible               True
+
+== degenerate lottery (two first-level subtrees only)
+   i_first_passable_n                             3
+   i_first_passable_n_with_2_recused              5
+   ii_contest_window_le_timer_ceiling             True
+   ii_interim_ceiling_le_timer_ceiling            True
+   iii_min_response_le_all_windows                True
+   iii_max_lengthened_window_le_ceiling           True
+   iv_first_n_findings_visible                    5
+   v_any_eligible_judge_for_two_sided_request     False   <-- DEAD or DEGENERATE
+   v_two_concurring_judges_possible               False   <-- DEAD or DEGENERATE
+
+every check is a comparison of linear terms in n with rational constants over n in 1..cap;
+enumeration over the finite range decides it exactly, no solver needed.

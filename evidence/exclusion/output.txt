@@ -1,0 +1,55 @@
+==============================================================================
+exclusion.lp
+==============================================================================
+rules: 19  facts: 42  components: 30
+stratified (neg+count): True
+range-restricted (own check): True
+arithmetic only in non-recursive strata: True
+count is the only aggregate: True
+answer sets: 1
+  EXPECT     below_cost(q8)                                ok
+  EXPECT     passes(q8)                                    ok
+  EXPECT     captured_a(q8)                                ok
+  EXPECT     passes(q9)                                    ok
+  EXPECT     captured_a(q9)                                ok
+  EXPECT     escalates(q10)                                ok
+  EXPECT     too_few_b(q10)                                ok
+  EXPECT-NOT passes_b(q8)                                  ok
+  EXPECT-NOT captured_b(q8)                                ok
+  EXPECT-NOT passes_b(q9)                                  ok
+
+==============================================================================
+SUMMARY
+==============================================================================
+program                                strat  rr     arith  count  models  expect
+exclusion.lp                           True   True   True   True   1       10/10
+
+Exclusions a sub-capture coalition needs (None = impossible before escalation)
+  N share cost  c |  pass, shrinking base | pass, frozen base | to escalate
+  5   1/2    3  1 |                  None |              None |           3
+  5   1/2    3  2 |                  None |              None |           3
+  5   2/3    4  1 |                  None |              None |           3
+  5   2/3    4  2 |                  None |              None |           3
+  5   2/3    4  3 |                     1 |              None |           3
+  8   1/2    4  1 |                  None |              None |           6
+  8   1/2    4  2 |                  None |              None |           6
+  8   1/2    4  3 |                     2 |              None |           6
+  8   2/3    6  1 |                  None |              None |           6
+  8   2/3    6  4 |                     2 |              None |           6
+  8   2/3    6  5 |                     1 |              None |           6
+ 12   1/2    6  1 |                  None |              None |          10
+ 12   1/2    6  4 |                     4 |              None |          10
+ 12   1/2    6  5 |                     2 |              None |          10
+ 12   2/3    8  1 |                  None |              None |          10
+ 12   2/3    8  6 |                     3 |              None |          10
+ 12   2/3    8  7 |                     2 |              None |          10
+ 20   1/2   10  1 |                  None |              None |          18
+ 20   1/2   10  8 |                     4 |              None |          18
+ 20   1/2   10  9 |                     2 |              None |          18
+ 20   2/3   14  1 |                  None |              None |          18
+ 20   2/3   14 12 |                     2 |              None |          18
+ 20   2/3   14 13 |                     1 |              None |          18
+
+Reading: under a shrinking base a coalition one below the capture cost passes
+with a handful of exclusions; under a frozen base no number of exclusions
+passes anything (exclusion can only block or escalate).

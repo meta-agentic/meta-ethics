@@ -1,0 +1,25 @@
+==============================================================================
+keyed_views.lp
+==============================================================================
+rules: 22  facts: 32  components: 30
+stratified (neg+count): True
+range-restricted (own check): True
+arithmetic only in non-recursive strata: True
+count is the only aggregate: True
+answer sets: 1
+  EXPECT     resolved(k2,bob)                              ok
+  EXPECT     resolved(k3,cat)                              ok
+  EXPECT     linked(f2,bob)                                ok
+  EXPECT     elim(k1,ann)                                  ok
+  EXPECT     exposed(bob)                                  ok
+  EXPECT     exposed(cat)                                  ok
+  EXPECT     exposed(ann)                                  ok
+  EXPECT     view(f1,r_scope)                              ok
+  EXPECT     m_resolved_by_effect(f3,cat)                  ok
+  EXPECT-NOT view_object(f1,obj_ledger)                    ok
+
+==============================================================================
+SUMMARY
+==============================================================================
+program                                strat  rr     arith  count  models  expect
+keyed_views.lp                         True   True   True   True   1       10/10

@@ -1,0 +1,174 @@
+==============================================================================
+closure_by_partner.lp
+==============================================================================
+rules: 10  facts: 21  components: 18
+stratified (neg+count): True
+range-restricted (own check): True
+arithmetic only in non-recursive strata: True
+count is the only aggregate: True
+answer sets: 1
+  EXPECT     p1_closed(v1)                                 ok
+  EXPECT     open(v1)                                      ok
+  EXPECT     closed(v2)                                    ok
+  EXPECT-NOT closed(v1)                                    ok
+==============================================================================
+obstruction.lp
+==============================================================================
+rules: 42  facts: 95  components: 74
+stratified (neg+count): True
+range-restricted (own check): True
+arithmetic only in non-recursive strata: True
+count is the only aggregate: True
+answer sets: 1
+  EXPECT     passes(q1)                                    ok
+  EXPECT     lapses(q2)                                    ok
+  EXPECT     lapses(q3)                                    ok
+  EXPECT     lapses(q4)                                    ok
+  EXPECT     lapses(q5)                                    ok
+  EXPECT     passes_responder(q5)                          ok
+  EXPECT     too_few(q6)                                   ok
+  EXPECT     escalates(q6)                                 ok
+  EXPECT     undecided(q7)                                 ok
+  EXPECT     capacity(sub3,1)                              ok
+  EXPECT     total_held(7)                                 ok
+  EXPECT     capacity(sub1,1)                              ok
+  EXPECT     bad_pass(t4,m4)                               ok
+  EXPECT     double_pass(t2,orch)                          ok
+  EXPECT     conservation_broken                           ok
+  EXPECT     severity(q1,1)                                ok
+  EXPECT     priority(q2,13)                               ok
+  EXPECT     new_evidence(e3,mt1)                          ok
+  EXPECT     absent_only(e4,mt1)                           ok
+  EXPECT     over_ceiling(p1,mt1)                          ok
+  EXPECT     knew(bob,risk_y,4)                            ok
+  EXPECT     flooded(mallory,bob,per1)                     ok
+  EXPECT     blocked(rq2)                                  ok
+  EXPECT-NOT passes(q5)                                    ok
+  EXPECT-NOT passes(q6)                                    ok
+  EXPECT-NOT severity(q1,3)                                ok
+  EXPECT-NOT new_evidence(e4,mt1)                          ok
+  EXPECT-NOT knew(bob,risk_x,1)                            ok
+  EXPECT-NOT blocked(rq3)                                  ok
+==============================================================================
+party_mandates.lp
+==============================================================================
+rules: 21  facts: 58  components: 29
+stratified (neg+count): True
+range-restricted (own check): True
+arithmetic only in non-recursive strata: True
+count is the only aggregate: True
+answer sets: 1
+  EXPECT     reaches(m2)                                   ok
+  EXPECT     orphan(gh2)                                   ok
+  EXPECT     scope_violation(m3,deploy)                    ok
+  EXPECT     scope_violation(m4,deploy)                    ok
+  EXPECT     holds(sub1,read)                              ok
+  EXPECT     implicit_mandate(g2,orch,contractor)          ok
+  EXPECT     answers_for(orch,x1)                          ok
+  EXPECT     attributed(x1,orch)                           ok
+  EXPECT     subject(contractor)                           ok
+  EXPECT     subject(leaver)                               ok
+  EXPECT     subject(outsider)                             ok
+  EXPECT     party_at(leaver,4)                            ok
+  EXPECT     attributed(x3,orch)                           ok
+  EXPECT     attributed(x3,founder)                        ok
+  EXPECT     seats_held(2)                                 ok
+  EXPECT     seats_claimed(5)                              ok
+  EXPECT     unratified_seat(seat4)                        ok
+  EXPECT-NOT reaches(m9)                                   ok
+  EXPECT-NOT holds(sub2,deploy)                            ok
+  EXPECT-NOT party_at(leaver,6)                            ok
+  EXPECT-NOT party_at(outsider,4)                          ok
+  EXPECT-NOT attributed(x3,root)                           ok
+  EXPECT-NOT unattributed(x4)                              ok
+==============================================================================
+sameness.lp
+==============================================================================
+rules: 36  facts: 56  components: 45
+stratified (neg+count): True
+range-restricted (own check): True
+arithmetic only in non-recursive strata: True
+count is the only aggregate: True
+answer sets: 1
+  EXPECT     inadmissible(rq3)                             ok
+  EXPECT     repeat(rq2,rq1)                               ok
+  EXPECT     immaterial(rq2)                               ok
+  EXPECT     blocked(rq2)                                  ok
+  EXPECT     material(rq4)                                 ok
+  EXPECT     admitted(rq4)                                 ok
+  EXPECT     admitted(rq5)                                 ok
+  EXPECT     bound(bob,rq2)                                ok
+  EXPECT     unattributed(j3)                              ok
+  EXPECT     eligible_judge(rq2,judgeA)                    ok
+  EXPECT     n_eligible(rq2,4)                             ok
+  EXPECT     reply_admissible(rp1)                         ok
+  EXPECT-NOT blocked(rq4)                                  ok
+  EXPECT-NOT pending(rq5)                                  ok
+  EXPECT-NOT bound(carol,rq2)                              ok
+  EXPECT-NOT eligible_judge(rq2,judgeX)                    ok
+  EXPECT-NOT eligible_judge(rq2,judgeY)                    ok
+  EXPECT-NOT eligible_judge(rq2,bob)                       ok
+==============================================================================
+working_state.lp
+==============================================================================
+rules: 22  facts: 33  components: 32
+stratified (neg+count): True
+range-restricted (own check): True
+arithmetic only in non-recursive strata: True
+count is the only aggregate: True
+answer sets: 1
+  EXPECT     open(a1)                                      ok
+  EXPECT     latest_passing(a,r1)                          ok
+  EXPECT     closed(a3)                                    ok
+  EXPECT     open(a4)                                      ok
+  EXPECT     open_count_sat(b,2)                           ok
+  EXPECT     open_count(b,3)                               ok
+  EXPECT     age(a4,5)                                     ok
+  EXPECT     age(a6,4)                                     ok
+  EXPECT     closer_outside(a1,c1)                         ok
+  EXPECT     stuck_against(a1,c2)                          ok
+  EXPECT     closable_outside_chain(a1)                    ok
+  EXPECT-NOT closed(a4)                                    ok
+  EXPECT-NOT outside_chain(b,a)                            ok
+==============================================================================
+x_capacity_transfer_nonstratified.lp
+==============================================================================
+rules: 5  facts: 10  components: 6
+stratified (neg+count): False
+range-restricted (own check): True
+arithmetic only in non-recursive strata: False
+count is the only aggregate: True
+  ! NOT STRATIFIED: neg edge gave_away/3 -> holds_at/3 inside a recursive component
+  ! ARITHMETIC IN RECURSIVE STRATUM: holds_at(E,Tk,T1) :- valid_pass(Tk,M,T); mandate(M,_,E); T1 = (T+1).
+  ! ARITHMETIC IN RECURSIVE STRATUM: holds_at(P,Tk,T1) :- holds_at(P,Tk,T); time(T1); T1 = (T+1); not gave_away(P,Tk,T).
+answer sets: 1
+  EXPECT     holds_at(sub1,t1,3)                           ok
+==============================================================================
+x_pending_naive_nonstratified.lp
+==============================================================================
+rules: 4  facts: 6  components: 7
+stratified (neg+count): False
+range-restricted (own check): True
+arithmetic only in non-recursive strata: True
+count is the only aggregate: True
+  ! NOT STRATIFIED: neg edge blocked/1 -> pending_at/2 inside a recursive component
+answer sets: 1
+  EXPECT     blocked(rq2)                                  ok
+
+==============================================================================
+SUMMARY
+==============================================================================
+program                                strat  rr     arith  count  models  expect
+closure_by_partner.lp                  True   True   True   True   1       4/4
+obstruction.lp                         True   True   True   True   1       29/29
+party_mandates.lp                      True   True   True   True   1       23/23
+sameness.lp                            True   True   True   True   1       18/18
+working_state.lp                       True   True   True   True   1       13/13
+x_capacity_transfer_nonstratified.lp   False  True   False  True   1       1/1
+x_pending_naive_nonstratified.lp       False  True   True   True   1       1/1
+
+symmetry_check.py (renaming two judges in sameness.lp)
+ASYMMETRIC  drawn            pi(original)=['drawn(rq2,judgeA)', 'drawn(rq5,judgeA)']   permuted=['drawn(rq2,judgeC)', 'drawn(rq5,judgeC)']
+ASYMMETRIC  rank             pi(original)=['rank(rq2,carol,0)', 'rank(rq2,judgeA,3)', 'rank(rq2,judgeB,2)', 'rank(rq2,judgeC,1)', 'rank(rq4,carol,0)', 'rank(rq4,judgeA,3)', 'rank(rq4,judgeB,2)', 'rank(rq4,judgeC,1)', 'rank(rq5,carol,0)', 'rank(rq5,judgeA,3)', 'rank(rq5,judgeB,2)', 'rank(rq5,judgeC,1)']   permuted=['rank(rq2,carol,0)', 'rank(rq2,judgeA,1)', 'rank(rq2,judgeB,2)', 'rank(rq2,judgeC,3)', 'rank(rq4,carol,0)', 'rank(rq4,judgeA,1)', 'rank(rq4,judgeB,2)', 'rank(rq4,judgeC,3)', 'rank(rq5,carol,0)', 'rank(rq5,judgeA,1)', 'rank(rq5,judgeB,2)', 'rank(rq5,judgeC,3)']
+
+predicates checked: 44   asymmetric: ['drawn', 'rank']
