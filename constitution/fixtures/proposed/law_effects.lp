@@ -49,6 +49,8 @@ finding(g3, h3, 10). interim(i3, g3, 10).
 finding(g4, h3, 80). closed_in_favour(g4).
 duty_on(u2, x9, h3). duty_from_act(u2, q2).
 finding(g5, h1, 80). cites(g5, x10). duty_on(u3, x10, h1).
+% the filer marks each other act's effect reversible
+reversible_marking(q1). reversible_marking(q2). reversible_marking(q3). reversible_marking(q4). reversible_marking(q5). reversible_marking(q6). reversible_marking(q8). reversible_marking(q9).
 
 % EXPECT[LV.2]: pr_law_hold(q1)
 % EXPECT[LV.5]: pr_act_not_effective(q1)

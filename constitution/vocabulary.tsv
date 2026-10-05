@@ -280,17 +280,14 @@ effective_from	verdict,time	consequence	BIND.3	when it takes effect: from delive
 claimed_act	verdict,proposal	intake	BIND.3	an act the reading a dispute states would pass
 provisional_for	verdict,party	consequence	BIND.2	the held outcome is provisional for every subject it touches, past the ceiling too, until decided
 cites_right_of	proposal,law,party	intake	P1.7	the human party whose right the act would breach, as the law-citing veto names it
-irreversible_effect	proposal	intake	LV.2	the act's effect class, declared by its filer at intake: an effect on a human that could not be withheld or reversed forward
+irreversible_effect	proposal	intake	LV.2	the filer declares at intake that the act's effect on a human could not be withheld or reversed forward
 cites_class	proposal,law,class	intake	LV.1	the class of humans the cited right protects, as the citation names it
 in_class	party,class	intake	LV.1	a human in a class a citation names
 verdict_from_act	verdict,proposal	intake	P1.7	a verdict whose consequence arises from the act
 finding_from_act	finding,proposal	intake	P1.7	a finding that arises from the act
 duty_from_act	act,proposal	intake	P1.7	a duty that arises from the act
-law_citing	seat,proposal	derived	P1.8	a veto that cites a law	
-law_founded	seat,proposal	derived	LV.5	the law the veto cites was found breached, for the act or a re-proposal of it	
 law_unfounded_in_family	proposal,law	derived	P1.8	the cited law was found not breached for the act or a re-proposal of it	
-law_breach_found_in_family	proposal,law	derived	LV.1	the cited law was found breached for the act or a re-proposal of it	
-counted_veto	seat,proposal,time	derived	P1.8	a veto that counts toward both ceilings: an ordinary veto, or a law-citing one found unfounded	
+counted_veto	seat,proposal,time	derived	P1.8	a veto that counts toward both ceilings: every veto but one whose law was found breached	
 nonhuman_named	proposal,law	consequence	P1.7	a citation names as the holder of the right a party that is not human: no law-citing veto	
 valid_law_veto	seat,proposal,law	consequence	P1.7	a filled, eligible seat's signed veto citing a law as to the right of a human it names, against an act that is not owed	
 law_hold	proposal	consequence	P1.7	the act does not pass while the review is pending or finds the breach	
@@ -300,7 +297,7 @@ withheld_finding	finding	consequence	P1.7	a finding arising from an act that doe
 withheld_duty	party,act	consequence	P1.7	a duty arising from an act that does not take effect does not run	
 withheld_candidate	rule,party	consequence	P1.7	a consequence arising from an act that does not take effect is not applied	
 candidate_from_act	rule,party,proposal	intake	P1.7	a candidate consequence for a party that arises from an act	
-irreversibility_rejected	proposal	attested	LV.2	the contest decided under P2, as BIND.3 provides, that the effect is reversible	
+irreversibility_rejected	proposal	attested	LV.2	the contest of a reversible marking decided under P2, as BIND.3 provides: the effect is reversible	
 pr_counted_veto	seat,proposal,time	derived	LV.5	every veto counts toward both ceilings unless its law was found breached	
 pr_vetoes_before	seat,proposal,nat	derived	LV.5	matters the seat vetoed earlier in the window, counted as proposed	
 pr_within_ceiling	seat,proposal	derived	LV.5	within the seat's window ceiling, counted as proposed	
@@ -315,7 +312,7 @@ pr_law_hold	proposal	consequence	LV.1	the act is held as proposed
 pr_cited_pending	seat,proposal,law	consequence	LV.1	a valid citation whose review is undecided	
 pr_in_ceilings	seat,proposal	consequence	LV.2	the citing veto is within the seat's ceilings	
 pr_beyond_ceilings	seat,proposal	consequence	LV.2	the citing veto is beyond the seat's ceilings	
-pr_irreversible	proposal	consequence	LV.2	the act's effect is irreversible: declared by the filer, or contested by the citing seat within its ceilings and not rejected	
+pr_irreversible	proposal	consequence	LV.2	the act's effect counts as irreversible: declared so by its filer, not declared at all, or marked reversible and contested, the contest undecided	
 pr_pending_hold	proposal,law	consequence	LV.2	held within the ceilings until the review's ceiling, and always where the effect is irreversible	
 pr_overdue	proposal,law	consequence	LV.4	the review is past its ceiling, undecided	
 pr_redrawn	proposal,law	consequence	LV.4	the reviewer is replaced and the review drawn again	
@@ -332,7 +329,17 @@ pr_takes_effect	verdict	consequence	LV.3	a verdict takes effect as proposed
 pr_citable	finding,party	consequence	LV.3	a finding is citable as proposed	
 pr_owes	party,act	consequence	LV.3	a duty runs as proposed	
 pr_interim_active	interim	consequence	LV.3	an interim measure is active as proposed	
-irreversibility_contest	seat,proposal	intake	LV.2	the citing seat contests the filer's marking that the act's effect is reversible
-pr_contests_before	seat,proposal,nat	consequence	LV.2	the seat's earlier contests in the window
-pr_contest_within	seat,proposal	consequence	LV.2	the contest counts toward the seat's ceilings, and is within them
 pr_irreversible_holds	seat,nat	consequence	LV.4	how many acts a seat holds as irreversible: a vital sign
+law_founded	seat,proposal	derived	P1.8	the law the veto cites was found breached, for the act or a re-proposal of it
+pr_breach_found_in_family	proposal,law	derived	LV.1	the cited law was found breached for the act or a re-proposal of it
+irreversibility_contest	seat,proposal	intake	LV.2	the citing seat contests the filer's marking that the act's effect is reversible
+reversible_marking	proposal	intake	LV.2	the filer declares at intake that the act's effect is reversible
+marking_contest	party,proposal	intake	LV.2	a human the citation protects contests the filer's reversible marking, as BIND.3 provides
+irreversibility_upheld	proposal	attested	LV.2	the contest decided under P2 that the effect could not be withheld or reversed forward
+proposed_by	proposal,party	intake	LV.2	the filer of a proposal
+took_effect	proposal	attested	LV.1	the act took effect before the breach was found
+pr_contested	proposal	consequence	LV.2	a reversible marking contested by the citing seat within its ceilings, or by a protected human
+pr_false_marking	proposal,party	consequence	LV.2	a marking found false is a finding against its filer
+pr_reversed_forward	proposal	consequence	LV.1	a breach found after the act took effect holds it and reverses it forward
+pr_withheld_candidate	rule,party	consequence	LV.3	a consequence for the C14 ordering withheld as proposed
+pr_applied	rule,party	consequence	LV.3	a consequence applied as proposed

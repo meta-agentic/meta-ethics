@@ -29,6 +29,8 @@ veto_cites_law(ca, q6, l6). cites_right_of(q6, l6, h6).
 passed_channel(q4). matter_of(q4, x4). veto(ch, q4, 13). veto_signed(ch, q4). veto_cites_law(ch, q4, l4).
 cites_right_of(q4, l4, h4). law_unfounded(q4, l4).
 decided_seq(q0, 5). decided_seq(q1, 10). decided_seq(q2, 11). decided_seq(q3, 12). decided_seq(q4, 13). decided_seq(q5, 14). decided_seq(q6, 15).
+% the filer marks each other act's effect reversible
+reversible_marking(q0). reversible_marking(q1). reversible_marking(q2). reversible_marking(q3). reversible_marking(q5). reversible_marking(q6). reversible_marking(q4).
 
 % EXPECT[LV.5]: pr_within_ceiling(ch,q0)
 % EXPECT-NOT[LV.2]: pr_law_hold(q1)
