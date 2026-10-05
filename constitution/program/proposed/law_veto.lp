@@ -39,21 +39,29 @@ pr_cited_pending(S, Q, L) :- pr_valid_law_veto(S, Q, L), not law_unfounded_in_fa
 
 % clause: LV.2
 % within the seat's ceilings and until the review's ceiling; an irreversible
-% effect, declared at intake or by the citing seat and not rejected, is held
-% until the review decides
+% effect, declared by the filer at intake, or contested by the citing seat
+% within its ceilings and not yet rejected, is held until the review decides
 pr_in_ceilings(S, Q) :- pr_valid_law_veto(S, Q, _), pr_within_ceiling(S, Q), pr_within_act_bound(Q).
 pr_beyond_ceilings(S, Q) :- pr_valid_law_veto(S, Q, _), not pr_in_ceilings(S, Q).
 pr_irreversible(Q) :- irreversible_effect(Q).
-pr_irreversible(Q) :- declared_irreversible(S, Q), pr_valid_law_veto(S, Q, _), not irreversibility_rejected(Q).
+pr_contests_before(S, Q, N) :- irreversibility_contest(S, Q), decided_seq(Q, K), param(veto_window, W),
+                               N = #count{ Q2 : irreversibility_contest(S, Q2), decided_seq(Q2, K2), K2 < K, K - K2 < W }.
+pr_contest_within(S, Q) :- pr_contests_before(S, Q, N), param(veto_ceiling, C), N < C.
+pr_irreversible(Q) :- irreversibility_contest(S, Q), pr_valid_law_veto(S, Q, _), pr_contest_within(S, Q),
+                      not irreversibility_rejected(Q).
 pr_pending_hold(Q, L) :- pr_cited_pending(S, Q, L), pr_in_ceilings(S, Q), not pr_overdue(Q, L),
                          not pr_irreversible(Q).
 pr_pending_hold(Q, L) :- pr_cited_pending(_, Q, L), pr_irreversible(Q).
 pr_law_hold(Q) :- pr_pending_hold(Q, _).
 
 % clause: LV.4
+pr_irreversible_holds(S, N) :- custodian_seat(S),
+                               N = #count{ Q : pr_pending_hold(Q, _), pr_irreversible(Q), pr_cited_pending(S, Q, _) }.
 pr_overdue(Q, L) :- pr_cited_pending(S, Q, L), veto(S, Q, T), now(N), param(law_review_ceiling, X), N - T >= X.
 pr_redrawn(Q, L) :- pr_overdue(Q, L).
 pr_counts_toward_d2(Q) :- pr_overdue(Q, _).
+
+% clause: LV.4 H3.11
 pr_genesis_cost_hold(Q) :- pr_pending_hold(Q, L), pr_irreversible(Q), pr_overdue(Q, L), not regime_exited.
 
 % clause: LV.3
