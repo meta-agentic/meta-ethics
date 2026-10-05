@@ -171,6 +171,7 @@ H3.7	todo	02:H3	until programmed: binds in full; the instance's adoption record 
 H3.8	program	02:H3		
 H3.9	todo	02:H3	until programmed: binds in full; the instance's adoption record attests it (D6.2); conformance on the parent fixtures does not test it (C15.4)	
 H3.10	cost	02:§accepted-costs/the-genesis-regime-is-disclosed-not-cured		
+H3.11	proposed		founder decision pending	proposed addition to the genesis costs from review; in neither record
 S1.1	todo	02:S1	until programmed: binds in full; the instance's adoption record attests it (D6.2); conformance on the parent fixtures does not test it (C15.4)	
 S1.2	todo	02:S1	until programmed: binds in full; the instance's adoption record attests it (D6.2); conformance on the parent fixtures does not test it (C15.4)	
 S1.3	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
@@ -227,6 +228,11 @@ P1.20	program	02:P1 01:§accepted-costs
 P1.21	program	02:P1		
 P1.22	procedural	02:P1	founding document disclosures (H3); custody structure published as verification material	parameter declaration
 P1.23	cost	02:§accepted-costs/two-last-words-can-deadlock		
+LV.1	proposed		founder decision pending	proposed replacement for P1.7 and P1.8, merged from two reviews; in neither record
+LV.2	proposed		founder decision pending	proposed replacement for P1.7 and P1.8, merged from two reviews; in neither record
+LV.3	proposed		founder decision pending	proposed replacement for P1.7 and P1.8, merged from two reviews; in neither record
+LV.4	proposed		founder decision pending	proposed replacement for P1.7 and P1.8, merged from two reviews; in neither record
+LV.5	proposed		founder decision pending	proposed replacement for P1.7 and P1.8, merged from two reviews; in neither record
 P2.1	program	02:P2 02:A2		
 P2.2	program	02:P2 02:A2		
 P2.3	program	02:P2 02:A2		
@@ -263,11 +269,6 @@ OD23.5	cost	02:§accepted-costs/accountability-outside-the-system-waits-for-law
 BIND.1	proposed		founder decision pending	proposed remedy where the program and the prose disagree; not in either record
 BIND.2	proposed		founder decision pending	proposed remedy where the program and the prose disagree; not in either record
 BIND.3	proposed		founder decision pending	proposed remedy where the program and the prose disagree; not in either record
-LV.1	proposed		founder decision pending	proposed replacement for P1.7 and P1.8 from review; in neither record
-LV.2	proposed		founder decision pending	proposed replacement for P1.7 and P1.8 from review; in neither record
-LV.3	proposed		founder decision pending	proposed replacement for P1.7 and P1.8 from review; in neither record
-LV.4	proposed		founder decision pending	proposed replacement for P1.7 and P1.8 from review; in neither record
-LV.5	proposed		founder decision pending	proposed replacement for P1.7 and P1.8 from review; in neither record
 OPEN.1	open	01:§open-decisions-adr-eth-01-od-n 02:§open-decisions		
 OPEN.2	open	01:§open-decisions-adr-eth-01-od-n 02:§open-decisions		
 OPEN.3	open	01:§open-decisions-adr-eth-01-od-n 02:§open-decisions		
