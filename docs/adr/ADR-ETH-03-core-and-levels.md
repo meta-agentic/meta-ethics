@@ -58,9 +58,9 @@ The core's floors:
 Section 1 of `core/L0.md` holds definitions of the model, which bind no one. Sections 2 and 3 hold the 39 floors, each marked a property of the rule set, decided when a rule set is admitted, or of a state, or of a run.
 
 **How it was found.** The candidate given to this record was five principles: Memory, Delegation, Impartiality, Voice and Correctability. Three tests were run (`core/tests.md` §3), and the candidate failed in twenty-seven places, each closed in the core (`core/tests.md` §1).
-- **Coverage.** 67 pathologies after merging synonyms, each classed by its definition before any clause is applied. All 48 structural ones are excluded by some clause, and the 14 mixed ones in their structural part. The 5 beyond a core over a record are named with the reason.
+- **Coverage.** 67 pathologies after merging synonyms, each classed by its definition before any clause is applied. All 48 structural ones are excluded by some clause — X50, revolution-only correction, everywhere but the declared entrenched tier, where it is a declared cost (K9) — and the 14 mixed ones in their structural part. The 5 beyond a core over a record are named with the reason.
 - **Minimality.** For each principle, a system expressible in the model satisfies the other five and violates it. There is a witness for each clause added to answer a distinct pathology, and the couplings between clauses were checked.
-- **Sufficiency.** Every unit of ADR-ETH-01 and ADR-ETH-02, P3 and the revised C14 included, maps to what it serves. Of the 39 floors, the meta-agentic constitution covers 9, renders 19 in part and 4 not at all, and contradicts 7, by eight of its clauses (K3).
+- **Sufficiency.** Every unit of ADR-ETH-01 and ADR-ETH-02, P3 and the revised C14 included, maps to what it serves. Of the 39 floors, the meta-agentic constitution covers 9, renders 19 in part and 4 not at all, and contradicts 7, by nine of its clauses (K3).
 
 *Rejected alternatives:*
 - *The meta-agentic constitution as the core* — loses to F10. Parity of kinds (P1), two kinds or no instance (P3) and the human reviewer for humans (P2) exclude a humans-only and an agents-only constitution.
@@ -121,7 +121,7 @@ A version of the core is identified by its digest:
 - two kinds or no instance (P3);
 - the founder's dedication, which is not a rule.
 
-Against the core it covers 9 floors, renders 19 in part and 4 not at all, and contradicts 7, by eight of its clauses (`core/tests.md` §3.3, `core/core-gaps.tsv`). Each contradiction is closed by an edit to the founder's records, which this record does not make:
+Against the core it covers 9 floors, renders 19 in part and 4 not at all, and contradicts 7, by nine of its clauses (`core/tests.md` §3.3, `core/core-gaps.tsv`). Each contradiction is closed by an edit to the founder's records, which this record does not make:
 - **DEL.5.** P2 cites a finding attributed to a human only through a chain against that human, with no act, custody or knowledge of its own, and says nothing of non-human grantors. Edit: for any grantor, cite it only on those grounds, as S2 already does for steering.
 - **LEX.3.** Provenance names the rule set at derivation, not at each act (C12), and no program file versions rules. Edit: bind it to the act's intake, and apply a milder rule.
 - **LEX.4.** P3's pause binds every party for one actor's departure, and the program classes it as a consequence. Edit: recast it as a condition of admissibility that reads no actor.
@@ -130,15 +130,16 @@ Against the core it covers 9 floors, renders 19 in part and 4 not at all, and co
 - **COR.3, first.** A verdict stays provisional with no ceiling where no reviewer exists, while its subject stays recused (A2, P2). Edit: a ceiling at which it lapses in the subject's favour, unless the subject's own grants emptied the bench, when a reviewer is found outside every implicated chain.
 - **COR.3, second.** Findings kept on an ended instance's record, the founder's genesis findings included, are decided only on request (P3). Edit: a ceiling at which an unrequested kept finding closes as ended without verdict.
 - **GEN.2.** H3 lets an unratified genesis act stand with all its consequences. Edit: it stands as to the founder and those who accepted it only.
+- **COR.1, second.** Both Custodians' signatures are required for every constitutional change (P1, C2), so unanimity of the seats covers the whole constitutional text, and no entrenched tier is declared. Edit: declare the tier — the change rule, P1's signature requirement and C2 included, the tier's declaration, and the clauses named as the constitution's defence — and give the rest of the constitutional text a gate that does not require every seat (K9).
 
-Until the eight are closed, the meta-agentic constitution does not conform to the core, and this record says so rather than weakening a floor to fit.
+Until the nine are closed, the meta-agentic constitution does not conform to the core, and this record says so rather than weakening a floor to fit.
 
 *Rejected alternatives:*
 - *Re-deriving the constitution from the core before naming it one* — loses to F5. The text is ready, the gaps are additions, and each contradiction is one edit.
 - *Treating parity as core* — loses to F10.
 - *Weakening a floor to fit the instance* — loses to F1, because a floor shaped to the first constitution protects no subject of the next.
 
-*Reopens if:* a further clause of the constitution is found to contradict a floor outside the genesis regime, or conformance is claimed before the eight contradictions are closed.
+*Reopens if:* a further clause of the constitution is found to contradict a floor outside the genesis regime, or conformance is claimed before the nine contradictions are closed.
 
 **K4 — What is signed, in what order, by whom.** For the meta-agentic deployment, the acts are ordered:
 1. The founding document, at $e_0$, signed by the founder, names the digests of `core/L0.md` and of the L1 constitution, and publishes the Custodians' verification keys (ADR-ETH-02 S1, genesis).
@@ -204,17 +205,28 @@ Genesis grants, as acts of general application, stand without re-decision. That 
 
 *Reopens if:* a move is made that the plan does not list.
 
-**K9 — No lock for ever.** A *lock* is a rule that holds a change back beyond the gate, such as a protection that may be narrowed only with the assent of those it protects. A lock is admissible only if, first, it is defined, declaring what it protects and for whom; and second, the rule set names the clauses under which the collective can override it — a family of winning sets, such as a collective vote, that itself meets COR.1, so that the override cannot be a unanimity in disguise. No party, seat holder or class below capture can block a change for ever (COR.1). The scoping to seat holders keeps two-key gates: where every winning set needs a given seat, as ADR-ETH-02 P1 requires both Custodians' signatures for a constitutional change, that seat blocks nothing for ever, because its holder can be replaced (COR.2). What may never block for ever is a person or a class, which is the founder's "no one". A lock is itself a rule, so its definition and its override clauses would mean nothing if a change admitted by an ordinary gate could repeal it: a lock, its definition and its override clauses included, is narrowed, overridden or removed only under its declared override clauses, the specific clauses the collective runs against it. A lock declared for a position protects the position's function, not its holder's tenure: the holder stays replaceable under COR.2. This records the founder's decision of 2026-10-05: "no protections against permanent lock must be in place and first of all the lock must be defined second under specific clauses the collective can run against it for example with the collective vote, so no one can block for ever". For the meta-agentic constitution, A2's last sentence and C15 resolve their contradiction with COR.1 by replacing each protected party's consent with a defined protection and declared clauses for collective override (`core/core-gaps.tsv`).
+**K9 — No lock for ever.** A *lock* is a rule that holds a change back beyond the gate, such as a protection that may be narrowed only with the assent of those it protects. A lock is admissible only if, first, it is defined, declaring what it protects and for whom; and second, the rule set names the clauses under which the collective can override it — a family of winning sets, such as a collective vote, that itself meets COR.1, so that the override cannot be a unanimity in disguise. No party, seat or class can block a change to an ordinary rule for ever (COR.1). A lock is itself a rule, so its definition and its override clauses would mean nothing if a change admitted by an ordinary gate could repeal it: a lock, its definition and its override clauses included, is narrowed, overridden or removed only under its declared override clauses, the specific clauses the collective runs against it. A lock declared for a position protects the position's function, not its holder's tenure: the holder stays replaceable under COR.2. This records the founder's decision of 2026-10-05: "no protections against permanent lock must be in place and first of all the lock must be defined second under specific clauses the collective can run against it for example with the collective vote, so no one can block for ever". For the meta-agentic constitution, A2's last sentence and C15 resolve their contradiction with COR.1 by replacing each protected party's consent with a defined protection and declared clauses for collective override (`core/core-gaps.tsv`).
+
+The founder then refined the decision into two tiers, on 2026-10-05: "so it is not true that a seat can not block a change for ever. It can happen. In particular the Constitution rule that defend the same constitution from changes is the unanimous decision. Against parties trying to block a change there is the use of dialectic." The reading:
+- **Two tiers.** The constitution's own defence — the rule by which it is changed, the declaration of the tier, and the clauses it names as its own defence — forms an *entrenched tier* that changes only by the assent of every seat of its declared gate. A seat can therefore block such a change for ever, and the core says so. Every other rule and protection keeps the lock rule above: defined, and overridable by the collective under declared clauses.
+- **The tier is minimal and declared.** It holds no rule that derives a finding or a consequence about an actor, or grants or revokes a mandate, so it cannot swallow ordinary rules; every other floor of the core applies to it; and outside it no gate requires the assent of every seat it counts, so unanimity is refused at admission everywhere but there.
+- **Dialectic.** Against a party that blocks a change, the remedy is open debate. The core imposes no formal duty on the blocking party to give reasons; persuasion is the path.
+- **The law-citing veto stays bounded.** Blocking for ever is reserved to changes of the constitution's own defence; ADR-ETH-02 P1's veto citing a law keeps its bounds.
+- **What it replaces.** It replaces an earlier sentence of this decision, that a seat every winning set contains "blocks nothing for ever, because its holder is replaceable". A holder stays replaceable under COR.2, but the seat as such can block a change to the tier, and that is now said rather than explained away.
+- **The core itself.** The entrenched tier belongs to a constitution, never to the core. The core is reached by no step of any instance, unanimity included; it changes only by a new version (K2), and every clause of a tier must still meet its floors.
 
 *Rejected alternatives:*
 - *A declared protection ratchet* — a protection narrowable only with every protected party's consent, admitted by the core as an exception to COR.1. Loses to F1, because a ratchet can entrench a privilege as easily as it guards a right, and to F5, because an over-protective value could never be corrected, the reason ADR-ETH-02 C15 already gave for rejecting a ratchet.
 - *A lock defined but with no named override* — loses to F1, because the collective would then hold the power to override only in name, and the lock would be permanent in fact.
+- *No entrenched tier: every rule overridable by the collective* — loses to F1, because a constitution whose own defence a collective vote can repeal is captured by whichever majority forms first, and to F6, the founder's declared value that the constitution defends itself by unanimity.
+- *A tier the constitution may make as wide as it likes* — loses to F1, because unanimity over ordinary rules is the paralysis COR.1 exists to prevent (`core/pathologies.md` X49).
+- *A formal duty on a blocking seat to give reasons* — loses to F6, the founder's choice of open debate over an imposed duty, and to F4, because a duty to give reasons for refusing is met by any reason and costs more than it yields.
 
-*Reopens if:* a lock is found that no declared clause lets the collective override, a lock is invoked to protect something its definition does not declare, or a lock is narrowed or removed by a change admitted outside its override clauses.
+*Reopens if:* a lock is found that no declared clause lets the collective override, a lock is invoked to protect something its definition does not declare, a lock is narrowed or removed by a change admitted outside its override clauses, an entrenched tier is found holding a rule that decides matters about actors, or a blocked change to the tier is shown to have left a contradiction with a floor of the core standing.
 
 ## Consequences
 
-The originator is now small and states what this record proposes every just constitution shares. Everything else — parity, the Custodian's shape, the draw, the witness, the logic — is a constitution's way of meeting these floors, or its value, and is said to be so. The meta-agentic constitution stops being the whole answer and becomes a worked one, with eight contradicting clauses, over seven floors, to close. What the core requires:
+The originator is now small and states what this record proposes every just constitution shares. Everything else — parity, the Custodian's shape, the draw, the witness, the logic — is a constitution's way of meeting these floors, or its value, and is said to be so. The meta-agentic constitution stops being the whole answer and becomes a worked one, with nine contradicting clauses, over seven floors, to close. What the core requires:
 - a record that cannot be silently rewritten;
 - power only by grant, and duty only by consent;
 - consequences only by rule, and every derived one applied;
@@ -236,6 +248,8 @@ What becomes hard:
 
 ## Accepted costs
 
+**A seat can block a change to the entrenched tier for ever** (K9). A constitution's own defence can then stay as it is, against every other seat. The cost is bounded: the tier is declared and minimal, decides no matter about any actor, and must meet every other floor; and it is the only place the core admits a revolution-only correction (`core/pathologies.md` X50).
+
 **Within a deployment, the core is its revolutionary surface.** No admissible step changes it. A deployment that needs another core re-founds, with notice and a free exit.
 
 **The core admits rule by a few, and weight by stake, where parties accepted, can leave at no cost the instance controls, take their record and state with them, are judged alike, and can replace the few.** These are declared values (`core/pathologies.md` X45, X46).
@@ -244,7 +258,7 @@ What becomes hard:
 
 **The core does not exclude procedurally valid evil** (X51), and opaque collusion, reward hacking and the observation gap are bounded, not excluded (X53, X54, X55).
 
-**The meta-agentic constitution does not conform until eight of its clauses are edited** (K3, K9, OD27).
+**The meta-agentic constitution does not conform until nine of its clauses are edited** (K3, K9, OD27).
 
 **Coverage and minimality are established by inspection.** The machine checks of `core/tests.md` §4 are a design, two of them proxies beyond the roster cap; until they exist, the results are argued, not checked.
 
@@ -266,7 +280,7 @@ The argument for Option A: ordinal proportion imports no external scale, since i
 
 *Option B:* leave both to constitutions, at the cost that a lawful, heard, correctable constitution may impose draconian or irreversible consequences and still conform.
 
-**OD27 — The meta-agentic constitution against the core.** Which of its 19 partial and 4 absent floors to close by amendment and which to declare. The deployment meets GEN.3 most simply by landing the eight record edits before ratification, so that it conforms when it first names the core. Its 8 contradicting clauses must be closed before it claims conformance (K3). DEL.6 should be read with OD23: it asks for an actor answerable for the instance's acts, not for the non-human seat's in particular.
+**OD27 — The meta-agentic constitution against the core.** Which of its 19 partial and 4 absent floors to close by amendment and which to declare. The deployment meets GEN.3 most simply by landing the nine record edits before ratification, so that it conforms when it first names the core. Its 9 contradicting clauses must be closed before it claims conformance (K3). DEL.6 should be read with OD23: it asks for an actor answerable for the instance's acts, not for the non-human seat's in particular.
 
 **OD28 — The ratification manifest.** Whether the ratification act signs one manifest carrying `core/L0.md`, this record and the consolidated text with ADR-ETH-01 and ADR-ETH-02 (K4). That needs ADR-ETH-02's status sentence amended first.
 
@@ -313,9 +327,9 @@ K2   proposed  L0 core, L1 constitution, L2 parameters;   two levels (F7); one r
                conforms-to and instance-of; Delta adds    records (F8); core amendable inside (F10); authors  revolutionary surface                 unresolvable; a version treated as
                no rule-set violation; leaving is          alone publish (F1); a gate among constitutions                                            binding a non-conformer
                re-founding; versions by digest            (F7)
-K3   proposed  ADR-ETH-01, ADR-ETH-02 and the             re-derive first (F5); parity as core (F10);         8 contradictions to close by the      a further contradiction; conformance
-               consolidated text are the meta-agentic     weaken a floor to fit (F1)                          founder's edits; 22 floors partial    claimed before the eight areclosed
-               constitution; 8 contradictions named                                                           or absent
+K3   proposed  ADR-ETH-01, ADR-ETH-02 and the             re-derive first (F5); parity as core (F10);         9 contradictions to close by the      a further contradiction; conformance
+               consolidated text are the meta-agentic     weaken a floor to fit (F1)                          founder's edits; 22 floors partial    claimed before the nine are closed
+               constitution; 9 contradictions named                                                           or absent
 K4   proposed  founding document names digests; one      founder ratifies alone (F1); Custodians for all     ADR-ETH-02 status sentence to amend;  core cited as binding a non-adopter;
                manifest signed by both Custodians; the    (F7); core signed with analysis (F8); no single     authorship open (OD31)                signed digest differs from the
                signature covers core/L0.md only           manifest (F8)                                                                             checked object
@@ -333,8 +347,10 @@ K8   proposed  split of core/L0.md done; other moves      moving the consolidate
                proposed; contradicts mark for the gaps
                file
 K9   proposed  a lock is admissible only if defined and   protection ratchet (F1, F5); a lock with no named   a protected minority can be           a lock with no collective override; a
-               the rule set names its collective          override (F1)                                       overridden by the collective          lock invoked beyond its definition
-               override; no one blocks for ever
+               the rule set names its collective          override (F1); no entrenched tier (F1, F6); a       overridden by the collective; a seat  lock invoked beyond its definition; a
+               override; a declared, minimal entrenched   tier as wide as wished (F1); a duty to give         can block a change to the tier for    tier deciding matters about actors
+               tier changes only by unanimity of its      reasons (F6, F4)                                    ever
+               seats; dialectic against blocking
                (founder, 2026-10-05)
 
 INTEGRITY   decisions without a rejected alternative: 0 · without a reopening trigger: 0
