@@ -18,7 +18,7 @@ causer(F) :- made_one_kind(A), founder_presumed(A), founder(F).
 causer(P) :- made_one_kind(A), controlled_by(A, P).
 controlled_act(A) :- controlled_by(A, _).
 
-% clause: P3.9
+% clause: P3.9 P3.11
 exit_by(T) :- regime_exit(E), finding(_, _, T), E <= T.
 kept_open(F) :- instance_ended, open(F), finding(F, P, _), causer(P).
 kept_open(F) :- instance_ended, open(F), finding(F, P, T), founder(P), not exit_by(T).

@@ -144,7 +144,7 @@ H2.5	todo	02:H2
 H3.1	procedural	02:H3	founding document disclosures and every party's inform channel; an exit not checkable from the record is an attested fact (C11)	
 H3.2	procedural	02:H3	founding document disclosures and every party's inform channel; an exit not checkable from the record is an attested fact (C11)	
 H3.3	program	02:H3		
-H3.4	todo	02:H3		
+H3.4	program	02:H3		
 H3.5	todo	02:H3		
 H3.6	procedural	02:H3	founding document disclosures and every party's inform channel; an exit not checkable from the record is an attested fact (C11)	
 H3.7	todo	02:H3		
@@ -188,8 +188,8 @@ P1.3	program	02:P1
 P1.4	program	02:P1		
 P1.5	program	02:P1 02:C9		
 P1.6	program	02:P1		
-P1.7	todo	02:P1		
-P1.8	todo	02:P1		
+P1.7	program	02:P1		
+P1.8	program	02:P1		
 P1.9	interpretive	02:P1		
 P1.10	todo	02:P1		
 P1.11	todo	02:P1		
@@ -207,10 +207,10 @@ P1.22	procedural	02:P1	founding document disclosures (H3); custody structure pub
 P2.1	program	02:P2 02:A2		
 P2.2	program	02:P2 02:A2		
 P2.3	todo	02:P2 02:A2		
-P2.4	interpretive	02:P2 02:A2		
+P2.4	program	02:P2 02:A2		
 P2.5	program	02:P2 02:A2		
 P2.6	procedural	02:P2 02:A2	configuration check (C18); founding document	
-P2.7	todo	02:P2 02:A2		
+P2.7	program	02:P2 02:A2		
 P2.8	procedural	02:P2 02:A2	configuration check (C18); founding document	parameter declaration
 P3.1	procedural	02:P3	configuration check (C18) of the founding document	
 P3.2	todo	02:P3		
@@ -222,7 +222,7 @@ P3.7	program	02:P3
 P3.8	program	02:P3		
 P3.9	program	02:P3		
 P3.10	procedural	02:P3	founding document names the keeper and the forum; configuration check (C18)	
-P3.11	todo	02:P3		
+P3.11	program	02:P3		
 P3.12	program	02:P3		
 P3.13	procedural	02:P3	founding document names the keeper and the forum; configuration check (C18)	parameter declaration
 DEDICATION.1	interpretive	02:Dedication		

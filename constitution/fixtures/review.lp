@@ -19,6 +19,22 @@ drawn_reviewer(v4, h1). reviewed(v4, h1).
 verdict(v5, h1, 10). bears_consequence(v5). consequence_on(v5, h1). filed_by(v5, n3).
 drawn_reviewer(v5, h2). reviewed(v5, h2).
 
+verdict_delivered(v1, 10). verdict_delivered(v2, 10). verdict_delivered(v3, 10).
+verdict_delivered(v4, 18). verdict_delivered(v5, 10).
+% derived at 2, delivered at 18: the window runs from delivery, so it has not passed
+verdict(v6, n3, 2). bears_consequence(v6). consequence_on(v6, n3). filed_by(v6, h2).
+verdict_delivered(v6, 18). drawn_reviewer(v6, n1). reviewed(v6, n1).
+% about subjects of both kinds, the consequence on the non-human one: a human reviews
+verdict(v7, n3, 5). also_about(v7, h2). bears_consequence(v7). consequence_on(v7, n3). filed_by(v7, h1).
+verdict_delivered(v7, 5). drawn_reviewer(v7, n1). reviewed(v7, n1).
+verdict(v8, n3, 5). also_about(v8, h2). bears_consequence(v8). consequence_on(v8, n3). filed_by(v8, n1).
+verdict_delivered(v8, 5). drawn_reviewer(v8, h1). reviewed(v8, h1).
+% a reviewer who benefits from the outcome, or has acted in the matter, is implicated
+verdict(v9, n2, 5). bears_consequence(v9). consequence_on(v9, n2). filed_by(v9, h1).
+verdict_delivered(v9, 5). drawn_reviewer(v9, n3). reviewed(v9, n3). benefits_from(n3, v9).
+verdict(v10, n2, 5). bears_consequence(v10). consequence_on(v10, n2). filed_by(v10, h1).
+verdict_delivered(v10, 5). drawn_reviewer(v10, h2). reviewed(v10, h2). acted_in(h2, v10).
+
 % EXPECT[A2.5]: takes_effect(v1)
 % EXPECT[A2.5]: provisional(v4)
 % EXPECT-NOT[A2.5]: takes_effect(v4)
@@ -29,5 +45,17 @@ drawn_reviewer(v5, h2). reviewed(v5, h2).
 % EXPECT[P2.2]: takes_effect(v5)
 % EXPECT-NOT[P2.2]: takes_effect(v2)
 % EXPECT-NOT[P2.2]: reviewer_kind_ok(v2,n3)
+% EXPECT[H1.5]: window_passed(v1)
+% EXPECT-NOT[H1.5]: window_passed(v6)
+% EXPECT-NOT[A2.5]: takes_effect(v6)
+% EXPECT[P2.5]: needs_human_reviewer(v7)
+% EXPECT[P2.5]: takes_effect(v8)
+% EXPECT-NOT[P2.5]: takes_effect(v7)
+% EXPECT[P2.4]: needs_human_reviewer(v2)
+% EXPECT-NOT[P2.4]: reviewer_kind_ok(v2,n3)
+% EXPECT[C21.2]: implicated(n3,v9)
+% EXPECT[C21.2]: implicated(h2,v10)
+% EXPECT-NOT[C21.2]: takes_effect(v9)
+% EXPECT-NOT[C21.2]: takes_effect(v10)
 % EXPECT[P2.5]: reviewer_kind_ok(v1,n3)
 % EXPECT-NOT[P2.5]: needs_human_reviewer(v1)

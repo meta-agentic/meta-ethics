@@ -40,5 +40,6 @@ founder_finding_held(F) :- finding(F, P, _), founder(P), not regime_exited.
 delivery_owed(F, P) :- finding(F, P, _), not delivered_to_subject(F).
 may_answer(P, F) :- finding(F, P, _).
 
-% clause: A2.7
-interim_active(I) :- interim(I, F, T), finding(F, _, _), now(N), param(interim_ceiling, C), N - T < C.
+% clause: A2.7 P3.7
+interim_active(I) :- interim(I, F, T), finding(F, _, _), now(N), param(interim_ceiling, C), N - T < C,
+                     not instance_ended.

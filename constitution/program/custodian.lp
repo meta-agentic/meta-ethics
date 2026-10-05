@@ -13,9 +13,15 @@ seat_filled(S) :- custodian_seat(S), seat_holder(_, S).
 empty_seat(S) :- custodian_seat(S), not seat_filled(S).
 filling_owed(S) :- empty_seat(S).
 
-% clause: P1.5
+% clause: P1.7 P1.8
+law_citing(S, Q) :- veto_cites_law(S, Q, _).
+counted_veto(S, Q, T) :- veto(S, Q, T), not law_citing(S, Q).
+counted_veto(S, Q, T) :- veto(S, Q, T), veto_cites_law(S, Q, L), law_unfounded(Q, L).
+law_hold(Q) :- veto_cites_law(_, Q, L), not law_unfounded(Q, L).
+
+% clause: P1.5 P1.8
 vetoes_before(S, Q, N) :- veto(S, Q, T), param(veto_window, W),
-                          N = #count{ X : veto(S, Q2, T2), matter_of(Q2, X), T2 < T, T - T2 < W }.
+                          N = #count{ X : counted_veto(S, Q2, T2), matter_of(Q2, X), T2 < T, T - T2 < W }.
 within_ceiling(S, Q) :- vetoes_before(S, Q, N), param(veto_ceiling, C), N < C.
 
 % clause: P1.6
@@ -23,7 +29,7 @@ is_reproposal(Q) :- reproposal_of(Q, _).
 family(Q, Q) :- passed_channel(Q), not is_reproposal(Q).
 family(Q2, R) :- reproposal_of(Q2, Q), family(Q, R).
 vetoes_on_act(Q, N) :- veto(_, Q, T), family(Q, R),
-                       N = #count{ S2, Q2 : veto(S2, Q2, T2), family(Q2, R), T2 < T }.
+                       N = #count{ S2, Q2 : counted_veto(S2, Q2, T2), family(Q2, R), T2 < T }.
 within_act_bound(Q) :- vetoes_on_act(Q, N), param(veto_per_act, B), N < B.
 act_to_review(Q) :- veto(_, Q, _), not within_act_bound(Q).
 
@@ -37,9 +43,9 @@ vetoed(Q) :- standing_veto(_, Q).
 eligible_seat(S, Q) :- custodian_seat(S), seat_filled(S), passed_channel(Q), not seat_ineligible(S, Q).
 some_eligible_seat(Q) :- eligible_seat(_, Q).
 
-% clause: P1.2 P1.3
-custodian_passes(Q) :- passed_channel(Q), not vetoed(Q), some_eligible_seat(Q).
-custodian_passes(Q) :- passed_channel(Q), not vetoed(Q), not some_eligible_seat(Q),
+% clause: P1.2 P1.3 P1.7
+custodian_passes(Q) :- passed_channel(Q), not vetoed(Q), not law_hold(Q), some_eligible_seat(Q).
+custodian_passes(Q) :- passed_channel(Q), not vetoed(Q), not law_hold(Q), not some_eligible_seat(Q),
                        act_reviewed(Q), not stopped_by_review(Q).
 
 % clause: P1.12

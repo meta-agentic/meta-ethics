@@ -44,6 +44,9 @@ attributed(A, P) :- act(A, P, _, _).
 attributed(A, P) :- chain_of(A, M), mandate(M, P, _).
 attributed(A, Gr) :- act(A, H, C, _), grant(G, Gr, H, C), not covered_grant(G).
 
+% clause: C7.3
+grantor_of(F, P) :- mandate(M, P, _), root_grant(M), founder_revocable(M), founder(F), F != P.
+
 % clause: C21.2
 % A party's delegation chain: its grantors up to, not including, the common
 % root, and the parties holding mandates delegated from it.

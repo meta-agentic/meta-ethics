@@ -19,6 +19,8 @@ act(z3, c, revoke, 5). made_one_kind(z3). under_founder_custody(z3).
 act(z4, d, revoke, 22). made_one_kind(z4). controlled_by(z4, e).
 act(z5, g, revoke, 6). made_one_kind(z5). under_founder_custody(z5). rebutted(z5).
 instance_ended.
+param(citation_period, 50). param(interim_ceiling, 50).
+interim(i1, n2, 20).
 finding(n1, a, 15).
 finding(n2, b, 15).
 finding(n3, f, 4).
@@ -34,11 +36,16 @@ finding(n6, d, 16).
 % EXPECT[P3.12]: causer(g)
 % EXPECT-NOT[P3.12]: founder_presumed(z5)
 % EXPECT[P3.8]: causer(f)
+% EXPECT[P3.11]: kept_open(n1)
+% EXPECT-NOT[P3.11]: kept_open(n6)
 % EXPECT[P3.9]: kept_open(n1)
 % EXPECT[P3.9]: kept_open(n3)
 % EXPECT[P3.9]: kept_open(n5)
 % EXPECT[P3.9]: kept_open(n4)
 % EXPECT-NOT[P3.9]: kept_open(n2)
+% EXPECT-NOT[P3.7]: citable(n2,b)
+% EXPECT-NOT[P3.7]: interim_active(i1)
+% EXPECT-NOT[P3.9]: citable(n1,a)
 % EXPECT[P3.7]: ended_without_verdict(n2)
 % EXPECT[P3.7]: ended_without_verdict(n6)
 % EXPECT-NOT[P3.7]: ended_without_verdict(n1)

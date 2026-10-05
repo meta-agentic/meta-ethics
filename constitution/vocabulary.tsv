@@ -189,7 +189,7 @@ interim_active	interim	derived	A2.7	an interim measure ends at a ceiling the fou
 composition_breach	seat	consequence	P1.21	a Custodian seat held by a party not of the seat's kind
 replacement_inadmissible	proposal	consequence	P1.20	a replacement that would leave a kind unrepresented is not admissible
 renunciation_act	act	intake	P3.8	an act refusing or renouncing the actor's own mandate
-made_one_kind	act	attested	P3.8	a reviewed finding that the act made the parties one kind
+made_one_kind	act	attested	P3.8	a causer finding that the act made the parties one kind, reviewed under P2 or still provisional because no reviewer was available before the end
 under_founder_custody	act	attested	P3.8	the act was made under custody the founder can override, during the genesis regime
 rebutted	act	attested	P3.12	the founder rebutted, on evidence, the presumption that the act is the founder's
 controlled_by	act,party	attested	P3.8	the record shows the party mandated or controlled the act
@@ -201,3 +201,16 @@ exit_by	time	derived	P3.9	the genesis regime had ended by that time
 kept_open	finding	derived	P3.9	findings that stay open on the kept record
 ended_without_verdict	finding	derived	P3.7	findings about a subject who did not cause the end close as ended without verdict
 founder_presumed	act	derived	P3.12	during the genesis regime an act made under custody the founder can override counts as the founder's, unless rebutted
+also_about	verdict,party	intake	P2.5	a further subject of a verdict
+verdict_subject	verdict,party	derived	P2.5	a subject of the verdict
+benefits_from	party,verdict	attested	C21.1	a declared or shown relation: the party benefits from the outcome
+acted_in	party,verdict	intake	C21.2	the party has acted in the matter
+verdict_delivered	verdict,time	attested	A1.5	the verdict was delivered to its subject in the form its mandate declares, the delivery observed
+founder_chain	party	derived	H3.4	the founder, or a party in the founder's delegation chain, a mandate the founder can revoke alone included
+genesis_bar	party	derived	P2.7	under the genesis regime the reviewer is outside the founder's chain
+founder_revocable	mandate	intake	C7.3	a mandate the founding document grants that the founder can revoke alone
+veto_cites_law	seat,proposal,law	intake	P1.7	a veto citing a law binding the instance that the act would breach as to a human party's right
+law_unfounded	proposal,law	attested	P1.7	the review under P2 found the cited law not breached
+law_citing	seat,proposal	derived	P1.8	a veto that cites a law
+counted_veto	seat,proposal,time	derived	P1.8	a veto that counts toward a ceiling: an ordinary veto, or a law-citing one the review found unfounded
+law_hold	proposal	derived	P1.7	the act does not pass while the review of a cited law is pending or finds the breach
