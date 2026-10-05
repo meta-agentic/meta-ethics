@@ -161,7 +161,7 @@ The signature covers `core/L0.md`, never `core/tests.md` or the taxonomy, so the
 - It carries a thin adoption record in its own repository, as ADR-ETH-01 already provides.
 - Constitutions are siblings, and adopting first confers nothing.
 - A constitution may meet each floor by any mechanism, and may reuse the meta-agentic mechanisms without its values.
-- A deployment that names the core before its constitution meets every floor is under GEN.3: it declares every violation and a finite ceiling to its subjects, claims no conformance, adds no violation by any change, and past the ceiling stops naming the core.
+- A deployment that names the core before its constitution meets every floor is under GEN.3: it declares every violation and a finite ceiling to its subjects, claims no conformance, adds no violation by any change, cannot have its ceiling lengthened except with the assent of parties not implicated in its violations, and past the ceiling stops naming the core, with DEL.7's notice and free exit.
 
 *Rejected alternatives:*
 - *Adoption by copying the meta-agentic constitution and editing it* — loses to F10, because it carries parity into a constitution that may not hold it.
