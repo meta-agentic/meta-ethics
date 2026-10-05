@@ -228,11 +228,11 @@ P1.20	program	02:P1 01:§accepted-costs
 P1.21	program	02:P1		
 P1.22	procedural	02:P1	founding document disclosures (H3); custody structure published as verification material	parameter declaration
 P1.23	cost	02:§accepted-costs/two-last-words-can-deadlock		
-LV.1	proposed		founder decision pending	proposed replacement for P1.7 and P1.8, merged from two reviews; in neither record
-LV.2	proposed		founder decision pending	proposed replacement for P1.7 and P1.8, merged from two reviews; in neither record
-LV.3	proposed		founder decision pending	proposed replacement for P1.7 and P1.8, merged from two reviews; in neither record
-LV.4	proposed		founder decision pending	proposed replacement for P1.7 and P1.8, merged from two reviews; in neither record
-LV.5	proposed		founder decision pending	proposed replacement for P1.7 and P1.8, merged from two reviews; in neither record
+LV.1	proposed		adopted by the founder, subject to review	replacement for P1.7 and P1.8, merged from two reviews; enters force with the record edits
+LV.2	proposed		adopted by the founder, subject to review	replacement for P1.7 and P1.8, merged from two reviews; enters force with the record edits
+LV.3	proposed		adopted by the founder, subject to review	replacement for P1.7 and P1.8, merged from two reviews; enters force with the record edits
+LV.4	proposed		adopted by the founder, subject to review	replacement for P1.7 and P1.8, merged from two reviews; enters force with the record edits
+LV.5	proposed		adopted by the founder, subject to review	replacement for P1.7 and P1.8, merged from two reviews; enters force with the record edits
 P2.1	program	02:P2 02:A2		
 P2.2	program	02:P2 02:A2		
 P2.3	program	02:P2 02:A2		
