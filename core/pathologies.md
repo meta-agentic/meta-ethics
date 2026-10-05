@@ -106,7 +106,7 @@ Notation as in `core/core.md`: $R$ the record, $\sigma$ the state, $M$ the manda
 
 ## 6. Pathologies of correctability
 
-**X44 Entrenchment** — *also:* self-perpetuation, life tenure, the unremovable office, the founder beyond replacement. *Definition:* a holder cannot be replaced without its own assent. *Violation:* a reachable state from which every admissible path ending with $x$ out of a position contains an act by $x$. *Excluded by:* COR.2. Applies after the founding regime (`core/core.md` §2.8). *Class:* structural.
+**X44 Entrenchment** — *also:* self-perpetuation, life tenure, the unremovable office, the founder beyond replacement. *Definition:* a holder cannot be replaced without its own assent. *Violation:* a reachable state from which every admissible path ending with $x$ out of a position contains an act by $x$. *Excluded by:* COR.2. Applies after the founding regime (`core/core.md` GEN). *Class:* structural.
 
 **X45 Oligarchy** — *also:* rule by a closed few, aristocracy as a closed elite. *Definition:* decision power held by a small closed set. *Violation:* one of three — the set self-perpetuates (COR.2), a class is barred from it by an unchosen attribute (IMP.3), or it binds parties who never accepted or cannot leave (DEL.3, DEL.4). *Excluded by:* those three. *Class:* mixed. "A few decide" over parties who accepted, can leave, are judged like everyone and can replace them is a declared value — the management of an organisation — and the core does not exclude it. The pathology in a polity is that its members cannot leave.
 

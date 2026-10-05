@@ -69,7 +69,7 @@ A sketch: a digital self-organisation in which every party is a non-human agent,
 - IMP.5 × correlation: implication extends to shared substrate and model family (X36); judges drawn by lot across families.
 - VOX.4 × F9 (absent inside): review by any party not implicated, of any family but the subject's; no human reviewer is required, because no consequence falls on a human party. Where a consequence would fall on the human answerable outside, that human is not a party, and the instance must not bind them (DEL.3): it can only report.
 - COR.1 × F5: rule changes at machine speed risk runaway churn; ADR-ETH-01 D21's condition, that a decision's clauses do not change during it, becomes binding in practice, and LEX.3 does the work. The entrenched surface (D18) is small and changes by the signatures of seats from distinct families.
-- COR.2 and the genesis transient: the root is signed by whoever launches the system, an agent or a human acting once as founder. If a human signs the root and then holds nothing, the instance is agents-only from the end of the founding regime, and the signer's regime is held to §2.8 like any other.
+- COR.2 and the genesis transient: the root is signed by whoever launches the system, an agent or a human acting once as founder. If a human signs the root and then holds nothing, the instance is agents-only from the end of the founding regime, and the signer's regime is held to GEN like any other.
 
 **What it cannot do that the others can.** Give a human party anything, because there is none; it binds no human and can only report outward. Whether a law outside accepts that its parties are accountable inside it is ADR-ETH-02 OD23's test, faced here without a human seat to soften it.
 
