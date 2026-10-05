@@ -14,9 +14,13 @@ empty_seat(S) :- custodian_seat(S), not seat_filled(S).
 filling_owed(S) :- empty_seat(S).
 
 % clause: P1.7 P1.8
-law_citing(S, Q) :- veto_cites_law(S, Q, _).
-counted_veto(S, Q, T) :- veto(S, Q, T), not law_citing(S, Q).
-counted_veto(S, Q, T) :- veto(S, Q, T), veto_cites_law(S, Q, L), law_unfounded(Q, L).
+% every veto counts toward both ceilings unless the law it cites was found
+% breached, for the act or a re-proposal of it; a review never run, lapsed
+% or found unfounded leaves the veto counted
+law_founded(S, Q) :- veto(S, Q, _), veto_cites_law(S, Q, L), family(Q, R), family(Q2, R),
+                     law_breach_found(Q2, L).
+counted_veto(S, Q, T) :- veto(S, Q, T), not law_founded(S, Q).
+law_unfounded_in_family(Q, L) :- veto_cites_law(_, Q, L), family(Q, R), family(Q2, R), law_unfounded(Q2, L).
 
 % clause: P1.7 P1.3 P1.20
 % only a filled, eligible seat's signed veto citing a law holds the act, and
@@ -26,9 +30,11 @@ valid_law_veto(S, Q, L) :- veto_cites_law(S, Q, L), veto(S, Q, _), veto_signed(S
 % no lapse passes the act: past the ceiling the review is drawn again, the
 % delay is marked and counts toward D2's measure, and the proposer may
 % re-propose the act without the cited part, which this veto does not hold
-law_hold(Q) :- valid_law_veto(_, Q, L), not law_unfounded(Q, L).
+% a law already found unfounded for the act or a re-proposal of it gives no
+% fresh hold: its re-citation is an ordinary, counted veto
+law_hold(Q) :- valid_law_veto(_, Q, L), not law_unfounded_in_family(Q, L).
 law_review_overdue(Q, L) :- valid_law_veto(S, Q, L), veto(S, Q, T), now(N), param(law_review_ceiling, X),
-                            N - T >= X, not law_unfounded(Q, L), not law_breach_found(Q, L).
+                            N - T >= X, not law_unfounded_in_family(Q, L), not law_founded(S, Q).
 law_review_redrawn(Q, L) :- law_review_overdue(Q, L).
 counts_toward_d2(Q) :- law_review_overdue(Q, _).
 

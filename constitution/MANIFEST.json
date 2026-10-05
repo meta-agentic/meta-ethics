@@ -120,7 +120,7 @@
     "P3.5"
   ],
   "digest_rule": "sha256 over the lines '<sha256>  <path>\\n' of the entries, in the order listed",
-  "combined_sha256": "3932c869526a51ef8c164ee6e53a904b0132f8b60840b68f7490766320fbc586",
+  "combined_sha256": "6aa635062114ee0d4803975b01647feef84010956d094ac2fdcd34596e355807",
   "entries": [
     {
       "path": "L0.md",
@@ -136,7 +136,7 @@
     },
     {
       "path": "vocabulary.tsv",
-      "sha256": "393f7bc26cc2417019ba24ecacc4b569c92da8b6182c413bc8ac398f564e4150"
+      "sha256": "576809ec72a6f8c0879368cc75e2c1f90f7fe864964d991aa75c96a7767bfda5"
     },
     {
       "path": "parameters.tsv",
@@ -144,7 +144,7 @@
     },
     {
       "path": "program/custodian.lp",
-      "sha256": "5db4162cc617cdedc44d8577f1c6c7f8fafa9adce332ceb98207a6b0209f1b99"
+      "sha256": "729e0e956bfd7bd7484ebd0e272c55490b459a35a28ea80145824a601d332e45"
     },
     {
       "path": "program/kinds.lp",
@@ -184,11 +184,15 @@
     },
     {
       "path": "fixtures/custodian_law.lp",
-      "sha256": "e240247719bbcfc8b203f425541b4c2d7d0816282bd00e627e00d99875d8832c"
+      "sha256": "150ab4c12368ec82ad00eafb7bb0973e0b7557dd9eda63e80ca4108965ba16cd"
     },
     {
       "path": "fixtures/custodian_law_gate.lp",
       "sha256": "5eda7145cd48cc2efb67cd994d7d1a8fdb447d7b00f39477d3f571a1c3f85d70"
+    },
+    {
+      "path": "fixtures/custodian_law_genesis.lp",
+      "sha256": "4ccb5257177d6ab685c2d392edd84f2606703d36438604b82ca88d33fcfb274c"
     },
     {
       "path": "fixtures/genesis_regime.lp",
@@ -200,7 +204,7 @@
     },
     {
       "path": "fixtures/kill_custodian.lp",
-      "sha256": "59d0204c0a69e3051e4caf0d15b1f0d6fd4f7f19c1be1a7e72b6f23fd1adca7c"
+      "sha256": "0299938f836f75ff899f007de56bca2abea561bc01faa86a65bc8cefcfed2c46"
     },
     {
       "path": "fixtures/kill_end.lp",
@@ -296,7 +300,7 @@
     },
     {
       "path": "DESIGN.md",
-      "sha256": "cc5e382241d8e25f4545ed0c03c430d8110c6fda662e8ce1a262d67e3773a95a"
+      "sha256": "3d8e92af2aa2e27e4737239890bba9d29fe91b0dfb73e1b5f29db3a8c42da7fa"
     },
     {
       "path": "tools/c18.py",
@@ -312,7 +316,7 @@
     },
     {
       "path": "tools/mutants-allowed.tsv",
-      "sha256": "afefaf552059b3f3ab3eaa4e4057e4419059a8d232745df9b7065d95f8c32059"
+      "sha256": "89d810346887ef1245865f792a1137302162ed8484e54465ddd80be387befc25"
     },
     {
       "path": "tools/mutants.py",

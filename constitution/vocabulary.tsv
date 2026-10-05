@@ -209,8 +209,7 @@ genesis_bar	party	derived	P2.7	under the genesis regime the reviewer is outside 
 founder_revocable	mandate	intake	C7.3	a mandate the founding document grants that the founder can revoke alone	
 veto_cites_law	seat,proposal,law	intake	P1.7	a veto citing a law binding the instance that the act would breach as to a human party's right	
 law_unfounded	proposal,law	attested	P1.7	the review under P2 found the cited law not breached	
-law_citing	seat,proposal	derived	P1.8	a veto that cites a law	
-counted_veto	seat,proposal,time	derived	P1.8	a veto that counts toward a ceiling: an ordinary veto, or a law-citing one the review found unfounded	
+counted_veto	seat,proposal,time	derived	P1.8	a veto that counts toward both ceilings: every veto, unless the law it cites was found breached	
 law_hold	proposal	derived	P1.7	the act does not pass while the review is pending or finds the breach; no lapse passes it	
 exempts	act,party	intake	A1.9	an act that purports to exempt a party from a rule	
 self_exemption	act	derived	A1.9	the founder may not exempt themself: a finding	
@@ -286,3 +285,5 @@ law_review_overdue	proposal,law	derived	P1.7	the review of a cited law is not de
 law_review_redrawn	proposal,law	derived	P1.7	past the ceiling the reviewer is replaced and the review drawn again
 counts_toward_d2	proposal	derived	P1.7	the marked delay counts toward the share D2 measures
 provisional_for	verdict,party	consequence	BIND.2	the held outcome is provisional for every subject it touches, past the ceiling too, until decided
+law_founded	seat,proposal	derived	P1.8	the law the veto cites was found breached, for the act or a re-proposal of it
+law_unfounded_in_family	proposal,law	derived	P1.7	the cited law was found not breached for the act or a re-proposal of it
