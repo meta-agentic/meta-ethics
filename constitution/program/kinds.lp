@@ -9,8 +9,10 @@ composition_breach(S) :- custodian_seat(S), seat_holder(P, S), seat_kind(S, K), 
 % clause: P1.20
 replacement_inadmissible(Q) :- replaces_seat(Q, S, P), seat_kind(S, K), kind_of(P, K2), K != K2.
 
-% clause: P3.8 P3.12
+% clause: P3.8 P3.15
 own_exit(A) :- renunciation_act(A).
+
+% clause: P3.8 P3.12
 founder_presumed(A) :- under_founder_custody(A), not rebutted(A).
 causer(P) :- made_one_kind(A), act(A, P, _, _), not own_exit(A), not founder_presumed(A),
              not controlled_act(A).

@@ -13,6 +13,7 @@ F8.1	interpretive	01:F8
 F9.1	interpretive	01:F9		
 T.1	procedural	02:T	configuration check (C18) of the founding document's values against parameters.tsv	
 T.2	procedural	02:T	the L0 gate of both Custodians' signatures (P1.13); the governed channel for values	
+T.3	procedural	02:§safety-envelope	conformance on the parent fixtures (C15.4) and the configuration check (C18)	
 D1.1	todo	01:D1		
 D1.2	meta	01:D1 02:C13	checker: C13 derivation/consequence split	
 D2.1	interpretive	01:D2 02:P1		
@@ -22,10 +23,12 @@ D3.2	todo	01:D3 02:C8
 C1.1	meta	02:C1 01:D4	checker: stratification and one model per fixture (determinism); party-term check	
 C1.2	meta	02:C1 01:D4	checker: no party constant in any rule; party variables compared only by neq	
 C1.3	procedural	02:C1 01:D4	the published draw procedure, re-run by any party; uniformity tested in the conformance suite	
+C1.4	meta	02:§accepted-costs/rules-cannot-rank-parties	checker: party terms compared only by != (C1); the draw runs outside the rule set (C17)	
 D5.1	interpretive	01:D5		
 D5.2	todo	01:D5 02:C9 01:D19		
 D6.1	interpretive	01:D6 02:C3		
 D6.2	procedural	01:§adoption-by-instances	the instance's own records; read by the conformance suite	
+D6.3	procedural	01:§safety-envelope	a new parent version arrives only as a ratify-class proposal inside the instance	
 C15.1	meta	02:C15 01:D7	checker: every parameters.tsv row names the role its bound protects	
 C15.2	meta	02:C15 01:D7	checker: parameters.tsv floors are relations in a closed grammar, never numbers	
 C15.3	todo	02:C15 01:D7		
@@ -38,6 +41,9 @@ A1.4	program	02:A1 01:D8 01:D12
 A1.5	program	02:A1 01:D8 01:D12		
 A1.6	procedural	02:A1 01:D8 01:D12	founding document; configuration check (C18)	parameter declaration
 A1.7	todo	02:A1 01:D8 01:D11		
+A1.8	program	01:§accepted-costs/closure-makes-the-founder-a-judged-party-from-the-first-act		
+A1.9	program	01:§safety-envelope		
+A1.10	program	02:§accepted-costs/a-subject-with-no-mandate-is-never-negligent		
 C7.1	program	02:C7 01:D12		
 C7.2	todo	02:C7 01:D12		
 C7.3	program	02:C7 01:D12		
@@ -59,6 +65,7 @@ D13.1	todo	01:D13
 D15.1	todo	01:D15		
 D15.2	program	01:D15		
 D15.3	program	01:D15 02:C19		
+D15.4	procedural	01:§accepted-costs/witnessed-delivery-costs-a-second-collector	the founding document; no configuration check names it	
 A2.1	todo	02:A2 01:D14		
 A2.2	todo	02:A2 01:D14		
 A2.3	program	02:A2 01:D14		
@@ -76,6 +83,9 @@ A2.14	todo	02:A2 02:C21
 A2.15	todo	02:A2 01:D14		
 A2.16	procedural	02:A2 01:D14	the anonymizing act, appended and attested (C11); any party re-checks the chain and replays the listed verdicts; parameters in the founding document, checked by C18	parameter declaration
 A2.17	todo	02:A2 02:P2 01:D1		
+A2.18	cost	02:§accepted-costs/anonymization-lowers-accountability-for-its-subject-where-the-law-requires-it		
+A2.19	cost	02:§accepted-costs/recusal-takes-effect-before-any-hearing		
+A2.20	procedural	02:§accepted-costs/recusal-takes-effect-before-any-hearing	the closing review appends the overturn to the matter (A2.1)	
 C23.1	procedural	02:C23 02:A2	the anonymizing act, appended and attested (C11); any party re-checks the chain and replays the listed verdicts	
 C23.2	procedural	02:C23 02:A2	the anonymizing act, appended and attested (C11); any party re-checks the chain and replays the listed verdicts	
 A3.1	program	02:A3		
@@ -85,6 +95,7 @@ A3.4	procedural	02:A3	published correctability result, re-runnable by any party;
 A3.5	procedural	02:A3	published correctability result, re-runnable by any party; ceilings declared in the founding document, checked by C18	
 A3.6	procedural	02:A3	published correctability result, re-runnable by any party; ceilings declared in the founding document, checked by C18	parameter declaration
 A3.7	interpretive	02:A3		
+A3.8	cost	02:§accepted-costs/the-correctness-claim-is-conditional		
 C10.1	interpretive	02:C10 01:§open-decisions-adr-eth-01-od-n		
 D16.1	interpretive	01:D16		
 D16.2	interpretive	01:D16		
@@ -92,14 +103,22 @@ D17.1	interpretive	01:D17
 D18.1	interpretive	01:D18 02:C2		
 D18.2	interpretive	01:D18 02:C2		
 D18.3	program	02:C2 02:P1		
+D18.4	cost	01:§accepted-costs/every-human-gate-is-a-bottleneck-by-choice		
+D18.5	cost	01:§accepted-costs/some-pathologies-are-not-infinitesimally-correctable		
+D18.6	cost	02:§accepted-costs/l0-grows		
 D19.1	todo	01:D19		
+D19.2	cost	01:§accepted-costs/the-choice-of-which-properties-to-monitor-is-where-the-last-of-the-authors-values-lives		
 D20.1	procedural	01:D20	governed evolution channel	
+D20.2	procedural	01:§safety-envelope	its findings enter only as governed-evolution proposals	
 D21.1	interpretive	01:D21		
 C6.1	meta	02:C6 01:F3	checker: stratified negation and count, range restriction, arithmetic only in non-recursive strata, count the only aggregate	
 C6.2	meta	02:C6 01:F3	checker: range restriction; no function terms in rule heads (no rule mints an object)	
 C6.3	interpretive	02:C6 01:F3		
+C6.4	meta	01:§safety-envelope	checker: fragment check of every rule; every paragraph classed in the inventory	
+C6.5	interpretive	02:§safety-envelope		
 C13.1	meta	02:C13	checker: derivation rules read no kind-sorted predicate or kind constant	
 C13.2	meta	02:C13	checker: derivation rules read no consequence predicate; fold rules kind-blind	
+C13.3	cost	02:§accepted-costs/three-asymmetries-by-kind-of-party-are-now-designed-not-deferred		
 C14.1	program	02:C14		
 C14.2	program	02:C14		
 C14.3	todo	02:C14		
@@ -150,6 +169,7 @@ H3.6	procedural	02:H3	founding document disclosures and every party's inform cha
 H3.7	todo	02:H3		
 H3.8	todo	02:H3		
 H3.9	todo	02:H3		
+H3.10	cost	02:§accepted-costs/the-genesis-regime-is-disclosed-not-cured		
 S1.1	todo	02:S1		
 S1.2	todo	02:S1		
 S1.3	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
@@ -170,6 +190,7 @@ S1.17	procedural	02:S1	signature verification by any party from recorded verific
 S1.18	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	
 S1.19	interpretive	02:S1		
 S1.20	procedural	02:S1	signature verification by any party from recorded verification material; validity enters as attested facts (C11)	parameter declaration
+S1.21	cost	02:§accepted-costs/every-signer-bears-a-key		
 C5.1	procedural	02:C5 02:S1	merge event and landing commit, the hash appended and covered by a witnessed head (C16); signatures (S1)	
 C5.2	program	02:C5 02:S1		
 C5.3	procedural	02:S1 02:C5	merge event and landing commit, the hash appended and covered by a witnessed head (C16); signatures (S1)	
@@ -204,6 +225,7 @@ P1.19	program	02:P1 01:D9
 P1.20	program	02:P1 01:§accepted-costs		
 P1.21	program	02:P1		
 P1.22	procedural	02:P1	founding document disclosures (H3); custody structure published as verification material	parameter declaration
+P1.23	cost	02:§accepted-costs/two-last-words-can-deadlock		
 P2.1	program	02:P2 02:A2		
 P2.2	program	02:P2 02:A2		
 P2.3	todo	02:P2 02:A2		
@@ -212,6 +234,8 @@ P2.5	program	02:P2 02:A2
 P2.6	procedural	02:P2 02:A2	configuration check (C18); founding document	
 P2.7	program	02:P2 02:A2		
 P2.8	procedural	02:P2 02:A2	configuration check (C18); founding document	parameter declaration
+P2.9	cost	02:§accepted-costs/a-contest-window-delays-consequences-for-every-subject		
+P2.10	cost	02:§accepted-costs/review-needs-a-roster		
 P3.1	procedural	02:P3	configuration check (C18) of the founding document	
 P3.2	todo	02:P3		
 P3.3	program	02:P3		
@@ -225,6 +249,8 @@ P3.10	procedural	02:P3	founding document names the keeper and the forum; configu
 P3.11	program	02:P3		
 P3.12	program	02:P3		
 P3.13	procedural	02:P3	founding document names the keeper and the forum; configuration check (C18)	parameter declaration
+P3.14	cost	02:§accepted-costs/the-last-party-of-a-kind-can-pause-the-instance		
+P3.15	program	02:§accepted-costs/the-last-party-of-a-kind-can-pause-the-instance		
 DEDICATION.1	interpretive	02:Dedication		
 OD4.1	open	02:§open-decisions 01:§open-decisions-adr-eth-01-od-n		
 OD5.1	open	02:§open-decisions 01:§open-decisions-adr-eth-01-od-n		
@@ -232,6 +258,7 @@ OD23.1	open	02:§open-decisions
 OD23.2	interpretive	02:§open-decisions		
 OD23.3	procedural	02:§open-decisions	the grant's delivered terms (A1); configuration check (C18)	
 OD23.4	procedural	02:§open-decisions 02:C18	the grant's delivered terms (A1); configuration check (C18)	
+OD23.5	cost	02:§accepted-costs/accountability-outside-the-system-waits-for-law		
 OPEN.1	open	01:§open-decisions-adr-eth-01-od-n 02:§open-decisions		
 OPEN.2	open	01:§open-decisions-adr-eth-01-od-n 02:§open-decisions		
 OPEN.3	open	01:§open-decisions-adr-eth-01-od-n 02:§open-decisions		

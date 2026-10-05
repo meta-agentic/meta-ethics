@@ -4,35 +4,35 @@ last_word_share	D2.2	share	every party (the last word stays an exception)	declar
 bypass_window	D5.2	duration	every party (bypass is seen)	declared	the window over which a clause's bypasses and passes are counted
 browse_reach	A1.6	set	the subject of a finding	declared	how far anyone may browse findings about others; the floor is self-sight and the answer
 personal_data_line	A2.16	standard	the human subject	law	the line between personal data and the record
-contest_window	A2.16	duration	the subject (longer) and the complainant (shorter)	finite	the length of the contest window before a consequence takes effect
-display_threshold	A2.16	count	the subject of a finding	declared	the least number of possible subjects before a finding is shown to others
+contest_window	A2.16	duration	the subject (longer) and the complainant (shorter)	positive & >= min_response_window & finite	the length of the contest window before a consequence takes effect
+display_threshold	A2.16	count	the subject of a finding	>= 2	the least number of possible subjects before a finding is shown to others; at least two, so that showing it cannot identify its subject
 interim_measures	A2.16	set	the subject of a finding	declared	which interim measures apply before review
-interim_ceiling	A2.16	duration	the subject of a finding	law	the ceiling at which an interim measure ends, whatever the state of review
+interim_ceiling	A2.16	duration	the subject of a finding	finite & law	the ceiling at which an interim measure ends, whatever the state of review
 anonymization_method	A2.16	method	the human subject	declared	how anonymization is done, provided its result can be checked
-citation_period	A2.16	duration	the subject of a finding	law	the period for which a finding may be cited against its subject
+citation_period	A2.16	duration	the subject of a finding	finite & law	the period for which a finding may be cited against its subject
 count_ceiling	A3.6	count	every party (closure stays decidable)	finite	the ceiling at which counts of the working state are capped
 timer_ceiling	A3.6	duration	every party (closure stays decidable)	finite	the ceiling at which timers of the working state are capped
 lever_ceiling	A3.6	count	the complainant	finite	the ceiling per finding of every lever that delays it, suspension included
 conflict_ceiling	C14.3	duration	the subject of an undecided conflict	finite	the ceiling within which a drawn reviewer resolves an undecided conflict
 ordering_method	C14.5	method	every party	declared	how the kernel computes the ordering among rules, itself stratified
-witness_service	C16.6	service	every party (rewrites are provable)	declared	the external witness, outside the operator's and the founder's control
+witness_service	C16.6	service	every party (rewrites are provable)	nonempty	the external witness, outside the operator's and the founder's control
 witness_place	C16.6	standard	the human party	law	where the witness sits, as the law of the human parties permits
 witness_cadence	C16.6	duration	every party (rewrites are provable)	finite	the fixed cadence at which heads are witnessed
 draw_eligibility	C17.9	standard	the subject of a matter	declared	who is eligible to be drawn as judge or reviewer
-beacon	C17.9	service	every party to a matter	declared	the public randomness beacon
-panel_size	C17.9	count	the subject of a matter	declared	the number of judges drawn
+beacon	C17.9	service	every party to a matter	nonempty	the public randomness beacon
+panel_size	C17.9	count	the subject of a matter	positive	the number of judges drawn
 family_diversity	C17.9	standard	the subject of a matter	declared	diversity across model families in a draw
-min_response_window	C18.1	duration	the party that must answer	finite	the least response window the founding document declares
+min_response_window	C18.1	duration	the party that must answer	positive & law & finite	the least response window the founding document declares
 challenge_window	C17.9	duration	every party to a matter	>= min_response_window	the challenge window before a draw
 delivery_bound	C17.9	duration	every party to a matter	finite	the bound on delivery of a filing to every party to the matter
 challenge_ceiling	C17.9	duration	the filer	>= delivery_bound + challenge_window	the ceiling from intake of the challenge window
-recusal_standard	C17.9	standard	the subject of a matter	declared	the recusal standard above its L0 floor (C21)
+recusal_standard	C17.9	standard	the subject of a matter	clause(C21.2)	the recusal standard, at least its L0 floor: a judge or reviewer in a party's delegation chain, one who benefits from the outcome, and one who has acted in the matter (C21.2)
 cause_challenge_ceiling	C21.3	duration	the subject of a matter	finite	the ceiling within which a challenge for cause is judged
 sameness_ceiling	C22.2	duration	the later filer	finite	the ceiling within which a judgement of sameness is decided
 roster_cap	C18.1	count	every party	finite	the roster size up to which the configuration check enumerates
 least_composition	C18.1	count	every subject (a reviewer exists)	declared	the least composition from which a reviewer and both Custodian seats can be drawn
 obstruction_defence	H1.2	method	the party whose dissent is delayed	declared	each instance's defence against lawful obstruction, which narrows no floor
-extension_amount	H1.5	duration	the party that must answer	finite	the amount by which a party's window is extended once per matter at its request
+extension_amount	H1.5	duration	the party that must answer	positive & finite	the amount by which a party's window is extended once per matter at its request
 assurance_levels	S1.3	standard	the signer	declared	the assurance level per act, the same for every party that performs it
 lapse_ceiling	S1.5	duration	every party (no act waits forever)	finite	the ceiling at which an act still waiting for a required signature lapses
 staleness_window	S1.4	duration	the signer	>= lapse_ceiling	the window beyond which a signature over an older head is stale
@@ -40,7 +40,7 @@ key_binding_custody	S1.16	standard	the human signer	law	where and for how long t
 signing_method	S1.20	method	the signer	declared	the signing method; replacing it is an act of power
 carrier	S1.20	method	the signer	declared	the carriers a signed act may be made on
 continuity_procedure	S2.9	method	the non-human party	declared	how the challenge, the attestation and the act of presence are made
-nonhuman_seat_holder	P1.22	declaration	every party (the seat is filled)	declared	who holds the non-human Custodian seat, its charter and its key's custody
+nonhuman_seat_holder	P1.22	declaration	every party (the seat is filled)	nonempty	who holds the non-human Custodian seat, its charter and its key's custody
 seat_fill_ceiling	P1.4	duration	every party (the seat is filled)	finite	the ceiling within which an empty Custodian seat is filled
 veto_window	P1.5	duration	every party (the veto stays a last resort)	declared	the window over which a seat's vetoes are counted
 veto_ceiling	P1.5	count	every party (the veto stays a last resort)	<= share(D2)	the count of matters per window a seat may veto
@@ -48,9 +48,9 @@ veto_per_act	P1.6	count	the proposer	finite	how many times a veto against one ac
 owed_content_ceiling	P1.10	duration	the party owed the act	finite	the ceiling within which an owed act's content is decided
 reviewer_independence	P2.8	standard	the subject of a verdict	declared	whether a shared substrate or model family makes a reviewer implicated
 admission_ceiling	P3.5	duration	the applicant of the missing kind	finite	the ceiling after which a drawn party admits an applicant of the missing kind
-record_keeper	P3.13	declaration	every subject of the kept record	declared	the keeper of an ended instance's record, bound by A2
-kept_forum	P3.13	declaration	the subject of an open finding on the kept record	declared	the forum and its pool that decide open findings on the kept record
+record_keeper	P3.13	declaration	every subject of the kept record	nonempty	the keeper of an ended instance's record, bound by A2
+kept_forum	P3.13	declaration	the subject of an open finding on the kept record	nonempty	the forum and its pool that decide open findings on the kept record
 forum_ceiling	P3.13	duration	the subject of an open finding on the kept record	finite	the ceiling within which the forum decides on request
 regime_duration	H3.5	duration	every party (the regime ends)	finite	the declared, finite duration of the genesis regime
-external_answerability	OD23.4	declaration	the injured outsider	declared	whether a law binding the instance requires naming a person answerable for a non-human party's acts
-answer_window	H1.5	duration	the party that must answer	>= min_response_window	the window within which a party answers, running from delivery in the declared form
+external_answerability	OD23.4	declaration	the injured outsider, and the human party inside the system	declared	whether a law binding the instance holds, or requires it to name, a natural or legal person answerable for a non-human party's acts; where it does, the person named (OD23.4)
+answer_window	H1.5	duration	the party that must answer	positive & >= min_response_window & finite	the window within which a party answers, running from delivery in the declared form

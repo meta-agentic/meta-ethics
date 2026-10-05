@@ -18,6 +18,11 @@ act(z2, b, renounce, 21). made_one_kind(z2). renunciation_act(z2).
 act(z3, c, revoke, 5). made_one_kind(z3). under_founder_custody(z3).
 act(z4, d, revoke, 22). made_one_kind(z4). controlled_by(z4, e).
 act(z5, g, revoke, 6). made_one_kind(z5). under_founder_custody(z5). rebutted(z5).
+root_grant(m7). mandate(m7, b2, s). issued(m7, 0).
+root_grant(m8). mandate(m8, b3, s). issued(m8, 0).
+root_grant(m9). mandate(m9, e2, s). issued(m9, 0).
+act(z6, b2, renounce, 23). made_one_kind(z6). renunciation_act(z6).
+act(z7, b3, renounce, 24). made_one_kind(z7). renunciation_act(z7). controlled_by(z7, e2).
 instance_ended.
 param(citation_period, 50). param(interim_ceiling, 50).
 interim(i1, n2, 20).
@@ -28,6 +33,9 @@ finding(n4, f, 12).
 finding(n5, e, 16).
 finding(n6, d, 16).
 
+% EXPECT[P3.15]: causer(e2)
+% EXPECT-NOT[P3.15]: causer(b2)
+% EXPECT-NOT[P3.15]: causer(b3)
 % EXPECT[P3.8]: causer(a)
 % EXPECT[P3.8]: causer(e)
 % EXPECT-NOT[P3.8]: causer(b)

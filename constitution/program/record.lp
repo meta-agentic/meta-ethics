@@ -21,7 +21,7 @@ ratification_missing(R, S) :- placed(R), custodian_seat(S), not ratification_sig
 ratification_incomplete(R) :- ratification_missing(R, _).
 ratified(R) :- placed(R), not ratification_incomplete(R).
 
-% clause: D15.2 D15.3
+% clause: D15.2 D15.3 A1.10
 arbiter_holder(P) :- seat_holder(P, S), arbiter_seat(S).
 collector_implicated(C, D) :- delivered(D, C, _, _).
 collector_implicated(C, D) :- delivered(D, R, _, _), in_chain(C, R).
@@ -29,7 +29,7 @@ collector_implicated(C, D) :- delivered(D, _, X, _), filer(X, F), in_chain(C, F)
 collector_implicated(F, D) :- delivered(D, _, X, _), filer(X, F).
 collector_implicated(C, D) :- observed(D, C), arbiter_holder(A), in_chain(C, A).
 independent_collector(C, D) :- observed(D, C), not arbiter_holder(C), not collector_implicated(C, D).
-knew(R, X, T) :- delivered(D, R, X, T), independent_collector(_, D).
+knew(R, X, T) :- delivered(D, R, X, T), independent_collector(_, D), holds_inform(R).
 
 % clause: S2.3
 party_fork(P, K) :- presence(E1, P, K, H), presence(E2, P, K, H), E1 != E2.

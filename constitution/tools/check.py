@@ -362,7 +362,7 @@ def main():
     clauses = {r["id"].split(".")[0] for r in inv}
     print("paragraphs %d in %d clauses: %s" % (len(inv), len(clauses),
           ", ".join("%s %d" % (k, counts.get(k, 0)) for k in
-                    ("program", "procedural", "meta", "todo", "interpretive", "open"))))
+                    ("program", "procedural", "meta", "todo", "interpretive", "open", "cost"))))
     print("record units %d (unmapped %d) · predicates %d · rules %d in %d files (%d components) · "
           "fixtures %d with %d assertions · parameters %d · refusals %d/%d"
           % (n_units, n_unmapped, len(vocab), n_rules, len(prog_files), a["n_sccs"], n_fix, n_assert, n_params,

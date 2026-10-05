@@ -35,6 +35,7 @@ delivered(d1, rcpt, x1, 5). observed(d1, col1).
 delivered(d2, rcpt, x2, 6). observed(d2, col2).
 delivered(d3, rcpt, x3, 7). observed(d3, arb).
 delivered(d4, rcpt, x4, 8). observed(d4, sub).
+delivered(d6, stranger, x6, 9). observed(d6, col1).
 filer(x5, col1). delivered(d5, rcpt, x5, 9). observed(d5, col1).
 
 presence(e1, col1, k1, h2). presence(e2, col1, k1, h2).
@@ -67,6 +68,8 @@ filed(y3, col2). balance(col2, 3).
 % EXPECT-NOT[D15.3]: knew(rcpt,x2,6)
 % EXPECT-NOT[D15.3]: knew(rcpt,x4,8)
 % EXPECT-NOT[D15.3]: knew(rcpt,x5,9)
+% EXPECT[A1.10]: knew(rcpt,x1,5)
+% EXPECT-NOT[A1.10]: knew(stranger,x6,9)
 % EXPECT[S2.3]: party_fork(col1,k1)
 % EXPECT-NOT[S2.3]: party_fork(col2,k2)
 % EXPECT[C14.1]: applied(warn,col1)

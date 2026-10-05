@@ -36,6 +36,12 @@ subject(X) :- act(A, X, _, _), effect(A).
 subject(P) :- party(P).
 holds_inform(P) :- party(P).
 
+% clause: A1.8
+subject(F) :- founder(F).
+
+% clause: A1.9
+self_exemption(A) :- exempts(A, F), founder(F), act(A, F, _, _).
+
 % clause: A2.4
 in_scope(A, M) :- act_under(A, M), act(A, _, C, _), mandate(M, _, S), scope_has(S, C).
 chain_of(A, M) :- in_scope(A, M).

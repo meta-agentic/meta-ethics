@@ -1,2 +1,12 @@
 unit	reason
 02:C4	correction of fact about the records themselves (D1–D7 were decided as conclusions and argued three days later); reasoning only, no rule
+01:§accepted-costs/the-record-cannot-be-erased-and-for-human-parties-that-collides-with-law	describes OD19 as open and erasure as undesigned; ADR-ETH-02 A2 closes OD19, though neither record's front matter names this cost as superseded
+01:§accepted-costs/the-formal-frame-is-exact-for-finite-systems-and-a-claim-about-families-otherwise	superseded by ADR-ETH-02 A3, as both records' front matter states
+01:§consequences	a summary of what the decisions make easy and hard; it adds no rule
+01:§reopening-triggers-consolidated	reopening triggers are conditions for reopening the record, kept in the record
+01:§decision-ledger	a tabular summary of the decisions, kept in the record
+01:§provenance	the record's own sources
+02:§context	the questions the record settles; reasoning only
+02:§consequences	a summary of what the amendments make easy and hard; it adds no rule
+02:§decision-ledger	a tabular summary of the decisions, kept in the record
+02:§provenance	the record's own sources

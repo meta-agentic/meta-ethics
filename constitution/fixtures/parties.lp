@@ -24,6 +24,8 @@ act(x3, sub1, read, 4). effect(x3). act_under(x3, m2).
 act(x4, outsider, read, 4). effect(x4).
 terms_delivered(m2).
 terms_delivered(m3). accepts_signed(m3, 3). renounces(m3, 8).
+founder(founder). act(x5, founder, write, 9). exempts(x5, founder).
+mandate(m8, quitter, s_sub). delegated_from(m8, m1). issued(m8, 1). revoked(m8, 2).
 proposal(q1). approves(founder, q1). approves(orch, q1). approves(sub1, q1). approves(outsider, q1).
 
 % EXPECT[A1.1]: party(sub1)
@@ -48,6 +50,10 @@ proposal(q1). approves(founder, q1). approves(orch, q1). approves(sub1, q1). app
 % EXPECT[A1.4]: subject(outsider)
 % EXPECT[A1.4]: holds_inform(sub1)
 % EXPECT-NOT[A1.4]: holds_inform(outsider)
+% EXPECT[A1.8]: subject(founder)
+% EXPECT-NOT[A1.8]: subject(quitter)
+% EXPECT[A1.9]: self_exemption(x5)
+% EXPECT-NOT[A1.9]: self_exemption(x3)
 % EXPECT[A2.4]: attributed(x3,orch)
 % EXPECT[A2.4]: attributed(x3,founder)
 % EXPECT[A2.4]: attributed(x1,orch)

@@ -214,3 +214,5 @@ law_unfounded	proposal,law	attested	P1.7	the review under P2 found the cited law
 law_citing	seat,proposal	derived	P1.8	a veto that cites a law
 counted_veto	seat,proposal,time	derived	P1.8	a veto that counts toward a ceiling: an ordinary veto, or a law-citing one the review found unfounded
 law_hold	proposal	derived	P1.7	the act does not pass while the review of a cited law is pending or finds the breach
+exempts	act,party	intake	A1.9	an act that purports to exempt a party from a rule
+self_exemption	act	derived	A1.9	the founder may not exempt themself: a finding

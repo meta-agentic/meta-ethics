@@ -13,12 +13,15 @@ ROOT = os.path.dirname(HERE)                      # constitution/
 REPO = os.path.dirname(ROOT)
 RECORDS = {"01": os.path.join(REPO, "docs/adr/ADR-ETH-01-constitution-shape.md"),
            "02": os.path.join(REPO, "docs/adr/ADR-ETH-02-first-amendment.md")}
-STATUSES = {"program", "todo", "procedural", "meta", "interpretive", "open"}
+STATUSES = {"program", "todo", "procedural", "meta", "interpretive", "open", "cost"}
 INPUT_CLASSES = {"intake", "attested", "param"}
 RULE_CLASSES = {"derived", "consequence"}
-NARRATIVE = re.compile(r"\b(restored|corrected|correction|amended|amendment|amendments|"
+NARRATIVE = re.compile(r"\b((?<!be )restored|corrected|correction|amended|amendment|amendments|"
                        r"supersedes?|superseded|as first written|now reads|first draft)\b", re.I)
-FLOOR = re.compile(r"^(finite|declared|nonempty|law|>= [a-z_]+( \+ [a-z_]+)?|<= share\(D2\))$")
+# One floor atom; a floor is one or more atoms joined by " & ", all of which hold.
+FLOOR = re.compile(r"^(finite|declared|nonempty|positive|law|>= [0-9]+|>= [a-z_]+( \+ [a-z_]+)?|"
+                   r"<= share\(D2\)|clause\([A-Z]+[0-9]*\.[0-9]+\))$")
+KEYWORDS = ("finite", "declared", "nonempty", "positive", "law", "share", "clause")
 
 errors = []
 SKIP = {ast.ASTType.Program} | ({ast.ASTType.Comment} if hasattr(ast.ASTType, "Comment") else set())
@@ -65,9 +68,15 @@ def check_prose():
             fail("prose", "%s: %s paragraph names no enforcement" % (r["id"], r["status"]))
     # paragraphs marked procedural in the prose are procedural in the inventory
     status = {r["id"]: r["status"] for r in inv}
-    for pid in re.findall(r"^\*\*([A-Z]+[0-9]*\.[0-9]+)\*\* \*(?:Procedural|Parameters)\.\*", text, re.M):
-        if status.get(pid) != "procedural":
-            fail("prose", "%s is marked procedural in the prose but %s in the inventory" % (pid, status.get(pid)))
+    marked = dict(re.findall(r"^\*\*([A-Z]+[0-9]*\.[0-9]+)\*\* \*(Procedural|Parameters|Accepted cost)\.\*", text, re.M))
+    for pid, st in status.items():
+        want = {"Procedural": "procedural", "Parameters": "procedural", "Accepted cost": "cost"}.get(marked.get(pid))
+        if want and st != want:
+            fail("prose", "%s is marked %s in the prose but %s in the inventory" % (pid, marked[pid], st))
+        if st == "cost" and marked.get(pid) != "Accepted cost":
+            fail("prose", "%s is an accepted cost in the inventory but not marked so in the prose" % pid)
+        if st == "procedural" and marked.get(pid) not in ("Procedural", "Parameters"):
+            fail("prose", "%s is procedural in the inventory but not marked so in the prose" % pid)
     stripped = re.sub(r"`[^`]*`", "", text)
     for n, line in enumerate(stripped.splitlines(), 1):
         for m in NARRATIVE.finditer(line):
@@ -82,17 +91,31 @@ def slug(h):
 
 
 def record_units():
-    units, sections = set(), set()
+    """Units: a bold identifier followed by a dash, the dedication, and each
+    bold-led paragraph of an "Accepted costs" section. Sections: every `##`
+    heading, with the units it holds."""
+    units, sections = set(), {}
     for k, path in RECORDS.items():
+        sec = None
         for line in open(path, encoding="utf-8"):
-            m = re.match(r"^\*\*([A-Z]+[0-9]*) — ", line)
-            if m:
-                units.add("%s:%s" % (k, m.group(1)))
-            if line.startswith("**Dedication.**"):
-                units.add("%s:Dedication" % k)
             m = re.match(r"^## (.*)$", line.rstrip("\n"))
             if m:
-                sections.add("%s:§%s" % (k, slug(m.group(1))))
+                sec = "%s:§%s" % (k, slug(m.group(1)))
+                sections[sec] = set()
+                continue
+            unit = None
+            m = re.match(r"^\*\*([A-Z]+[0-9]*) — ", line)
+            if m:
+                unit = "%s:%s" % (k, m.group(1))
+            if line.startswith("**Dedication.**"):
+                unit = "%s:Dedication" % k
+            m = re.match(r"^\*\*(.+?)\*\*", line)
+            if m and sec and sec.endswith("§accepted-costs"):
+                unit = "%s/%s" % (sec, slug(m.group(1)))
+            if unit:
+                units.add(unit)
+                if sec:
+                    sections[sec].add(unit)
     return units, sections
 
 
@@ -109,15 +132,19 @@ def check_sources(inv):
             used.add(t)
     unmapped = {r["unit"]: r["reason"] for r in read_tsv("unmapped.tsv")}
     for u, why in unmapped.items():
-        if u not in units:
-            fail("sources", "unmapped.tsv: %s is not a unit of the records" % u)
+        if u not in units and u not in sections:
+            fail("sources", "unmapped.tsv: %s is not a unit or section of the records" % u)
         if u in used:
             fail("sources", "unmapped.tsv: %s is also a source of a paragraph" % u)
         if not why.strip():
             fail("sources", "unmapped.tsv: %s gives no reason" % u)
     for u in sorted(units - used - set(unmapped)):
         fail("sources", "record unit %s is rendered by no paragraph and not listed as unmapped" % u)
-    return len(units), len(unmapped)
+    # every section is a source, holds a unit that is, or is listed as unmapped
+    for sec, held in sorted(sections.items()):
+        if sec not in used and sec not in unmapped and not (held & used):
+            fail("sources", "record section %s is rendered by no paragraph and not listed as unmapped" % sec)
+    return len(units) + len(sections), len(unmapped)
 
 
 # ------------------------------------------------------------- parameters
@@ -135,12 +162,16 @@ def check_parameters(inv_ids, prog_files):
         if not r["protects"].strip():
             fail("parameters", "%s: names no protected party (C15)" % r["parameter"])
     for r in rows:
-        fl = r["floor"].strip()
-        if not FLOOR.match(fl):
-            fail("parameters", "%s: floor %r is outside the floor grammar" % (r["parameter"], fl))
-        for ref in re.findall(r"[a-z_]+", fl.replace("share(D2)", "")):
-            if ref not in ("finite", "declared", "nonempty", "law") and ref not in ids:
-                fail("parameters", "%s: floor names undeclared parameter %s" % (r["parameter"], ref))
+        for atom in r["floor"].strip().split(" & "):
+            if not FLOOR.match(atom):
+                fail("parameters", "%s: floor %r is outside the floor grammar" % (r["parameter"], atom))
+                continue
+            m = re.match(r"clause\((.+)\)", atom)
+            if m and m.group(1) not in inv_ids:
+                fail("parameters", "%s: floor names clause %s, not a paragraph of L0.md" % (r["parameter"], m.group(1)))
+            for ref in re.findall(r"[a-z_]+", re.sub(r"clause\(.*\)|share\(D2\)", "", atom)):
+                if ref not in KEYWORDS and ref not in ids:
+                    fail("parameters", "%s: floor names undeclared parameter %s" % (r["parameter"], ref))
     declared_in = {r["clause"] for r in rows}
     for pid in re.findall(r"^\*\*([A-Z]+[0-9]*\.[0-9]+)\*\* \*Parameters\.\*", text, re.M):
         if pid not in declared_in:
