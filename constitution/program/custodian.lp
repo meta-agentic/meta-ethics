@@ -17,7 +17,7 @@ filling_owed(S) :- empty_seat(S).
 % a law-citing veto the review finds founded never counts toward a ceiling;
 % every other veto counts, a pending or unfounded citation included: P1.8
 % read with P1.5, which bounds every veto; re-citing a law already reviewed
-% for the act or a re-proposal of it is an ordinary veto
+% for the act or a re-proposal of it is a veto, with no law citation
 law_founded(S, Q) :- veto(S, Q, _), veto_cites_law(S, Q, L), family(Q, R), family(Q2, R),
                      law_breach_found(Q2, L).
 law_unfounded_in_family(Q, L) :- veto_cites_law(_, Q, L), family(Q, R), family(Q2, R), law_unfounded(Q2, L).

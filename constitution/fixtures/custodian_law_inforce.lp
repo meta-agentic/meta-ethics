@@ -32,7 +32,7 @@ passed_channel(q13). matter_of(q13, x13). veto(ca, q13, 900). veto_signed(ca, q1
 cites_class(q13, l13, tenants).
 passed_channel(q14). matter_of(q14, x14). veto(ca, q14, 900). veto_signed(ca, q14). veto_cites_law(ca, q14, l14).
 cites_right_of(q14, l14, n9).
-% a citation naming no one is an ordinary veto: it stands and counts
+% a citation naming no one leaves a veto with no law citation: it stands and counts
 % valid, pending since 10: held at 1000, with no ceiling on the hold
 passed_channel(q6). matter_of(q6, x6). veto(ch, q6, 10). veto_signed(ch, q6). veto_cites_law(ch, q6, l6).
 cites_right_of(q6, l6, h1).
@@ -60,7 +60,7 @@ decided_seq(q11, 15). decided_seq(q16, 17).
 param(conflict_ceiling, 5).
 candidate(shield, h3). candidate(fine3, h3). conflicts(fine3, shield). protection(shield).
 conflict_filed(shield, h3, 1). candidate_from_act(shield, h3, q6).
-% an ordinary veto on q7 by another seat counts though ch's law was found
+% a veto on q7 by another seat, with no law citation, counts though ch's law was found
 % breached; a citation of l7 on an unrelated act counts too
 veto(ca, q7, 18). veto_signed(ca, q7).
 passed_channel(q17). matter_of(q17, x17). veto(ch, q17, 19). veto_signed(ch, q17). veto_cites_law(ch, q17, l7).
