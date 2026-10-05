@@ -3,185 +3,323 @@ kind: adr
 space: eth
 adrId: ADR-ETH-03
 provisionalNumber: false
-title: The core and the levels — six invariant principles as the originator, shared by every instance; the meta-agentic constitution as one instance of them
+title: The core and the levels — six invariant principles and one declared transient as the originator; the meta-agentic constitution as one constitution conforming to them
 status: Proposed
 date: '2026-10-05'
 project: meta-ethics
 supersedes: []
 supersededBy: []
-labels: [core, L0, levels, instance, pathology, minimality, sufficiency, genesis]
+labels: [core, L0, levels, conformance, pathology, minimality, sufficiency, genesis]
 ---
 
 # ADR-ETH-03 — The core and the levels
 
-**Status: Proposed 2026-10-05.** This record decides what the originator of the constitution is. Until now the text called "the L0 constitution" — ADR-ETH-01 with ADR-ETH-02, and their consolidated rendering — has been both the originator and the constitution of one system. The founder asked which of its parts are the real generative rules that transcend every specific instance, and decided that the invariants are the originator: the meta-level, the core, the kernel, level zero, L0, all one thing. This record names that core, states the levels, and places ADR-ETH-01 and ADR-ETH-02 as the constitution of one instance. The analysis it rests on is in `core/`: the core as a property of a transition-system model (`core/core.md`), the taxonomy of pathologies it was tested against (`core/pathologies.md`), three instance derivations (`core/instances.md`) and the re-levelling plan (`core/relevel.md`).
+**Status: Proposed 2026-10-05.** This record decides what the originator of the constitution is. Until now, the text called "the L0 constitution" — ADR-ETH-01 with ADR-ETH-02, and their consolidated rendering — was both the originator and the constitution of one system. The founder asked which of its parts are the real generative rules that transcend every specific system. The founder then decided that the invariants are the originator: the meta-level, the core, the kernel, level zero, L0, all one thing. This record names that core, states the levels and the relations between them, and places ADR-ETH-01 and ADR-ETH-02 as one constitution conforming to it.
+
+The files under `core/`:
+- `core/L0.md` — the core's normative text;
+- `core/tests.md` — the tests the core was put through, and the machine checks;
+- `core/pathologies.md` — the taxonomy of pathologies;
+- `core/instances.md` — three derivations;
+- `core/relevel.md` — the re-levelling plan.
 
 > Claim tags as in ADR-ETH-01: **[evidence]** · **[hypothesis]** · **[open]** · **[proposed]** · **[pending]**.
 
 ## Context — the forces in tension
 
-The forces F1–F9 of ADR-ETH-01, as ADR-ETH-02 sharpens F3, apply. At the level of the core they are not obstacles to one design but the environment every instance is derived in, and their strength differs between instances. Two forces act on this decision that the earlier records did not need.
+The forces F1–F9 of ADR-ETH-01, as ADR-ETH-02 sharpens F3, apply. At the level of the core they are not obstacles to one design. They are the environment every constitution is derived in, and their strength differs between constitutions. One force acts on this decision that the earlier records did not need, and one criterion judges its result.
 
-**F10 — Instance-independence.** Considering all possible constitutions, some yield more ethical decisional systems than others. The core is a candidate for what every instance worth calling just shares **[hypothesis]**: one whose parties are all human, one whose parties are all agents in a fully autonomous self-organisation, and one that mixes them, at any speed and under any law. Anything that depends on which kinds are present, how many, or how fast they act, cannot be in it.
+**F10 — Instance-independence.** Considering all possible constitutions, some yield more ethical decisional systems than others. The core is a candidate for what every constitution worth calling just shares **[hypothesis]**. That covers one whose parties are all human, one whose parties are all agents in a fully autonomous self-organisation, and one that mixes them, at any speed and under any law. Anything that depends on which kinds are present, how many, or how fast they act cannot be in it.
 
-**F11 — Exclusion.** A core is justified by what it rules out. Every structural pathology of a decisional system — including the structural components of the unjust, unfair, tyrannical, arbitrary, fascist, oligarchic, plutocratic, corrupt and evil (`core/pathologies.md` §8), and those the founder did not list — must be the violation of some principle; and every principle must rule out something no other does, or it is not part of the core.
+**E — Exclusion, a criterion, not a force.** A core is judged by what it rules out. Every structural pathology of a decisional system must be excluded by some clause, including the structural components of the unjust, unfair, tyrannical, arbitrary, fascist, oligarchic, plutocratic, corrupt and evil (`core/pathologies.md` §8) and those the founder did not list. Every principle must rule out something no other does. Alternatives below lose to a force; E is how the result is graded.
 
-The two pull against each other and against F6. F10 pushes the core toward less; F11 toward more; F6 says that whatever is added beyond structure is the authors' values relocated.
+F10 pushes the core toward less. F1 pushes it toward more, because every structural pathology a core admits is an attack route. F6 says that whatever is added beyond structure is the authors' values relocated.
 
 ## The decisions
 
-**K1 — L0 is the core: six principles.** The core is six principles, each a property of the model in `core/core.md` §1 (an append-only record; state as a fold over it; a mandate graph rooted in a founding document that is not a party; a verdict function from facts and rules to findings and consequences; a change operator on rules gated over positions).
+**K1 — L0 is the core: six principles and one declared transient.** The core is `core/L0.md`. It states a model, then floors over that model.
 
-- **MEM — Memory.** What happened is written once, attributed, and never silently changed; reading about a subject is itself written.
-- **DEL — Delegation.** Every power is granted, every duty accepted by whoever bears it, every mandate renounceable at no cost the instance controls, and all trace to one root; delegation divides power and never multiplies it; someone outside answers for what the instance does, and an instance leaves the core only with notice and a free exit.
-- **LEX — Legality.** Every consequence is derived from acts by rules in force before them, the same way every time, and compliance is always possible.
-- **IMP — Impartiality.** What is found does not depend on who you are or on what you did not choose, power and admission are symmetric across classes, no one is outside judgement, and no one decides their own case.
-- **VOX — Voice.** Whoever is bound is told, can see, can answer at no cost, and is heard before it binds, interim measures included; whoever is affected, inside or not, can complain and is answered.
-- **COR — Correctability.** Every rule, verdict and position can be corrected by admissible steps in finite time, no provisional status and no jeopardy is endless, and no one, the founder included, owns a fixed point.
+The model is a system as an abstraction with an observation map. It has:
+- an append-only record of entries, each with a skeleton and a content;
+- a rule set whose fold and admissibility relation are among its components;
+- a mandate graph rooted in a founding document that is not a party;
+- typed attestations;
+- a change operator gated over positions, which admits only conforming rule sets.
 
-A seventh identifier, **GEN**, states the genesis transient (K6).
+The core's floors:
+- **MEM — Memory.** What happened is written once, by its true author, and never silently changed. Nothing more is written than is needed, and no one learns about a subject unseen.
+- **DEL — Delegation.** Every power is granted. Every duty is accepted by whoever bears it, every mandate can be renounced at no cost the instance controls, and all trace to one root. One controller counts once. Liability runs only for one's own act. Someone outside answers for what the instance does, and leaving the core takes notice and a free exit.
+- **LEX — Legality.** Every consequence follows from acts by the rules in force for them, or milder ones, and every derived consequence follows. Compliance is always possible, like acts are judged alike, and the rules change only by change.
+- **IMP — Impartiality.** What is found does not depend on who you are. Attributes may shape safeguards, never burdens or power, and admission reads no attribute but kind. No one is outside judgement, and no one decides their own case.
+- **VOX — Voice.** Whoever is bound is told in time, can see, can answer at no cost, and is heard before it binds; interim measures are bounded. Whoever is affected, inside or not, can complain and is answered.
+- **COR — Correctability.** No group short of capture can block a correction, and no position's replacement depends on itself. Every matter ends, and no one is tried twice on the same facts without new evidence.
+- **GEN — the founding regime**, a declared transient and not a principle. No rooted system meets the core at its first act. The core is claimed from the end of a founding regime held to every other floor it can meet.
 
-The core fixes outcomes and floors, never mechanisms. It is procedural (ADR-ETH-01 D3): it excludes pathologies of structure, not of purpose.
+Section 1 of `core/L0.md` holds definitions of the model, which bind no one. Sections 2 and 3 hold the 37 floors, each marked a state or a run property.
 
-**How it was found.** The candidate given to this record was five principles: Memory, Delegation, Impartiality, Voice, Correctability. Three tests were run (`core/core.md` §3). *Coverage:* 60 pathologies after merging synonyms; the 44 structural ones are each excluded by at least one principle, the 10 mixed ones in their structural part, and the 6 beyond a procedural core are named with the reason. *Minimality:* for each principle, a system satisfying the other five and violating it, and a witness for each clause that answers a distinct pathology; the couplings between clauses were checked and none makes a principle depend on another. *Sufficiency:* every unit of ADR-ETH-01, ADR-ETH-02 and the open amendment adding P3 maps to principle and force, or to value, mechanism, meta or editorial; one unit serves no principle, by its own text; fifteen core clauses have no clause, or only a partial one, in the instance, and one is contradicted (K3).
+**How it was found.** The candidate given to this record was five principles: Memory, Delegation, Impartiality, Voice and Correctability. Three tests were run (`core/tests.md` §3), and the candidate failed in eighteen places, each closed in the core (`core/tests.md` §1).
+- **Coverage.** 65 pathologies after merging synonyms, each classed by its definition before any clause is applied. All 47 structural ones are excluded by some clause, and the 13 mixed ones in their structural part. The 5 beyond a core over a record are named with the reason.
+- **Minimality.** For each principle, a system expressible in the model satisfies the other five and violates it. There is a witness for each clause added to answer a distinct pathology, and the couplings between clauses were checked.
+- **Sufficiency.** Every unit of ADR-ETH-01, ADR-ETH-02 and the open amendment adding P3 maps to what it serves. Of the 37 floors, the meta-agentic constitution covers 11, renders 19 in part and 3 not at all, and contradicts 4 (K3).
 
-The candidate failed the tests in nine places, and the core above is the result (`core/core.md` §3.4): Legality split from Impartiality, because the two have separate counter-models; accepted duty and exit added to Delegation, because the five admitted bondage; no amplification added, because a rooted chain can mint a thousand delegates; attribute-symmetric power added, because renaming invariance admits caste; the reviewer's independence moved from Voice to Impartiality, and non-retaliation added to Voice; reading made an act, because the five admitted surveillance; Correctability made finite and per-party, because "changeable by the rules" admitted gridlock; the genesis transient stated, because no system satisfies "no position beyond replacement" at its first act. Eight further failures were found and closed the same way (`core/core.md` §3.4, items 10–17): exclusion from standing by an unchosen attribute; answerability that ended at a document, with no standing for the affected outsider; interim measures as an unbounded exception to hearing; exit that was formal only; provisional status and favourable verdicts with no end; procedure frozen at the filer's choice, and no milder law; erasure that erased nothing, and completeness that meant total recording; and a founding regime its founder could extend, end by declaration, and have its own dependants re-decide.
+*Rejected alternatives:*
+- *The meta-agentic constitution as the core* — loses to F10. Parity of kinds (P1), two kinds or no instance (P3) and the human reviewer for humans (P2) exclude a humans-only and an agents-only constitution.
+- *The candidate five unchanged* — loses to F1. Bondage, sybil capture, caste by consequence, discretion by attestation, unanimity and mutual entrenchment, retroactive and impossible law, surveillance and retaliation all satisfy the five, and each is an attack route.
+- *COR in a cooperative form, a path existing* — loses to F1, for the reason ADR-ETH-02 A3 gave: a correcting path that needs the blocking group's cooperation satisfies it.
+- *A list of forbidden regimes* — loses to F6 and to ADR-ETH-01 D16, because it scores against human forms of government and relocates the authors' values.
+- *A core of mechanisms*, such as stratified Datalog, an external witness, a draw by lot — loses to F10, because each is one constitution's way of meeting a floor.
+- *A substantive floor in the core*, such as a duty not to harm outsiders — loses to F6 and D3.
+- *One principle, Correctability alone* — loses to F1, because a correctable tyranny is a tyranny until corrected.
+- *A voice in making the rules for every party* — loses to F10 and F6. An organisation in which a few decide, over parties who accepted, can leave at no cost and can replace them, is a declared value, not a pathology.
+- *One core per kind* — loses to F7 and F2, because there is then no shared vocabulary in which to compare constitutions.
 
-*Rejected:* the meta-agentic constitution as the core — loses to F10, because parity of kinds (P1), two kinds or no instance (P3) and the human reviewer for humans (P2) exclude a humans-only and an agents-only instance, and to F11, because the text cannot say which of its clauses do the excluding. *Rejected:* the candidate five unchanged — loses to F11: bondage, sybil capture, caste, retroactive and impossible law, surveillance, retaliation and gridlock satisfy all five (`core/core.md` §3.4). *Rejected:* a list of forbidden regimes, a blacklist of pathologies — loses to F6 and to ADR-ETH-01 D16, because it scores against human forms of government and relocates the authors' values, and to F11, because a list is never complete. *Rejected:* a core of mechanisms, such as stratified Datalog, an external witness, a draw by lot — loses to F10, because each is one instance's way of meeting a floor, and another instance may meet it another way. *Rejected:* a substantive floor in the core, such as a duty not to harm outsiders — loses to F6 and D3, as D3 already argued for the instance. *Rejected:* one principle, Correctability alone, on the ground that every pathology is eventually correctable — loses to F11, because a correctable tyranny is a tyranny until corrected, and Correctability alone admits arbitrary verdicts later reversed. *Rejected:* a voice in making the rules for every party, in the core — loses to F10 and F6: an organisation in which a few decide, over parties who accepted, can leave, are judged alike and can replace them, is a declared value, not a pathology; the core requires exit and hearing (`core/pathologies.md` X45, X46). *Rejected:* one core per kind of instance — loses to F7 and F2, because there is then no shared vocabulary in which to compare instances or name their pathologies.
+*Reopens if:*
+- a pathology is shown to be structural and excluded by no clause;
+- a counter-model is shown to violate a second principle, so that the principles are not independent;
+- a conforming constitution exhibits a structural pathology;
+- a constitution that conforms to the core, or a subject of one of its instances, shows that a constitution it holds legitimate violates a principle, in a reasoned finding reviewed by parties not implicated.
 
-*Reopens if:* a pathology is shown to be structural and excluded by no principle; a principle's counter-model is shown to violate another principle too, so that the principles are not independent; an instance satisfying all six exhibits a pathology the taxonomy classes structural; or an instance that adopted the core, or a subject of one, shows that an instance it holds legitimate violates a principle.
+**K2 — Three levels and two relations.**
 
-**K2 — Three levels.** **L0** is the core, shared by every instance. **L1** is an instance's constitution: for the meta-agentic instance, ADR-ETH-01 with ADR-ETH-02 and their consolidated text. **L2** is an instance's rules and parameters, admitted through its governed channel within the bounds L1 fixes (ADR-ETH-02 T, C15). An instance is derived, not chosen whole: core × forces × values ⟹ instance ⟹ parameters.
+| Level | What it is |
+|---|---|
+| L0 | the core |
+| L1 | a constitution: for the meta-agentic case, ADR-ETH-01 with ADR-ETH-02 and their consolidated text |
+| L2 | a deployment's parameters and rules, within the bounds L1 fixes (ADR-ETH-02 T, C15) |
 
-The records before this one use "L0" for the meta-agentic constitution and "L1" for its ordinary rules. They are not rewritten. Read under the levels: their "L0" is the instance's L1, their "L0 change" is a constitutional change of the instance, their "L1" is L2, and their "parent" (ADR-ETH-01 D6) is the core with its conformance suite. `core/relevel.md` §1 carries the full mapping.
+A constitution **conforms to** a version of the core. A deployment — a founding document with its parameter values — **is an instance of** a constitution, and conforms to the core through it. A constitution is derived, not chosen whole: core × forces × values ⟹ constitution ⟹ parameters.
 
-The core is not a rule of any instance. COR reaches every rule of an instance, its entrenched clauses included, and not the core: an instance cannot amend the core, it can only leave the family. The core changes by re-founding: a new version, which each instance adopts or not by its own constitutional change, as D6 already provides for a parent version. The core binds no one who has not adopted it, so it is a fixed point owned by no party. An instance leaves it only as DEL.7 provides: with notice to every subject a declared interval ahead, a free exit meanwhile, and the acts before the departure judged under the core.
+The records before this one are read through the mapping of `core/relevel.md` §1, not rewritten:
+- their "L0" is L1, and their "L0 change" is a constitutional change;
+- their "L1" is L2;
+- their "instance" is a deployment;
+- their "parent" is the L1 constitution as the template of its deployments.
 
-The core's own governance is held to the core (`core/core.md` §2.7). Its versions and its conformance suite are published in this repository's record, append-only and verifiable, their authors named; a version is proposed by a decision record and binds no instance until adopted; any instance or subject may file a finding against a version or a check and receives a reasoned answer; no author of a check certifies an instance it is implicated in; and anyone may fork the core under another name. Publishing a version is the one power this repository holds over the core, and it reaches no instance that does not adopt the version.
+Under that mapping C15's conformance test keeps its fixtures, which are L1's.
 
-*Rejected:* two levels, core and instance, with parameters inside the instance — loses to F7, because tailoring (C15) is a level of its own, with its own change rule. *Rejected:* renaming throughout the existing records — loses to MEM, applied to the records themselves: the evolution must stay readable, as ADR-ETH-02 kept ADR-ETH-01's body. *Rejected:* a core amendable from within an instance by its strongest gate — loses to F10, because one instance could then change what every instance shares.
+The change operator reaches every rule of a constitution and admits only a conforming rule set. Leaving the core is a re-founding: a new founding document whose genesis entry cites the old record, preceded by notice and a free exit (DEL.7). It is not a step of the old system. Within a deployment, the core is therefore its revolutionary surface (ADR-ETH-02 C2).
 
-*Reopens if:* a clause is found that belongs to no level, or a reader of the earlier records cannot resolve a level from the mapping.
+A version of the core is identified by its digest:
+- Anyone may publish a version, and authorship confers nothing.
+- A version binds no one until a constitution conforms to it and a deployment adopts it.
+- The family of a version is the set of constitutions that conform to it.
+- The core's own versions and conformance suite are held to the core (`core/L0.md` §4): published append-only with their authors named, answerable to findings, and certified by no one implicated.
 
-**K3 — ADR-ETH-01 and ADR-ETH-02 are the meta-agentic instance.** ADR-ETH-01, ADR-ETH-02 and the consolidated text are the constitution of the meta-agentic instance: the instance designed to govern the agentic system that develops software with the founder of meta-agentic.ai. It aims at being a good constitution for humans and agents collaborating; it does not claim to be the best one, and other instances may serve humans alone or agents alone better. Its values, declared under F6, are parity between kinds (P1), review for every subject (P2's extension), two kinds or no instance (P3) and the founder's dedication, which is not a rule. Its forces are F1–F9 at full strength, F2 and F9 in particular. `core/instances.md` §1 derives its text from the core.
+*Rejected alternatives:*
+- *Two levels, parameters inside the constitution* — loses to F7, because tailoring (C15) is a level with its own change rule.
+- *One relation for both* — loses to F8. C15's conformance test would then compare a deployment with a core that has no fixtures, and could not be replayed.
+- *Renaming the earlier records* — loses to F8, because a past verdict is replayed against the text that governed it.
+- *A core amendable from within a constitution* — loses to F10, because one constitution could then change what every constitution shares.
+- *Only the core's authors may publish versions* — loses to F1, because the core every deployment depends on would then be a fixed point owned by a party.
+- *A gate among conforming constitutions decides versions* — loses to F7, because constitutions are siblings and none governs another.
 
-The instance satisfies the core except in the genesis regime, which K6 accounts for, and leaves fifteen core clauses without a clause or with a partial one (`core/core.md` §3.3): non-retroactivity and the milder law; notice a declared interval before a change adds a duty; non-retaliation; possible compliance; no consequence from prediction or association; reads beyond findings; the replacement of a Custodian (OD4); answerability outside; standing of affected outsiders; remedy for interim measures; exit at no cost with portability; departure from the core; a bound on reopening a favourable verdict; recording no more than needed; and three parts of the founding regime (delivery to every subject, no lengthening, lapse at the ceiling). Each is for the instance to close by its own amendment, or to declare.
+*Reopens if:* a clause is found that belongs to no level, a reader cannot resolve a level from the mapping, or a version is treated as binding a constitution that did not conform to it.
 
-One clause is contradicted. A2 and P2 keep a consequence-bearing verdict provisional, with no ceiling, where no eligible reviewer exists, and its subject stays recused on the matter while the finding is open; COR.3 requires every provisional status to end, decided or lapsed in the subject's favour. The revised C14 already does this for undecided conflicts. Until the instance gives that provisional status a ceiling, it does not conform to COR.3, and this record says so rather than weakening COR.3 to fit.
+**K3 — ADR-ETH-01 and ADR-ETH-02 are the meta-agentic constitution.** ADR-ETH-01, ADR-ETH-02 and the consolidated text are the constitution, level L1, designed to govern the agentic system that develops software with the founder of meta-agentic.ai. It has one deployment today. It aims at being a good constitution for humans and agents collaborating; it does not claim to be the best one, and other constitutions may serve humans alone or agents alone better. Its declared values are:
+- parity between kinds (P1);
+- review for every subject (P2's extension);
+- two kinds or no instance (P3);
+- the founder's dedication, which is not a rule.
 
-*Rejected:* re-deriving the instance from the core before naming it one — loses to F5: the instance's text is ready for ratification, the gaps are additions, and the one contradiction is closed by a single ceiling. *Rejected:* treating parity as core — loses to F10, by the founder's decision.
+Against the core it covers 11 floors, renders 19 in part and 3 not at all, and contradicts 4 (`core/tests.md` §3.3). Each contradiction is closed by an edit to the founder's records, which this record does not make:
+- **DEL.5.** A chain-attributed finding is cited against a grantor with no act, custody or knowledge of its own (A2, P2). Edit: cite it only on those grounds, as S2 already does for steering.
+- **LEX.3.** Provenance names the rule set at derivation, not at each act (C12). Edit: bind it to the act's intake, and apply a milder rule.
+- **LEX.4.** P3's pause binds every party for one actor's departure. Edit: recast it as a condition of admissibility, applying alike to every party.
+- **COR.3.** A verdict stays provisional with no ceiling where no reviewer exists, while its subject stays recused (A2, P2). Edit: a ceiling at which it lapses in the subject's favour, as the revised C14 already provides.
 
-*Reopens if:* a clause of the instance, other than the provisional status named above, is found to contradict a core clause outside the genesis regime, or that one is not closed before the instance claims conformance.
+Until the four are closed, the meta-agentic constitution does not conform to the core, and this record says so rather than weakening a floor to fit.
 
-**K4 — What the founder's ceremony ratifies.** The core is published under its authors' signatures, as authors: an attribution (MEM.2), not an act of power, because the core binds no one by itself. The meta-agentic instance adopts the core and ratifies its own constitution in one act, signed by both Custodians (ADR-ETH-02 S1, P1). ADR-ETH-02 already makes ADR-ETH-01 and ADR-ETH-02 one act over both digests; this record proposes that the same act carry the digests of this record and of the core. That needs ADR-ETH-02's status sentence amended in place before the act, which ADR-ETH-02 permits until then; this record does not make that edit. The act is made under the genesis regime and is marked so (ADR-ETH-02 H3).
+*Rejected alternatives:*
+- *Re-deriving the constitution from the core before naming it one* — loses to F5. The text is ready, the gaps are additions, and each contradiction is one edit.
+- *Treating parity as core* — loses to F10.
+- *Weakening a floor to fit the instance* — loses to F1, because a floor shaped to the first constitution protects no subject of the next.
 
-*Rejected:* the core ratified by the founder alone as the instance's supreme law — loses to F10 and COR.2, because a core one party ratifies for an instance is that party's fixed point. *Rejected:* the core ratified by the meta-agentic Custodians on behalf of every instance — loses to F7: instances are siblings, and none adopts for another. *Rejected:* two separate acts, one for the core and one for the instance — loses to F5, because the instance would then exist for a time with a constitution and no core, or a core and no ratified constitution.
+*Reopens if:* a further clause of the constitution is found to contradict a floor outside the genesis regime, or conformance is claimed before the four contradictions are closed.
 
-*Reopens if:* the core is cited as binding a party that has not adopted it.
+**K4 — What is signed, in what order, by whom.** For the meta-agentic deployment, the acts are ordered:
+1. The founding document, at $e_0$, signed by the founder, names the digests of `core/L0.md` and of the L1 constitution, and publishes the Custodians' verification keys (ADR-ETH-02 S1, genesis).
+2. The ratification, signed by both Custodians, signs one manifest listing every ratified object: `core/L0.md`, ADR-ETH-01, ADR-ETH-02, this record, and the consolidated text's manifest.
+3. Both acts are made under the genesis regime and marked so, and go for re-decision at its end (H3, GEN.2).
 
-**K5 — How a future instance adopts the core.** An instance adopts the core by its founding document, which names the core's version by digest, declares the instance's forces and values, and states the instance's constitution (L1). It conforms when its rules pass the core's conformance checks (`core/core.md` §4, to be built under `conformance/core/`) and its own; and it carries a thin adoption record in its own repository, as ADR-ETH-01 already provides. It is a sibling of every other instance: adopting first confers nothing. It may meet each floor by any mechanism, and may adopt the meta-agentic instance's mechanisms as a library without adopting its values.
+The signature covers `core/L0.md`, never `core/tests.md` or the taxonomy, so the analysis does not become part of the originator. The core is published under its authors' signatures as authors: an attribution, true under MEM.2, not an act of power. Who signs as author, and how authorship of each part is attributed, is the founder's decision (OD31).
 
-*Rejected:* adoption by copying the meta-agentic constitution and editing it — loses to F10, because it carries parity into an instance that may not hold it, and to F11, because the edit cannot tell which clauses carry the core. *Rejected:* conformance by self-declaration — loses to F1.
+*Rejected alternatives:*
+- *The founder ratifies the core alone as the deployment's supreme law* — loses to F1, because a core one party ratifies for others is that party's fixed point.
+- *The Custodians ratify for every constitution* — loses to F7.
+- *Signing the core together with its analysis* — loses to F8, because a signed object must be the one replay and conformance read, and the analysis would then bind as originator.
+- *Separate acts with no single manifest* — loses to F8, because no replay could then say which objects one ratification covered.
 
-*Reopens if:* an instance passes the core's conformance checks and violates a principle on its fixtures, which would mean the checks do not capture the core.
+*Reopens if:* the core is cited as binding a party that has not adopted it, or a signed digest differs from the object conformance is checked against.
 
-**K6 — The genesis transient.** In every rooted system the signer of the founding document holds every position at the first act, before any grant (DEL.1). No system satisfies COR.2 or IMP.5 at genesis. The core is therefore claimed from the end of a founding regime, and the regime is held to the core's other clauses (GEN.2): it is declared with its ceiling and the floors it cannot meet, every act under it is marked, and the declaration is delivered to every subject; its ceiling is public from the first act and no act lengthens it except with the assent of parties not implicated in the regime, never by the founder alone; it ends at an event any party can verify, never by declaration alone; every act of power under it is decided again at its end by parties not implicated in it, which now excludes anyone holding a position through a grant the founder made or can revoke alone; and if the ceiling passes without the end, every consequence under the regime on anyone but the founder lapses. ADR-ETH-02 H3 is the meta-agentic instance's mechanism for this; the outcome is the core's.
+**K5 — How a constitution conforms and a deployment adopts.**
+- A constitution conforms to a version of the core when it meets its floors, tested by the checks of `core/tests.md` §4, built under `conformance/core/`.
+- A deployment adopts a constitution by its founding document, which names the constitution's and the core's digests, declares the deployment's forces and values, and sets its parameters.
+- It carries a thin adoption record in its own repository, as ADR-ETH-01 already provides.
+- Constitutions are siblings, and adopting first confers nothing.
+- A constitution may meet each floor by any mechanism, and may reuse the meta-agentic mechanisms without its values.
 
-*Rejected:* a core that holds from the first act — loses to its own impossibility. *Rejected:* a ceiling the founder may extend, or an end by the founder's declaration — loses to F1, because a lever its holder can lengthen is not finite in any sense that binds. *Rejected:* forfeiting only the label past the ceiling — loses to F1, because subjects stay bound by acts made under a regime that overstayed. *Rejected:* exempting genesis without bounds — loses to F1, because a founding regime with no end is entrenchment by another name (`core/pathologies.md` X44).
+*Rejected alternatives:*
+- *Adoption by copying the meta-agentic constitution and editing it* — loses to F10, because it carries parity into a constitution that may not hold it.
+- *Conformance by self-declaration* — loses to F1.
 
-*Reopens if:* an instance claims conformance with its founding regime past its declared ceiling, a ceiling is lengthened by the founder or the founder's dependants, or a consequence under a regime survives its lapse.
+*Reopens if:* a constitution passes the conformance checks and violates a floor on its fixtures, which would mean the checks do not capture the core.
 
-**K7 — Pathologies are labels on violations, and instances are partially ordered.** Each pathology in `core/pathologies.md` is defined as a violation of a property of the model, never as a resemblance to a historical polity; no entry is defined by reference to a real person or state, and names and synonyms are descriptive, leaving out terms of art drawn from a person, a book or a historical policy. This is the ex-post labelling ADR-ETH-01 D16 allows, not the scoring it rejects. Instances are ordered by which principles they satisfy and which pathologies they exclude. The order is partial: two instances satisfying all six are not ranked by the core, because what remains between them is their values.
+**K6 — GEN is a declared transient, not a principle.** At $e_0$ the founder is the author of every root grant. Until some position is held through a grant the founder cannot revoke alone, every position is held through the founder's grants, so COR.2 and IMP.5's dependency ground fail; this is a lemma of the model.
 
-*Rejected:* a ranking of instances by a score — loses to F6 and D16.
+GEN.2 holds the founding regime to every other floor it can meet:
+- it is declared with its ceiling and the floors it cannot meet;
+- it is delivered to every subject, and every act under it is marked;
+- its ceiling is public from $e_0$, and no act lengthens it except with the assent of parties not implicated — never the founder's alone;
+- it ends at an event any party can verify;
+- every act of power under it goes for re-decision by parties not implicated, and one not re-decided within a window stands, marked, as a finding, which is H3's own rule;
+- past the ceiling without the ending event, every consequence under it on others lapses.
 
-*Reopens if:* a pathology is defined in the taxonomy by resemblance rather than by a property.
+*Rejected alternatives:*
+- *A core that holds from the first act* — loses to F7, because no deployment could conform: every one begins with one signer.
+- *GEN as a seventh principle* — loses to F8. The principles are what replay and checks test at every state; GEN says when they are claimed, and tested as a principle it would fail every deployment at its first entry.
+- *A ceiling the founder may extend, or an end by declaration* — loses to F1.
+- *Forfeiting only the conformance label past the ceiling* — loses to F1, because subjects stay bound by acts of a regime that overstayed.
 
-**K8 — The re-levelling plan.** `core/relevel.md` proposes the moves: the consolidated text to `instances/meta-agentic/constitution/`; the core's property checks to `conformance/core/`; the threat model and the genesis directory under the instance; the decision records where they are, their level recorded at ratification; and the companion paper's new structure — thesis the core and the pathology result, the multiverse of constitutions as its frame, the meta-agentic instance as a worked derivation, a humans-only and an agents-only instance as sketches. No existing file is moved by this record.
+*Reopens if:* a deployment claims conformance past its regime's ceiling, a ceiling is lengthened by the founder or the founder's dependants, or a consequence under a regime survives its lapse.
 
-*Rejected:* moving files in this record — loses to F5 and to the open consolidated text, which would be rebased under a move it did not make.
+**K7 — Pathologies are labels on violations, and constitutions are partially ordered.** Each pathology in `core/pathologies.md` is defined as a violation of a property of the model, and classed by its definition before any clause is applied. No entry is defined by reference to a real person or state, and names are descriptive. This is the ex-post labelling ADR-ETH-01 D16 allows, not the scoring it rejects. Within one version's family, constitutions are ordered by the floors they meet and the pathologies they exclude. The order is partial: two constitutions meeting the same floors are not ranked by the core, because what remains between them is their values.
+
+*Rejected alternatives:* a ranking by a score — loses to F6 and D16.
+
+*Reopens if:* a pathology is defined by resemblance rather than by a property, or classed by whether the core excludes it.
+
+**K8 — The re-levelling plan.**
+- Done in this change: the core's normative text is split into `core/L0.md`, because a signature must cover it alone.
+- Proposed only, in `core/relevel.md`: the other moves — the consolidated text to `instances/meta-agentic/constitution/`; the core's floor checks to `conformance/core/`; the threat model and genesis under the deployment; the records in place, their level recorded at ratification.
+- Also proposed there: the inventory's `core` column; a `core-gaps.tsv` with marks `none`, `partial` and `contradicts`; and the companion paper's new structure.
+
+*Rejected alternatives:* moving the consolidated text in this record — loses to F5, because it is an open change that would be rebased under a move it did not make.
 
 *Reopens if:* a move is made that the plan does not list.
 
 ## Consequences
 
-The originator is now small and states only what every just instance must share: a record that cannot be silently rewritten, power that flows only by grant and duty only by consent, consequences only by rule, findings blind to who you are, a hearing before anything binds, someone outside who answers for what the instance does and a channel for anyone it affects, an exit that costs nothing the instance controls, and a path to correct every rule and replace every holder. Everything else — parity, the Custodian's shape, the draw, the witness, the logic — is an instance's way of meeting these floors or an instance's value, and is said to be so. The meta-agentic constitution stops being the whole answer and becomes a worked one.
+The originator is now small and states what every just constitution must share. Everything else — parity, the Custodian's shape, the draw, the witness, the logic — is a constitution's way of meeting these floors, or its value, and is said to be so. The meta-agentic constitution stops being the whole answer and becomes a worked one, with four named contradictions to close. What the core requires:
+- a record that cannot be silently rewritten;
+- power only by grant, and duty only by consent;
+- consequences only by rule, and every derived one applied;
+- findings blind to who you are;
+- a hearing before anything binds;
+- someone outside who answers, and a channel for anyone affected;
+- an exit that costs nothing the instance controls;
+- a path to correct every rule against any group short of capture, and to replace every holder;
+- an end to every matter.
 
-What becomes easy: founding an instance for humans alone, or agents alone, without editing the meta-agentic text; saying which clause of an instance excludes which pathology; comparing two instances without scoring them. What becomes hard: adding a clause to the core, which must exclude a pathology nothing else excludes; claiming conformance while a founding regime runs on.
+What becomes easy:
+- founding a constitution for humans alone or agents alone without editing the meta-agentic text;
+- saying which clause excludes which pathology;
+- comparing constitutions without scoring them.
+
+What becomes hard:
+- adding a floor, which must exclude a pathology no other floor excludes;
+- claiming conformance while a founding regime runs on, or while a contradiction stands.
 
 ## Accepted costs
 
-**The core admits rule by a few, and weight by stake, where parties accepted, can leave at no cost the instance controls and take their record and state with them, are judged alike and can replace the few.** These are declared values, not pathologies, under this core (`core/pathologies.md` X45, X46). An instance whose parties cannot leave in practice needs more, and OD25 asks whether that is a core clause.
+**Within a deployment, the core is its revolutionary surface.** No admissible step changes it. A deployment that needs another core re-founds, with notice and a free exit.
 
-**The core does not exclude procedurally valid evil.** A lawful, blind, heard and correctable decision can be wrong in what it decides (X51). The core makes it recorded, binding on its makers alike, answerable, leavable and correctable, and no more. This is ADR-ETH-01 D3, stated at the level of the core.
+**The core admits rule by a few, and weight by stake, where parties accepted, can leave at no cost the instance controls, take their record and state with them, are judged alike, and can replace the few.** These are declared values (`core/pathologies.md` X45, X46).
 
-**Opaque collusion, reward hacking and selective observation are bounded, not excluded** (X53–X55). No core over a record excludes them.
+**Kind is the one attribute admission may read.** A constitution that leaves a kind out of party status leaves it out of every power, as a declared value. Those it leaves out stay subjects with every protection of VOX and no burden by attribute (OD24).
 
-**The meta-agentic instance has fifteen gaps and one contradiction against the core** (K3). Each gap is a clause to add or a declaration to make; the contradiction is one ceiling to add (OD27).
+**The core does not exclude procedurally valid evil** (X51), and opaque collusion, reward hacking and the observation gap are bounded, not excluded (X53, X54, X55).
 
-**Kind is the one unchosen attribute admission may read.** An instance may keep a kind out of party status as a declared value; those it leaves out stay subjects with every protection of VOX and no burden by kind (IMP.3). Every other unchosen attribute is barred from admission (X58).
+**The meta-agentic constitution does not conform until four records are edited** (K3, OD27).
 
-**Coverage and minimality are established by inspection.** The machine checks of `core/core.md` §4 are a sketch; until they exist, the results here are argued, not checked.
+**Coverage and minimality are established by inspection.** The machine checks of `core/tests.md` §4 are a design, two of them proxies beyond the roster cap; until they exist, the results are argued, not checked.
 
 ## Safety envelope
 
-This record changes what the repository calls its originator and how it reads the earlier records. It changes no clause of ADR-ETH-01 or ADR-ETH-02, moves no file, and changes no running system. The core binds no party until an instance adopts it by a signed act.
+This record changes what the repository calls its originator and how it reads the earlier records. It changes no clause of ADR-ETH-01 or ADR-ETH-02, moves no existing file, and changes no running system. The core binds no party until a deployment adopts it by a signed act.
 
 ## Open decisions
 
-**OD24** — Agents as parties, subjects or instruments. `core/core.md` §1 defines an instrument — a non-human actor with no mandate of its own, every act attributed to the party using it, no consequence falling on it — and states that no human is an instrument. Should the core keep the category? *Recommendation:* keep it, with "no human is an instrument" as a floor, because without it every tool an instance uses is a subject owed notice and hearing, and with it no instance can strip a human worker of VOX by calling them a tool.
+**OD24 — Agents as parties, subjects or instruments.** `core/L0.md` §1 defines an *instrument*: a non-human actor with no mandate of its own, every act recorded to the party using it, and no consequence falling on it. An instrument is still a subject owed notice, sight and answer, and no human is an instrument. Should the core keep the category? *Recommendation:* keep it. Without it every tool a deployment uses is a subject owed a hearing on consequences that fall on it. With it, no constitution can strip a human worker of voice by calling them a tool.
 
-**OD25** — Whether a share in making the rules, for parties who cannot in practice leave, belongs in the core or is derived from a force. *Recommendation:* answer conditionally in the core. A party with real exit (DEL.4) needs no share in rule-making. A subject bound repeatedly over a declared span, without real exit, has a finite admissible path to party status — which COR.3's ceiling on pending admission already begins to give.
+**OD25 — A share in making the rules.** Does a share in making the rules, for parties who cannot in practice leave, belong in the core, or is it derived from a force? *Recommendation:* answer conditionally in the core. A party with real exit (DEL.4) needs no share. A subject bound repeatedly over a declared span without real exit has a finite admissible path to party status, which COR.3's ceiling on pending admission begins to give.
 
-**OD26** — Proportion and remedy. *Option A, recommended:* add two floors. "LEX.7 Proportion. Every consequence rule declares the breaches it answers and a finite ceiling on its burden; the instance declares an order of gravity over breaches and an order of burden over consequences, and no breach draws a burden greater than one drawn by a graver breach." "COR.5 Remedy. A consequence whose effect cannot be undone binds only once its verdict has passed every review the instance offers; every consequence later reversed carries a declared remedy, and the remedy is owed." The argument for it: ordinal proportion imports no external scale, since it is monotonicity against the instance's own declared orders, checkable on fixtures; and re-examination is empty when a consequence cannot be undone, which is a correctability failure, not a values question. Disproportion then becomes a structural pathology, split from X51. *Option B:* leave both to instances, as now, at the cost that a lawful, heard, correctable instance may impose draconian or irreversible consequences and still conform.
+**OD26 — Proportion and remedy.** *Option A, recommended:* add two floors.
+- "**LEX.9** Proportion. Every consequence rule declares the breaches it answers and a finite ceiling on its burden; the constitution declares an order of gravity over breaches and an order of burden over consequences, and no breach draws a burden greater than one drawn by a graver breach."
+- "**COR.5** Remedy. A consequence whose effect cannot be undone binds only once its verdict has passed every review offered; every consequence later reversed carries a declared remedy, and the remedy is owed."
 
-**OD27** — The meta-agentic instance's fifteen gaps and one contradiction against the core (`core/core.md` §3.3): which to close by amendment, and which to declare. The contradiction, an unbounded provisional status where no reviewer exists, needs a ceiling before the instance claims conformance. DEL.6 should be read with OD23: it asks for an actor answerable for the instance's acts, not for the non-human seat's in particular.
+The argument for Option A: ordinal proportion imports no external scale, since it is monotonicity against the constitution's own declared orders and can be checked on fixtures. And re-examination is empty when a consequence cannot be undone, which is a correctability failure, not a values question. Disproportion then becomes structural, split from X51.
 
-**OD28** — Whether the ratification act carries this record and the core (K4), which needs ADR-ETH-02's status sentence amended first.
+*Option B:* leave both to constitutions, at the cost that a lawful, heard, correctable constitution may impose draconian or irreversible consequences and still conform.
 
-**OD29** — Thin, not neutral. *Option A, recommended:* restate the core's scope (`core/core.md` §2.7) as: "The core encodes who decides, on what record, with whom excluded, and how it is corrected, and the floors that keep a subject from domination: consent to duty, exit, no burden for another's act or for an attribute one did not choose, and a hearing. These are its authors' values, declared under F6. It says nothing about the content of an instance's purposes; a lawful, heard, correctable decision can still be wrong in what it decides (X51), and the core does not claim to exclude it." The argument for it: ADR-ETH-01 F6 holds that a design claiming no values has hidden them, and DEL.4, LEX.4, IMP.3 and VOX.5 are already commitments to non-domination; the honest line is not procedure against substance but properties of the model against the content of what is prescribed. *Option B:* keep "not substantive", at the cost of a claim F6 itself calls false.
+**OD27 — The meta-agentic constitution against the core.** Which of its 19 partial and 3 absent floors to close by amendment and which to declare. Its 4 contradictions must be closed before it claims conformance (K3). DEL.6 should be read with OD23: it asks for an actor answerable for the instance's acts, not for the non-human seat's in particular.
 
-**OD30** — External law. *Option A, recommended:* add "LEX.8 External law. The founding document declares the jurisdictions the instance's acts reach and the law it treats as binding there; external law enters as attested facts (LEX.2). Where that law requires an act a core clause forbids, the instance either declines it and bears the external consequence; or performs it as a declared derogation — entered, attributed to the requiring authority and to the instance, delivered to the affected subject as soon as that law permits, every deferral counted and published in aggregate at each declared interval, every other core clause intact; or withdraws from that jurisdiction. No derogation is unrecorded, and the instance claims no conformance for the scope a derogation covers." The argument for it: an instance is not a sovereign, and a core that licensed defiance of law would set itself above law; a core that absorbed unjust law silently would let its label cover it; declared derogation, refusal or withdrawal avoids both, and generalises ADR-ETH-02's "the constitution does not resist the law" without making an unjust law a silent override. *Option B:* stay silent, at the cost that an instance doing what law forbids, or doing silently what law commands against a core clause, keeps the core's label.
+**OD28 — The ratification manifest.** Whether the ratification act signs one manifest carrying `core/L0.md`, this record and the consolidated text with ADR-ETH-01 and ADR-ETH-02 (K4). That needs ADR-ETH-02's status sentence amended first.
 
-The ledger of ADR-ETH-01 and ADR-ETH-02 otherwise stands.
+**OD29 — Thin, not neutral.** *Option A, recommended:* restate the core's scope (`core/L0.md` §4) as follows. "The core encodes who decides, on what record, with whom excluded, and how it is corrected, and the floors that keep a subject from domination: consent to duty, exit, no burden for another's act or for an attribute, and a hearing. These are its authors' values, declared under F6. It says nothing about the content of an instance's purposes; a lawful, heard, correctable decision can still be wrong in what it decides (X51), and the core does not claim to exclude it."
+
+The argument for Option A: ADR-ETH-01 F6 holds that a design claiming no values has hidden them. DEL.4, LEX.4, IMP.3 and VOX.5 are already commitments to non-domination. The honest line is not procedure against substance; it is properties of the model against the content of what is prescribed.
+
+*Option B:* keep "not substantive", at the cost of a claim F6 itself calls false.
+
+**OD30 — External law.** *Option A, recommended:* add the following floor.
+
+"**LEX.10** External law. The founding document declares the jurisdictions the deployment's acts reach and the law it treats as binding there; external law enters as attestations. Where that law requires an act a core clause forbids, the deployment does one of three things:
+- declines it and bears the external consequence;
+- performs it as a declared derogation — entered, attributed to the requiring authority and to the deployment, delivered to the affected subject as soon as that law permits, every deferral counted and published in aggregate at each declared interval, every other core clause intact;
+- withdraws from that jurisdiction.
+
+No derogation is unrecorded, and the deployment claims no conformance for the scope a derogation covers."
+
+The argument for Option A: a deployment is not a sovereign, and a core that licensed defiance of law would set itself above law. A core that absorbed unjust law silently would let its label cover it. Declared derogation, refusal or withdrawal avoids both, and generalises ADR-ETH-02's "the constitution does not resist the law" without making an unjust law a silent override.
+
+*Option B:* stay silent, at the cost that a deployment doing what law forbids, or silently doing what law commands against a floor, keeps the core's label.
+
+**OD31 — Authorship of the core.** MEM.2 requires every entry to name its true author, and K4 publishes the core under its authors' signatures. Who signs as author, and whether the parts drafted by a non-human party are attributed to it, is the founder's decision. The options:
+- the founder signs as sole author;
+- the founder signs, with the non-human drafting attributed in the record;
+- each author signs for the parts it drafted.
+
+This record takes none of them.
+
+The ledgers of ADR-ETH-01 and ADR-ETH-02 otherwise stand.
 
 ## Decision ledger
 
 ```
 ID   STATUS    DECISION                                   ALTERNATIVES REJECTED (why)                         ACCEPTED COST                         REOPENING TRIGGER
-K1   proposed  L0 is the core: MEM, DEL, LEX, IMP, VOX,   meta-agentic text as core (F10, F11); candidate     admits rule by a few with real exit;  structural pathology excluded by none;
-               COR, properties of a minimal model, with   five (F11); blacklist (F6, D16, F11); mechanisms    procedurally valid evil not           principles not independent; conforming
-               GEN for genesis; outcomes not mechanisms;  (F10); substantive floor (F6, D3); one principle    excluded; collusion bounded; kind     instance shows a structural pathology;
-               answerability outside and standing of the  (F11); voice in rule-making (F10, F6); a core per   the one attribute admission may read  an adopter or its subject shows a
-               affected                                   kind (F7, F2)                                                                             legitimate instance violates a principle
-K2   proposed  levels L0 core, L1 instance constitution,  two levels (F7); renaming the records (MEM);        two vocabularies until the            clause with no level; level unresolvable
-               L2 rules and parameters; records read by   core amendable inside an instance (F10)             consolidated text changes             from the mapping
-               a mapping; core changes by re-founding;
-               departure only under DEL.7; the core's
-               own governance held to the core
-K3   proposed  ADR-ETH-01, ADR-ETH-02 and the             re-derive before naming (F5); parity as core (F10)  15 gaps, 1 contradiction to close                 instance clause contradicts the core
-               consolidated text are the meta-agentic                                                                                               outside genesis (one named; to close)
-               instance; parity its value
-K4   proposed  core published under its authors'          founder ratifies alone (F10, COR.2); Custodians     ADR-ETH-02 status sentence to amend   core cited as binding a non-adopter
-               signatures; instance adopts it and         ratify for all (F7); two acts (F5)
-               ratifies its constitution in one act
-               signed by both Custodians
-K5   proposed  adoption by a founding document naming     copy and edit (F10, F11); self-declaration (F1)     conformance checks to build           instance passes checks, violates a
-               the core by digest; core conformance                                                                                                 principle on its fixtures
-               checks; siblings
-K6   proposed  genesis transient: core claimed from the   core from the first act (impossible); ceiling the   no instance conforms during genesis   conformance claimed past the ceiling;
-               end of a declared, delivered, marked       founder extends or end by declaration (F1);                                               ceiling lengthened by the founder or a
-               regime; ceiling not lengthened by the      label-only forfeit (F1); unbounded exemption (F1)                                         dependant; a consequence survives lapse
-               founder; verifiable end; acts re-decided
-               by non-dependants; lapse past ceiling
-K7   proposed  pathologies are labels on violations;      ranking by score (F6, D16)                          no total order of instances           a pathology defined by resemblance
-               instances partially ordered
-K8   proposed  re-levelling plan proposed, not executed   moving files now (F5)                               the plan waits on the open text       a move made outside the plan
+K1   proposed  L0 is the core: MEM, DEL, LEX, IMP, VOX,   meta-agentic text (F10); candidate five (F1);       admits rule by a few with real exit;  structural pathology excluded by none;
+               COR over a model of observed systems,      cooperative COR (F1, as A3); blacklist (F6, D16);   procedurally valid evil not           a counter-model violates two
+               and the transient GEN; 37 floors, each a   mechanisms (F10); substantive floor (F6, D3); one   excluded; collusion bounded; kind     principles; a conforming constitution
+               state or run property; definitions apart   principle (F1); voice in rule-making (F10, F6);     the one attribute admission reads     shows a structural pathology; a
+                                                          a core per kind (F7, F2)                                                                  reviewed finding of a violation
+K2   proposed  L0 core, L1 constitution, L2 parameters;   two levels (F7); one relation (F8); renaming the    within a deployment the core is its   clause with no level; level
+               conforms-to and instance-of; Delta admits  records (F8); core amendable inside (F10); authors  revolutionary surface                 unresolvable; a version treated as
+               only conforming rule sets; leaving is      alone publish (F1); a gate among constitutions                                            binding a non-conformer
+               re-founding; versions by digest            (F7)
+K3   proposed  ADR-ETH-01, ADR-ETH-02 and the             re-derive first (F5); parity as core (F10);         4 contradictions to close by the      a further contradiction; conformance
+               consolidated text are the meta-agentic     weaken a floor to fit (F1)                          founder's edits; 22 floors partial    claimed before the four are closed
+               constitution; 4 contradictions named                                                           or absent
+K4   proposed  founding document names digests; one      founder ratifies alone (F1); Custodians for all     ADR-ETH-02 status sentence to amend;  core cited as binding a non-adopter;
+               manifest signed by both Custodians; the    (F7); core signed with analysis (F8); no single     authorship open (OD31)                signed digest differs from the
+               signature covers core/L0.md only           manifest (F8)                                                                             checked object
+K5   proposed  constitutions conform by the floor        copy and edit (F10); self-declaration (F1)          conformance checks to build           passes checks, violates a floor on its
+               checks; deployments adopt by founding                                                                                                fixtures
+               document; siblings
+K6   proposed  GEN a declared transient; regime          core from the first act (F7); GEN a principle      no deployment conforms during         conformance past the ceiling; ceiling
+               declared, delivered, unextendable by the   (F8); founder-extendable ceiling or end by          genesis                               lengthened by the founder or a
+               founder, verifiable end, acts re-decided   declaration (F1); label-only forfeit (F1)                                                 dependant; a consequence survives lapse
+               by non-dependants, lapse past ceiling
+K7   proposed  pathologies are labels on violations,      ranking by score (F6, D16)                          no total order                        a pathology defined by resemblance or
+               classed by definition; partial order                                                                                                 classed by excludability
+               within a version's family
+K8   proposed  split of core/L0.md done; other moves      moving the consolidated text now (F5)               the plan waits on the open text       a move made outside the plan
+               proposed; contradicts mark for the gaps
+               file
 
 INTEGRITY   decisions without a rejected alternative: 0 · without a reopening trigger: 0
-            ADR-ETH-01 and ADR-ETH-02 lines edited by this record: 0
+            alternatives that lose to no force: 0 · ADR-ETH-01 and ADR-ETH-02 lines edited by this record: 0
 ```
 
 ## Provenance
 
-The founder's decision of 2026-10-05: the invariants are the originator, and the constitution designed so far is the instance that governs the agentic system developing software with the founder of meta-agentic.ai. The candidate five principles were given to this record as a starting point and changed as `core/core.md` §3.4 records. ADR-ETH-01 and ADR-ETH-02 at the main line; the open amendment that adds P3 and revises C14, and the open consolidated text, read for the sufficiency test. References: Aristotle, *Politics*, Book III; Fuller, *The Morality of Law*, 1964; Hirschman, *Exit, Voice, and Loyalty*, 1970; Ostrom, *Governing the Commons*, 1990. The backlog is tracked outside this repository.
+The founder's decision of 2026-10-05: the invariants are the originator, and the constitution designed so far governs the agentic system developing software with the founder of meta-agentic.ai. The candidate five principles were given to this record as a starting point and changed as `core/tests.md` §1 records. The sufficiency test reads ADR-ETH-01 and ADR-ETH-02 at the main line, the open amendment that adds P3 and revises C14, and the open consolidated text. References: Aristotle, *Politics*, Book III; Fuller, *The Morality of Law*, 1964; Hirschman, *Exit, Voice, and Loyalty*, 1970; Ostrom, *Governing the Commons*, 1990. The backlog is tracked outside this repository.
