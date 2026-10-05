@@ -1,4 +1,4 @@
-% Five windows under the genesis regime (P1.7, P1.8, P1.5): the formal
+% Five windows under the genesis regime (LV, as proposed; P1.7, P1.8, P1.5): the formal
 % review's case. The founder f's seat ch may veto one matter per window of
 % five decided proposals, and vetoes five acts, one per window, each citing a
 % law as to a human's right. No review decides; it is now long past the
@@ -27,21 +27,21 @@ passed_channel(p6). matter_of(p6, y6). veto(ch, p6, 995). veto_signed(ch, p6). v
 cites_right_of(p6, l6, h6). irreversible_effect(p6). decided_seq(p6, 995).
 decided_seq(p1, 1). decided_seq(p2, 6). decided_seq(p3, 11). decided_seq(p4, 16). decided_seq(p5, 21).
 
-% EXPECT[P1.8]: within_ceiling(ch,p5)
-% EXPECT-NOT[P1.7]: law_hold(p1)
-% EXPECT-NOT[P1.7]: law_hold(p3)
-% EXPECT-NOT[P1.7]: law_hold(p5)
-% EXPECT[P1.7]: protection_mode(p1,l1)
-% EXPECT[P1.7]: consequence_withheld(p3,h3)
-% EXPECT[P1.7]: consequence_withheld(p5,h5)
-% EXPECT[P1.7]: law_review_redrawn(p1,l1)
-% EXPECT[P1.5]: standing_veto(ch,p1)
-% EXPECT[P1.7]: law_hold(p2)
-% EXPECT[P1.7]: law_hold(p4)
-% EXPECT[P1.7]: genesis_cost_hold(p2)
-% EXPECT[P1.7]: genesis_cost_hold(p4)
-% EXPECT-NOT[P1.7]: genesis_cost_hold(p1)
-% EXPECT-NOT[P1.7]: consequence_withheld(p2,h2)
-% EXPECT[P1.7]: counts_toward_d2(p4)
-% EXPECT[P1.7]: law_hold(p6)
-% EXPECT-NOT[P1.7]: genesis_cost_hold(p6)
+% EXPECT[LV.5]: pr_within_ceiling(ch,p5)
+% EXPECT-NOT[LV.2]: pr_law_hold(p1)
+% EXPECT-NOT[LV.2]: pr_law_hold(p3)
+% EXPECT-NOT[LV.2]: pr_law_hold(p5)
+% EXPECT[LV.3]: pr_protection_mode(p1,l1)
+% EXPECT[LV.3]: pr_consequence_withheld(p3,h3)
+% EXPECT[LV.3]: pr_consequence_withheld(p5,h5)
+% EXPECT[LV.4]: pr_redrawn(p1,l1)
+% EXPECT[LV.5]: pr_standing_veto(ch,p1)
+% EXPECT[LV.2]: pr_law_hold(p2)
+% EXPECT[LV.2]: pr_law_hold(p4)
+% EXPECT[LV.4]: pr_genesis_cost_hold(p2)
+% EXPECT[LV.4]: pr_genesis_cost_hold(p4)
+% EXPECT-NOT[LV.4]: pr_genesis_cost_hold(p1)
+% EXPECT-NOT[LV.3]: pr_consequence_withheld(p2,h2)
+% EXPECT[LV.4]: pr_counts_toward_d2(p4)
+% EXPECT[LV.2]: pr_law_hold(p6)
+% EXPECT-NOT[LV.4]: pr_genesis_cost_hold(p6)

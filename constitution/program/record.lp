@@ -32,7 +32,7 @@ knew(R, X, T) :- delivered(D, R, X, T), independent_collector(_, D), holds_infor
 % clause: S2.3
 party_fork(P, K) :- presence(E1, P, K, H), presence(E2, P, K, H), E1 != E2.
 
-% clause: C14.1 C14.2
+% clause: C14.1 C14.2 P1.7
 conflict(C1, C2) :- conflicts(C1, C2).
 conflict(C2, C1) :- conflicts(C1, C2).
 beats(C1, C2, P) :- candidate(C1, P), candidate(C2, P), conflict(C1, C2), prevails(C1, C2).
@@ -41,11 +41,11 @@ beats(C1, C2, P) :- candidate(C1, P), candidate(C2, P), conflict(C1, C2), resolu
 defeated(C, P) :- beats(_, C, P).
 undecided(C, P) :- candidate(C, P), candidate(C2, P), conflict(C, C2),
                    not beats(C, C2, P), not beats(C2, C, P).
-applied(C, P) :- candidate(C, P), not defeated(C, P), not undecided(C, P).
+applied(C, P) :- candidate(C, P), not defeated(C, P), not undecided(C, P), not withheld_candidate(C, P).
 
-% clause: C14.3
+% clause: C14.3 P1.7
 conflict_lapsed(C, P) :- undecided(C, P), conflict_filed(C, P, T), now(N), param(conflict_ceiling, X), N - T >= X.
-applied(C, P) :- conflict_lapsed(C, P), protection(C).
+applied(C, P) :- conflict_lapsed(C, P), protection(C), not withheld_candidate(C, P).
 
 % clause: H1.4
 admitted_act(A) :- filed(A, _), owed(A).

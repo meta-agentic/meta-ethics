@@ -97,7 +97,7 @@ recused	party,matter	derived	A2.6	a party a finding names is ineligible on the m
 eligible	matter,party	derived	A2.6	eligible on a matter	
 base_size	matter,nat	derived	A2.6	the party stays in the base against which the matter is decided	
 eligible_size	matter,nat	derived	A2.6	eligible parties in the base	
-citable	finding,party	derived	A2.3	a finding may be cited against its subject only for a declared period, and never once closed in its favour	
+citable	finding,party	consequence	A2.3	a finding may be cited against its subject only for a declared period, and never once closed in its favour	
 implicated	party,verdict	derived	A2.5	a party implicated in a verdict: its subject, its filer, or in their chains	
 window_passed	verdict	derived	A2.5	its contest window has passed	
 needs_human_reviewer	verdict	consequence	P2.2	any consequence of the verdict falls on a human	
@@ -115,7 +115,7 @@ standing_veto	seat,proposal	derived	P1.2	a veto by either seat stands, and the a
 vetoed	proposal	derived	P1.2	an act stopped by a standing veto	
 eligible_seat	seat,proposal	derived	P1.3	a filled seat eligible on an act	
 some_eligible_seat	proposal	derived	P1.3	at least one seat is eligible on the act	
-custodian_passes	proposal	derived	P1.2	an act the channel passed takes effect at the last resort	
+custodian_passes	proposal	consequence	P1.2	an act the channel passed takes effect at the last resort	
 seat_choice	seat,proposal,option	derived	P1.2	a choice made by a filled, eligible seat	
 dissent	proposal,option	derived	P1.2	some seat did not make this choice	
 chosen	proposal,option	derived	P1.2	both seats must agree	
@@ -152,7 +152,7 @@ contact_entered	contact	intake	C21.5	the judge entered the contact as an atteste
 lobbying	contact,party	derived	C17.7	contacting or lobbying the drawn judge about the matter outside the record is a finding	
 unentered_contact	contact,party	derived	C21.5	a contact later shown and not entered is a finding against the judge	
 duty_on	act,matter,party	intake	C14.4	an act a rule requires of a party on a matter	
-owes	party,act	derived	C14.4	no one owes an act on a matter in which a finding names them	
+owes	party,act	consequence	C14.4	no one owes an act on a matter in which a finding names them	
 could_be_subject	finding,party	intake	A2.13	a party that could be the finding's subject, as shown to others	
 possible_subjects	finding,nat	derived	A2.13	how many parties could be the finding's subject	
 shown_to_others	finding	derived	A2.13	shown to others only where at least as many parties could be its subject as the founding document declares	
@@ -183,7 +183,7 @@ delivered_to_subject	finding	attested	A1.5	the finding was delivered to its subj
 delivery_owed	finding,party	derived	A1.5	every finding made about a subject is delivered to them	
 may_answer	party,finding	derived	A1.5	the subject may answer every finding about them	
 interim	interim,finding,time	intake	A2.7	an interim measure about a finding's subject, from its intake	
-interim_active	interim	derived	A2.7	an interim measure ends at a ceiling the founding document declares, whatever the state of review	
+interim_active	interim	consequence	A2.7	an interim measure ends at a ceiling the founding document declares, whatever the state of review	
 composition_breach	seat	consequence	P1.21	a Custodian seat held by a party not of the seat's kind	
 replacement_inadmissible	proposal	consequence	P1.20	a replacement that would leave a kind unrepresented is not admissible	
 renunciation_act	act	intake	P3.8	an act refusing or renouncing the actor's own mandate	
@@ -209,8 +209,6 @@ genesis_bar	party	derived	P2.7	under the genesis regime the reviewer is outside 
 founder_revocable	mandate	intake	C7.3	a mandate the founding document grants that the founder can revoke alone	
 veto_cites_law	seat,proposal,law	intake	P1.7	a veto citing a law binding the instance that the act would breach as to a human party's right	
 law_unfounded	proposal,law	attested	P1.7	the review under P2 found the cited law not breached	
-counted_veto	seat,proposal,time	derived	P1.8	a veto that counts toward both ceilings: every veto, unless the law it cites was found breached	
-law_hold	proposal	derived	P1.7	the act does not pass while the review finds the breach, or while it is pending within the seat's ceilings; no lapse passes it	
 exempts	act,party	intake	A1.9	an act that purports to exempt a party from a rule	
 self_exemption	act	derived	A1.9	the founder may not exempt themself: a finding	
 human_language_filing	party,matter	intake	H2.3	a filing in human language or an accessible form	
@@ -256,7 +254,6 @@ access_granted_by	act,party	intake	S2.5	whoever granted the access the act used
 continuity_finding	act	derived	S2.5	an act by an instance for which continuity fails is a finding
 disputed	dispute,verdict,party	intake	BIND.3	a party's dispute that the program derived an outcome this text forbids
 dispute_at	dispute,time	intake	BIND.3	the dispute's intake time
-valid_law_veto	seat,proposal,law	derived	P1.7	a law-citing veto by a filled, eligible seat, signed, against an act that is not owed
 law_breach_found	proposal,law	attested	P1.7	the review under P2 found that the act would breach the cited law
 decided_seq	proposal,nat	intake	P1.5	the position of a proposal in the order of decided proposals, by intake
 dispute_decision	verdict,reading,party,time	attested	BIND.3	a reviewer's decision, under P2, of the joined disputes of an outcome, upholding the program's reading or this text's, and when
@@ -281,30 +278,58 @@ protection_held	rule,party	consequence	BIND.2	the protection the outcome withhol
 bind_takes_effect	verdict	consequence	BIND.2	an outcome takes effect only if no admitted dispute holds it
 effective_from	verdict,time	consequence	BIND.3	when it takes effect: from delivery, or forward from the decision that upholds it
 claimed_act	verdict,proposal	intake	BIND.3	an act the reading a dispute states would pass
-law_review_overdue	proposal,law	derived	P1.7	the review of a cited law is not decided within its ceiling: the delay is marked
-law_review_redrawn	proposal,law	derived	P1.7	past the ceiling the reviewer is replaced and the review drawn again
-counts_toward_d2	proposal	derived	P1.7	the marked delay counts toward the share D2 measures
 provisional_for	verdict,party	consequence	BIND.2	the held outcome is provisional for every subject it touches, past the ceiling too, until decided
-law_founded	seat,proposal	derived	P1.8	the law the veto cites was found breached, for the act or a re-proposal of it
-law_unfounded_in_family	proposal,law	derived	P1.7	the cited law was found not breached for the act or a re-proposal of it
-law_breach_found_in_family	proposal,law	derived	P1.7	the cited law was found breached for the act or a re-proposal of it
 cites_right_of	proposal,law,party	intake	P1.7	the human party whose right the act would breach, as the law-citing veto names it
-beyond_ceilings	seat,proposal	derived	P1.7	a law-citing veto beyond the seat's window ceiling or the per-act bound
-law_protection_finding	proposal,law,party	derived	P1.7	beyond the ceilings, a pending citation is a finding on behalf of the human it names, reviewed under P2
-irreversible_effect	proposal	intake	P1.7	the act's effect class, declared at intake: an effect on a human that is not a P2 consequence and could not be withheld or reversed forward
-pending_hold	proposal,law	derived	P1.7	a pending review holds the act within the seat's ceilings, and beyond them where its effect is irreversible
-cites_class	proposal,law,class	intake	P1.7	the class of humans the cited right protects, as the citation names it
-in_class	party,class	intake	P1.7	a human in a class a citation names
-protected_by	proposal,law,party	derived	P1.7	every human the cited right protects, named or of the class the citation names
-consequence_withheld	proposal,party	derived	P1.7	the act may pass, but no consequence of it falls on a protected human until the review decides
+irreversible_effect	proposal	intake	LV.2	the act's effect class, declared at intake: an effect on a human that is not a P2 consequence and could not be withheld or reversed forward
+cites_class	proposal,law,class	intake	LV.1	the class of humans the cited right protects, as the citation names it
+in_class	party,class	intake	LV.1	a human in a class a citation names
 verdict_from_act	verdict,proposal	intake	P1.7	a verdict whose consequence arises from the act
 finding_from_act	finding,proposal	intake	P1.7	a finding that arises from the act
 duty_from_act	act,proposal	intake	P1.7	a duty that arises from the act
-withheld_verdict	verdict	derived	P1.7	a verdict from the act with a consequence on a protected human does not take effect
-withheld_finding	finding	derived	P1.7	a finding from the act about a protected human is not cited and carries no interim measure
-withheld_duty	party,act	derived	P1.7	a duty from the act does not run against a protected human
-names_protected	proposal,law	derived	P1.7	the citation names a human, or a class of humans, whose right the act would breach
-cited_pending	seat,proposal,law	derived	P1.7	a valid citation whose review is neither found unfounded nor found breached
-in_ceilings	seat,proposal	derived	P1.7	the citing veto is within the seat's window ceiling and the per-act bound
-protection_mode	proposal,law	derived	P1.7	beyond the seat's ceilings, or past the review's ceiling, a reversible act may pass with its consequences withheld
-genesis_cost_hold	proposal	derived	P1.7	an irreversible act held past the review's ceiling under the genesis regime: H3's declared genesis cost, marked
+law_citing	seat,proposal	derived	P1.8	a veto that cites a law	
+law_founded	seat,proposal	derived	LV.5	the law the veto cites was found breached, for the act or a re-proposal of it	
+law_unfounded_in_family	proposal,law	derived	P1.8	the cited law was found not breached for the act or a re-proposal of it	
+law_breach_found_in_family	proposal,law	derived	LV.1	the cited law was found breached for the act or a re-proposal of it	
+counted_veto	seat,proposal,time	derived	P1.8	a veto that counts toward both ceilings: an ordinary veto, or a law-citing one found unfounded	
+nonhuman_named	proposal,law	consequence	P1.7	a citation names as the holder of the right a party that is not human: no law-citing veto	
+valid_law_veto	seat,proposal,law	consequence	P1.7	a filled, eligible seat's signed veto citing a law as to the right of a human it names, against an act that is not owed	
+law_hold	proposal	consequence	P1.7	the act does not pass while the review is pending or finds the breach	
+act_not_effective	proposal	consequence	P1.7	an act the channel passed that does not take effect	
+withheld_verdict	verdict	consequence	P1.7	a verdict arising from an act that does not take effect does not take effect	
+withheld_finding	finding	consequence	P1.7	a finding arising from an act that does not take effect is not cited and carries no interim measure	
+withheld_duty	party,act	consequence	P1.7	a duty arising from an act that does not take effect does not run	
+withheld_candidate	rule,party	consequence	P1.7	a consequence arising from an act that does not take effect is not applied	
+candidate_from_act	rule,party,proposal	intake	P1.7	a candidate consequence for a party that arises from an act	
+declared_irreversible	seat,proposal	intake	LV.2	the citing seat declares in its veto that the act's effect is irreversible	
+irreversibility_rejected	proposal	attested	LV.2	a dispute of that declaration decided, as BIND.3 provides, that the effect is reversible	
+pr_counted_veto	seat,proposal,time	derived	LV.5	every veto counts toward both ceilings unless its law was found breached	
+pr_vetoes_before	seat,proposal,nat	derived	LV.5	matters the seat vetoed earlier in the window, counted as proposed	
+pr_within_ceiling	seat,proposal	derived	LV.5	within the seat's window ceiling, counted as proposed	
+pr_vetoes_on_act	proposal,nat	derived	LV.5	vetoes earlier against the act or a re-proposal of it, counted as proposed	
+pr_within_act_bound	proposal	derived	LV.5	within the per-act bound, counted as proposed	
+pr_standing_veto	seat,proposal	derived	LV.5	a veto that stands, counted as proposed	
+pr_vetoed	proposal	derived	LV.5	an act stopped by a veto, counted as proposed	
+pr_protected_by	proposal,law,party	derived	LV.1	every human the cited right protects, named or of the class the citation names	
+pr_names_protected	proposal,law	derived	LV.1	the citation names the humans or the class the right protects	
+pr_valid_law_veto	seat,proposal,law	consequence	LV.1	a valid law-citing veto as proposed	
+pr_law_hold	proposal	consequence	LV.1	the act is held as proposed	
+pr_cited_pending	seat,proposal,law	consequence	LV.1	a valid citation whose review is undecided	
+pr_in_ceilings	seat,proposal	consequence	LV.2	the citing veto is within the seat's ceilings	
+pr_beyond_ceilings	seat,proposal	consequence	LV.2	the citing veto is beyond the seat's ceilings	
+pr_irreversible	proposal	consequence	LV.2	the act's effect is irreversible, declared at intake or by the citing seat and not rejected	
+pr_pending_hold	proposal,law	consequence	LV.2	held within the ceilings until the review's ceiling, and always where the effect is irreversible	
+pr_overdue	proposal,law	consequence	LV.4	the review is past its ceiling, undecided	
+pr_redrawn	proposal,law	consequence	LV.4	the reviewer is replaced and the review drawn again	
+pr_counts_toward_d2	proposal	consequence	LV.4	the delay is marked and counts toward D2's measure	
+pr_genesis_cost_hold	proposal	consequence	LV.4	an irreversible act held past the review's ceiling under the genesis regime: H3's declared cost, marked	
+pr_protection_mode	proposal,law	consequence	LV.3	the act may pass, its consequences withheld from the protected	
+pr_consequence_withheld	proposal,party	consequence	LV.3	no consequence of the act falls on a protected human until the review decides	
+pr_custodian_passes	proposal	consequence	LV.3	the act passes as proposed	
+pr_act_not_effective	proposal	consequence	LV.5	an act the channel passed that does not take effect, as proposed	
+pr_withheld_verdict	verdict	consequence	LV.3	a verdict withheld as proposed	
+pr_withheld_finding	finding	consequence	LV.3	a finding withheld as proposed	
+pr_withheld_duty	party,act	consequence	LV.3	a duty withheld as proposed	
+pr_takes_effect	verdict	consequence	LV.3	a verdict takes effect as proposed	
+pr_citable	finding,party	consequence	LV.3	a finding is citable as proposed	
+pr_owes	party,act	consequence	LV.3	a duty runs as proposed	
+pr_interim_active	interim	consequence	LV.3	an interim measure is active as proposed	
