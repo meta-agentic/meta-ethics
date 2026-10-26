@@ -45,7 +45,7 @@ Fuller's eight ways to fail to make law are restated as follows: generality as I
 
 ## 2. Clauses and definitions
 
-The core has **39 floors**: MEM 5, DEL 8, LEX 8, IMP 5, VOX 7, COR 4 in six principles, and GEN.2 and GEN.3 in the two declared transients. §1 of `core/L0.md` holds the **definitions of the model**: systems as abstractions, attribute and kind, act time, skeleton, the rule set's six components, state, live edge, party, subject, instrument, binding, implication, positions and capture, change, attestation, provisional status, runs, and the two relations between levels. A definition binds no one; it fixes what a floor means.
+The core has **40 floors**: MEM 5, DEL 8, LEX 9, IMP 5, VOX 7, COR 4 in six principles, and GEN.2 and GEN.3 in the two declared transients. §1 of `core/L0.md` holds the **definitions of the model**: systems as abstractions, attribute and kind, act time, skeleton, the rule set's six components, state, live edge, party, subject, binding, implication, positions and capture, change, attestation, provisional status, runs, and the two relations between levels. A definition binds no one; it fixes what a floor means.
 
 ## 3. Tests
 
@@ -207,6 +207,7 @@ The classes a unit can fall in:
 | LEX.6 | covered | D10, D11 | — |
 | LEX.7 | none | — | alike acts attested differently are a finding |
 | LEX.8 | partial | C12 (fold version in provenance) | the fold and the admissibility relation change only through the governed channel |
+| LEX.10 | partial | F9, A2, P1 (the law-citing veto), C18 | declare the jurisdictions the instance's acts reach and the law binding there; a required act a clause forbids is declined, performed as a declared derogation, or escaped by withdrawal, never silently |
 | IMP.1 | covered | C1 | — |
 | IMP.2 | covered | C13 | — |
 | IMP.3 | **contradicts** | D1, C13, P1, P2, A2, P3 | D1's second sentence lets consequence tables differ by kind of party, while IMP.3 lets an attribute shape safeguards only. Edit: "safeguards in consequences may differ by kind"; and restrict C13 to safeguards. P1 eligibility, P2's reviewer, A2's anonymisation and P3's admission already conform |
@@ -275,6 +276,7 @@ A check marked **proxy** is weaker than its floor, and the row says where.
 | LEX.6 | static | every observation predicate is produced by a rule or a declared collector; no rule reaches outside the perimeter predicate | — |
 | LEX.7 | fixture | two attestations over renamed-equal act descriptions with different judgements derive `unlike` | **proxy**: only for act descriptions the vocabulary makes comparable |
 | LEX.8 | procedural | the fold version and admissibility relation in each provenance are ones a recorded change admitted | — |
+| LEX.10 | procedural + fixture | the founding document names each jurisdiction and its binding law; every derogation is an entered act attributed to the requiring authority and to the instance, its deferrals counted and published at each interval; an act performed under external law with no derogation entry, or conformance claimed for a derogated scope, derives `undeclared_derogation` | — |
 | IMP.1 | static + fixture | no party constant in any rule of $D$, $C$ or $A$; party terms compared only by `!=`; permutation fixtures give permuted models and permuted admissibility | — |
 | IMP.2 | static | no derivation rule reads an attribute-bearing predicate | — |
 | IMP.3 | static + fixture | every consequence head that reads an attribute belongs to the closed safeguard class; gate, eligibility and admissibility rules on each fixture and its attribute-swapped image give equal models up to the swap; admission rules read no attribute but kind | — |
@@ -293,6 +295,6 @@ A check marked **proxy** is weaker than its floor, and the row says where.
 
 ## 5. Open questions
 
-The open decisions are ADR-ETH-03's, OD24–OD31, and the undecided sub-point under OD32. Two concern this file rather than the decision.
+The open decisions are ADR-ETH-03's OD27, OD28 and OD31, and the undecided sub-point under OD32; OD24, OD25, OD26, OD29 and OD30 were decided by the founder on 2026-10-23, and LEX.10 was added. Two concern this file rather than the decision.
 1. **Coverage is by inspection.** A machine cross-check of each pathology's *Violation* against the clauses it lists would turn coverage into a test.
 2. **The counter-models are prose.** Each could be written as a fixture set with the checks of §4 run on it, so that "satisfies the other five" is checked rather than argued.

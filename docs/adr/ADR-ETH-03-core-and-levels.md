@@ -14,7 +14,7 @@ labels: [core, L0, levels, conformance, pathology, minimality, sufficiency, gene
 
 # ADR-ETH-03 — The core and the levels
 
-**Status: Proposed 2026-10-05.** This record decides what the originator of the constitution is. Until now, the text called "the L0 constitution" — ADR-ETH-01 with ADR-ETH-02, and their consolidated rendering — was both the originator and the constitution of one system. The founder asked which of its parts are the real generative rules that transcend every specific system. The founder then decided that the invariants are the originator: the meta-level, the core, the kernel, level zero, L0, all one thing. This record names that core, states the levels and the relations between them, and places ADR-ETH-01 and ADR-ETH-02 as one constitution conforming to it.
+**Status: Proposed 2026-10-05.** This record decides what the originator of the constitution is. Until now, the text called "the L0 constitution" — ADR-ETH-01 with ADR-ETH-02, and their consolidated rendering — was both the originator and the constitution of one system. The founder asked which of its parts are the real generative rules that transcend every specific system. The founder then decided that the invariants are the originator: the meta-level, the core, the kernel, level zero, L0, all one thing. This record names that core, states the levels and the relations between them, and places ADR-ETH-01 and ADR-ETH-02 as one constitution conforming to it. **Amended 2026-10-23:** the founder decided OD24, OD25, OD26, OD29 and OD30, each recorded under *Open decisions* in the founder's words and carried into `core/L0.md`; ledger row K10 records them.
 
 The files under `core/`:
 - `core/L0.md` — the core's normative text;
@@ -49,18 +49,18 @@ The model is a system as an abstraction with an observation map. It has:
 The core's floors:
 - **MEM — Memory.** What happened is written once, by its true author, and never silently changed. Nothing more is written than is needed, and no one learns about a subject unseen.
 - **DEL — Delegation.** Every power is granted, and every grant and revocation is answerable. Every duty is accepted by whoever bears it, every mandate can be renounced at no cost the instance controls, and all trace to one root. One controller counts once. Liability runs only for one's own act. Someone outside, who accepted it, answers for what the instance does, and leaving the core takes the most demanding gate, notice and a free exit.
-- **LEX — Legality.** Every consequence follows from acts by the rules in force for them, or milder ones, and every derived consequence follows. Compliance is always possible, like acts are judged alike, and the rules change only by change.
+- **LEX — Legality.** Every consequence follows from acts by the rules in force for them, or milder ones, and every derived consequence follows. Compliance is always possible, like acts are judged alike, and the rules change only by change. External law is declared, and an act it requires against a floor is declined, performed as a declared derogation, or escaped by withdrawal, never obeyed in silence (LEX.10).
 - **IMP — Impartiality.** What is found does not depend on who you are. Attributes may shape safeguards, never burdens or power, and admission reads no attribute but kind. No one is outside judgement, and no one decides their own case.
 - **VOX — Voice.** Whoever is bound is told in time, can see, can answer at no cost, and is heard before it binds; interim measures are bounded. Whoever is affected, inside or not, can complain and is answered.
 - **COR — Correctability.** No group short of capture can block a correction, and no position's replacement depends on itself. Every matter ends, and no one is tried twice on the same facts without new evidence.
 - **GEN — two declared transients, not principles:** the founding regime (GEN.2), and partial conformance (GEN.3), under which a deployment that names the core before meeting it declares every violation and a ceiling to its subjects, and stops naming the core past the ceiling. For the founding regime: No rooted system meets the core at its first act. The core is claimed from the end of a founding regime held to every other floor it can meet.
 
-Section 1 of `core/L0.md` holds definitions of the model, which bind no one. Sections 2 and 3 hold the 39 floors, each marked a property of the rule set, decided when a rule set is admitted, or of a state, or of a run.
+Section 1 of `core/L0.md` holds definitions of the model, which bind no one. Sections 2 and 3 hold the 40 floors, each marked a property of the rule set, decided when a rule set is admitted, or of a state, or of a run.
 
 **How it was found.** The candidate given to this record was five principles: Memory, Delegation, Impartiality, Voice and Correctability. Three tests were run (`core/tests.md` §3), and the candidate failed in twenty-seven places, each closed in the core (`core/tests.md` §1).
 - **Coverage.** 67 pathologies after merging synonyms, each classed by its definition before any clause is applied. All 48 structural ones are excluded by some clause — X50, revolution-only correction, everywhere but the declared entrenched tier, where it is a declared cost (K9) — and the 14 mixed ones in their structural part. The 5 beyond a core over a record are named with the reason.
 - **Minimality.** For each principle, a system expressible in the model satisfies the other five and violates it. There is a witness for each clause added to answer a distinct pathology, and the couplings between clauses were checked.
-- **Sufficiency.** Every unit of ADR-ETH-01 and ADR-ETH-02, P3 and the revised C14 included, maps to what it serves. Of the 39 floors, the meta-agentic constitution covers 9, renders 19 in part and 4 not at all, and contradicts 7, by nine of its clauses (K3).
+- **Sufficiency.** Every unit of ADR-ETH-01 and ADR-ETH-02, P3 and the revised C14 included, maps to what it serves. Of the 40 floors, the meta-agentic constitution covers 9, renders 20 in part and 4 not at all, and contradicts 7, by nine of its clauses (K3).
 
 *Rejected alternatives:*
 - *The meta-agentic constitution as the core* — loses to F10. Parity of kinds (P1), two kinds or no instance (P3) and the human reviewer for humans (P2) exclude a humans-only and an agents-only constitution.
@@ -121,7 +121,7 @@ A version of the core is identified by its digest:
 - two kinds or no instance (P3);
 - the founder's dedication, which is not a rule.
 
-Against the core it covers 9 floors, renders 19 in part and 4 not at all, and contradicts 7, by nine of its clauses (`core/tests.md` §3.3, `core/core-gaps.tsv`). Each contradiction is closed by an edit to the founder's records, which this record does not make:
+Against the core it covers 9 floors, renders 20 in part and 4 not at all, and contradicts 7, by nine of its clauses (`core/tests.md` §3.3, `core/core-gaps.tsv`). Each contradiction is closed by an edit to the founder's records, which this record does not make:
 - **DEL.5.** P2 cites a finding attributed to a human only through a chain against that human, with no act, custody or knowledge of its own, and says nothing of non-human grantors. Edit: for any grantor, cite it only on those grounds, as S2 already does for steering.
 - **LEX.3.** Provenance names the rule set at derivation, not at each act (C12), and no program file versions rules. Edit: bind it to the act's intake, and apply a milder rule.
 - **LEX.4.** P3's pause binds every party for one actor's departure, and the program classes it as a consequence. Edit: recast it as a condition of admissibility that reads no actor.
@@ -235,7 +235,8 @@ The originator is now small and states what this record proposes every just cons
 - someone outside who answers, and a channel for anyone affected;
 - an exit that costs nothing the instance controls;
 - a path to correct every rule against any group short of capture, and to replace every holder;
-- an end to every matter.
+- an end to every matter;
+- declared jurisdictions, and no silent compliance with a law against a floor.
 
 What becomes easy:
 - founding a constitution for humans alone or agents alone without editing the meta-agentic text;
@@ -254,7 +255,9 @@ What becomes hard:
 
 **The core admits rule by a few, and weight by stake, where parties accepted, can leave at no cost the instance controls, take their record and state with them, are judged alike, and can replace the few.** These are declared values (`core/pathologies.md` X45, X46).
 
-**Admission may read kind, and declared thresholds every actor of an admitted kind meets or comes to meet** — a minimum age, legal capacity, a qualification open to every such actor and attested by a party not implicated. A constitution that leaves a kind out of party status leaves it out of every power, as a declared value; a threshold no actor of a kind can meet reads that kind and is declared as such. Those it leaves out stay subjects with every protection of VOX and no burden by attribute (OD24).
+**Admission may read kind, and declared thresholds every actor of an admitted kind meets or comes to meet** — a minimum age, legal capacity, a qualification open to every such actor and attested by a party not implicated. A constitution that leaves a kind out of party status leaves it out of every power, as a declared value; a threshold no actor of a kind can meet reads that kind and is declared as such. Those it leaves out stay subjects with every protection of VOX and no burden by attribute, and the core has no further category of actor (OD24, decided 2026-10-23).
+
+**A lawful, heard, correctable constitution may impose draconian or irreversible consequences and still conform** (OD26, decided 2026-10-23). The core has no proportion floor and no remedy floor; both are left to constitutions, and disproportion stays with X51, beyond the core.
 
 **The core does not exclude procedurally valid evil** (X51), and opaque collusion, reward hacking and the observation gap are bounded, not excluded (X53, X54, X55).
 
@@ -268,11 +271,13 @@ This record changes what the repository calls its originator and how it reads th
 
 ## Open decisions
 
-**OD24 — Agents as parties, subjects or instruments.** `core/L0.md` §1 defines an *instrument*: a non-human actor with no mandate of its own, every act recorded to the party using it, and no consequence falling on it. An instrument is still a subject owed notice, sight and answer, and no human is an instrument. Should the core keep the category? *Recommendation:* keep it. Without it every tool a deployment uses is a subject owed a hearing on consequences that fall on it. With it, no constitution can strip a human worker of voice by calling them a tool.
+Decided on 2026-10-23 by the founder, one by one, with this record's text and its recommendation put to him: OD24, OD25, OD26, OD29 and OD30. Each is recorded below in the founder's words. OD27, OD28, OD31 and the sub-point under OD32 stay open.
 
-**OD25 — A share in making the rules.** Does a share in making the rules, for parties who cannot in practice leave, belong in the core, or is it derived from a force? *Recommendation:* answer conditionally in the core. A party with real exit (DEL.4) needs no share. A subject bound repeatedly over a declared span without real exit has a finite admissible path to party status, which COR.3's ceiling on pending admission begins to give.
+**OD24 — Agents as parties, subjects or instruments.** *Decided 2026-10-23: the category is dropped, against the recommendation.* `core/L0.md` §1 defined an *instrument*: a non-human actor with no mandate of its own, every act recorded to the party using it, and no consequence falling on it; still a subject owed notice, sight and answer; never a human. The recommendation was to keep it, so that no tool a deployment uses is owed a hearing on consequences that fall on it, and no constitution can strip a human worker of voice by calling them a tool. The founder, verbatim: "In the meaning of instrument, related to agency, a person, thing or abstract force used to bring about a result or a social change. Told so looks to me an overloaded categorization that brings nothing new to the actors. Drop the category". `core/L0.md` §1 now says the core has parties and subjects and no third kind of actor: a non-human actor without a mandate of its own is a subject, judged on its own acts (LEX.4), its acts within a party's mandate recorded to that party's chain (DEL.5). The accepted-cost paragraph on admission is reworded accordingly, and `core/instances.md` no longer uses the category.
 
-**OD26 — Proportion and remedy.** *Option A, recommended:* add two floors.
+**OD25 — A share in making the rules.** *Decided 2026-10-23: derived, not in the core, against the recommendation.* The question was whether a share in making the rules, for parties who cannot in practice leave, belongs in the core or is derived from a force. The recommendation was a conditional floor in the core: a party with real exit (DEL.4) needs no share, and a subject bound repeatedly over a declared span without real exit would have a finite admissible path to party status. The founder, verbatim: "Derived, not in core". No floor is added. COR.3's ceiling on a pending admission ends that matter like any other; it is not read as the beginning of a path to party status. A constitution that gives a share in rule-making to parties without real exit derives it from the forces it faces (F1, F6) and declares it as its value.
+
+**OD26 — Proportion and remedy.** *Decided 2026-10-23: Option B.* *Option A, recommended:* add two floors.
 - "**LEX.9** Proportion. Every consequence rule declares the breaches it answers and a finite ceiling on its burden; the constitution declares an order of gravity over breaches and an order of burden over consequences, and no breach draws a burden greater than one drawn by a graver breach."
 - "**COR.5** Remedy. A consequence whose effect cannot be undone binds only once its verdict has passed every review offered; every consequence later reversed carries a declared remedy, and the remedy is owed."
 
@@ -280,17 +285,21 @@ The argument for Option A: ordinal proportion imports no external scale, since i
 
 *Option B:* leave both to constitutions, at the cost that a lawful, heard, correctable constitution may impose draconian or irreversible consequences and still conform.
 
-**OD27 — The meta-agentic constitution against the core.** Which of its 19 partial and 4 absent floors to close by amendment and which to declare. The deployment meets GEN.3 most simply by landing the nine record edits before ratification, so that it conforms when it first names the core. Its 9 contradicting clauses must be closed before it claims conformance (K3). DEL.6 should be read with OD23: it asks for an actor answerable for the instance's acts, not for the non-human seat's in particular.
+*Decided 2026-10-23: Option B, against the recommendation.* The founder, verbatim: "Option B: leave both out". LEX.9 and COR.5 are not added; their identifiers are not reused (`core/L0.md`, Identifiers). The cost stated under Option B stands as accepted, and `core/pathologies.md` X51 keeps disproportion beyond the core.
+
+**OD27 — The meta-agentic constitution against the core.** Which of its 20 partial and 4 absent floors to close by amendment and which to declare. The deployment meets GEN.3 most simply by landing the nine record edits before ratification, so that it conforms when it first names the core. Its 9 contradicting clauses must be closed before it claims conformance (K3). DEL.6 should be read with OD23: it asks for an actor answerable for the instance's acts, not for the non-human seat's in particular.
 
 **OD28 — The ratification manifest.** Whether the ratification act signs one manifest carrying `core/L0.md`, this record and the consolidated text with ADR-ETH-01 and ADR-ETH-02 (K4). That needs ADR-ETH-02's status sentence amended first.
 
-**OD29 — Thin, not neutral.** *Option A, recommended:* restate the core's scope (`core/L0.md` §4) as follows. "The core encodes who decides, on what record, with whom excluded, and how it is corrected, and the floors that keep a subject from domination: consent to duty, exit, no burden for another's act or for an attribute, and a hearing. These are its authors' values, declared under F6. It says nothing about the content of an instance's purposes; a lawful, heard, correctable decision can still be wrong in what it decides (X51), and the core does not claim to exclude it."
+**OD29 — Thin, not neutral.** *Decided 2026-10-23: Option A.* *Option A, recommended:* restate the core's scope (`core/L0.md` §4) as follows. "The core encodes who decides, on what record, with whom excluded, and how it is corrected, and the floors that keep a subject from domination: consent to duty, exit, no burden for another's act or for an attribute, and a hearing. These are its authors' values, declared under F6. It says nothing about the content of an instance's purposes; a lawful, heard, correctable decision can still be wrong in what it decides (X51), and the core does not claim to exclude it."
 
 The argument for Option A: ADR-ETH-01 F6 holds that a design claiming no values has hidden them. DEL.4, LEX.4, IMP.3 and VOX.5 are already commitments to non-domination. The honest line is not procedure against substance; it is properties of the model against the content of what is prescribed.
 
 *Option B:* keep "not substantive", at the cost of a claim F6 itself calls false.
 
-**OD30 — External law.** *Option A, recommended:* add the following floor.
+*Decided 2026-10-23: Option A, the recommendation.* The founder, verbatim: "Option A: thin, declared (Rec.)". `core/L0.md` §4 now opens with the sentence above under the heading *Thin, not neutral*.
+
+**OD30 — External law.** *Decided 2026-10-23: Option A.* *Option A, recommended:* add the following floor.
 
 "**LEX.10** External law. The founding document declares the jurisdictions the deployment's acts reach and the law it treats as binding there; external law enters as attestations. Where that law requires an act a core clause forbids, the deployment does one of three things:
 - declines it and bears the external consequence;
@@ -302,6 +311,8 @@ No derogation is unrecorded, and the deployment claims no conformance for the sc
 The argument for Option A: a deployment is not a sovereign, and a core that licensed defiance of law would set itself above law. A core that absorbed unjust law silently would let its label cover it. Declared derogation, refusal or withdrawal avoids both, and generalises ADR-ETH-02's "the constitution does not resist the law" without making an unjust law a silent override.
 
 *Option B:* stay silent, at the cost that a deployment doing what law forbids, or silently doing what law commands against a floor, keeps the core's label.
+
+*Decided 2026-10-23: Option A, the recommendation.* The founder, verbatim: "Option A: add LEX.10 (Rec.)". LEX.10 enters `core/L0.md` as drafted, with "instance" for "deployment" as that text's convention requires, and IMP.3's reference to this decision now cites LEX.10. The core has 40 floors. For the meta-agentic constitution LEX.10 is a partial floor (`core/core-gaps.tsv`): its founding document must declare the jurisdictions its acts reach and the law binding there, a record edit of the founder's.
 
 **OD31 — Authorship of the core.** MEM.2 requires every entry to name its true author, and K4 publishes the core under its authors' signatures. Who signs as author, and whether the parts drafted by a non-human party are attributed to it, is the founder's decision. The options:
 - the founder signs as sole author;
@@ -320,7 +331,7 @@ The ledgers of ADR-ETH-01 and ADR-ETH-02 otherwise stand.
 ID   STATUS    DECISION                                   ALTERNATIVES REJECTED (why)                         ACCEPTED COST                         REOPENING TRIGGER
 K1   proposed  L0 is the core: MEM, DEL, LEX, IMP, VOX,   meta-agentic text (F10); candidate five (F1);       admits rule by a few with real exit;  structural pathology excluded by none;
                COR over a model of observed systems,      cooperative COR (F1, as A3); blacklist (F6, D16);   procedurally valid evil not           a counter-model violates two
-               two transients (GEN); 39 floors, each a    mechanisms (F10); substantive floor (F6, D3); one   excluded; collusion bounded;          principles; a conforming constitution
+               two transients (GEN); 40 floors, each a    mechanisms (F10); substantive floor (F6, D3); one   excluded; collusion bounded;          principles; a conforming constitution
                state or run property; definitions apart   principle (F1); voice in rule-making (F10, F6);     admission reads kind and declared     shows a structural pathology; a
                                                           a core per kind (F7, F2)                            thresholds every admitted actor meets reviewed finding of a violation
 K2   proposed  L0 core, L1 constitution, L2 parameters;   two levels (F7); one relation (F8); renaming the    within a deployment the core is its   clause with no level; level
@@ -328,7 +339,7 @@ K2   proposed  L0 core, L1 constitution, L2 parameters;   two levels (F7); one r
                no rule-set violation; leaving is          alone publish (F1); a gate among constitutions                                            binding a non-conformer
                re-founding; versions by digest            (F7)
 K3   proposed  ADR-ETH-01, ADR-ETH-02 and the             re-derive first (F5); parity as core (F10);         9 contradictions to close by the      a further contradiction; conformance
-               consolidated text are the meta-agentic     weaken a floor to fit (F1)                          founder's edits; 22 floors partial    claimed before the nine are closed
+               consolidated text are the meta-agentic     weaken a floor to fit (F1)                          founder's edits; 23 floors partial    claimed before the nine are closed
                constitution; 9 contradictions named                                                           or absent
 K4   proposed  founding document names digests; one      founder ratifies alone (F1); Custodians for all     ADR-ETH-02 status sentence to amend;  core cited as binding a non-adopter;
                manifest signed by both Custodians; the    (F7); core signed with analysis (F8); no single     authorship open (OD31)                signed digest differs from the
@@ -352,6 +363,12 @@ K9   proposed  a lock is admissible only if defined and   protection ratchet (F1
                tier changes only by unanimity of its      reasons (F6, F4)                                    ever
                seats; dialectic against blocking
                (founder, 2026-10-05)
+K10  decided   founder, 2026-10-23: no instrument         keep instruments (brings nothing new to             a draconian or irreversible           a human treated as a tool; a party with
+               category (OD24); a share in rule-making    the actors); a conditional share in the core        consequence can conform; a bound      no real exit and no share, under
+               derived, not a floor (OD25); no proportion (F10, F6); LEX.9 and COR.5 (F6: proportion          party without exit has no share by    domination; a derogation left
+               or remedy floor (OD26); scope thin and     and remedy are a constitution's values);            the core; a derogation is counted,    unrecorded; a conforming act claimed
+               declared (OD29); LEX.10 external law       "not substantive" (F6); silence on external         not excluded                          for a derogated scope
+               (OD30); 40 floors                          law (F9: the label would cover defiance)
 
 INTEGRITY   decisions without a rejected alternative: 0 · without a reopening trigger: 0
             alternatives that lose to no force: 0 · ADR-ETH-01 and ADR-ETH-02 lines edited by this record: 0
@@ -359,4 +376,4 @@ INTEGRITY   decisions without a rejected alternative: 0 · without a reopening t
 
 ## Provenance
 
-The founder's decision of 2026-10-05: the invariants are the originator, and the constitution designed so far governs the agentic system developing software with the founder of meta-agentic.ai. The candidate five principles were given to this record as a starting point and changed as `core/tests.md` §1 records. The sufficiency test read ADR-ETH-01 and ADR-ETH-02, P3 and the revised C14 while they were an open amendment, and the consolidated text while it was open; both have since landed on the main line, and the contradictions are stated against the main line. References: Aristotle, *Politics*, Book III; Fuller, *The Morality of Law*, 1964; Hirschman, *Exit, Voice, and Loyalty*, 1970; Ostrom, *Governing the Commons*, 1990. The backlog is tracked outside this repository.
+The founder's decision of 2026-10-05: the invariants are the originator, and the constitution designed so far governs the agentic system developing software with the founder of meta-agentic.ai. The candidate five principles were given to this record as a starting point and changed as `core/tests.md` §1 records. The sufficiency test read ADR-ETH-01 and ADR-ETH-02, P3 and the revised C14 while they were an open amendment, and the consolidated text while it was open; both have since landed on the main line, and the contradictions are stated against the main line. References: Aristotle, *Politics*, Book III; Fuller, *The Morality of Law*, 1964; Hirschman, *Exit, Voice, and Loyalty*, 1970; Ostrom, *Governing the Commons*, 1990. The founder's decisions of 2026-10-23 on OD24, OD25, OD26, OD29 and OD30 were taken one by one against this record at its then head, with the record's text and its recommendation put to the founder; the words recorded under each decision are the founder's, and the text of `core/L0.md` was amended the same day. The backlog is tracked outside this repository.
