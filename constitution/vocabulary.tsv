@@ -340,6 +340,9 @@ proposed_by	proposal,party	intake	LV.2	the filer of a proposal
 took_effect	proposal	attested	LV.1	the act took effect before the breach was found
 pr_contested	proposal	consequence	LV.2	a reversible marking contested by the citing seat within its ceilings, or by a protected human
 pr_false_marking	proposal,party	consequence	LV.2	a marking found false is a finding against its filer
+pr_marking_owed	proposal,party	consequence	LV.2	a reversible marking on an act a law-citing veto names is owed in delivery to a human the citation protects
+pr_marking_answered	party,matter	consequence	LV.2	the party's answer window on the matter, running from delivery (H1.5), has passed
+pr_marking_pending	proposal	consequence	LV.2	the act is held until the marking was delivered to every protected human and each one's answer window has passed without a contest
 pr_reversed_forward	proposal	consequence	LV.1	a breach found after the act took effect holds it and reverses it forward
 pr_withheld_candidate	rule,party	consequence	LV.3	a consequence for the C14 ordering withheld as proposed
 pr_applied	rule,party	consequence	LV.3	a consequence applied as proposed

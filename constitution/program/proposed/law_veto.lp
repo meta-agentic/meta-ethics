@@ -41,7 +41,8 @@ pr_cited_pending(S, Q, L) :- pr_valid_law_veto(S, Q, L), not law_unfounded_in_fa
 % clause: LV.2
 % within the seat's ceilings and until the review's ceiling; an irreversible
 % effect, declared by the filer at intake, or contested by the citing seat
-% within its ceilings and not yet rejected, is held until the review decides
+% within its ceilings and not yet rejected, is held until the review decides;
+% a reversible marking is held until it was delivered and answered
 pr_in_ceilings(S, Q) :- pr_valid_law_veto(S, Q, _), pr_within_ceiling(S, Q), pr_within_act_bound(Q).
 pr_beyond_ceilings(S, Q) :- pr_valid_law_veto(S, Q, _), not pr_in_ceilings(S, Q).
 % an act whose filer declares nothing is held as if its effect were
@@ -54,9 +55,16 @@ pr_contested(Q) :- marking_contest(H, Q), pr_cited_pending(_, Q, L), pr_protecte
 pr_irreversible(Q) :- reversible_marking(Q), pr_contested(Q), not irreversibility_rejected(Q).
 % a marking found false is a finding against its filer
 pr_false_marking(Q, F) :- reversible_marking(Q), irreversibility_upheld(Q), proposed_by(Q, F).
+% a reversible marking is delivered to every human the citation protects,
+% and the act is held until each one's answer window, running from that
+% delivery (H1.5), has passed without a contest
+pr_marking_owed(Q, H) :- reversible_marking(Q), pr_cited_pending(_, Q, L), pr_protected_by(Q, L, H).
+pr_marking_answered(H, X) :- due(H, X, E), now(N), E <= N.
+pr_marking_pending(Q) :- pr_marking_owed(Q, H), matter_of(Q, X), not pr_marking_answered(H, X).
 pr_pending_hold(Q, L) :- pr_cited_pending(S, Q, L), pr_in_ceilings(S, Q), not pr_overdue(Q, L),
                          not pr_irreversible(Q).
 pr_pending_hold(Q, L) :- pr_cited_pending(_, Q, L), pr_irreversible(Q).
+pr_pending_hold(Q, L) :- pr_cited_pending(_, Q, L), pr_marking_pending(Q).
 pr_law_hold(Q) :- pr_pending_hold(Q, _).
 
 % clause: LV.1
@@ -77,8 +85,10 @@ pr_genesis_cost_hold(Q) :- pr_pending_hold(Q, L), pr_irreversible(Q), pr_overdue
 % clause: LV.3
 % otherwise the act may pass, and no consequence of it reaches any human the
 % citation protects until the review decides
-pr_protection_mode(Q, L) :- pr_cited_pending(S, Q, L), pr_beyond_ceilings(S, Q), not pr_irreversible(Q).
-pr_protection_mode(Q, L) :- pr_cited_pending(_, Q, L), pr_overdue(Q, L), not pr_irreversible(Q).
+pr_protection_mode(Q, L) :- pr_cited_pending(S, Q, L), pr_beyond_ceilings(S, Q), not pr_irreversible(Q),
+                            not pr_marking_pending(Q).
+pr_protection_mode(Q, L) :- pr_cited_pending(_, Q, L), pr_overdue(Q, L), not pr_irreversible(Q),
+                            not pr_marking_pending(Q).
 pr_consequence_withheld(Q, H) :- pr_protection_mode(Q, L), pr_protected_by(Q, L, H).
 
 % clause: LV.3 LV.5
