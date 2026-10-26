@@ -31,6 +31,8 @@ cites_right_of(q4, l4, h4). law_unfounded(q4, l4).
 decided_seq(q0, 5). decided_seq(q1, 10). decided_seq(q2, 11). decided_seq(q3, 12). decided_seq(q4, 13). decided_seq(q5, 14). decided_seq(q6, 15).
 % the filer marks each other act's effect reversible
 reversible_marking(q0). reversible_marking(q1). reversible_marking(q2). reversible_marking(q3). reversible_marking(q5). reversible_marking(q6). reversible_marking(q4).
+% the reversible markings were delivered to each protected human, and each answer window has passed
+param(answer_window, 5). window_opens(h1, x1, 10). window_opens(h2, x2, 11). window_opens(h6, x5, 15).
 
 % EXPECT[LV.5]: pr_within_ceiling(ch,q0)
 % EXPECT-NOT[LV.2]: pr_law_hold(q1)

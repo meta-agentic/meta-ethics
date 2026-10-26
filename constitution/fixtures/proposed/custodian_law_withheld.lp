@@ -50,6 +50,8 @@ cites_class(q5, l5, tenants). decided_seq(q5, 14).
 decided_seq(q0, 5). decided_seq(q1, 10). decided_seq(q2, 11). decided_seq(q3, 12).
 % the filer marks each other act's effect reversible
 reversible_marking(q0). reversible_marking(q1). reversible_marking(q3). reversible_marking(q5).
+% the reversible markings were delivered to each protected human, and each answer window has passed
+param(answer_window, 5). window_opens(h1, x1, 10). window_opens(h2, x1, 10). window_opens(h2, x5, 14).
 
 % EXPECT[LV.3]: pr_custodian_passes(q1)
 % EXPECT[LV.3]: pr_consequence_withheld(q1,h1)

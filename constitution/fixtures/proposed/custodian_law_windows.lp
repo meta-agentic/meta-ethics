@@ -28,6 +28,8 @@ cites_right_of(p6, l6, h6). irreversible_effect(p6). decided_seq(p6, 995).
 decided_seq(p1, 1). decided_seq(p2, 6). decided_seq(p3, 11). decided_seq(p4, 16). decided_seq(p5, 21).
 % the filer marks each other act's effect reversible
 reversible_marking(p1). reversible_marking(p3). reversible_marking(p5).
+% the reversible markings were delivered to each protected human, and each answer window has passed
+param(answer_window, 5). window_opens(h1, y1, 1). window_opens(h3, y3, 11). window_opens(h5, y5, 21).
 
 % EXPECT[LV.5]: pr_within_ceiling(ch,p5)
 % EXPECT-NOT[LV.2]: pr_law_hold(p1)
