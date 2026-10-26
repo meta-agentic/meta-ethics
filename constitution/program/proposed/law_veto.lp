@@ -57,10 +57,18 @@ pr_irreversible(Q) :- reversible_marking(Q), pr_contested(Q), not irreversibilit
 pr_false_marking(Q, F) :- reversible_marking(Q), irreversibility_upheld(Q), proposed_by(Q, F).
 % a reversible marking is delivered to every human the citation protects,
 % and the act is held until each one's answer window, running from that
-% delivery (H1.5), has passed without a contest
+% delivery and extended once at most (H1.5), has passed; a marking not
+% delivered holds the act until the delivery bound, the window and the one
+% extension, counted from the veto, have all passed
 pr_marking_owed(Q, H) :- reversible_marking(Q), pr_cited_pending(_, Q, L), pr_protected_by(Q, L, H).
-pr_marking_answered(H, X) :- due(H, X, E), now(N), E <= N.
-pr_marking_pending(Q) :- pr_marking_owed(Q, H), matter_of(Q, X), not pr_marking_answered(H, X).
+pr_marking_due(Q, H, E) :- marking_delivered(Q, H, T), matter_of(Q, X), not extended(H, X),
+                           param(answer_window, W), E = T + W.
+pr_marking_due(Q, H, E) :- marking_delivered(Q, H, T), matter_of(Q, X), extended(H, X),
+                           param(answer_window, W), param(extension_amount, A), E = T + W + A.
+pr_marking_answered(Q, H) :- pr_marking_due(Q, H, E), now(N), E <= N.
+pr_marking_lapsed(Q) :- pr_cited_pending(S, Q, _), veto(S, Q, T), now(N), param(delivery_bound, D),
+                        param(answer_window, W), param(extension_amount, A), N - T >= D + W + A.
+pr_marking_pending(Q) :- pr_marking_owed(Q, H), not pr_marking_answered(Q, H), not pr_marking_lapsed(Q).
 pr_pending_hold(Q, L) :- pr_cited_pending(S, Q, L), pr_in_ceilings(S, Q), not pr_overdue(Q, L),
                          not pr_irreversible(Q).
 pr_pending_hold(Q, L) :- pr_cited_pending(_, Q, L), pr_irreversible(Q).
