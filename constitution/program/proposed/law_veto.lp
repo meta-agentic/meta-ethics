@@ -61,17 +61,21 @@ pr_false_marking(Q, F) :- reversible_marking(Q), irreversibility_upheld(Q), prop
 % suspended or awaiting rendering (H1.5, S1.12, H2.3), has passed; a marking not delivered within the
 % delivery bound holds the act as if its filer had declared nothing
 pr_marking_owed(Q, H) :- reversible_marking(Q), pr_cited_pending(_, Q, L), pr_protected_by(Q, L, H).
-pr_marking_start(Q, H, T) :- marking_delivered(Q, H, T), pr_cited_pending(S, Q, _), veto(S, Q, V), V <= T.
-pr_marking_start(Q, H, V) :- marking_delivered(Q, H, T), pr_cited_pending(S, Q, _), veto(S, Q, V), T < V.
+% the veto whose citation protects the human
+pr_marking_cited(Q, H, V) :- pr_cited_pending(S, Q, L), pr_protected_by(Q, L, H), veto(S, Q, V).
+pr_marking_start(Q, H, T) :- marking_delivered(Q, H, T), pr_marking_cited(Q, H, V), V <= T.
+pr_marking_start(Q, H, V) :- marking_delivered(Q, H, T), pr_marking_cited(Q, H, V), T < V.
 pr_marking_due(Q, H, E) :- pr_marking_start(Q, H, T), matter_of(Q, X), not extended(H, X),
                            param(answer_window, W), E = T + W.
 pr_marking_due(Q, H, E) :- pr_marking_start(Q, H, T), matter_of(Q, X), extended(H, X),
                            param(answer_window, W), param(extension_amount, A), E = T + W + A.
-pr_marking_answered(Q, H) :- pr_marking_due(Q, H, E), now(N), E <= N, matter_of(Q, X), not window_suspended(H, X),
-                             not awaiting_render(H, X).
+pr_marking_open(Q, H) :- pr_marking_due(Q, H, E), now(N), E > N.
+pr_marking_answered(Q, H) :- pr_marking_due(Q, H, _), not pr_marking_open(Q, H), matter_of(Q, X),
+                             not window_suspended(H, X), not awaiting_render(H, X).
 pr_marking_pending(Q) :- pr_marking_owed(Q, H), not pr_marking_answered(Q, H).
-pr_marking_lapsed(Q, H) :- pr_marking_owed(Q, H), not marking_delivered(Q, H, _), pr_cited_pending(S, Q, _),
-                           veto(S, Q, V), now(N), param(delivery_bound, D), N - V >= D.
+pr_marking_delivered(Q, H) :- marking_delivered(Q, H, _).
+pr_marking_lapsed(Q, H) :- pr_marking_owed(Q, H), not pr_marking_delivered(Q, H), pr_marking_cited(Q, H, V),
+                           now(N), param(delivery_bound, D), N - V >= D.
 pr_irreversible(Q) :- pr_marking_lapsed(Q, _).
 pr_pending_hold(Q, L) :- pr_cited_pending(S, Q, L), pr_in_ceilings(S, Q), not pr_overdue(Q, L),
                          not pr_irreversible(Q).
