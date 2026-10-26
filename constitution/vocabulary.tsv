@@ -342,9 +342,12 @@ took_effect	proposal	attested	LV.1	the act took effect before the breach was fou
 pr_contested	proposal	consequence	LV.2	a reversible marking contested by the citing seat within its ceilings, or by a protected human
 pr_false_marking	proposal,party	consequence	LV.2	a marking found false is a finding against its filer
 pr_marking_owed	proposal,party	consequence	LV.2	a reversible marking on an act a law-citing veto names is owed in delivery to a human the citation protects
-pr_marking_start	proposal,party,time	consequence	LV.2	when the protected human's answer window on the marking starts: the later of the marking's delivery and the citing veto
+pr_marking_cited	proposal,party,time	consequence	LV.2	the time of the veto whose citation protects the human
+pr_marking_start	proposal,party,time	consequence	LV.2	when the protected human's answer window on the marking starts: the later of the marking's delivery and the veto whose citation protects them
+pr_marking_delivered	proposal,party	consequence	LV.2	the marking was delivered to the protected human
+pr_marking_open	proposal,party	consequence	LV.2	one of the protected human's answer windows on the marking has not yet closed
 pr_marking_due	proposal,party,time	consequence	LV.2	when the protected human's answer window on the marking closes: its start plus the answer window, plus the one extension on the matter where requested (H1.5)
-pr_marking_answered	proposal,party	consequence	LV.2	the protected human's answer window on the marking has passed, and the window is neither suspended (S1.12) nor awaiting rendering (H2.3)
+pr_marking_answered	proposal,party	consequence	LV.2	every answer window of the protected human on the marking has passed, and the window is neither suspended (S1.12) nor awaiting rendering (H2.3)
 pr_marking_lapsed	proposal,party	consequence	LV.2	the marking was not delivered to this protected human within the delivery bound from the citing veto: the act is held as if its filer had declared nothing
 pr_marking_pending	proposal	consequence	LV.2	the act is held until the marking was delivered to every protected human and each one's answer window has passed
 pr_reversed_forward	proposal	consequence	LV.1	a breach found after the act took effect holds it and reverses it forward: the hold's withholding of every later consequence performs the reversal, and this label marks it

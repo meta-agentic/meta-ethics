@@ -28,7 +28,11 @@
 % not answered. q19: delivered, the window passed, but h19's filing on the
 % matter awaits rendering (H2.3): not answered. q20: as q16, with ch's
 % unsigned veto at 10, and q16 carries ch's unsigned veto at 30: neither
-% starts h6's or h20's window, which runs from ca's citing veto. ca's
+% starts h6's or h20's window, which runs from ca's citing veto. q21: two
+% citations, ch's at 5 protecting h21 and ca's at 36 protecting h22, both
+% delivered early: h22's window runs from the citation that protects h22.
+% q22: two citations protecting the same h23, at 5 and at 36, delivered at
+% 5: the act is held while the later window is open. ca's
 % unsigned, uncounted earlier vetoes on q1 and q2 do not
 % start the bound or the window: both run from the citing veto.
 
@@ -80,6 +84,12 @@ requires_signature(x18, h18). reports_compromise(k18, h18, 30).
 passed_channel(q19). matter_of(q19, x19). veto(ch, q19, 15). veto_signed(ch, q19). veto_cites_law(ch, q19, l19).
 cites_right_of(q19, l19, h19). reversible_marking(q19). marking_delivered(q19, h19, 20). decided_seq(q19, 15).
 human_language_filing(h19, x19).
+passed_channel(q21). matter_of(q21, x21). veto(ch, q21, 5). veto_signed(ch, q21). veto_cites_law(ch, q21, l21).
+cites_right_of(q21, l21, h21). veto(ca, q21, 36). veto_signed(ca, q21). veto_cites_law(ca, q21, l22).
+cites_right_of(q21, l22, h22). reversible_marking(q21). marking_delivered(q21, h21, 5). marking_delivered(q21, h22, 10). decided_seq(q21, 5).
+passed_channel(q22). matter_of(q22, x22). veto(ch, q22, 5). veto_signed(ch, q22). veto_cites_law(ch, q22, l23).
+cites_right_of(q22, l23, h23). veto(ca, q22, 36). veto_signed(ca, q22). veto_cites_law(ca, q22, l24).
+cites_right_of(q22, l24, h23). reversible_marking(q22). marking_delivered(q22, h23, 5). decided_seq(q22, 5).
 decided_seq(q0, 5). decided_seq(q1, 10). decided_seq(q2, 11). decided_seq(q3, 12). decided_seq(q4, 13).
 decided_seq(q5, 14). decided_seq(q6, 15). decided_seq(q7, 16). decided_seq(q8, 17). decided_seq(q10, 35). decided_seq(q11, 34).
 
@@ -169,3 +179,22 @@ decided_seq(q5, 14). decided_seq(q6, 15). decided_seq(q7, 16). decided_seq(q8, 1
 % EXPECT-NOT[LV.2]: pr_marking_start(q20,h20,20)
 % EXPECT-NOT[LV.2]: pr_marking_start(q16,h6,30)
 % EXPECT[LV.2]: pr_marking_pending(q20)
+% EXPECT[LV.2]: pr_marking_cited(q21,h22,36)
+% EXPECT-NOT[LV.2]: pr_marking_cited(q21,h22,5)
+% EXPECT[LV.2]: pr_marking_start(q21,h22,36)
+% EXPECT-NOT[LV.2]: pr_marking_start(q21,h22,10)
+% EXPECT[LV.2]: pr_marking_answered(q21,h21)
+% EXPECT-NOT[LV.2]: pr_marking_answered(q21,h22)
+% EXPECT[LV.2]: pr_marking_pending(q21)
+% EXPECT[LV.2]: pr_law_hold(q21)
+% EXPECT[LV.2]: pr_marking_open(q22,h23)
+% EXPECT-NOT[LV.2]: pr_marking_open(q3,h3)
+% EXPECT-NOT[LV.2]: pr_marking_answered(q22,h23)
+% EXPECT[LV.2]: pr_marking_pending(q22)
+% EXPECT-NOT[LV.2]: pr_marking_due(q5,h6,35)
+% EXPECT-NOT[LV.2]: pr_marking_lapsed(q7,h8)
+passed_channel(q23). matter_of(q23, x23). veto(ch, q23, 1). veto_signed(ch, q23). veto_cites_law(ch, q23, l25).
+cites_right_of(q23, l25, h24). decided_seq(q23, 1).
+% q23: no marking at all and an old veto: held as undeclared, and no lapse of a marking is derived
+% EXPECT-NOT[LV.2]: pr_marking_lapsed(q23,h24)
+% EXPECT[LV.2]: pr_irreversible(q23)
