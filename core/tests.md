@@ -232,7 +232,7 @@ The classes a unit can fall in:
 | Status | Count |
 |---|---|
 | covered | 9 |
-| partial | 19 |
+| partial | 20 |
 | none | 4 |
 | contradicts | 7 |
 
