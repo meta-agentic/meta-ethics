@@ -43,7 +43,7 @@ passed_channel(q10). matter_of(q10, x10). veto(ca, q10, 17). veto_signed(ca, q10
 cites_right_of(q10, l10, h1). reversible_marking(q10). law_breach_found(q10, l10). took_effect(q10).
 proposed_by(q4, fz).
 % the reversible markings were delivered to each protected human, and each answer window has passed
-param(answer_window, 5). param(extension_amount, 5). param(delivery_bound, 10). marking_delivered(q2, h1, 11). marking_delivered(q4, h1, 13). marking_delivered(q5, h1, 14).
+param(answer_window, 5). param(extension_amount, 5). param(delivery_bound, 100). marking_delivered(q2, h1, 11). marking_delivered(q4, h1, 13). marking_delivered(q5, h1, 14).
 % q11: the citation was found unfounded; h1's contest has nothing to protect
 passed_channel(q11). matter_of(q11, x11). veto(ca, q11, 18). veto_signed(ca, q11). veto_cites_law(ca, q11, l11).
 cites_right_of(q11, l11, h1). reversible_marking(q11). marking_contest(h1, q11). law_unfounded(q11, l11).

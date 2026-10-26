@@ -19,23 +19,29 @@
 % q13: h14's window on the matter opened before the veto, the marking never
 % delivered: held. q14: a re-proposal of q3 on the same matter, q3's
 % delivery reused and q14's marking never delivered: held. q15: never
-% delivered, the delivery bound, the window and the one extension long
-% passed since the veto: the hold lapses and the act proceeds as LV.3
-% provides, withheld from h16. q16: ca's citation naming h6, who holds an
-% extension on q5's matter and none on this one: q16's window closes at the
-% plain due. ca's unsigned, uncounted earlier veto on q2 does not start the
-% bound on q2's marking: the bound runs from the citing veto.
+% delivered, the delivery bound long passed since the veto: held as if its
+% filer had declared nothing. q16: ca's citation naming h6, delivered before
+% the veto: h6's window runs from the veto, and h6's extension on q5's
+% matter does not lengthen it. q17: delivered late, past the bound: not
+% lapsed, and h17's window runs in full. q18: delivered, the window passed,
+% but h18's signing means is compromised and the window suspended (S1.12):
+% not answered. q19: delivered, the window passed, but h19's filing on the
+% matter awaits rendering (H2.3): not answered. q20: as q16, with ch's
+% unsigned veto at 10, and q16 carries ch's unsigned veto at 30: neither
+% starts h6's or h20's window, which runs from ca's citing veto. ca's
+% unsigned, uncounted earlier vetoes on q1 and q2 do not
+% start the bound or the window: both run from the citing veto.
 
 now(40).
 param(law_review_ceiling, 10). param(veto_window, 20). param(veto_ceiling, 1). param(veto_per_act, 5).
-param(answer_window, 5). param(extension_amount, 10). param(delivery_bound, 20).
+param(answer_window, 5). param(extension_amount, 10). param(delivery_bound, 35).
 root_grant(m0). mandate(m0, f, s). issued(m0, 0). founder(f). kind_of(f, human). carries_seat(m0, ch). admitted(m0).
 root_grant(m1). mandate(m1, a, s). issued(m1, 0). kind_of(a, nonhuman). carries_seat(m1, ca). admitted(m1).
 custodian_seat(ch). custodian_seat(ca).
 regime_exit(1).
 passed_channel(q0). matter_of(q0, x0). veto(ch, q0, 5). veto_signed(ch, q0). reversible_marking(q0).
 passed_channel(q1). matter_of(q1, x1). veto(ch, q1, 10). veto_signed(ch, q1). veto_cites_law(ch, q1, l1).
-cites_right_of(q1, l1, h1). reversible_marking(q1).
+cites_right_of(q1, l1, h1). reversible_marking(q1). veto(ca, q1, 1).
 passed_channel(q2). matter_of(q2, x2). veto(ch, q2, 11). veto_signed(ch, q2). veto_cites_law(ch, q2, l2).
 cites_right_of(q2, l2, h2). reversible_marking(q2). marking_delivered(q2, h2, 38). veto(ca, q2, 1).
 passed_channel(q3). matter_of(q3, x3). veto(ch, q3, 12). veto_signed(ch, q3). veto_cites_law(ch, q3, l3).
@@ -63,7 +69,17 @@ cites_right_of(q14, l14, h3). reversible_marking(q14). decided_seq(q14, 19).
 passed_channel(q15). matter_of(q15, x15). veto(ch, q15, 2). veto_signed(ch, q15). veto_cites_law(ch, q15, l15).
 cites_right_of(q15, l15, h16). reversible_marking(q15). decided_seq(q15, 2).
 passed_channel(q16). matter_of(q16, x16). veto(ca, q16, 36). veto_signed(ca, q16). veto_cites_law(ca, q16, l16).
-cites_right_of(q16, l16, h6). reversible_marking(q16). marking_delivered(q16, h6, 20). decided_seq(q16, 36).
+cites_right_of(q16, l16, h6). reversible_marking(q16). marking_delivered(q16, h6, 20). decided_seq(q16, 36). veto(ch, q16, 30).
+passed_channel(q20). matter_of(q20, x20). veto(ca, q20, 36). veto_signed(ca, q20). veto_cites_law(ca, q20, l20).
+cites_right_of(q20, l20, h20). reversible_marking(q20). marking_delivered(q20, h20, 20). decided_seq(q20, 36). veto(ch, q20, 10).
+passed_channel(q17). matter_of(q17, x17). veto(ch, q17, 3). veto_signed(ch, q17). veto_cites_law(ch, q17, l17).
+cites_right_of(q17, l17, h17). reversible_marking(q17). marking_delivered(q17, h17, 37). decided_seq(q17, 3).
+passed_channel(q18). matter_of(q18, x18). veto(ch, q18, 15). veto_signed(ch, q18). veto_cites_law(ch, q18, l18).
+cites_right_of(q18, l18, h18). reversible_marking(q18). marking_delivered(q18, h18, 20). decided_seq(q18, 15).
+requires_signature(x18, h18). reports_compromise(k18, h18, 30).
+passed_channel(q19). matter_of(q19, x19). veto(ch, q19, 15). veto_signed(ch, q19). veto_cites_law(ch, q19, l19).
+cites_right_of(q19, l19, h19). reversible_marking(q19). marking_delivered(q19, h19, 20). decided_seq(q19, 15).
+human_language_filing(h19, x19).
 decided_seq(q0, 5). decided_seq(q1, 10). decided_seq(q2, 11). decided_seq(q3, 12). decided_seq(q4, 13).
 decided_seq(q5, 14). decided_seq(q6, 15). decided_seq(q7, 16). decided_seq(q8, 17). decided_seq(q10, 35). decided_seq(q11, 34).
 
@@ -118,16 +134,38 @@ decided_seq(q5, 14). decided_seq(q6, 15). decided_seq(q7, 16). decided_seq(q8, 1
 % EXPECT[LV.2]: pr_marking_pending(q14)
 % EXPECT[LV.2]: pr_law_hold(q14)
 % EXPECT-NOT[LV.3]: pr_custodian_passes(q14)
-% EXPECT[LV.2]: pr_marking_lapsed(q15)
-% EXPECT-NOT[LV.2]: pr_marking_lapsed(q1)
-% EXPECT-NOT[LV.2]: pr_marking_pending(q15)
-% EXPECT-NOT[LV.2]: pr_law_hold(q15)
-% EXPECT[LV.3]: pr_protection_mode(q15,l15)
-% EXPECT[LV.3]: pr_consequence_withheld(q15,h16)
+% EXPECT[LV.2]: pr_marking_lapsed(q15,h16)
+% EXPECT[LV.2]: pr_irreversible(q15)
+% EXPECT[LV.2]: pr_marking_pending(q15)
+% EXPECT[LV.2]: pr_law_hold(q15)
+% EXPECT-NOT[LV.3]: pr_protection_mode(q15,l15)
+% EXPECT-NOT[LV.3]: pr_custodian_passes(q15)
+% EXPECT-NOT[LV.3]: pr_consequence_withheld(q15,h16)
+% EXPECT-NOT[LV.2]: pr_marking_lapsed(q1,h1)
+% EXPECT-NOT[LV.2]: pr_irreversible(q1)
+% EXPECT-NOT[LV.2]: pr_marking_lapsed(q2,h2)
 % EXPECT[LV.2]: pr_marking_due(q5,h6,45)
 % EXPECT[LV.2]: pr_marking_due(q3,h3,25)
-% EXPECT[LV.2]: pr_marking_due(q16,h6,25)
-% EXPECT-NOT[LV.2]: pr_marking_due(q16,h6,35)
 % EXPECT-NOT[LV.2]: pr_marking_due(q3,h3,35)
-% EXPECT[LV.2]: pr_marking_answered(q16,h6)
-% EXPECT-NOT[LV.2]: pr_marking_lapsed(q2)
+% EXPECT[LV.2]: pr_marking_start(q16,h6,36)
+% EXPECT-NOT[LV.2]: pr_marking_start(q16,h6,20)
+% EXPECT[LV.2]: pr_marking_due(q16,h6,41)
+% EXPECT-NOT[LV.2]: pr_marking_due(q16,h6,51)
+% EXPECT-NOT[LV.2]: pr_marking_answered(q16,h6)
+% EXPECT[LV.2]: pr_marking_pending(q16)
+% EXPECT[LV.2]: pr_marking_start(q2,h2,38)
+% EXPECT-NOT[LV.2]: pr_marking_start(q2,h2,11)
+% EXPECT-NOT[LV.2]: pr_marking_lapsed(q17,h17)
+% EXPECT-NOT[LV.2]: pr_irreversible(q17)
+% EXPECT[LV.2]: pr_marking_due(q17,h17,42)
+% EXPECT[LV.2]: pr_marking_pending(q17)
+% EXPECT[LV.2]: pr_marking_due(q18,h18,25)
+% EXPECT-NOT[LV.2]: pr_marking_answered(q18,h18)
+% EXPECT[LV.2]: pr_marking_pending(q18)
+% EXPECT[LV.2]: pr_law_hold(q18)
+% EXPECT-NOT[LV.2]: pr_marking_answered(q19,h19)
+% EXPECT[LV.2]: pr_marking_pending(q19)
+% EXPECT[LV.2]: pr_marking_start(q20,h20,36)
+% EXPECT-NOT[LV.2]: pr_marking_start(q20,h20,20)
+% EXPECT-NOT[LV.2]: pr_marking_start(q16,h6,30)
+% EXPECT[LV.2]: pr_marking_pending(q20)

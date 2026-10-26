@@ -17,7 +17,7 @@ cites_right_of(q1, l1, hr).
 % the filer marks each other act's effect reversible
 reversible_marking(q1). reversible_marking(q2).
 % the reversible markings were delivered to each protected human, and each answer window has passed
-param(answer_window, 5). param(extension_amount, 5). param(delivery_bound, 10). marking_delivered(q1, hr, 10).
+param(answer_window, 5). param(extension_amount, 5). param(delivery_bound, 100). marking_delivered(q1, hr, 10).
 
 % EXPECT-NOT[LV.2]: pr_law_hold(q1)
 % EXPECT[LV.3]: pr_consequence_withheld(q1,hr)
