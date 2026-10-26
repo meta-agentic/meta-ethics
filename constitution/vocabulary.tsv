@@ -312,7 +312,7 @@ pr_law_hold	proposal	consequence	LV.1	the act is held as proposed
 pr_cited_pending	seat,proposal,law	consequence	LV.1	a valid citation whose review is undecided	
 pr_in_ceilings	seat,proposal	consequence	LV.2	the citing veto is within the seat's ceilings	
 pr_beyond_ceilings	seat,proposal	consequence	LV.2	the citing veto is beyond the seat's ceilings	
-pr_irreversible	proposal	consequence	LV.2	the act's effect counts as irreversible: declared so by its filer, not declared at all, or marked reversible and contested, the contest undecided	
+pr_irreversible	proposal	consequence	LV.2	the act's effect counts as irreversible: declared so by its filer, not declared at all, marked reversible and contested, the contest undecided, or marked reversible and not delivered within the delivery bound	
 pr_pending_hold	proposal,law	consequence	LV.2	held within the ceilings until the review's ceiling, and always where the effect is irreversible	
 pr_overdue	proposal,law	consequence	LV.4	the review is past its ceiling, undecided	
 pr_redrawn	proposal,law	consequence	LV.4	the reviewer is replaced and the review drawn again	
@@ -342,10 +342,11 @@ took_effect	proposal	attested	LV.1	the act took effect before the breach was fou
 pr_contested	proposal	consequence	LV.2	a reversible marking contested by the citing seat within its ceilings, or by a protected human
 pr_false_marking	proposal,party	consequence	LV.2	a marking found false is a finding against its filer
 pr_marking_owed	proposal,party	consequence	LV.2	a reversible marking on an act a law-citing veto names is owed in delivery to a human the citation protects
-pr_marking_due	proposal,party,time	consequence	LV.2	when the protected human's answer window on the marking closes: the delivery plus the answer window, plus the one extension on the matter where requested (H1.5)
-pr_marking_answered	proposal,party	consequence	LV.2	the protected human's answer window on the marking, running from its delivery, has passed
-pr_marking_lapsed	proposal	consequence	LV.2	the delivery bound, the answer window and the one extension, counted from the veto, have all passed: a marking not delivered by then holds the act no longer
-pr_marking_pending	proposal	consequence	LV.2	the act is held until the marking was delivered to every protected human and each one's answer window has passed, or until the bound on an undelivered marking lapses
+pr_marking_start	proposal,party,time	consequence	LV.2	when the protected human's answer window on the marking starts: the later of the marking's delivery and the citing veto
+pr_marking_due	proposal,party,time	consequence	LV.2	when the protected human's answer window on the marking closes: its start plus the answer window, plus the one extension on the matter where requested (H1.5)
+pr_marking_answered	proposal,party	consequence	LV.2	the protected human's answer window on the marking has passed, and the window is neither suspended (S1.12) nor awaiting rendering (H2.3)
+pr_marking_lapsed	proposal,party	consequence	LV.2	the marking was not delivered to this protected human within the delivery bound from the citing veto: the act is held as if its filer had declared nothing
+pr_marking_pending	proposal	consequence	LV.2	the act is held until the marking was delivered to every protected human and each one's answer window has passed
 pr_reversed_forward	proposal	consequence	LV.1	a breach found after the act took effect holds it and reverses it forward: the hold's withholding of every later consequence performs the reversal, and this label marks it
 pr_withheld_candidate	rule,party	consequence	LV.3	a consequence for the C14 ordering withheld as proposed
 pr_applied	rule,party	consequence	LV.3	a consequence applied as proposed

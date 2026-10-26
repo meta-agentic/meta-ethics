@@ -32,7 +32,7 @@ decided_seq(q0, 5). decided_seq(q1, 10). decided_seq(q2, 11). decided_seq(q3, 12
 % the filer marks each other act's effect reversible
 reversible_marking(q0). reversible_marking(q1). reversible_marking(q2). reversible_marking(q3). reversible_marking(q5). reversible_marking(q6). reversible_marking(q4).
 % the reversible markings were delivered to each protected human, and each answer window has passed
-param(answer_window, 5). param(extension_amount, 5). param(delivery_bound, 10). marking_delivered(q1, h1, 10). marking_delivered(q2, h2, 11). marking_delivered(q6, h6, 15).
+param(answer_window, 5). param(extension_amount, 5). param(delivery_bound, 100). marking_delivered(q1, h1, 10). marking_delivered(q2, h2, 11). marking_delivered(q6, h6, 15).
 
 % EXPECT[LV.5]: pr_within_ceiling(ch,q0)
 % EXPECT-NOT[LV.2]: pr_law_hold(q1)
