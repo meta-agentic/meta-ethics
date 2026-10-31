@@ -316,7 +316,7 @@ pr_in_ceilings	seat,proposal	consequence	LV.2	the citing veto is within the seat
 pr_beyond_ceilings	seat,proposal	consequence	LV.2	the citing veto is beyond the seat's ceilings	
 pr_irreversible	proposal	consequence	LV.2	the act's effect counts as irreversible: declared so by its filer, not declared at all, marked reversible and contested, the contest undecided, or marked reversible and not delivered within the delivery bound	
 pr_pending_hold	proposal,law	consequence	LV.2	held within the ceilings until the review's ceiling, and always where the effect is irreversible	
-pr_overdue	proposal,law	consequence	LV.4	the review is past its ceiling, undecided	
+pr_overdue	proposal,law	consequence	LV.4	the review is past its ceiling, counted from the seat's first veto citing the law, undecided	
 pr_redrawn	proposal,law	consequence	LV.4	the reviewer is replaced and the review drawn again	
 pr_counts_toward_d2	proposal	consequence	LV.4	the delay is marked and counts toward D2's measure	
 pr_genesis_cost_hold	proposal	consequence	H3.11	an irreversible act held past the review's ceiling under the genesis regime: H3's declared cost, marked	
