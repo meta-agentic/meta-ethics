@@ -14,7 +14,9 @@
 % consequences withheld from hn as from h4. q5: h5 joined c5 at the veto
 % itself and was never delivered: owed, lapsed and held. q6 and q7: never
 % delivered; at 100 the delivery bound of 35 has run from q6's veto at 65,
-% and not from q7's at 66: q6 has lapsed, q7 has not.
+% and not from q7's at 66: q6 has lapsed, q7 has not. q8: ch's citation for
+% h8 records no time and was entered at 12, with re-vetoes at 38 and 97,
+% delivered at 12: the anchor stays at 12 and the window closed at 17.
 
 now(100).
 param(law_review_ceiling, 10). param(veto_window, 20). param(veto_ceiling, 1). param(veto_per_act, 5).
@@ -24,18 +26,21 @@ custodian_seat(ch).
 regime_exit(1).
 passed_channel(q0). matter_of(q0, x0). veto(ch, q0, 5). veto_signed(ch, q0). reversible_marking(q0). decided_seq(q0, 5).
 passed_channel(q1). matter_of(q1, x1). veto(ch, q1, 12). veto(ch, q1, 38). veto(ch, q1, 97). veto_signed(ch, q1).
-veto_cites_law(ch, q1, l1). cites_law_at(ch, q1, l1, 12). cites_right_of(q1, l1, h1). reversible_marking(q1). marking_delivered(q1, h1, 12). decided_seq(q1, 6).
+veto_cites_law(ch, q1, l1). citation_entered(ch, q1, l1, 12). cites_law_at(ch, q1, l1, 12). cites_right_of(q1, l1, h1). reversible_marking(q1). marking_delivered(q1, h1, 12). decided_seq(q1, 6).
 passed_channel(q2). matter_of(q2, x2). veto(ch, q2, 94). veto(ch, q2, 97). veto_signed(ch, q2).
-veto_cites_law(ch, q2, l2). cites_law_at(ch, q2, l2, 94). cites_right_of(q2, l2, h2). reversible_marking(q2). marking_delivered(q2, h2, 94). decided_seq(q2, 7).
-passed_channel(q4). matter_of(q4, x4). veto(ch, q4, 12). veto_signed(ch, q4). veto_cites_law(ch, q4, l4).
+veto_cites_law(ch, q2, l2). citation_entered(ch, q2, l2, 94). cites_law_at(ch, q2, l2, 94). cites_right_of(q2, l2, h2). reversible_marking(q2). marking_delivered(q2, h2, 94). decided_seq(q2, 7).
+passed_channel(q4). matter_of(q4, x4). veto(ch, q4, 12). veto_signed(ch, q4). veto_cites_law(ch, q4, l4). citation_entered(ch, q4, l4, 12).
 cites_class(q4, l4, c4). in_class(h4, c4). in_class(hn, c4). joined_class(hn, c4, 20).
 reversible_marking(q4). marking_delivered(q4, h4, 12). took_effect(q4). decided_seq(q4, 8).
-passed_channel(q5). matter_of(q5, x5). veto(ch, q5, 12). veto_signed(ch, q5). veto_cites_law(ch, q5, l5).
+passed_channel(q5). matter_of(q5, x5). veto(ch, q5, 12). veto_signed(ch, q5). veto_cites_law(ch, q5, l5). citation_entered(ch, q5, l5, 12).
 cites_class(q5, l5, c5). in_class(h5, c5). joined_class(h5, c5, 12). reversible_marking(q5). decided_seq(q5, 9).
-passed_channel(q6). matter_of(q6, x6). veto(ch, q6, 65). veto_signed(ch, q6). veto_cites_law(ch, q6, l6).
+passed_channel(q6). matter_of(q6, x6). veto(ch, q6, 65). veto_signed(ch, q6). veto_cites_law(ch, q6, l6). citation_entered(ch, q6, l6, 65).
 cites_right_of(q6, l6, h6). reversible_marking(q6). decided_seq(q6, 10).
-passed_channel(q7). matter_of(q7, x7). veto(ch, q7, 66). veto_signed(ch, q7). veto_cites_law(ch, q7, l7).
+passed_channel(q7). matter_of(q7, x7). veto(ch, q7, 66). veto_signed(ch, q7). veto_cites_law(ch, q7, l7). citation_entered(ch, q7, l7, 66).
 cites_right_of(q7, l7, h7). reversible_marking(q7). decided_seq(q7, 11).
+passed_channel(q8). matter_of(q8, x8). veto(ch, q8, 12). veto(ch, q8, 38). veto(ch, q8, 97). veto_signed(ch, q8).
+veto_cites_law(ch, q8, l8). citation_entered(ch, q8, l8, 12). cites_right_of(q8, l8, h8).
+reversible_marking(q8). marking_delivered(q8, h8, 12). decided_seq(q8, 12).
 
 % EXPECT[LV.2]: pr_beyond_ceilings(ch,q1)
 % EXPECT[LV.2]: pr_first_citing(ch,q1,l1,12)
@@ -76,3 +81,9 @@ cites_right_of(q7, l7, h7). reversible_marking(q7). decided_seq(q7, 11).
 % EXPECT[LV.2]: pr_law_hold(q7)
 % EXPECT[LV.2]: pr_marking_notice(q4,hn)
 % EXPECT-NOT[LV.2]: pr_marking_notice(q4,h4)
+% EXPECT[LV.2]: pr_first_citing(ch,q8,l8,12)
+% EXPECT-NOT[LV.2]: pr_first_citing(ch,q8,l8,97)
+% EXPECT[LV.2]: pr_marking_due(q8,h8,17)
+% EXPECT-NOT[LV.2]: pr_marking_due(q8,h8,102)
+% EXPECT-NOT[LV.2]: pr_law_hold(q8)
+% EXPECT[LV.3]: pr_custodian_passes(q8)

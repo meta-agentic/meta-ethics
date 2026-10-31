@@ -208,7 +208,8 @@ founder_chain	party	derived	H3.4	the founder, or a party in the founder's delega
 genesis_bar	party	derived	P2.7	under the genesis regime the reviewer is outside the founder's chain	
 founder_revocable	mandate	intake	C7.3	a mandate the founding document grants that the founder can revoke alone	
 veto_cites_law	seat,proposal,law	intake	P1.7	a veto citing a law binding the instance that the act would breach as to a human party's right	
-cites_law_at	seat,proposal,law,time	intake	LV.2	when the seat's veto first cited the law; required where the seat vetoes the act more than once; where the seat vetoes once and none is recorded, the citation was made at that veto
+cites_law_at	seat,proposal,law,time	intake	LV.2	when the seat's veto first cited the law, where intake records it; a time no veto of the seat reaches is refused as malformed
+citation_entered	seat,proposal,law,time	intake	LV.2	the position of the citation's own entry in the append-only record (MEM.1); required for every citation
 law_unfounded	proposal,law	attested	P1.7	the review under P2 found the cited law not breached	
 exempts	act,party	intake	A1.9	an act that purports to exempt a party from a rule	
 self_exemption	act	derived	A1.9	the founder may not exempt themself: a finding	
@@ -347,13 +348,12 @@ pr_marking_owed	proposal,party	consequence	LV.2	a reversible marking on an act a
 pr_marking_notice	proposal,party	consequence	LV.2	a human who joined a cited class after the seat's first citing veto is owed the reversible marking as notice only: it adds no hold and starts no window
 pr_marking_cited	proposal,party,time	consequence	LV.2	the time of the seat's first citing veto whose citation protects the human, the human protected at that veto
 pr_cite_time_met	seat,proposal,law	derived	LV.2	a veto of the seat falls at or after the citation's recorded time
-pr_cite_time_refused	seat,proposal,law	derived	LV.2	the citation's recorded time is later than every veto of the seat on the act, or no time is recorded though the seat vetoed the act more than once: intake refuses the record as malformed, and the citation cites at the seat's latest veto
-pr_cite_recorded	seat,proposal,law	derived	LV.2	the intake records when the seat's citation of the law was made
-pr_later_veto	seat,proposal,time	derived	LV.2	the seat vetoed the act again after this veto
-pr_last_veto	seat,proposal,time	derived	LV.2	the seat's latest veto of the act
-pr_citing_veto	seat,proposal,law,time	derived	LV.2	a veto of the seat that cites the law: at or after the citation's recorded time; any veto of the seat where it vetoed once and none is recorded; its latest veto where the time is refused
+pr_cite_time_refused	seat,proposal,law	derived	LV.2	the citation's recorded time is later than every veto of the seat on the act: intake refuses it as malformed, and the citation cites at its entry's position
+pr_cite_entered	seat,proposal,law	derived	LV.2	the citation's entry position is recorded
+pr_citation_refused	seat,proposal,law	derived	LV.2	a citation with neither a valid time nor an entry position: intake refuses it as malformed; it anchors nothing and adds no hold of its own, the seat's veto standing within its ceilings and every consequence withheld from the protected
+pr_citing_veto	seat,proposal,law,time	derived	LV.2	the citation's anchor: a veto of the seat at or after the citation's valid recorded time, or else the position of the citation's own entry
 pr_earlier_citing	seat,proposal,law,time	derived	LV.2	the seat cited the law in a veto of the act before this one
-pr_first_citing	seat,proposal,law,time	derived	LV.2	the seat's first citing veto of the act: a later veto of the seat restarts neither the answer window nor the delivery bound
+pr_first_citing	seat,proposal,law,time	derived	LV.2	the citation's first anchor, the seat's first citing veto: a later veto of the seat restarts neither the answer window, the delivery bound nor the review's ceiling
 pr_joined_after	proposal,law,party,time	derived	LV.2	the human joined the cited class after the seat's first citing veto: owed the delivery as notice only, adding no hold, protected by LV.3 and BIND.3
 pr_marking_start	proposal,party,time	consequence	LV.2	when the protected human's answer window on the marking starts: the later of the marking's delivery and the first citing veto whose citation protects them
 pr_marking_delivered	proposal,party	consequence	LV.2	the marking was delivered to the protected human

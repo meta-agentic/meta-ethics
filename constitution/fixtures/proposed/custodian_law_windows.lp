@@ -15,15 +15,15 @@ param(law_review_ceiling, 10). param(veto_window, 5). param(veto_ceiling, 1). pa
 root_grant(m0). mandate(m0, f, s). issued(m0, 0). founder(f). carries_seat(m0, ch). admitted(m0).
 root_grant(m1). mandate(m1, a, s). issued(m1, 0). carries_seat(m1, ca). admitted(m1).
 custodian_seat(ch). custodian_seat(ca).
-passed_channel(p1). matter_of(p1, y1). veto(ch, p1, 1). veto_signed(ch, p1). veto_cites_law(ch, p1, l1). cites_right_of(p1, l1, h1).
-passed_channel(p2). matter_of(p2, y2). veto(ch, p2, 6). veto_signed(ch, p2). veto_cites_law(ch, p2, l2). cites_right_of(p2, l2, h2).
+passed_channel(p1). matter_of(p1, y1). veto(ch, p1, 1). veto_signed(ch, p1). veto_cites_law(ch, p1, l1). citation_entered(ch, p1, l1, 1). cites_right_of(p1, l1, h1).
+passed_channel(p2). matter_of(p2, y2). veto(ch, p2, 6). veto_signed(ch, p2). veto_cites_law(ch, p2, l2). citation_entered(ch, p2, l2, 6). cites_right_of(p2, l2, h2).
 irreversible_effect(p2).
-passed_channel(p3). matter_of(p3, y3). veto(ch, p3, 11). veto_signed(ch, p3). veto_cites_law(ch, p3, l3). cites_right_of(p3, l3, h3).
-passed_channel(p4). matter_of(p4, y4). veto(ch, p4, 16). veto_signed(ch, p4). veto_cites_law(ch, p4, l4). cites_right_of(p4, l4, h4).
+passed_channel(p3). matter_of(p3, y3). veto(ch, p3, 11). veto_signed(ch, p3). veto_cites_law(ch, p3, l3). citation_entered(ch, p3, l3, 11). cites_right_of(p3, l3, h3).
+passed_channel(p4). matter_of(p4, y4). veto(ch, p4, 16). veto_signed(ch, p4). veto_cites_law(ch, p4, l4). citation_entered(ch, p4, l4, 16). cites_right_of(p4, l4, h4).
 irreversible_effect(p4).
-passed_channel(p5). matter_of(p5, y5). veto(ch, p5, 21). veto_signed(ch, p5). veto_cites_law(ch, p5, l5). cites_right_of(p5, l5, h5).
+passed_channel(p5). matter_of(p5, y5). veto(ch, p5, 21). veto_signed(ch, p5). veto_cites_law(ch, p5, l5). citation_entered(ch, p5, l5, 21). cites_right_of(p5, l5, h5).
 % p6: irreversible, its review not yet past its ceiling: held, not yet marked
-passed_channel(p6). matter_of(p6, y6). veto(ch, p6, 995). veto_signed(ch, p6). veto_cites_law(ch, p6, l6).
+passed_channel(p6). matter_of(p6, y6). veto(ch, p6, 995). veto_signed(ch, p6). veto_cites_law(ch, p6, l6). citation_entered(ch, p6, l6, 995).
 cites_right_of(p6, l6, h6). irreversible_effect(p6). decided_seq(p6, 995).
 decided_seq(p1, 1). decided_seq(p2, 6). decided_seq(p3, 11). decided_seq(p4, 16). decided_seq(p5, 21).
 % the filer marks each other act's effect reversible
