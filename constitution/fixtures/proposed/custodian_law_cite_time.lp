@@ -31,28 +31,28 @@ custodian_seat(ca).
 regime_exit(1).
 passed_channel(q0). matter_of(q0, x0). veto(ch, q0, 5). veto_signed(ch, q0). reversible_marking(q0). decided_seq(q0, 5).
 passed_channel(q1). matter_of(q1, x1). veto(ch, q1, 30). veto(ch, q1, 50). veto_signed(ch, q1).
-veto_cites_law(ch, q1, l1). cites_law_at(ch, q1, l1, 50). cites_right_of(q1, l1, h1).
+veto_cites_law(ch, q1, l1). citation_entered(ch, q1, l1, 50). cites_law_at(ch, q1, l1, 50). cites_right_of(q1, l1, h1).
 reversible_marking(q1). marking_delivered(q1, h1, 31). decided_seq(q1, 6).
 passed_channel(q2). matter_of(q2, x2). veto(ch, q2, 10). veto(ch, q2, 50). veto_signed(ch, q2).
-veto_cites_law(ch, q2, l2). cites_law_at(ch, q2, l2, 50). cites_right_of(q2, l2, h2).
+veto_cites_law(ch, q2, l2). citation_entered(ch, q2, l2, 50). cites_law_at(ch, q2, l2, 50). cites_right_of(q2, l2, h2).
 reversible_marking(q2). decided_seq(q2, 7).
 passed_channel(q3). matter_of(q3, x3). veto(ch, q3, 30). veto(ch, q3, 45). veto(ch, q3, 48). veto_signed(ch, q3).
-veto_cites_law(ch, q3, l3). cites_law_at(ch, q3, l3, 48). cites_right_of(q3, l3, h3).
+veto_cites_law(ch, q3, l3). citation_entered(ch, q3, l3, 48). cites_law_at(ch, q3, l3, 48). cites_right_of(q3, l3, h3).
 reversible_marking(q3). marking_delivered(q3, h3, 31). decided_seq(q3, 8).
-passed_channel(q4). matter_of(q4, x4). veto(ch, q4, 50). veto_signed(ch, q4). veto_cites_law(ch, q4, l4).
+passed_channel(q4). matter_of(q4, x4). veto(ch, q4, 50). veto_signed(ch, q4). veto_cites_law(ch, q4, l4). citation_entered(ch, q4, l4, 50).
 cites_right_of(q4, l4, h4). in_class(h4, c9). joined_class(h4, c9, 51). reversible_marking(q4). decided_seq(q4, 9).
 
 passed_channel(q5). matter_of(q5, x5). veto(ca, q5, 30). veto(ca, q5, 45). veto_signed(ca, q5).
-veto_cites_law(ca, q5, l5). cites_law_at(ca, q5, l5, 45). cites_right_of(q5, l5, h5).
+veto_cites_law(ca, q5, l5). citation_entered(ca, q5, l5, 45). cites_law_at(ca, q5, l5, 45). cites_right_of(q5, l5, h5).
 reversible_marking(q5). marking_delivered(q5, h5, 45). decided_seq(q5, 10).
 passed_channel(q6). matter_of(q6, x6). veto(ca, q6, 30). veto(ca, q6, 41). veto_signed(ca, q6).
-veto_cites_law(ca, q6, l6). cites_law_at(ca, q6, l6, 41). cites_right_of(q6, l6, h6).
+veto_cites_law(ca, q6, l6). citation_entered(ca, q6, l6, 41). cites_law_at(ca, q6, l6, 41). cites_right_of(q6, l6, h6).
 reversible_marking(q6). marking_delivered(q6, h6, 41). decided_seq(q6, 31).
 passed_channel(q7). matter_of(q7, x7). veto(ca, q7, 30). veto_signed(ca, q7).
-veto_cites_law(ca, q7, l7). cites_law_at(ca, q7, l7, 60). cites_right_of(q7, l7, h7).
+veto_cites_law(ca, q7, l7). citation_entered(ca, q7, l7, 30). cites_law_at(ca, q7, l7, 60). cites_right_of(q7, l7, h7).
 reversible_marking(q7). marking_delivered(q7, h7, 30). decided_seq(q7, 60).
 passed_channel(q8). matter_of(q8, x8). veto(ch, q8, 48). veto_signed(ch, q8).
-veto_cites_law(ch, q8, l8). cites_law_at(ch, q8, l8, 60). cites_right_of(q8, l8, h8).
+veto_cites_law(ch, q8, l8). citation_entered(ch, q8, l8, 48). cites_law_at(ch, q8, l8, 60). cites_right_of(q8, l8, h8).
 reversible_marking(q8). marking_delivered(q8, h8, 48). decided_seq(q8, 13).
 
 % EXPECT[LV.2]: pr_beyond_ceilings(ch,q1)

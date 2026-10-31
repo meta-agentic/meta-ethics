@@ -120,11 +120,11 @@
     "P3.5"
   ],
   "digest_rule": "sha256 over the lines '<sha256>  <path>\\n' of the entries, in the order listed",
-  "combined_sha256": "a08fed1e308d872ac20e51758d19f52f6cd1e56e56a98f38ba653fc35ed77ab0",
+  "combined_sha256": "4cfbc9c1e63ab215e1f01192e8b1f5b1b4075d6428c65bf7e3905a54c9af294e",
   "entries": [
     {
       "path": "L0.md",
-      "sha256": "d80839e0b53d75a87a72688df6302569d3eeb66af77220777e8488b3ea5347ac"
+      "sha256": "ff5c3230b8fb0ade747b145661905e6b3e9285aa942c9e259b1d5fed23e01007"
     },
     {
       "path": "clauses.tsv",
@@ -136,7 +136,7 @@
     },
     {
       "path": "vocabulary.tsv",
-      "sha256": "209150359dbc93bb908547b7096f26576a43e753d5c4112d1f922baf20c073e4"
+      "sha256": "d6e8ae326c02638695036ba1e67d40cc14ba2377e1b23b060f802d4f7a538cf5"
     },
     {
       "path": "parameters.tsv",
@@ -276,7 +276,7 @@
     },
     {
       "path": "program/proposed/law_veto.lp",
-      "sha256": "09ffac29214c32cd1b74d26f3ee718cb9c94be833b839247f10b4e64fa9c9f88"
+      "sha256": "c80d2628639d4e74c3cda6489d661419338ee3854a21177d1b17e75172777579"
     },
     {
       "path": "fixtures/proposed/binding_decided.lp",
@@ -288,55 +288,55 @@
     },
     {
       "path": "fixtures/proposed/binding_protected.lp",
-      "sha256": "1430f833aaa46e972fc0df4bec0aa9a486baee8d6b1b808d9186df7f086c9c06"
+      "sha256": "993b95af8b649af462f80ea8b352380db885923cba6a655b7e6c1527a3655e26"
     },
     {
       "path": "fixtures/proposed/custodian_law.lp",
-      "sha256": "06faf7a228de862fd5d7670d9c715bad93912cf3b93bf91d22728cd2bac59179"
+      "sha256": "9e9153d77ed74c3af469e48eed1774e9bdb34cb1b2ff6a956e1c066bfeba3342"
     },
     {
       "path": "fixtures/proposed/custodian_law_ceilings.lp",
-      "sha256": "a94e9d8b5e31040da6b3470b0bcf7867db02fcf19d28c1bf0fda50568582f202"
+      "sha256": "23642646ce38c1535e4e71aa4399e7a091159ddf7d7bee5ae009716b654e52e4"
     },
     {
       "path": "fixtures/proposed/custodian_law_cite_time.lp",
-      "sha256": "65f69e4ed3e51f07aed027b2988f1d9165d3e6091f21d463e1964253e0e0f69e"
+      "sha256": "eb057be5d610e942b97fce2adcf48d4de4148695f69fed2068f326c6fc5f4b6c"
     },
     {
       "path": "fixtures/proposed/custodian_law_contest.lp",
-      "sha256": "3561ec13c935c5109a4d668bbd11acade9f5c4e16156d5b53f1fa5d3be5595dc"
+      "sha256": "bec5bc7ef6b242131cd7a1ab240c65b52f3be9400741ba253b66cfa0708ab521"
     },
     {
       "path": "fixtures/proposed/custodian_law_delivery.lp",
-      "sha256": "8a730669d50cc5342e95450622decdbca8f1ef5f8acbf02d83f27e5ef7c66081"
+      "sha256": "1244232ff00d04fa4af2b0f53140cea485dfc9df041c36f7ddb921e7a3712d8f"
     },
     {
       "path": "fixtures/proposed/custodian_law_first_veto.lp",
-      "sha256": "1cf62e18c548c64622c59ec29ac725342ad85a7d8e6a00afe850a2e6d2de8776"
+      "sha256": "4d080885eea220f1ea22979430638be1dbc89e9e0e17d6244390304f5da24e72"
     },
     {
       "path": "fixtures/proposed/custodian_law_gate.lp",
-      "sha256": "952683c6cb62526c389fdef8dbeff9b743ffec029c43d0f3c39adc085574e178"
+      "sha256": "fb26f262d45ed38d318270024492c4b3cc128ca8ef25fbbfd04f0511edb01595"
     },
     {
       "path": "fixtures/proposed/custodian_law_genesis.lp",
-      "sha256": "967c2d73cbe032bf7102b67cf753dda1f95a530f3cb1bc9004d5af7596be716e"
+      "sha256": "133b94cfaa95cf0cbb562a4b0198cb3952cdbdd385812d9cadb6d33ddf5bd552"
     },
     {
       "path": "fixtures/proposed/custodian_law_rights.lp",
-      "sha256": "5187632cddd3625a115630c32dd5d8c511eb9f606e8191ee1e39f886c8a175f8"
+      "sha256": "0aadbb3f5e49051aa0c49c3fbc0d9513f680043421bc52fa63e5924c8ca127e4"
     },
     {
       "path": "fixtures/proposed/custodian_law_windows.lp",
-      "sha256": "338df90894795be3918575413f605dcc087a0c5019b00da9e375f92f34be912f"
+      "sha256": "73a8f04da107e412a80b15ac509e5649385423e14885e3cd4261b129c2e7d13f"
     },
     {
       "path": "fixtures/proposed/custodian_law_withheld.lp",
-      "sha256": "f218bc91d9316f0c881ba84cf3f912408c9666280b6d5d8434d49f8f71e0569c"
+      "sha256": "68437b126058d427d3d1dc4d3e8fd6b48a0be67b1306abe04aafdcd866fddb46"
     },
     {
       "path": "fixtures/proposed/law_effects.lp",
-      "sha256": "c532c102be6aaf11fb9eb9b94dc29f0c2521730db756b3a8ce90f098153be5b5"
+      "sha256": "e55bd4c244587dc0ddd5eac120ed593a4608dace7db12f7e84901eea1b0781ca"
     },
     {
       "path": "fixtures/proposed/law_effects_end.lp",
@@ -360,7 +360,7 @@
     },
     {
       "path": "DESIGN.md",
-      "sha256": "48433f4e1c9894b576215a01abac166a835c19432f3e6d8c4649f90686601935"
+      "sha256": "0da3559ced3f6261a55df0cf1143a636c4aa4890e65653692c4393260685c024"
     },
     {
       "path": "tools/c18.py",
@@ -376,7 +376,7 @@
     },
     {
       "path": "tools/mutants-allowed.tsv",
-      "sha256": "ea4759a74b7607a4567dc7588c828eed9089dae7d3474d3d63e23d5582f01934"
+      "sha256": "a106fe580adf5cfa6e011b5ec50db51c7c9d390227a1b2ba40426c64933229b6"
     },
     {
       "path": "tools/mutants.py",

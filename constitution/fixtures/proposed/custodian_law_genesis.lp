@@ -9,7 +9,7 @@ param(law_review_ceiling, 10). param(veto_window, 50). param(veto_ceiling, 1). p
 root_grant(m0). mandate(m0, f, s). issued(m0, 0). founder(f). carries_seat(m0, ch). admitted(m0).
 root_grant(m1). mandate(m1, a, s). issued(m1, 0). carries_seat(m1, ca). admitted(m1).
 custodian_seat(ch). custodian_seat(ca).
-passed_channel(q1). matter_of(q1, x1). veto(ch, q1, 10). veto_signed(ch, q1). veto_cites_law(ch, q1, l1).
+passed_channel(q1). matter_of(q1, x1). veto(ch, q1, 10). veto_signed(ch, q1). veto_cites_law(ch, q1, l1). citation_entered(ch, q1, l1, 10).
 passed_channel(q2). matter_of(q2, x2). veto(ch, q2, 20). veto_signed(ch, q2).
 decided_seq(q1, 10). decided_seq(q2, 20).
 % the human whose right each citation names

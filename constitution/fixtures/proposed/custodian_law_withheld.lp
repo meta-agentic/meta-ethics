@@ -20,7 +20,7 @@ root_grant(m5). mandate(m5, r2, s). issued(m5, 0). kind_of(r2, human).
 custodian_seat(ch). custodian_seat(ca).
 passed_channel(q0). matter_of(q0, x0). veto(ch, q0, 5). veto_signed(ch, q0).
 % q1: reversible, beyond the ceiling, review pending
-passed_channel(q1). matter_of(q1, x1). veto(ch, q1, 10). veto_signed(ch, q1). veto_cites_law(ch, q1, l1).
+passed_channel(q1). matter_of(q1, x1). veto(ch, q1, 10). veto_signed(ch, q1). veto_cites_law(ch, q1, l1). citation_entered(ch, q1, l1, 10).
 cites_right_of(q1, l1, h1). cites_class(q1, l1, tenants). in_class(h2, tenants).
 verdict(v1, h1, 12). verdict_from_act(v1, q1). bears_consequence(v1). consequence_on(v1, h1). filed_by(v1, a).
 verdict_delivered(v1, 12). drawn_reviewer(v1, r2). reviewed(v1, r2).
@@ -31,21 +31,21 @@ finding(g2, h3, 12). finding_from_act(g2, q1).
 duty_on(u1, x9, h1). duty_from_act(u1, q1).
 duty_on(u2, x9, h3). duty_from_act(u2, q1).
 % q2: an irreversible effect (a disclosure of personal data), beyond the ceiling
-passed_channel(q2). matter_of(q2, x2). veto(ch, q2, 11). veto_signed(ch, q2). veto_cites_law(ch, q2, l2).
+passed_channel(q2). matter_of(q2, x2). veto(ch, q2, 11). veto_signed(ch, q2). veto_cites_law(ch, q2, l2). citation_entered(ch, q2, l2, 11).
 cites_right_of(q2, l2, h1). irreversible_effect(q2).
 % q3: reversible, beyond the ceiling, the citation found unfounded
-passed_channel(q3). matter_of(q3, x3). veto(ch, q3, 12). veto_signed(ch, q3). veto_cites_law(ch, q3, l3).
+passed_channel(q3). matter_of(q3, x3). veto(ch, q3, 12). veto_signed(ch, q3). veto_cites_law(ch, q3, l3). citation_entered(ch, q3, l3, 12).
 cites_right_of(q3, l3, h1). law_unfounded(q3, l3).
 verdict(v3, h1, 13). verdict_from_act(v3, q3). bears_consequence(v3). consequence_on(v3, h1). filed_by(v3, a).
 verdict_delivered(v3, 13). drawn_reviewer(v3, r2). reviewed(v3, r2).
 % q4: irreversible, beyond the ceiling, found unfounded: not held
-passed_channel(q4). matter_of(q4, x4). veto(ch, q4, 13). veto_signed(ch, q4). veto_cites_law(ch, q4, l4).
+passed_channel(q4). matter_of(q4, x4). veto(ch, q4, 13). veto_signed(ch, q4). veto_cites_law(ch, q4, l4). citation_entered(ch, q4, l4, 13).
 cites_right_of(q4, l4, h1). irreversible_effect(q4). law_unfounded(q4, l4).
 % a finding about h1 that does not arise from q1 is cited as usual
 finding(g3, h1, 12).
 decided_seq(q4, 13).
 % q5: a citation naming only a class
-passed_channel(q5). matter_of(q5, x5). veto(ch, q5, 14). veto_signed(ch, q5). veto_cites_law(ch, q5, l5).
+passed_channel(q5). matter_of(q5, x5). veto(ch, q5, 14). veto_signed(ch, q5). veto_cites_law(ch, q5, l5). citation_entered(ch, q5, l5, 14).
 cites_class(q5, l5, tenants). decided_seq(q5, 14).
 decided_seq(q0, 5). decided_seq(q1, 10). decided_seq(q2, 11). decided_seq(q3, 12).
 % the filer marks each other act's effect reversible

@@ -19,7 +19,7 @@ root_grant(m4). mandate(m4, r2, s). issued(m4, 0). kind_of(r2, human).
 root_grant(m5). mandate(m5, n9, s). issued(m5, 0). kind_of(n9, nonhuman).
 custodian_seat(ch). custodian_seat(ca).
 regime_exit(1).
-passed_channel(q1). matter_of(q1, x1). veto(ch, q1, 10). veto_signed(ch, q1). veto_cites_law(ch, q1, l1).
+passed_channel(q1). matter_of(q1, x1). veto(ch, q1, 10). veto_signed(ch, q1). veto_cites_law(ch, q1, l1). citation_entered(ch, q1, l1, 10).
 cites_right_of(q1, l1, h1).
 passed_channel(q2). matter_of(q2, x2).
 passed_channel(q3). matter_of(q3, x3). about(q3, h). about(q3, a). act_reviewed(q3).
@@ -27,9 +27,9 @@ passed_channel(q4). matter_of(q4, x4). about(q4, h). about(q4, a). act_reviewed(
 passed_channel(q5). matter_of(q5, x5). about(q5, h). about(q5, a).
 passed_channel(q6). matter_of(q6, x6). owed_act(q6). about(q6, h). about(q6, a).
 matter_of(q7, x7). owed_act(q7).
-passed_channel(q8). matter_of(q8, x8). veto(ca, q8, 11). veto_signed(ca, q8). veto_cites_law(ca, q8, l8).
+passed_channel(q8). matter_of(q8, x8). veto(ca, q8, 11). veto_signed(ca, q8). veto_cites_law(ca, q8, l8). citation_entered(ca, q8, l8, 11).
 cites_right_of(q8, l8, h1).
-passed_channel(q9). matter_of(q9, x9). veto(ca, q9, 12). veto_signed(ca, q9). veto_cites_law(ca, q9, l9).
+passed_channel(q9). matter_of(q9, x9). veto(ca, q9, 12). veto_signed(ca, q9). veto_cites_law(ca, q9, l9). citation_entered(ca, q9, l9, 12).
 cites_right_of(q9, l9, n9).
 decided_seq(q1, 10). decided_seq(q8, 11). decided_seq(q9, 12).
 % consequences from the held q1
