@@ -120,7 +120,7 @@
     "P3.5"
   ],
   "digest_rule": "sha256 over the lines '<sha256>  <path>\\n' of the entries, in the order listed",
-  "combined_sha256": "6c4dd1f6e7c471da1796aa865b213af3218dd86bfc6f74184696dc0347188947",
+  "combined_sha256": "b6c5fe957d536cac251e9f45461a42a08e62a15e32bd4bbde13653b4a5331d04",
   "entries": [
     {
       "path": "L0.md",
@@ -136,7 +136,7 @@
     },
     {
       "path": "vocabulary.tsv",
-      "sha256": "4e11dcd14c18d8adc5ca5bfbac8752971c375821b6cbce0df02b10d866d0bfa4"
+      "sha256": "9bb2c8a3d7105683d69953ca4e0c95a0e2b035c2cca19e38391434a4519b0764"
     },
     {
       "path": "parameters.tsv",
@@ -276,7 +276,7 @@
     },
     {
       "path": "program/proposed/law_veto.lp",
-      "sha256": "a7e7c08993f5d737a1a91c7ce8eb4953e32dacaf91fd7d981ec903e887823679"
+      "sha256": "ea8eba60ae6554a74fa19f3112f65ef52c58622903682100ce3d8bf5c2d08a16"
     },
     {
       "path": "fixtures/proposed/binding_decided.lp",
@@ -300,7 +300,7 @@
     },
     {
       "path": "fixtures/proposed/custodian_law_cite_time.lp",
-      "sha256": "4e43185195c79b81730e4919b5583a62ea77b9194d68447e0c80e5561566255e"
+      "sha256": "65f69e4ed3e51f07aed027b2988f1d9165d3e6091f21d463e1964253e0e0f69e"
     },
     {
       "path": "fixtures/proposed/custodian_law_contest.lp",
@@ -356,7 +356,7 @@
     },
     {
       "path": "DESIGN.md",
-      "sha256": "eafb397c40b471c5ffe8649656dd4d14a1bbd6dd5976e8709362f76fb33b3e31"
+      "sha256": "b8a396846cece2d3b1bd6827b43e516fd962e974be14aa4d759b66edef86ee1a"
     },
     {
       "path": "tools/c18.py",

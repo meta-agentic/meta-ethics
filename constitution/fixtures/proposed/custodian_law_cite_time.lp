@@ -14,6 +14,12 @@
 % law and cites l5 for h5 at 45: the review's ceiling of 10 counts from 45, so
 % at 51 the review is not overdue and the act is held. q6: as q5, the citation
 % at 41: at 51 the ceiling has run, exactly, and the review is redrawn.
+% q7 and q8: a malformed citation time, later than every veto of the seat:
+% intake refuses it and the citation cites at the veto. q7: ca, within its
+% ceilings, vetoes at 30 with the time recorded as 60, delivered at 30: the
+% review falls overdue at 40 as from the veto, not never. q8: ch, beyond its
+% ceilings, vetoes at 48 with the time recorded as 60, delivered at 48: h8's
+% window runs from 48 and is still open at 51, so the act does not pass.
 
 now(51).
 param(law_review_ceiling, 10). param(veto_window, 20). param(veto_ceiling, 1). param(veto_per_act, 5).
@@ -41,7 +47,13 @@ veto_cites_law(ca, q5, l5). cites_law_at(ca, q5, l5, 45). cites_right_of(q5, l5,
 reversible_marking(q5). marking_delivered(q5, h5, 45). decided_seq(q5, 10).
 passed_channel(q6). matter_of(q6, x6). veto(ca, q6, 30). veto(ca, q6, 41). veto_signed(ca, q6).
 veto_cites_law(ca, q6, l6). cites_law_at(ca, q6, l6, 41). cites_right_of(q6, l6, h6).
-reversible_marking(q6). marking_delivered(q6, h6, 41). decided_seq(q6, 11).
+reversible_marking(q6). marking_delivered(q6, h6, 41). decided_seq(q6, 31).
+passed_channel(q7). matter_of(q7, x7). veto(ca, q7, 30). veto_signed(ca, q7).
+veto_cites_law(ca, q7, l7). cites_law_at(ca, q7, l7, 60). cites_right_of(q7, l7, h7).
+reversible_marking(q7). marking_delivered(q7, h7, 30). decided_seq(q7, 60).
+passed_channel(q8). matter_of(q8, x8). veto(ch, q8, 48). veto_signed(ch, q8).
+veto_cites_law(ch, q8, l8). cites_law_at(ch, q8, l8, 60). cites_right_of(q8, l8, h8).
+reversible_marking(q8). marking_delivered(q8, h8, 48). decided_seq(q8, 13).
 
 % EXPECT[LV.2]: pr_beyond_ceilings(ch,q1)
 % EXPECT[LV.2]: pr_first_citing(ch,q1,l1,50)
@@ -75,3 +87,16 @@ reversible_marking(q6). marking_delivered(q6, h6, 41). decided_seq(q6, 11).
 % EXPECT[LV.4]: pr_overdue(q6,l6)
 % EXPECT[LV.4]: pr_redrawn(q6,l6)
 % EXPECT-NOT[LV.2]: pr_law_hold(q6)
+% EXPECT[LV.2]: pr_cite_time_refused(ca,q7,l7)
+% EXPECT-NOT[LV.2]: pr_cite_time_refused(ca,q5,l5)
+% EXPECT[LV.2]: pr_first_citing(ca,q7,l7,30)
+% EXPECT[LV.4]: pr_overdue(q7,l7)
+% EXPECT-NOT[LV.2]: pr_law_hold(q7)
+% EXPECT[LV.2]: pr_cite_time_refused(ch,q8,l8)
+% EXPECT[LV.2]: pr_marking_due(q8,h8,53)
+% EXPECT[LV.2]: pr_marking_pending(q8)
+% EXPECT[LV.2]: pr_law_hold(q8)
+% EXPECT-NOT[LV.3]: pr_custodian_passes(q8)
+% EXPECT[LV.2]: pr_in_ceilings(ca,q6)
+% EXPECT[LV.2]: pr_in_ceilings(ca,q7)
+% EXPECT-NOT[LV.2]: pr_beyond_ceilings(ca,q7)

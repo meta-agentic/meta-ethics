@@ -63,7 +63,11 @@ pr_false_marking(Q, F) :- reversible_marking(Q), irreversibility_upheld(Q), prop
 % nor the bound; a marking still undelivered when the delivery bound has run
 % holds the act as if its filer had declared nothing
 % a citation cites at the time its intake records, or else at the seat's veto
-pr_cite_timed(S, Q, L) :- cites_law_at(S, Q, L, _).
+% a citation time no veto of the seat reaches is malformed: intake refuses the
+% time, and the citation cites at the seat's veto, as where none is recorded
+pr_cite_time_met(S, Q, L) :- cites_law_at(S, Q, L, T), veto(S, Q, V), V >= T.
+pr_cite_time_refused(S, Q, L) :- cites_law_at(S, Q, L, _), not pr_cite_time_met(S, Q, L).
+pr_cite_timed(S, Q, L) :- cites_law_at(S, Q, L, _), not pr_cite_time_refused(S, Q, L).
 pr_citing_veto(S, Q, L, V) :- veto_cites_law(S, Q, L), veto(S, Q, V), not pr_cite_timed(S, Q, L).
 pr_citing_veto(S, Q, L, V) :- cites_law_at(S, Q, L, T), veto(S, Q, V), V >= T.
 pr_earlier_citing(S, Q, L, V) :- pr_citing_veto(S, Q, L, V), pr_citing_veto(S, Q, L, V2), V2 < V.
