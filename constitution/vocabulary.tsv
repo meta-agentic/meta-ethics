@@ -283,6 +283,7 @@ cites_right_of	proposal,law,party	intake	P1.7	the human party whose right the ac
 irreversible_effect	proposal	intake	LV.2	the filer declares at intake that the act's effect on a human could not be withheld or reversed forward
 cites_class	proposal,law,class	intake	LV.1	the class of humans the cited right protects, as the citation names it
 in_class	party,class	intake	LV.1	a human in a class a citation names
+joined_class	party,class,time	intake	LV.2	when a human joined a class a citation names; a member with no such entry was a member from the start
 verdict_from_act	verdict,proposal	intake	P1.7	a verdict whose consequence arises from the act
 finding_from_act	finding,proposal	intake	P1.7	a finding that arises from the act
 duty_from_act	act,proposal	intake	P1.7	a duty that arises from the act
@@ -341,14 +342,17 @@ proposed_by	proposal,party	intake	LV.2	the filer of a proposal
 took_effect	proposal	attested	LV.1	the act took effect before the breach was found
 pr_contested	proposal	consequence	LV.2	a reversible marking contested by the citing seat within its ceilings, or by a protected human
 pr_false_marking	proposal,party	consequence	LV.2	a marking found false is a finding against its filer
-pr_marking_owed	proposal,party	consequence	LV.2	a reversible marking on an act a law-citing veto names is owed in delivery to a human the citation protects
-pr_marking_cited	proposal,party,time	consequence	LV.2	the time of the veto whose citation protects the human
-pr_marking_start	proposal,party,time	consequence	LV.2	when the protected human's answer window on the marking starts: the later of the marking's delivery and the veto whose citation protects them
+pr_marking_owed	proposal,party	consequence	LV.2	a reversible marking on an act a law-citing veto names is owed in delivery to a human the citation protects at the citing seat's first veto
+pr_marking_cited	proposal,party,time	consequence	LV.2	the time of the first veto of the seat whose citation protects the human, the human protected at that veto
+pr_earlier_veto	seat,proposal,time	derived	LV.2	the seat vetoed the act before this veto of its own
+pr_first_veto	seat,proposal,time	derived	LV.2	the seat's first veto of the act; for a citing seat, a later veto of the seat restarts neither the answer window nor the delivery bound
+pr_joined_after	proposal,law,party,time	derived	LV.2	the human joined the cited class after the citing seat's first veto: owed no delivery and adding no hold, protected by LV.3 and BIND.3
+pr_marking_start	proposal,party,time	consequence	LV.2	when the protected human's answer window on the marking starts: the later of the marking's delivery and the first veto whose citation protects them
 pr_marking_delivered	proposal,party	consequence	LV.2	the marking was delivered to the protected human
 pr_marking_open	proposal,party	consequence	LV.2	one of the protected human's answer windows on the marking has not yet closed
 pr_marking_due	proposal,party,time	consequence	LV.2	when the protected human's answer window on the marking closes: its start plus the answer window, plus the one extension on the matter where requested (H1.5)
 pr_marking_answered	proposal,party	consequence	LV.2	every answer window of the protected human on the marking has passed, and the window is neither suspended (S1.12) nor awaiting rendering (H2.3)
-pr_marking_lapsed	proposal,party	consequence	LV.2	the marking was not delivered to this protected human within the delivery bound from the citing veto: the act is held as if its filer had declared nothing
+pr_marking_lapsed	proposal,party	consequence	LV.2	the marking was still undelivered to this protected human when the delivery bound had run from the first citing veto (lapsed at exactly the bound): the act is held as if its filer had declared nothing
 pr_marking_pending	proposal	consequence	LV.2	the act is held until the marking was delivered to every protected human and each one's answer window has passed
 pr_reversed_forward	proposal	consequence	LV.1	a breach found after the act took effect holds it and reverses it forward: the hold's withholding of every later consequence performs the reversal, and this label marks it
 pr_withheld_candidate	rule,party	consequence	LV.3	a consequence for the C14 ordering withheld as proposed
