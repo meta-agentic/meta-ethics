@@ -120,11 +120,11 @@
     "P3.5"
   ],
   "digest_rule": "sha256 over the lines '<sha256>  <path>\\n' of the entries, in the order listed",
-  "combined_sha256": "f0ab7ca4274f00c85f1d1dce03a26ba56b1bbc180df0521c5ba14d10266bb7f1",
+  "combined_sha256": "cf82b30888a7ac8945c70107733b0bd0f2344e531960ad2f39e426e842b7af29",
   "entries": [
     {
       "path": "L0.md",
-      "sha256": "267428bc2dbd3e0c0e3898b9cf5eaf34c677b3f7dd4d3e7e61b8a84331d2c56b"
+      "sha256": "f749e37ba39fc8a1a5a75ef0dadb46e8dfc236786c61ecfa341280558faf19db"
     },
     {
       "path": "clauses.tsv",
@@ -136,7 +136,7 @@
     },
     {
       "path": "vocabulary.tsv",
-      "sha256": "a61de42b262dd28839dd76342ac962489722006cee615cfd286d3389891886e3"
+      "sha256": "a3d071fa638eb5d31f97a362dcd928f277bd18996857b91b291cf3e05ebaf17b"
     },
     {
       "path": "parameters.tsv",
@@ -276,7 +276,7 @@
     },
     {
       "path": "program/proposed/law_veto.lp",
-      "sha256": "047816f39295582d3421cc6923ac3d983bb3509943e756f0925d2ce7e16642af"
+      "sha256": "37ddf395a79bc7c1e061dc6329c2e8db2f77f43cf48af9e1997bf0e3b8bf2bef"
     },
     {
       "path": "fixtures/proposed/binding_decided.lp",
@@ -299,6 +299,10 @@
       "sha256": "a94e9d8b5e31040da6b3470b0bcf7867db02fcf19d28c1bf0fda50568582f202"
     },
     {
+      "path": "fixtures/proposed/custodian_law_cite_time.lp",
+      "sha256": "5a167df2f8b1f3586ded23abc342e4ba011b1edbc224aea8e4912dc4be2b3b9f"
+    },
+    {
       "path": "fixtures/proposed/custodian_law_contest.lp",
       "sha256": "3561ec13c935c5109a4d668bbd11acade9f5c4e16156d5b53f1fa5d3be5595dc"
     },
@@ -308,7 +312,7 @@
     },
     {
       "path": "fixtures/proposed/custodian_law_first_veto.lp",
-      "sha256": "9622eed095f56dd7d9de1c36fe5061847d9462a7edb8122e41919c9be743fc34"
+      "sha256": "53aac754b11815949cd7669033a128a54bd1b3603f9e8713d3276b074fccc4bf"
     },
     {
       "path": "fixtures/proposed/custodian_law_gate.lp",
@@ -352,7 +356,7 @@
     },
     {
       "path": "DESIGN.md",
-      "sha256": "89af09904a81e669813761388a8ebb4e870150b5380eee18dd36a3e2a7c3f5c8"
+      "sha256": "1147a52a2fc76abf0dcb2f6cd7117d8f6205716c415399307124f7071c92ba5d"
     },
     {
       "path": "tools/c18.py",
