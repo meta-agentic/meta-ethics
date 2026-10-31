@@ -345,7 +345,9 @@ pr_contested	proposal	consequence	LV.2	a reversible marking contested by the cit
 pr_false_marking	proposal,party	consequence	LV.2	a marking found false is a finding against its filer
 pr_marking_owed	proposal,party	consequence	LV.2	a reversible marking on an act a law-citing veto names is owed in delivery to a human the citation protects at the seat's first citing veto
 pr_marking_cited	proposal,party,time	consequence	LV.2	the time of the seat's first citing veto whose citation protects the human, the human protected at that veto
-pr_cite_timed	seat,proposal,law	derived	LV.2	the intake records when the seat's citation of the law was made
+pr_cite_time_met	seat,proposal,law	derived	LV.2	a veto of the seat falls at or after the citation's recorded time
+pr_cite_time_refused	seat,proposal,law	derived	LV.2	the citation's recorded time is later than every veto of the seat on the act: intake refuses the time as malformed, and the citation cites at the seat's veto
+pr_cite_timed	seat,proposal,law	derived	LV.2	the intake records, well formed, when the seat's citation of the law was made
 pr_citing_veto	seat,proposal,law,time	derived	LV.2	a veto of the seat that cites the law: at or after the citation's recorded time, or any veto of the seat where none is recorded
 pr_earlier_citing	seat,proposal,law,time	derived	LV.2	the seat cited the law in a veto of the act before this one
 pr_first_citing	seat,proposal,law,time	derived	LV.2	the seat's first citing veto of the act: a later veto of the seat restarts neither the answer window nor the delivery bound
