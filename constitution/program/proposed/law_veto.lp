@@ -103,7 +103,9 @@ pr_reversed_forward(Q) :- took_effect(Q), pr_valid_law_veto(_, Q, L), pr_breach_
 % clause: LV.4
 pr_irreversible_holds(S, N) :- custodian_seat(S),
                                N = #count{ Q : pr_pending_hold(Q, _), pr_irreversible(Q), pr_cited_pending(S, Q, _) }.
-pr_overdue(Q, L) :- pr_cited_pending(S, Q, L), veto(S, Q, T), now(N), param(law_review_ceiling, X), N - T >= X.
+% the review's ceiling counts from the seat's first veto citing the law
+pr_overdue(Q, L) :- pr_cited_pending(S, Q, L), pr_first_citing(S, Q, L, T), now(N), param(law_review_ceiling, X),
+                    N - T >= X.
 pr_redrawn(Q, L) :- pr_overdue(Q, L).
 pr_counts_toward_d2(Q) :- pr_overdue(Q, _).
 
