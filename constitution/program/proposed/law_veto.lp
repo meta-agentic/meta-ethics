@@ -62,23 +62,32 @@ pr_false_marking(Q, F) :- reversible_marking(Q), irreversibility_upheld(Q), prop
 % S1.12, H2.3), has passed; a re-veto of the seat restarts neither the window
 % nor the bound; a marking still undelivered when the delivery bound has run
 % holds the act as if its filer had declared nothing
-% a citation cites at the time its intake records, or else at the seat's veto
-% a citation time no veto of the seat reaches is malformed: intake refuses the
-% time, and the citation cites at the seat's veto, as where none is recorded
+% a citation cites at the time its intake records; a citation on the seat's
+% only veto of the act may record none and cites at that veto
+pr_later_veto(S, Q, V) :- veto(S, Q, V), veto(S, Q, V2), V2 > V.
+pr_last_veto(S, Q, V) :- veto(S, Q, V), not pr_later_veto(S, Q, V).
+pr_cite_recorded(S, Q, L) :- cites_law_at(S, Q, L, _).
 pr_cite_time_met(S, Q, L) :- cites_law_at(S, Q, L, T), veto(S, Q, V), V >= T.
+% malformed, and refused at intake: a time no veto of the seat reaches, or no
+% time where the seat vetoed the act more than once; the citation then cites
+% at the seat's latest veto, the most protective anchor
 pr_cite_time_refused(S, Q, L) :- cites_law_at(S, Q, L, _), not pr_cite_time_met(S, Q, L).
-pr_cite_timed(S, Q, L) :- cites_law_at(S, Q, L, _), not pr_cite_time_refused(S, Q, L).
-pr_citing_veto(S, Q, L, V) :- veto_cites_law(S, Q, L), veto(S, Q, V), not pr_cite_timed(S, Q, L).
+pr_cite_time_refused(S, Q, L) :- veto_cites_law(S, Q, L), not pr_cite_recorded(S, Q, L), pr_later_veto(S, Q, _).
+pr_citing_veto(S, Q, L, V) :- veto_cites_law(S, Q, L), veto(S, Q, V), not pr_cite_recorded(S, Q, L),
+                              not pr_cite_time_refused(S, Q, L).
 pr_citing_veto(S, Q, L, V) :- cites_law_at(S, Q, L, T), veto(S, Q, V), V >= T.
+pr_citing_veto(S, Q, L, V) :- pr_cite_time_refused(S, Q, L), pr_last_veto(S, Q, V).
 pr_earlier_citing(S, Q, L, V) :- pr_citing_veto(S, Q, L, V), pr_citing_veto(S, Q, L, V2), V2 < V.
 pr_first_citing(S, Q, L, V) :- pr_citing_veto(S, Q, L, V), not pr_earlier_citing(S, Q, L, V).
-% a human who joins a cited class after that first citing veto is owed no
-% delivery and adds no hold; LV.3 and BIND.3 protect them
+% a human who joins a cited class after that first citing veto is owed the
+% delivery as notice only: it adds no hold and starts no window; LV.3 and
+% BIND.3 protect them
 pr_joined_after(Q, L, H, V) :- cites_class(Q, L, C), joined_class(H, C, J), pr_first_citing(_, Q, L, V), J > V.
 % the first citing veto whose citation protects the human
 pr_marking_cited(Q, H, V) :- pr_cited_pending(S, Q, L), pr_protected_by(Q, L, H), pr_first_citing(S, Q, L, V),
                              not pr_joined_after(Q, L, H, V).
 pr_marking_owed(Q, H) :- reversible_marking(Q), pr_marking_cited(Q, H, _).
+pr_marking_notice(Q, H) :- reversible_marking(Q), pr_cited_pending(_, Q, L), pr_joined_after(Q, L, H, _).
 pr_marking_start(Q, H, T) :- marking_delivered(Q, H, T), pr_marking_cited(Q, H, V), V <= T.
 pr_marking_start(Q, H, V) :- marking_delivered(Q, H, T), pr_marking_cited(Q, H, V), T < V.
 pr_marking_due(Q, H, E) :- pr_marking_start(Q, H, T), matter_of(Q, X), not extended(H, X),
