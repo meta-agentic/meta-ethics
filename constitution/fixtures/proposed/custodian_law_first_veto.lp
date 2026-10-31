@@ -1,4 +1,4 @@
-% The answer window and the delivery bound run from the citing seat's first
+% The answer window and the delivery bound run from the seat's first citing
 % veto, and the humans owed the marking are those the citation protects at
 % that veto (LV.2, LV.3, as proposed). The founder f's seat ch spent its
 % ceiling on q0, so each later citation of ch's is beyond the ceilings, and
@@ -37,8 +37,8 @@ passed_channel(q7). matter_of(q7, x7). veto(ch, q7, 66). veto_signed(ch, q7). ve
 cites_right_of(q7, l7, h7). reversible_marking(q7). decided_seq(q7, 11).
 
 % EXPECT[LV.2]: pr_beyond_ceilings(ch,q1)
-% EXPECT[LV.2]: pr_first_veto(ch,q1,12)
-% EXPECT-NOT[LV.2]: pr_first_veto(ch,q1,38)
+% EXPECT[LV.2]: pr_first_citing(ch,q1,l1,12)
+% EXPECT-NOT[LV.2]: pr_first_citing(ch,q1,l1,38)
 % EXPECT[LV.2]: pr_marking_due(q1,h1,17)
 % EXPECT-NOT[LV.2]: pr_marking_due(q1,h1,43)
 % EXPECT-NOT[LV.2]: pr_marking_due(q1,h1,102)
