@@ -210,6 +210,7 @@ founder_revocable	mandate	intake	C7.3	a mandate the founding document grants tha
 veto_cites_law	seat,proposal,law	intake	P1.7	a veto citing a law binding the instance that the act would breach as to a human party's right	
 cites_law_at	seat,proposal,law,time	intake	LV.2	when the seat's veto first cited the law, where intake records it; a time no veto of the seat reaches is refused as malformed
 citation_entered	seat,proposal,law,time	intake	LV.2	the position of the citation's own entry in the append-only record (MEM.1); required for every citation
+citation_refused_at	seat,proposal,law,time	intake	LV.4	the position at which intake entered its refusal of a citation with neither a valid time nor an entry position, the same as the refused entry's; the review's ceiling counts from it
 law_unfounded	proposal,law	attested	P1.7	the review under P2 found the cited law not breached	
 exempts	act,party	intake	A1.9	an act that purports to exempt a party from a rule	
 self_exemption	act	derived	A1.9	the founder may not exempt themself: a finding	
@@ -317,7 +318,7 @@ pr_in_ceilings	seat,proposal	consequence	LV.2	the citing veto is within the seat
 pr_beyond_ceilings	seat,proposal	consequence	LV.2	the citing veto is beyond the seat's ceilings	
 pr_irreversible	proposal	consequence	LV.2	the act's effect counts as irreversible: declared so by its filer, not declared at all, marked reversible and contested, the contest undecided, or marked reversible and not delivered within the delivery bound	
 pr_pending_hold	proposal,law	consequence	LV.2	held within the ceilings until the review's ceiling, and always where the effect is irreversible	
-pr_overdue	proposal,law	consequence	LV.4	the review is past its ceiling, counted from the seat's first veto citing the law, undecided	
+pr_overdue	proposal,law	consequence	LV.4	the review is past its ceiling, counted from the seat's first veto citing the law, or for a refused citation from the refusal's position, undecided	
 pr_redrawn	proposal,law	consequence	LV.4	the reviewer is replaced and the review drawn again	
 pr_counts_toward_d2	proposal	consequence	LV.4	the delay is marked and counts toward D2's measure	
 pr_genesis_cost_hold	proposal	consequence	H3.11	an irreversible act held past the review's ceiling under the genesis regime: H3's declared cost, marked	
