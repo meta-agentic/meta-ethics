@@ -115,6 +115,9 @@ pr_irreversible_holds(S, N) :- custodian_seat(S),
 % the review's ceiling counts from the seat's first veto citing the law
 pr_overdue(Q, L) :- pr_cited_pending(S, Q, L), pr_first_citing(S, Q, L, T), now(N), param(law_review_ceiling, X),
                     N - T >= X.
+% a refused citation's review ceiling counts from the refusal's own position
+pr_overdue(Q, L) :- pr_cited_pending(S, Q, L), citation_refused_at(S, Q, L, T), now(N), param(law_review_ceiling, X),
+                    N - T >= X.
 pr_redrawn(Q, L) :- pr_overdue(Q, L).
 pr_counts_toward_d2(Q) :- pr_overdue(Q, _).
 

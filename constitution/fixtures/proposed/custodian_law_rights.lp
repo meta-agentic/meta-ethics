@@ -18,6 +18,14 @@
 % stands and the act does not pass, with no law hold of the citation's own.
 % r11: a valid recorded time and no entry position: not refused, it cites at
 % its time. r12: as r9, the citation found unfounded: no protection mode.
+% r13 and r14: a refused citation on an act with no marking, refused at 40
+% and at 42: the review's ceiling of 10 counts from the refusal, so at 51
+% r13's review is overdue, redrawn and marked, and r14's is not; both stay
+% held as irreversible until the review decides (LV.2, LV.4), and every
+% consequence is withheld. r15: as r10, ca within its ceilings, the citation
+% refused at 44, so at 51 the review is not overdue: ca's veto stands and the
+% act does not pass, but the refused citation adds no law hold of its own
+% before the review's ceiling, and every consequence is withheld from h15.
 
 now(51).
 param(law_review_ceiling, 10). param(veto_window, 20). param(veto_ceiling, 1). param(veto_per_act, 5).
@@ -43,14 +51,20 @@ cites_class(r7, l7, c7). in_class(h7, c7). in_class(hm, c7). joined_class(hm, c7
 passed_channel(r8). matter_of(r8, x8). veto(ch, r8, 12). veto_signed(ch, r8). veto_cites_law(ch, r8, l8). citation_entered(ch, r8, l8, 12).
 cites_class(r8, l8, c8). in_class(h8, c8). in_class(hm, c8). joined_class(hm, c8, 20).
 reversible_marking(r8). law_unfounded(r8, l8). decided_seq(r8, 11).
-passed_channel(r9). matter_of(r9, x9). veto(ch, r9, 40). veto_signed(ch, r9). veto_cites_law(ch, r9, l9).
+passed_channel(r9). matter_of(r9, x9). veto(ch, r9, 40). veto_signed(ch, r9). veto_cites_law(ch, r9, l9). citation_refused_at(ch, r9, l9, 40).
 cites_right_of(r9, l9, h9). reversible_marking(r9). marking_delivered(r9, h9, 40). decided_seq(r9, 12).
-passed_channel(r10). matter_of(r10, x10). veto(ca, r10, 40). veto_signed(ca, r10). veto_cites_law(ca, r10, l10).
+passed_channel(r10). matter_of(r10, x10). veto(ca, r10, 40). veto_signed(ca, r10). veto_cites_law(ca, r10, l10). citation_refused_at(ca, r10, l10, 40).
 cites_right_of(r10, l10, h10). reversible_marking(r10). marking_delivered(r10, h10, 40). decided_seq(r10, 13).
 passed_channel(r11). matter_of(r11, x11). veto(ch, r11, 44). veto_signed(ch, r11). veto_cites_law(ch, r11, l11).
 cites_law_at(ch, r11, l11, 44). cites_right_of(r11, l11, h11). reversible_marking(r11). decided_seq(r11, 14).
-passed_channel(r12). matter_of(r12, x12). veto(ch, r12, 40). veto_signed(ch, r12). veto_cites_law(ch, r12, l12).
+passed_channel(r12). matter_of(r12, x12). veto(ch, r12, 40). veto_signed(ch, r12). veto_cites_law(ch, r12, l12). citation_refused_at(ch, r12, l12, 40).
 cites_right_of(r12, l12, h12). reversible_marking(r12). law_unfounded(r12, l12). decided_seq(r12, 15).
+passed_channel(r13). matter_of(r13, x13). veto(ch, r13, 40). veto_signed(ch, r13). veto_cites_law(ch, r13, l13).
+citation_refused_at(ch, r13, l13, 40). cites_right_of(r13, l13, h13). decided_seq(r13, 16).
+passed_channel(r14). matter_of(r14, x14). veto(ch, r14, 42). veto_signed(ch, r14). veto_cites_law(ch, r14, l14).
+citation_refused_at(ch, r14, l14, 42). cites_right_of(r14, l14, h14). decided_seq(r14, 17).
+passed_channel(r15). matter_of(r15, x15). veto(ca, r15, 44). veto_signed(ca, r15). veto_cites_law(ca, r15, l15). citation_refused_at(ca, r15, l15, 44).
+cites_right_of(r15, l15, h15). reversible_marking(r15). marking_delivered(r15, h15, 44). decided_seq(r15, 40).
 
 % EXPECT[LV.2]: pr_beyond_ceilings(ch,r1)
 % EXPECT-NOT[LV.2]: pr_citation_refused(ch,r1,l1)
@@ -93,3 +107,19 @@ cites_right_of(r12, l12, h12). reversible_marking(r12). law_unfounded(r12, l12).
 % EXPECT[LV.2]: pr_first_citing(ch,r11,l11,44)
 % EXPECT[LV.2]: pr_citation_refused(ch,r12,l12)
 % EXPECT-NOT[LV.3]: pr_protection_mode(r12,l12)
+% EXPECT[LV.2]: pr_citation_refused(ch,r13,l13)
+% EXPECT[LV.4]: pr_overdue(r13,l13)
+% EXPECT[LV.4]: pr_redrawn(r13,l13)
+% EXPECT[LV.4]: pr_counts_toward_d2(r13)
+% EXPECT-NOT[LV.4]: pr_overdue(r14,l14)
+% EXPECT-NOT[LV.4]: pr_redrawn(r14,l14)
+% EXPECT[LV.2]: pr_law_hold(r13)
+% EXPECT[LV.3]: pr_consequence_withheld(r13,h13)
+% EXPECT-NOT[LV.4]: pr_overdue(r12,l12)
+% EXPECT[LV.2]: pr_citation_refused(ca,r15,l15)
+% EXPECT[LV.2]: pr_in_ceilings(ca,r15)
+% EXPECT-NOT[LV.4]: pr_overdue(r15,l15)
+% EXPECT-NOT[LV.2]: pr_pending_hold(r15,l15)
+% EXPECT-NOT[LV.2]: pr_law_hold(r15)
+% EXPECT[LV.3]: pr_consequence_withheld(r15,h15)
+% EXPECT-NOT[LV.3]: pr_custodian_passes(r15)
