@@ -120,7 +120,7 @@
     "P3.5"
   ],
   "digest_rule": "sha256 over the lines '<sha256>  <path>\\n' of the entries, in the order listed",
-  "combined_sha256": "e7c91082f0ba69487f03c000c5b5e8bd1e365fc09ee183302855a57b6323adda",
+  "combined_sha256": "9a20fb79050096a7f2411cf0346d9f76cb85fbd88ebf6278e050fee140b516ba",
   "entries": [
     {
       "path": "L0.md",
@@ -324,7 +324,7 @@
     },
     {
       "path": "fixtures/proposed/custodian_law_rights.lp",
-      "sha256": "ca5efa597625704a404df95488acb20ef997647b6c5c1f7722b9e21727bc9fa3"
+      "sha256": "1ca68f1813a37e2a4be1acbf89c4ca2942ec6f7d2d16f72a3852a3f11bdc2e8c"
     },
     {
       "path": "fixtures/proposed/custodian_law_windows.lp",
@@ -360,7 +360,7 @@
     },
     {
       "path": "DESIGN.md",
-      "sha256": "175a94f2eb68eeb64866e48cd306c8de831d715fb4b56cdf5eade249dfc9f6f2"
+      "sha256": "8885af24725315c4bd59c4dd19e7933c817fcce13ba3d169d5c97a092b57f78a"
     },
     {
       "path": "tools/c18.py",
