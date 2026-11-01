@@ -53,7 +53,7 @@ cites_class(r8, l8, c8). in_class(h8, c8). in_class(hm, c8). joined_class(hm, c8
 reversible_marking(r8). law_unfounded(r8, l8). decided_seq(r8, 11).
 passed_channel(r9). matter_of(r9, x9). veto(ch, r9, 40). veto_signed(ch, r9). veto_cites_law(ch, r9, l9). citation_refused_at(ch, r9, l9, 40).
 cites_right_of(r9, l9, h9). reversible_marking(r9). marking_delivered(r9, h9, 40). decided_seq(r9, 12).
-passed_channel(r10). matter_of(r10, x10). veto(ca, r10, 40). veto_signed(ca, r10). veto_cites_law(ca, r10, l10). citation_refused_at(ca, r10, l10, 40).
+passed_channel(r10). matter_of(r10, x10). veto(ca, r10, 40). veto_signed(ca, r10). veto_cites_law(ca, r10, l10). citation_refused_at(ca, r10, l10, 45).
 cites_right_of(r10, l10, h10). reversible_marking(r10). marking_delivered(r10, h10, 40). decided_seq(r10, 13).
 passed_channel(r11). matter_of(r11, x11). veto(ch, r11, 44). veto_signed(ch, r11). veto_cites_law(ch, r11, l11).
 cites_law_at(ch, r11, l11, 44). cites_right_of(r11, l11, h11). reversible_marking(r11). decided_seq(r11, 14).
@@ -123,3 +123,4 @@ cites_right_of(r15, l15, h15). reversible_marking(r15). marking_delivered(r15, h
 % EXPECT-NOT[LV.2]: pr_law_hold(r15)
 % EXPECT[LV.3]: pr_consequence_withheld(r15,h15)
 % EXPECT-NOT[LV.3]: pr_custodian_passes(r15)
+% EXPECT-NOT[LV.4]: pr_overdue(r10,l10)
